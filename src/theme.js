@@ -12,7 +12,7 @@ export const fontSerifDefault = PT_Serif({
   fallback: ["Times New Roman", "Garamond", "serif"],
 });
 export const fontMonospaceDefault = Roboto_Mono({
-  weight: "300",
+  weight: ["300", "400"],
   subsets: ["latin"],
   display: "swap",
   fallback: ["Lucida Console", "monospace"],
@@ -39,22 +39,27 @@ const theme = createTheme({
     },
     h2: {
       fontFamily: fontMonospaceDefault.style.fontFamily,
+      fontWeight: 300,
     },
     h3: {
       fontFamily: fontMonospaceDefault.style.fontFamily,
+      fontWeight: 300,
     },
     h4: {
       fontFamily: fontMonospaceDefault.style.fontFamily,
+      fontWeight: 300,
     },
     h5: {
       fontFamily: fontMonospaceDefault.style.fontFamily,
+      fontWeight: 300,
     },
     h6: {
       fontFamily: fontMonospaceDefault.style.fontFamily,
+      fontWeight: 300,
     },
-    // button: {
-    //   fontWeight: 600,
-    // },
+    button: {
+      fontWeight: 700,
+    },
   },
 });
 

@@ -17,6 +17,6 @@
         "react"
     ],
     "rules": {
-        "react/prop-types": "object"
+        // "react/prop-types": "object"
     }
 }

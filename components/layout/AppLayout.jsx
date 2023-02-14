@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import AppHeader from './AppHeader';
+import ContactMe from '../misc/ContactMe';
 import AppFooter from './AppFooter';
 
 function AppLayout(props) {
@@ -10,6 +11,7 @@ function AppLayout(props) {
     <>
       <AppHeader />
       <main>{children}</main>
+      <ContactMe />
       <AppFooter />
     </>
   );

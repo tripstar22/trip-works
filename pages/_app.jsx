@@ -38,4 +38,8 @@ MyApp.propTypes = {
   pageProps: PropTypes.object.isRequired,
 };
 
+MyApp.defaultProps = {
+  emotionCache: undefined,
+};
+
 export default MyApp;

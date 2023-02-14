@@ -1,17 +1,19 @@
-import * as React from "react";
-import PropTypes from "prop-types";
-import Head from "next/head";
-import { ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import { CacheProvider } from "@emotion/react";
-import "../src/styles/fonts.css";
-import theme from "../src/theme";
-import createEmotionCache from "../src/createEmotionCache";
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import Head from 'next/head';
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import { CacheProvider } from '@emotion/react';
+import '../src/styles/fonts.css';
+import theme from '../src/theme';
+import createEmotionCache from '../src/createEmotionCache';
+
+import AppLayout from '../components/layout/AppLayout';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
 
-export default function MyApp(props) {
+function MyApp(props) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
   return (
@@ -22,7 +24,9 @@ export default function MyApp(props) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <Component {...pageProps} />
+        <AppLayout>
+          <Component pageProp={pageProps} />
+        </AppLayout>
       </ThemeProvider>
     </CacheProvider>
   );
@@ -33,3 +37,5 @@ MyApp.propTypes = {
   emotionCache: PropTypes.object,
   pageProps: PropTypes.object.isRequired,
 };
+
+export default MyApp;

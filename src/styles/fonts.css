@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Hudson-NY-Serif";
-  src: local("hudson_ny_serif-webfont"),
-    url("../fonts/hudson_ny_serif-webfont.woff") format("woff"),
-    url("../fonts/hudson_ny_serif-webfont.woff2") format("woff2");
+  font-family: 'Hudson-NY-Serif';
+  src: local('hudson_ny_serif-webfont'),
+    url('../fonts/hudson_ny_serif-webfont.woff') format('woff'),
+    url('../fonts/hudson_ny_serif-webfont.woff2') format('woff2');
 }

@@ -1,31 +1,31 @@
-import { PT_Serif, Roboto_Mono } from "@next/font/google";
-import { createTheme } from "@mui/material/styles";
-import { red } from "@mui/material/colors";
+import { PT_Serif, Roboto_Mono } from '@next/font/google';
+import { createTheme } from '@mui/material/styles';
+import { red } from '@mui/material/colors';
 
 // Define Local Font
-export const fontDisplayDefault = "Hudson-NY-Serif";
+export const fontDisplayDefault = 'Hudson-NY-Serif';
 // Import Google Fonts
 export const fontSerifDefault = PT_Serif({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-  display: "swap",
-  fallback: ["Times New Roman", "Garamond", "serif"],
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  fallback: ['Times New Roman', 'Garamond', 'serif'],
 });
 export const fontMonospaceDefault = Roboto_Mono({
-  weight: ["300", "400"],
-  subsets: ["latin"],
-  display: "swap",
-  fallback: ["Lucida Console", "monospace"],
+  weight: ['300', '400'],
+  subsets: ['latin'],
+  display: 'swap',
+  fallback: ['Lucida Console', 'monospace'],
 });
 
 // Create a theme instance.
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#556cd6",
+      main: '#556cd6',
     },
     secondary: {
-      main: "#19857b",
+      main: '#19857b',
     },
     error: {
       main: red.A400,

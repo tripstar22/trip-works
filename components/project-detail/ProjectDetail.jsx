@@ -1,3 +1,5 @@
+import React from 'react';
+
 import ProjectDetailHero from '../heroes/ProjectDetailHero';
 import ProjectDetailContent from './ProjectDetailContent';
 

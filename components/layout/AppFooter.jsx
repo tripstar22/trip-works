@@ -5,13 +5,13 @@ import Copyright from '../../src/Copyright';
 
 function AppFooter() {
   return (
-    <div>
+    <footer>
       <div>This is the footer</div>
       <Box sx={{ my: 4 }}>
         <ProTip />
         <Copyright />
       </Box>
-    </div>
+    </footer>
   );
 }
 

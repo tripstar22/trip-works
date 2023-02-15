@@ -1,7 +1,9 @@
 import React from 'react';
 
 function AppMenu() {
-  return <div>This is the menu</div>;
+  return (
+    <nav>This is the menu</nav>
+  );
 }
 
 export default AppMenu;

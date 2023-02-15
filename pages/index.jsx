@@ -3,14 +3,22 @@ import Container from '@mui/material/Container';
 
 import HomeHero from '../components/heroes/HomeHero';
 import AboutMe from '../components/misc/AboutMe';
-import FeaturedProjects from '../components/misc/FeaturedProjects';
+import ProjectsFeatured from '../components/misc/ProjectsFeatured';
+import ContactMe from '../components/global/ContactMe';
+import BlogsFeatured from '../components/global/BlogsFeatured';
 
-export default function Index() {
+function IndexPage() {
   return (
-    <Container maxWidth="lg">
-      <HomeHero />
-      <AboutMe />
-      <FeaturedProjects />
-    </Container>
+    <>
+      <Container maxWidth="lg">
+        <HomeHero />
+        <AboutMe />
+        <ProjectsFeatured />
+      </Container>
+      <ContactMe />
+      <BlogsFeatured />
+    </>
   );
 }
+
+export default IndexPage;

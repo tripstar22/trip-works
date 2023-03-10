@@ -3,8 +3,8 @@ import * as React from 'react';
 import Container from '@mui/material/Container';
 
 import HomeHero from '../components/heroes/HomeHero';
-import AboutMe from '../components/misc/AboutMe';
-import ProjectsFeatured from '../components/misc/ProjectsFeatured';
+import AboutMe from '../components/about/AboutMe';
+import ProjectsFeatured from '../components/projects/ProjectsFeatured';
 import ContactMe from '../components/global/ContactMe';
 import BlogsFeatured from '../components/global/BlogsFeatured';
 

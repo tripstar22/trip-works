@@ -17,7 +17,7 @@ import AppMenu from './AppMenu';
 
 function HideHeaderOnScroll(props) {
   const { children } = props;
-  const trigger = useScrollTrigger({});
+  const trigger = useScrollTrigger();
 
   return (
     <Slide appear={false} direction="down" in={!trigger}>
@@ -25,6 +25,10 @@ function HideHeaderOnScroll(props) {
     </Slide>
   );
 }
+
+HideHeaderOnScroll.propTypes = {
+  children: PropTypes.element.isRequired,
+};
 
 function AppHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -62,9 +66,5 @@ function AppHeader() {
     </HideHeaderOnScroll>
   );
 }
-
-HideHeaderOnScroll.propTypes = {
-  children: PropTypes.element.isRequired,
-};
 
 export default AppHeader;

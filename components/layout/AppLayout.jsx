@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import AppHeader from './AppHeader';
 import AppFooter from './AppFooter';
+import BackToTop from '../utilities/BackToTop';
 
 function AppLayout(props) {
   const { children } = props;
@@ -10,7 +11,10 @@ function AppLayout(props) {
     <>
       <span className="sr-only"><a href="#page-top">Skip to Content</a></span>
       <AppHeader />
-      <main id="page-top">{children}</main>
+      <main id="page-top">
+        {children}
+        <BackToTop />
+      </main>
       <AppFooter />
     </>
   );

@@ -8,8 +8,9 @@ function AppLayout(props) {
   const { children } = props;
   return (
     <>
+      <span className="sr-only"><a href="#page-top">Skip to Content</a></span>
       <AppHeader />
-      <main>{children}</main>
+      <main id="page-top">{children}</main>
       <AppFooter />
     </>
   );

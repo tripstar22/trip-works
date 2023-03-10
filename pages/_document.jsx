@@ -6,8 +6,8 @@ import Document, {
   NextScript,
 } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
-import theme, { fontSerifDefault } from '../src/theme';
-import createEmotionCache from '../src/createEmotionCache';
+import theme, { fontSerifDefault } from '../src/styles/js/theme';
+import createEmotionCache from '../src/styles/js/createEmotionCache';
 
 export default class MyDocument extends Document {
   render() {

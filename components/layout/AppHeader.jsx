@@ -1,8 +1,30 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+
+import Brightness3 from '@mui/icons-material/Brightness3';
+import WbSunny from '@mui/icons-material/WbSunny';
+
+import AppBar from '@mui/material/AppBar';
+import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
+import Link from '@mui/material/Link';
 import Menu from '@mui/icons-material/Menu';
+import Slide from '@mui/material/Slide';
+import Switch from '@mui/material/Switch';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
 
 import AppMenu from './AppMenu';
+
+function HideHeaderOnScroll(props) {
+  const { children } = props;
+  const trigger = useScrollTrigger({});
+
+  return (
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
+  );
+}
 
 function AppHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,14 +38,33 @@ function AppHeader() {
   };
 
   return (
-    <header>
-      This is the header
-      <IconButton aria-label="open menu" onClick={handlerMenuOpen}>
-        <Menu />
-      </IconButton>
-      <AppMenu menuOpen={menuOpen} handlerMenuClose={handlerMenuClose} />
-    </header>
+    <HideHeaderOnScroll>
+      <AppBar>
+        <Grid container spacing={0}>
+          <Grid item xs={3}>
+            <IconButton aria-label="open menu" onClick={handlerMenuOpen}>
+              <Menu />
+            </IconButton>
+            <AppMenu menuOpen={menuOpen} handlerMenuClose={handlerMenuClose} />
+          </Grid>
+          <Grid item xs={6}>
+            <Link to="/" color="textPrimary">
+              <div>Logo goes here</div>
+            </Link>
+          </Grid>
+          <Grid item xs={3}>
+            <span><WbSunny /></span>
+            <Switch aria-label="toggle theme" />
+            <span><Brightness3 /></span>
+          </Grid>
+        </Grid>
+      </AppBar>
+    </HideHeaderOnScroll>
   );
 }
+
+HideHeaderOnScroll.propTypes = {
+  children: PropTypes.element.isRequired,
+};
 
 export default AppHeader;

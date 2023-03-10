@@ -4,9 +4,10 @@ import Head from 'next/head';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider } from '@emotion/react';
-import '../src/styles/fonts.css';
-import theme from '../src/theme';
-import createEmotionCache from '../src/createEmotionCache';
+import '../src/styles/scss/fonts.scss';
+import '../src/styles/scss/utilities.scss';
+import theme from '../src/styles/js/theme';
+import createEmotionCache from '../src/styles/js/createEmotionCache';
 
 import AppLayout from '../components/layout/AppLayout';
 

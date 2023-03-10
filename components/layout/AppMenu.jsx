@@ -21,27 +21,27 @@ function AppMenu({ menuOpen, handlerMenuClose }) {
           <List>
             <ListItem>
               <ListItemButton>
-                <Link to="/">Home</Link>
+                <Link href="/">Home</Link>
               </ListItemButton>
             </ListItem>
             <ListItem>
               <ListItemButton>
-                <Link to="/">About</Link>
+                <Link href="/#about">About</Link>
               </ListItemButton>
             </ListItem>
             <ListItem>
               <ListItemButton>
-                <Link to="/">Work</Link>
+                <Link href="/#work">Work</Link>
               </ListItemButton>
             </ListItem>
             <ListItem>
               <ListItemButton>
-                <Link to="/">Contact</Link>
+                <Link href="/#contact">Contact</Link>
               </ListItemButton>
             </ListItem>
             <ListItem>
               <ListItemButton>
-                <Link to="/">View Résumé</Link>
+                <Link href="/">View Résumé</Link>
               </ListItemButton>
             </ListItem>
           </List>

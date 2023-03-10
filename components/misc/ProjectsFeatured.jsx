@@ -4,9 +4,11 @@ import Typography from '@mui/material/Typography';
 
 function ProjectsFeatured() {
   return (
-    <Box sx={{ my: 4 }}>
-      <Typography variant="h2" component="h2" gutterBottom>Work</Typography>
-    </Box>
+    <section id="work">
+      <Box sx={{ my: 4 }}>
+        <Typography variant="h2" component="h2" gutterBottom>Work</Typography>
+      </Box>
+    </section>
   );
 }
 

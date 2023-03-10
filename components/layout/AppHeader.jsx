@@ -48,7 +48,7 @@ function AppHeader() {
             <AppMenu menuOpen={menuOpen} handlerMenuClose={handlerMenuClose} />
           </Grid>
           <Grid item xs={6}>
-            <Link to="/" color="textPrimary">
+            <Link href="/" color="textPrimary">
               <div>Logo goes here</div>
             </Link>
           </Grid>

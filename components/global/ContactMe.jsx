@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 
 function ContactMe() {
   return (
-    <section>
+    <section id="contact">
       <Grid container spacing={0}>
         <Grid item xs={12}>
           <Typography variant="h2" component="h2" gutterBottom>

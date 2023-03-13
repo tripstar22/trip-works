@@ -17,7 +17,7 @@ function ScrollTop(props) {
 
   const handlerScrollTop = (event) => {
     const anchor = (event.target.ownerDocument || document).querySelector(
-      '#page-top',
+      '#page-top'
     );
 
     if (anchor) {
@@ -32,7 +32,7 @@ function ScrollTop(props) {
       <Box
         onClick={handlerScrollTop}
         role="presentation"
-        sx={{ position: 'fixed', bottom: 16, right: 16 }}
+        sx={{ position: "fixed", bottom: 16, right: 16 }}
       >
         {children}
       </Box>

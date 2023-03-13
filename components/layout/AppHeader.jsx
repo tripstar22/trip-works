@@ -21,7 +21,7 @@ function HideHeaderOnScroll(props) {
   const trigger = useScrollTrigger();
 
   return (
-    <Slide appear={false} direction="down" in={!trigger}>
+    <Slide appear={false} direction='down' in={!trigger}>
       {children}
     </Slide>
   );
@@ -58,13 +58,17 @@ function AppHeader() {
             </Link>
           </Grid>
           <Grid item xs={3}>
-            <span><WbSunny fontSize="small" /></span>
+            <span>
+              <WbSunny fontSize="small" />
+            </span>
             <FormControlLabel
               control={<Switch size="small" />}
               label="toggle theme"
               labelPlacement="top"
             />
-            <span><Brightness3 fontSize="small" /></span>
+            <span>
+              <Brightness3 fontSize="small" />
+            </span>
           </Grid>
         </Grid>
       </AppBar>

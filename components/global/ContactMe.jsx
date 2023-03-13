@@ -40,10 +40,7 @@ function ContactMe() {
                   />
                 </Grid>
                 <Grid item xs={12}>
-                  <TextField
-                    fullWidth
-                    label="Company"
-                  />
+                  <TextField fullWidth label="Company" />
                 </Grid>
                 <Grid item xs={12}>
                   <TextField

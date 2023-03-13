@@ -56,12 +56,22 @@ function AppFooter() {
           </Grid>
           <Grid item xs={12} md={3}>
             <Stack direction="row" spacing={1}>
-              <a href="http://www.linkedin.com/in/trip-pruitt-430b2b58" aria-label="View LinkedIn Profile" target="_blank" rel="noreferrer">
+              <a
+                href="http://www.linkedin.com/in/trip-pruitt-430b2b58"
+                aria-label="View LinkedIn Profile"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <IconButton aria-label="linkedin">
                   <LinkedIn />
                 </IconButton>
               </a>
-              <a href="https://github.com/tripstar22/" aria-label="View GitHub Profile" target="_blank" rel="noreferrer">
+              <a
+                href="https://github.com/tripstar22/"
+                aria-label="View GitHub Profile"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <IconButton aria-label="github">
                   <GitHub />
                 </IconButton>

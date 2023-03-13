@@ -11,8 +11,9 @@
   },
   "plugins": ["react"],
   "rules": {
-    "react/forbid-prop-types": "off",
+    "camelcase": "warn",
     "max-len": "off",
-    "camelcase": "warn"
+    "react/forbid-prop-types": "off",
+    "react/jsx-one-expression-per-line": [true, { "allow": "single-child" }]
   }
 }

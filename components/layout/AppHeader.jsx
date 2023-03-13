@@ -5,6 +5,7 @@ import Brightness3 from '@mui/icons-material/Brightness3';
 import WbSunny from '@mui/icons-material/WbSunny';
 
 import AppBar from '@mui/material/AppBar';
+import FormControlLabel from '@mui/material/FormControlLabel';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import Link from '@mui/material/Link';
@@ -57,9 +58,13 @@ function AppHeader() {
             </Link>
           </Grid>
           <Grid item xs={3}>
-            <span><WbSunny /></span>
-            <Switch aria-label="toggle theme" />
-            <span><Brightness3 /></span>
+            <span><WbSunny fontSize="small" /></span>
+            <FormControlLabel
+              control={<Switch size="small" />}
+              label="toggle theme"
+              labelPlacement="top"
+            />
+            <span><Brightness3 fontSize="small" /></span>
           </Grid>
         </Grid>
       </AppBar>

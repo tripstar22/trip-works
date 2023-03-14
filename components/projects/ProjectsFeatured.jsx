@@ -34,7 +34,7 @@ function ProjectsFeatured() {
                     Lorem ipsum dolor
                   </Typography>
                   <Typography variant="h6" component="h5" gutterBottom>
-                    Front End Engineer
+                    My Role: <span>Front End Engineer</span>
                   </Typography>
                   <Typography variant="body1" gutterBottom>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed

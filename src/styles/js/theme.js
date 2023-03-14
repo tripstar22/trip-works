@@ -1,11 +1,11 @@
-import { PT_Serif, Roboto_Mono } from '@next/font/google';
+import { Source_Sans_Pro, Roboto_Mono } from '@next/font/google';
 import { createTheme } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
 
 // Define Local Font
 export const fontDisplayDefault = 'Hudson-NY-Serif';
 // Import Google Fonts
-export const fontSerifDefault = PT_Serif({
+export const fontSansSerifDefault = Source_Sans_Pro({
   weight: ['400', '700'],
   subsets: ['latin'],
   display: 'swap',
@@ -35,7 +35,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: fontSerifDefault.style.fontFamily,
+    fontFamily: fontSansSerifDefault.style.fontFamily,
     htmlFontSize: 16,
     h1: {
       fontFamily: fontDisplayDefault,

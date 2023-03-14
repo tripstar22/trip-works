@@ -61,7 +61,7 @@ function ProjectsFeatured() {
                     Vestibulum mattis ullamcorper
                   </Typography>
                   <Typography variant="h6" component="h5" gutterBottom>
-                    Front End Engineer
+                    My Role: <span>Front End Engineer</span>
                   </Typography>
                   <Typography variant="body1" gutterBottom>
                     Faucibus nisl tincidunt eget nullam non nisi est. Elementum
@@ -87,7 +87,7 @@ function ProjectsFeatured() {
                     Quis eleifend quam
                   </Typography>
                   <Typography variant="h6" component="h5" gutterBottom>
-                    Front End Engineer
+                    My Role: <span>Front End Engineer</span>
                   </Typography>
                   <Typography variant="body1" gutterBottom>
                     Fermentum leo vel orci porta non pulvinar. Feugiat in

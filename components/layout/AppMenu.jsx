@@ -5,10 +5,11 @@ import Close from '@mui/icons-material/Close';
 
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import Link from '@mui/material/Link';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
+
+import AppLink from '../ui/AppLink/AppLink';
 
 function AppMenu({ menuOpen, handlerMenuClose }) {
   return (
@@ -21,27 +22,27 @@ function AppMenu({ menuOpen, handlerMenuClose }) {
           <List>
             <ListItem>
               <ListItemButton>
-                <Link href="/">Home</Link>
+                <AppLink href="/">Home</AppLink>
               </ListItemButton>
             </ListItem>
             <ListItem>
               <ListItemButton>
-                <Link href="/#about">About</Link>
+                <AppLink href="/#about">About</AppLink>
               </ListItemButton>
             </ListItem>
             <ListItem>
               <ListItemButton>
-                <Link href="/#work">Work</Link>
+                <AppLink href="/#work">Work</AppLink>
               </ListItemButton>
             </ListItem>
             <ListItem>
               <ListItemButton>
-                <Link href="/#contact">Contact</Link>
+                <AppLink href="/#contact">Contact</AppLink>
               </ListItemButton>
             </ListItem>
             <ListItem>
               <ListItemButton>
-                <Link href="/">View Résumé</Link>
+                <AppLink href="/">View Résumé</AppLink>
               </ListItemButton>
             </ListItem>
           </List>

@@ -1,11 +1,12 @@
 import React from 'react';
 
-import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
+
+import AppButton from '../ui/AppButton/AppButton';
 
 function ContactMe() {
   return (
@@ -16,7 +17,7 @@ function ContactMe() {
             <Typography variant="h2" component="h2" gutterBottom>
               Y‘all ready to code?
             </Typography>
-            <Button variant="contained">View Résumé</Button>
+            <AppButton>View Résumé</AppButton>
           </Grid>
         </Grid>
         <Paper elevation={2}>
@@ -53,7 +54,7 @@ function ContactMe() {
                   />
                 </Grid>
                 <Grid item xs={12}>
-                  <Button variant="contained">Submit</Button>
+                  <AppButton>Submit</AppButton>
                 </Grid>
               </Grid>
             </form>

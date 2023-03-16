@@ -1,9 +1,33 @@
 import { createTheme } from '@mui/material/styles';
 
-import {FontSansSerifDefault, FontMonospaceDefault, FontDisplayDefault} from '../fonts/fonts';
+import {FontSansSerifDefault, FontMonospaceDefault, FontDisplayDefault} from '../fonts';
 
 // Create theme instance
-const themeLight = createTheme({
+const themeDark = createTheme({
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#1565C0',
+          color: '#f5f5f5',
+        }
+      }
+    },
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          color: '#f5f5f5',
+        }
+      },
+    },
+    MuiSvgIcon: {
+      styleOverrides: {
+        root: {
+          fill: '#eeeeee',
+        },
+      },
+    },
+  },
   palette: {
     type: 'dark',
     background: {
@@ -17,11 +41,11 @@ const themeLight = createTheme({
     primary: {
       main: '#303030',
       light: '#212121',
-      dark: '#aaaaaa',
+      dark: '#000000',
     },
     secondary: {
-      main: '#1565c0',
-      light: '#1e88e5',
+      main: '#1565C0',
+      light: '#448aff',
       dark: '#0d47a1',
       contrastText: '#f5f5f5',
     },
@@ -30,9 +54,9 @@ const themeLight = createTheme({
     },
     text: {
       primary: '#f5f5f5',
-      secondary: '#d5d5d5',
-      disabled: 'rgba(245,245,245,0.4)',
-      hint: '#e0e0e0',
+      secondary: '#eeeeee',
+      disabled: 'rgba(245,245,245,0.6)',
+      hint: 'rgba(48,48,48,0.6)',
     },
   },
   typography: {
@@ -67,4 +91,4 @@ const themeLight = createTheme({
   },
 });
 
-export default themeLight;
+export default themeDark;

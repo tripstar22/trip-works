@@ -1,27 +1,51 @@
 import { createTheme } from '@mui/material/styles';
 
-import {FontSansSerifDefault, FontMonospaceDefault, FontDisplayDefault} from '../fonts/fonts';
+import {FontSansSerifDefault, FontMonospaceDefault, FontDisplayDefault} from '../fonts';
 
 // Create theme instance
 const themeLight = createTheme({
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#1565C0',
+          color: '#f5f5f5',
+        }
+      },
+    },
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          color: '#212121',
+        }
+      },
+    },
+    MuiSvgIcon: {
+      styleOverrides: {
+        root: {
+          fill: '#303030',
+        },
+      },
+    },
+  },
   palette: {
     type: 'light',
     background: {
       default: '#eeeeee',
-      paper: '#fafafa',
+      paper: '#f5f5f5',
     },
-    divider: '#bdbdbd',
+    divider: '#9e9e9e',
     error: {
       main: '#c62828',
     },
     primary: {
       main: '#eeeeee',
-      light: '#fafafa',
+      light: '#ffffff',
       dark: '#bdbdbd',
     },
     secondary: {
-      main: '#1565c0',
-      light: '#1e88e5',
+      main: '#1565C0',
+      light: '#448aff',
       dark: '#0d47a1',
       contrastText: '#f5f5f5',
     },
@@ -31,8 +55,8 @@ const themeLight = createTheme({
     text: {
       primary: '#212121',
       secondary: '#303030',
-      disabled: 'rgba(33,33,33,0.4)',
-      hint: '#616161',
+      disabled: 'rgba(33,33,33,0.6)',
+      hint: 'rgba(238,238,238,0.6)',
     },
   },
   typography: {

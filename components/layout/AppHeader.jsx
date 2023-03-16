@@ -8,12 +8,12 @@ import AppBar from '@mui/material/AppBar';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
-import Link from '@mui/material/Link';
 import Menu from '@mui/icons-material/Menu';
 import Slide from '@mui/material/Slide';
 import Switch from '@mui/material/Switch';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
+import AppLink from '../ui/AppLink/AppLink';
 import AppMenu from './AppMenu';
 
 function HideHeaderOnScroll(props) {
@@ -53,9 +53,9 @@ function AppHeader() {
             <AppMenu menuOpen={menuOpen} handlerMenuClose={handlerMenuClose} />
           </Grid>
           <Grid item xs={6}>
-            <Link href="/" color="textPrimary">
+            <AppLink href="/" color="textPrimary">
               <div>Logo goes here</div>
-            </Link>
+            </AppLink>
           </Grid>
           <Grid item xs={3}>
             <span>

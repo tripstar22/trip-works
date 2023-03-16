@@ -37,11 +37,13 @@ function ProjectsFeatured() {
                     My Role: <span>Front End Engineer</span>
                   </Typography>
                   <Typography variant="body1" gutterBottom>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Faucibus nisl tincidunt eget nullam non nisi est.
                     Elementum facilisis leo vel fringilla est ullamcorper eget
                     nulla facilisi.
+                  </Typography>
+                  <Typography color="primary" variant="body1" gutterBottom>
+                    Learn More
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -66,8 +68,10 @@ function ProjectsFeatured() {
                   <Typography variant="body1" gutterBottom>
                     Faucibus nisl tincidunt eget nullam non nisi est. Elementum
                     facilisis leo vel fringilla est ullamcorper eget nulla
-                    facilisi. Laoreet suspendisse interdum consectetur libero id
-                    faucibus nisl tincidunt. Urna cursus eget nunc scelerisque.
+                    facilisi. Laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt. Urna cursus eget nunc scelerisque.
+                  </Typography>
+                  <Typography color="primary" variant="body1" gutterBottom>
+                    Learn More
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -95,6 +99,9 @@ function ProjectsFeatured() {
                     accumsan in nisl nisi scelerisque eu. Phasellus faucibus
                     scelerisque eleifend donec. In est ante in nibh mauris
                     cursus. Diam ut venenatis tellus in metus vulputate eu.
+                  </Typography>
+                  <Typography color="primary" variant="body1" gutterBottom>
+                    Learn More
                   </Typography>
                 </CardContent>
               </CardActionArea>

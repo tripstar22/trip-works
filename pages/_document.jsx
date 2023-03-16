@@ -1,16 +1,15 @@
 import * as React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
-import theme, { fontSansSerifDefault } from '../src/styles/js/theme';
+import { FontSansSerifDefault } from '../src/styles/js/fonts/fonts';
 import createEmotionCache from '../src/styles/js/createEmotionCache';
 
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en" className={fontSansSerifDefault.className}>
+      <Html lang="en" className={FontSansSerifDefault.className}>
         <Head>
           {/* PWA primary color */}
-          <meta name="theme-color" content={theme.palette.primary.main} />
           <link rel="shortcut icon" href="/favicon.ico" />
           <meta name="emotion-insertion-point" content="" />
           {this.props.emotionStyleTags}

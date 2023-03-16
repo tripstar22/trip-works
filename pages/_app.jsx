@@ -6,7 +6,8 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider } from '@emotion/react';
 import '../src/styles/scss/fonts.scss';
 import '../src/styles/scss/utilities.scss';
-import theme from '../src/styles/js/theme';
+import themeLight from '../src/styles/js/themes/themeLight';
+import themeDark from '../src/styles/js/themes/themeDark';
 import createEmotionCache from '../src/styles/js/createEmotionCache';
 
 import AppLayout from '../components/layout/AppLayout';
@@ -23,7 +24,7 @@ function MyApp(props) {
         <title>Trip Pruitt - Front End Engineer</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={themeDark}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <AppLayout>

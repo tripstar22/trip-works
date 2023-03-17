@@ -10,14 +10,23 @@ const themeDark = createTheme({
         root: {
           backgroundColor: '#1565C0',
           color: '#f5f5f5',
-        }
-      }
+          fontWeight: '700',
+          textTransform: 'initial',
+        },
+      },
+    },
+    MuiFab: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#1565C0',
+        },
+      },
     },
     MuiLink: {
       styleOverrides: {
         root: {
           color: '#f5f5f5',
-        }
+        },
       },
     },
     MuiSvgIcon: {
@@ -60,6 +69,10 @@ const themeDark = createTheme({
     },
   },
   typography: {
+    body2: {
+      color: '#f5f5f5',
+      textDecoration: 'underline',
+    },
     fontFamily: FontSansSerifDefault.style.fontFamily,
     fontSize: 16,
     h1: {
@@ -84,9 +97,6 @@ const themeDark = createTheme({
     h6: {
       fontFamily: FontMonospaceDefault.style.fontFamily,
       fontWeight: 300,
-    },
-    button: {
-      fontWeight: 700,
     },
   },
 });

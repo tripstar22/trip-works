@@ -6,7 +6,8 @@ import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 
-import AppButton from '../ui/AppButton/AppButton';
+import ButtonAction from '../ui/buttons/ButtonAction';
+import ButtonLink from '../ui/buttons/ButtonLink';
 
 function ContactMe() {
   return (
@@ -17,7 +18,7 @@ function ContactMe() {
             <Typography variant="h2" component="h2" gutterBottom>
               Y‘all ready to code?
             </Typography>
-            <AppButton>View Résumé</AppButton>
+            <ButtonLink href="/">View Résumé</ButtonLink>
           </Grid>
         </Grid>
         <Paper elevation={2}>
@@ -54,7 +55,7 @@ function ContactMe() {
                   />
                 </Grid>
                 <Grid item xs={12}>
-                  <AppButton>Submit</AppButton>
+                  <ButtonAction>Submit</ButtonAction>
                 </Grid>
               </Grid>
             </form>

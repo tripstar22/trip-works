@@ -9,9 +9,9 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 
-import AppLink from '../ui/AppLink/AppLink';
+import AppLink from '../ui/LinkStandard';
 
-function AppMenu({ menuOpen, handlerMenuClose }) {
+function AppMenu({ handlerMenuClose, menuOpen }) {
   return (
     <div>
       <Drawer anchor="left" open={menuOpen}>
@@ -53,8 +53,8 @@ function AppMenu({ menuOpen, handlerMenuClose }) {
 }
 
 AppMenu.propTypes = {
-  menuOpen: PropTypes.bool.isRequired,
   handlerMenuClose: PropTypes.func.isRequired,
+  menuOpen: PropTypes.bool.isRequired,
 };
 
 export default AppMenu;

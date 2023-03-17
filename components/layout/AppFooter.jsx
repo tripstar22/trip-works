@@ -12,7 +12,8 @@ import ListItemButton from '@mui/material/ListItemButton';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
-import AppLink from '../ui/AppLink/AppLink';
+import LinkStandard from '../ui/LinkStandard';
+import { Link } from '@mui/material';
 
 function AppFooter() {
   return (
@@ -29,27 +30,27 @@ function AppFooter() {
               <List>
                 <ListItem>
                   <ListItemButton>
-                    <AppLink href="/">Home</AppLink>
+                    <LinkStandard href="/">Home</LinkStandard>
                   </ListItemButton>
                 </ListItem>
                 <ListItem>
                   <ListItemButton>
-                    <AppLink href="/#about">About</AppLink>
+                    <LinkStandard href="/#about">About</LinkStandard>
                   </ListItemButton>
                 </ListItem>
                 <ListItem>
                   <ListItemButton>
-                    <AppLink href="/#work">Work</AppLink>
+                    <LinkStandard href="/#work">Work</LinkStandard>
                   </ListItemButton>
                 </ListItem>
                 <ListItem>
                   <ListItemButton>
-                    <AppLink href="/#contact">Contact</AppLink>
+                    <LinkStandard href="/#contact">Contact</LinkStandard>
                   </ListItemButton>
                 </ListItem>
                 <ListItem>
                   <ListItemButton>
-                    <AppLink href="/">View Résumé</AppLink>
+                    <LinkStandard href="/">View Résumé</LinkStandard>
                   </ListItemButton>
                 </ListItem>
               </List>

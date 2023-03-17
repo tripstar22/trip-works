@@ -5,19 +5,35 @@ import {FontSansSerifDefault, FontMonospaceDefault, FontDisplayDefault} from '..
 // Create theme instance
 const themeLight = createTheme({
   components: {
+    MuiBox: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#1565C0',
+        },
+      },
+    },
     MuiButton: {
       styleOverrides: {
         root: {
           backgroundColor: '#1565C0',
           color: '#f5f5f5',
-        }
+          fontWeight: '700',
+          textTransform: 'initial',
+        },
+      },
+    },
+    MuiFab: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#1565C0',
+        },
       },
     },
     MuiLink: {
       styleOverrides: {
         root: {
           color: '#212121',
-        }
+        },
       },
     },
     MuiSvgIcon: {
@@ -60,6 +76,10 @@ const themeLight = createTheme({
     },
   },
   typography: {
+    body2: {
+      color: '#212121',
+      textDecoration: 'underline',
+    },
     fontFamily: FontSansSerifDefault.style.fontFamily,
     fontSize: 16,
     h1: {
@@ -84,9 +104,6 @@ const themeLight = createTheme({
     h6: {
       fontFamily: FontMonospaceDefault.style.fontFamily,
       fontWeight: 300,
-    },
-    button: {
-      fontWeight: 700,
     },
   },
 });

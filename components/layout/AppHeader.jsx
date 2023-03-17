@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import Brightness3 from '@mui/icons-material/Brightness3';
-import WbSunny from '@mui/icons-material/WbSunny';
+import WbSunnyOutlined from '@mui/icons-material/WbSunnyOutlined';
 
 import AppBar from '@mui/material/AppBar';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -13,7 +13,7 @@ import Slide from '@mui/material/Slide';
 import Switch from '@mui/material/Switch';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
-import AppLink from '../ui/AppLink/AppLink';
+import LinkStandard from '../ui/LinkStandard';
 import AppMenu from './AppMenu';
 
 function HideHeaderOnScroll(props) {
@@ -53,13 +53,13 @@ function AppHeader() {
             <AppMenu menuOpen={menuOpen} handlerMenuClose={handlerMenuClose} />
           </Grid>
           <Grid item xs={6}>
-            <AppLink href="/" color="textPrimary">
+            <LinkStandard href="/" color="textPrimary">
               <div>Logo goes here</div>
-            </AppLink>
+            </LinkStandard>
           </Grid>
           <Grid item xs={3}>
             <span>
-              <WbSunny fontSize="small" />
+              <WbSunnyOutlined fontSize="small" />
             </span>
             <FormControlLabel
               control={<Switch size="small" />}

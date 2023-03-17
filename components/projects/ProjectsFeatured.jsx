@@ -42,7 +42,7 @@ function ProjectsFeatured() {
                     Elementum facilisis leo vel fringilla est ullamcorper eget
                     nulla facilisi.
                   </Typography>
-                  <Typography color="primary" variant="body1" gutterBottom>
+                  <Typography variant="body2" gutterBottom>
                     Learn More
                   </Typography>
                 </CardContent>
@@ -70,7 +70,7 @@ function ProjectsFeatured() {
                     facilisis leo vel fringilla est ullamcorper eget nulla
                     facilisi. Laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt. Urna cursus eget nunc scelerisque.
                   </Typography>
-                  <Typography color="primary" variant="body1" gutterBottom>
+                  <Typography variant="body2" gutterBottom>
                     Learn More
                   </Typography>
                 </CardContent>
@@ -100,7 +100,7 @@ function ProjectsFeatured() {
                     scelerisque eleifend donec. In est ante in nibh mauris
                     cursus. Diam ut venenatis tellus in metus vulputate eu.
                   </Typography>
-                  <Typography color="primary" variant="body1" gutterBottom>
+                  <Typography variant="body2" gutterBottom>
                     Learn More
                   </Typography>
                 </CardContent>

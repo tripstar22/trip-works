@@ -1,38 +1,22 @@
 import { createTheme } from '@mui/material/styles';
 
-import {FontSansSerifDefault, FontMonospaceDefault, FontDisplayDefault} from '../fonts';
+import appColors from '../vars/colors';
+import themeBasic from './themeBasic';
 
-// Create theme instance
-const themeDark = createTheme({
+// Dark theme
+const themeDark = createTheme(themeBasic, {
   components: {
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          backgroundColor: '#1565C0',
-          color: '#f5f5f5',
-          fontWeight: '700',
-          textTransform: 'initial',
-        },
-      },
-    },
-    MuiFab: {
-      styleOverrides: {
-        root: {
-          backgroundColor: '#1565C0',
-        },
-      },
-    },
     MuiLink: {
       styleOverrides: {
         root: {
-          color: '#f5f5f5',
+          color: appColors['white'],
         },
       },
     },
     MuiSvgIcon: {
       styleOverrides: {
         root: {
-          fill: '#eeeeee',
+          fill: appColors['whiteOff'],
         },
       },
     },
@@ -40,63 +24,24 @@ const themeDark = createTheme({
   palette: {
     type: 'dark',
     background: {
-      default: '#303030',
-      paper: '#212121',
-    },
-    divider: '#9e9e9e',
-    error: {
-      main: '#c62828',
+      default: appColors['blackCharcoal'],
+      paper: appColors['black'],
     },
     primary: {
-      main: '#303030',
-      light: '#212121',
-      dark: '#000000',
-    },
-    secondary: {
-      main: '#1565C0',
-      light: '#448aff',
-      dark: '#0d47a1',
-      contrastText: '#f5f5f5',
-    },
-    success: {
-      main: '#2e7d32',
+      main: appColors['blackCharcoal'],
+      light: appColors['black'],
+      dark: appColors['blackPure'],
     },
     text: {
-      primary: '#f5f5f5',
-      secondary: '#eeeeee',
-      disabled: 'rgba(245,245,245,0.6)',
-      hint: 'rgba(48,48,48,0.6)',
+      primary: appColors['white'],
+      secondary: appColors['whiteOff'],
+      disabled: appColors['whiteSemiTransparent'],
+      hint: appColors['blackSemiTransparent'],
     },
   },
   typography: {
     body2: {
-      color: '#f5f5f5',
-      textDecoration: 'underline',
-    },
-    fontFamily: FontSansSerifDefault.style.fontFamily,
-    fontSize: 16,
-    h1: {
-      fontFamily: FontDisplayDefault,
-    },
-    h2: {
-      fontFamily: FontMonospaceDefault.style.fontFamily,
-      fontWeight: 300,
-    },
-    h3: {
-      fontFamily: FontMonospaceDefault.style.fontFamily,
-      fontWeight: 300,
-    },
-    h4: {
-      fontFamily: FontMonospaceDefault.style.fontFamily,
-      fontWeight: 300,
-    },
-    h5: {
-      fontFamily: FontMonospaceDefault.style.fontFamily,
-      fontWeight: 300,
-    },
-    h6: {
-      fontFamily: FontMonospaceDefault.style.fontFamily,
-      fontWeight: 300,
+      color: appColors['white'],
     },
   },
 });

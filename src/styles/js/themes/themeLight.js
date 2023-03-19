@@ -5,7 +5,6 @@ import themeBasic from './themeBasic';
 
 // Light theme
 const themeLight = createTheme(themeBasic, {
-  themeBasic,
   components: {
     MuiLink: {
       styleOverrides: {

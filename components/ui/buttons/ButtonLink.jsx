@@ -9,8 +9,7 @@ function ButtonLink(props) {
 }
 
 ButtonLink.propTypes = {
-  children: PropTypes.object.isRequired,
-  link: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
 };
 
 export default ButtonLink;

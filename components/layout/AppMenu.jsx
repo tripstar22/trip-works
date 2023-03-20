@@ -9,7 +9,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 
-import AppLink from '../ui/LinkStandard';
+import AppLink from '../ui/AppLink';
 
 function AppMenu({ handlerMenuClose, menuOpen }) {
   return (

@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 
 import Link from '@mui/material/Link';
 
-function LinkStandard(props) {
+function AppLink(props) {
   const { children } = props;
   return <Link href={props.href}>{children}</Link>;
 }
 
-LinkStandard.propTypes = {
-  children: PropTypes.object.isRequired,
-  link: PropTypes.string.isRequired,
+AppLink.propTypes = {
+  children: PropTypes.any.isRequired,
 };
 
-export default LinkStandard;
+export default AppLink;

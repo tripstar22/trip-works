@@ -13,7 +13,7 @@ import Slide from '@mui/material/Slide';
 import Switch from '@mui/material/Switch';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
-import LinkStandard from '../ui/LinkStandard';
+import AppLink from '../ui/AppLink';
 import AppMenu from './AppMenu';
 
 function HideHeaderOnScroll(props) {
@@ -53,9 +53,9 @@ function AppHeader() {
             <AppMenu menuOpen={menuOpen} handlerMenuClose={handlerMenuClose} />
           </Grid>
           <Grid item xs={6}>
-            <LinkStandard href="/" color="textPrimary">
+            <AppLink href="/">
               <div>Logo goes here</div>
-            </LinkStandard>
+            </AppLink>
           </Grid>
           <Grid item xs={3}>
             <span>

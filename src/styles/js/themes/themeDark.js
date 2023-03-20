@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 
-import appColors from '../vars/colors';
+import colors from '../vars/colors';
 import themeBasic from './themeBasic';
 
 // Dark theme
@@ -9,14 +9,14 @@ const themeDark = createTheme(themeBasic, {
     MuiLink: {
       styleOverrides: {
         root: {
-          color: appColors['white'],
+          color: colors['white'],
         },
       },
     },
     MuiSvgIcon: {
       styleOverrides: {
         root: {
-          fill: appColors['whiteOff'],
+          fill: colors['whiteOff'],
         },
       },
     },
@@ -24,24 +24,24 @@ const themeDark = createTheme(themeBasic, {
   palette: {
     type: 'dark',
     background: {
-      default: appColors['blackCharcoal'],
-      paper: appColors['black'],
+      default: colors['blackCharcoal'],
+      paper: colors['black'],
     },
     primary: {
-      main: appColors['blackCharcoal'],
-      light: appColors['black'],
-      dark: appColors['blackPure'],
+      main: colors['blackCharcoal'],
+      light: colors['black'],
+      dark: colors['blackPure'],
     },
     text: {
-      primary: appColors['white'],
-      secondary: appColors['whiteOff'],
-      disabled: appColors['whiteSemiTransparent'],
-      hint: appColors['blackSemiTransparent'],
+      primary: colors['white'],
+      secondary: colors['whiteOff'],
+      disabled: colors['whiteSemiTransparent'],
+      hint: colors['blackSemiTransparent'],
     },
   },
   typography: {
     body2: {
-      color: appColors['white'],
+      color: colors['white'],
     },
   },
 });

@@ -24,7 +24,7 @@ function MyApp(props) {
         <title>Trip Pruitt - Front End Engineer</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <ThemeProvider theme={themeDark}>
+      <ThemeProvider theme={themeLight}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <AppLayout>

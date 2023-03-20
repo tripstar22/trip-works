@@ -1,4 +1,4 @@
-const appColors = {
+const colors = {
   'blackPure': '#000000',
   'black': '#212121',
   'blackCharcoal': '#303030',
@@ -16,4 +16,4 @@ const appColors = {
   'red': '#c62828',
 };
 
-export default appColors;
+export default colors;

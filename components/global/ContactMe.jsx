@@ -11,7 +11,7 @@ import ButtonLink from '../ui/buttons/ButtonLink';
 
 function ContactMe() {
   return (
-    <section id="contact">
+    <section id="contact" className="contact-me">
       <Container maxWidth="lg">
         <Grid container spacing={0}>
           <Grid item xs={12}>
@@ -25,27 +25,45 @@ function ContactMe() {
           <Container maxWidth="md">
             <form>
               <Grid container spacing={4}>
-                <Grid item xs={6}>
+                <Grid item xs={12} md={6}>
                   <TextField
+                    className="contact-me__textfield"
                     fullWidth
                     helperText="First Name is required"
                     label="First Name"
                     required
                   />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12} md={6}>
                   <TextField
+                    className="contact-me__textfield"
                     fullWidth
                     helperText="Last Name is required"
                     label="Last Name"
                     required
                   />
                 </Grid>
-                <Grid item xs={12}>
-                  <TextField fullWidth label="Company" />
+                <Grid item xs={12} md={6}>
+                  <TextField
+                    className="contact-me__textfield"
+                    fullWidth
+                    helperText="Email address is required"
+                    label="Email"
+                    required
+                  />
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <TextField 
+                    className="contact-me__textfield"
+                    fullWidth
+                    helperText="Company name is required" 
+                    label="Company"
+                    required 
+                  />
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
+                    className="contact-me__textfield"
                     fullWidth
                     helperText="A description is required"
                     label="How may I help you?"

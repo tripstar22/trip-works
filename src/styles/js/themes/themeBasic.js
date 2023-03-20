@@ -1,7 +1,8 @@
 import { createTheme } from '@mui/material/styles';
+import { darken } from '@mui/material/styles';
 
 import {FontSansSerifDefault, FontMonospaceDefault, FontDisplayDefault} from '../fonts';
-import appColors from '../vars/colors';
+import colors from '../vars/colors';
 
 // Basic theme
 const themeBasic = createTheme({
@@ -9,40 +10,48 @@ const themeBasic = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          backgroundColor: appColors['blue'],
-          color: appColors['white'],
+          backgroundColor: colors['blue'],
+          color: colors['white'],
           fontWeight: '700',
+          outline: '2px solid transparent',
+          outlineOffset: '3px',
           textTransform: 'initial',
+          '&:hover': {
+            backgroundColor: darken(colors['blueDark'], 0.1),
+          },
+          '&:focus': {
+            backgroundColor: darken(colors['blueDark'], 0.1),
+          },
         },
       },
     },
     MuiFab: {
       styleOverrides: {
         root: {
-          backgroundColor: appColors['blue'],
+          backgroundColor: colors['blue'],
         },
       },
     },
   },
   palette: {
-    divider: appColors['grayDark'],
+    divider: colors['grayDark'],
     error: {
-      main: appColors['red'],
+      main: colors['red'],
     },
     secondary: {
-      main: appColors['blue'],
-      light: appColors['blueLight'],
-      dark: appColors['blueDark'],
-      contrastText: appColors['white'],
+      main: colors['blue'],
+      light: colors['blueLight'],
+      dark: colors['blueDark'],
+      contrastText: colors['white'],
     },
     success: {
-      main: appColors['green'],
+      main: colors['green'],
     },
     text: {
-      primary: appColors['white'],
-      secondary: appColors['whiteOff'],
-      disabled: appColors['whiteSemiTransparent'],
-      hint: appColors['blackSemiTransparent'],
+      primary: colors['white'],
+      secondary: colors['whiteOff'],
+      disabled: colors['whiteSemiTransparent'],
+      hint: colors['blackSemiTransparent'],
     },
   },
   typography: {

@@ -4,8 +4,6 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
-import ButtonLink from '../ui/buttons/ButtonLink';
-
 function RepositoryCta() {
   return (
     <section>
@@ -13,12 +11,11 @@ function RepositoryCta() {
         <Grid container spacing={0}>
           <Grid item xs={12}>
             <Typography variant="h5" component="h5" gutterBottom>
-              Like what you see??
+              Interested in how I built my portfolio site?
             </Typography>
             <Typography variant="body1" gutterBottom>
-              You can view my repo on GitHub to learn more about the tech stack, and logic that I used to create this site!
+              You can <a href="https://github.com/tripstar22/trip-works" target="_blank">view my repo on GitHub</a> to learn more about the tech stack, and logic that I used to create it!
             </Typography>
-            <ButtonLink href="https://github.com/tripstar22/trip-works">View on GitHub</ButtonLink>
           </Grid>
         </Grid>
       </Container>

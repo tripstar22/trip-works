@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 
-import appColors from '../vars/colors';
+import colors from '../vars/colors';
 import themeBasic from './themeBasic';
 
 // Light theme
@@ -9,14 +9,57 @@ const themeLight = createTheme(themeBasic, {
     MuiLink: {
       styleOverrides: {
         root: {
-          color: appColors['black'],
+          color: colors['black'],
         },
       },
     },
     MuiSvgIcon: {
       styleOverrides: {
         root: {
-          fill: appColors['blackCharcoal'],
+          fill: colors['blackCharcoal'],
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '&.contact-me__textfield': {
+            '& fieldset': {
+              border: '2px solid ' + colors['grayDark'],
+            },
+            '&:hover': {
+              '& .MuiFormLabel-root': {
+                color: colors['black'],
+              },
+            },
+            '& .MuiFormLabel-root': {
+              color: colors['grayDark'],
+              '&.Mui-focused': {
+                color: colors['blue'],
+              },
+            },
+            '& .MuiFormHelperText-root': {
+              color: colors['blackSemiTransparent'],
+            },
+            '& .MuiInputBase-input': {
+              color: colors['grayDark'],
+              '&:hover': {
+                color: colors['black'],
+                '~ fieldset': {
+                  border: '2px solid ' + colors['black'],
+                },
+              },
+              '&:focus': {
+                color: colors['blue'],
+                '~ fieldset': {
+                  border: '2px solid ' + colors['blue'],
+                },
+              },
+            },
+            '& .MuiInputBase-multiline': {
+              
+            },
+          },
         },
       },
     },
@@ -24,24 +67,24 @@ const themeLight = createTheme(themeBasic, {
   palette: {
     type: 'light',
     background: {
-      default: appColors['whiteOff'],
-      paper: appColors['white'],
+      default: colors['whiteOff'],
+      paper: colors['white'],
     },
     primary: {
-      main: appColors['whiteOff'],
-      light: appColors['whitePure'],
-      dark: appColors['gray'],
+      main: colors['whiteOff'],
+      light: colors['whitePure'],
+      dark: colors['gray'],
     },
     text: {
-      primary: appColors['black'],
-      secondary: appColors['blackCharcoal'],
-      disabled: appColors['blackSemiTransparent'],
-      hint: appColors['whiteSemiTransparent'],
+      primary: colors['black'],
+      secondary: colors['blackCharcoal'],
+      disabled: colors['blackSemiTransparent'],
+      hint: colors['whiteSemiTransparent'],
     },
   },
   typography: {
     body2: {
-      color: appColors['black'],
+      color: colors['black'],
     },
   },
 });

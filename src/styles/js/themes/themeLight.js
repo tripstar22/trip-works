@@ -29,7 +29,7 @@ const themeLight = createTheme(themeBasic, {
             },
             '&:hover': {
               '& .MuiFormLabel-root': {
-                color: colors['black'],
+                color: colors['blue'],
               },
             },
             '& .MuiFormLabel-root': {
@@ -44,9 +44,9 @@ const themeLight = createTheme(themeBasic, {
             '& .MuiInputBase-input': {
               color: colors['grayDark'],
               '&:hover': {
-                color: colors['black'],
+                color: colors['blue'],
                 '~ fieldset': {
-                  border: '2px solid ' + colors['black'],
+                  border: '2px solid ' + colors['blue'],
                 },
               },
               '&:focus': {
@@ -55,9 +55,6 @@ const themeLight = createTheme(themeBasic, {
                   border: '2px solid ' + colors['blue'],
                 },
               },
-            },
-            '& .MuiInputBase-multiline': {
-              
             },
           },
         },

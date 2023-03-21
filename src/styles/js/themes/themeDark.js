@@ -20,6 +20,46 @@ const themeDark = createTheme(themeBasic, {
         },
       },
     },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '&.contact-me__textfield': {
+            '& fieldset': {
+              border: '2px solid ' + colors['whiteOff'],
+            },
+            '&:hover': {
+              '& .MuiFormLabel-root': {
+                color: colors['blueLight'],
+              },
+            },
+            '& .MuiFormLabel-root': {
+              color: colors['whiteOff'],
+              '&.Mui-focused': {
+                color: colors['blueLight'],
+              },
+            },
+            '& .MuiFormHelperText-root': {
+              color: colors['whiteSemiTransparent'],
+            },
+            '& .MuiInputBase-input': {
+              color: colors['whiteOff'],
+              '&:hover': {
+                color: colors['blueLight'],
+                '~ fieldset': {
+                  border: '2px solid ' + colors['blueLight'],
+                },
+              },
+              '&:focus': {
+                color: colors['blueLight'],
+                '~ fieldset': {
+                  border: '2px solid ' + colors['blueLight'],
+                },
+              },
+            },
+          },
+        },
+      },
+    },
   },
   palette: {
     type: 'dark',

@@ -1,21 +1,44 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
+import Typed from 'typed.js';
 
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 function HomeHero() {
+  function aniTypeHandler() {
+    useEffect(() => {
+      const aniElement = document.getElementById('jsAniTypeElement');
+      const options = {
+        startDelay: 200,
+        strings: ['Front End ^300 Engineer'],
+        typeSpeed: 50,
+      };
+
+      const aniType = new Typed(aniElement, options);
+
+      return () => {
+        aniType.destroy();
+      };
+    });
+  }
+
   return (
     <section>
       <Container maxWidth="lg">
         <Grid container spacing={0}>
           <Grid item xs={12}>
-            <Typography variant="h1" component="h1" gutterBottom>
+            <Typography component="h1" gutterBottom variant="h1">
               Trip Pruitt
             </Typography>
-            <Typography variant="h4" component="h2" gutterBottom>
-              Front End Engineer
-            </Typography>
+            <Typography
+              component="h2"
+              id="jsAniTypeElement"
+              gutterBottom
+              onLoad={aniTypeHandler()}
+              variant="h4"
+            ></Typography>
           </Grid>
         </Grid>
       </Container>

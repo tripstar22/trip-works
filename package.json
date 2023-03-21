@@ -20,7 +20,8 @@
     "next": "latest",
     "prop-types": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "typed.js": "^2.0.132"
   },
   "devDependencies": {
     "eslint": "^8.34.0",

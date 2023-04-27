@@ -9,14 +9,14 @@ const themeDark = createTheme(themeBasic, {
     MuiLink: {
       styleOverrides: {
         root: {
-          color: colors['white'],
+          color: colors['blueLight'],
         },
       },
     },
     MuiSvgIcon: {
       styleOverrides: {
         root: {
-          fill: colors['whiteOff'],
+          fill: colors['blueLight'],
         },
       },
     },
@@ -25,7 +25,7 @@ const themeDark = createTheme(themeBasic, {
         root: {
           '&.contact-me__textfield': {
             '& fieldset': {
-              border: '2px solid ' + colors['whiteOff'],
+              border: '2px solid ' + colors['grayLight'],
             },
             '&:hover': {
               '& .MuiFormLabel-root': {
@@ -33,16 +33,13 @@ const themeDark = createTheme(themeBasic, {
               },
             },
             '& .MuiFormLabel-root': {
-              color: colors['whiteOff'],
+              color: colors['grayLight'],
               '&.Mui-focused': {
                 color: colors['blueLight'],
               },
             },
-            '& .MuiFormHelperText-root': {
-              color: colors['whiteSemiTransparent'],
-            },
             '& .MuiInputBase-input': {
-              color: colors['whiteOff'],
+              color: colors['white'],
               '&:hover': {
                 color: colors['blueLight'],
                 '~ fieldset': {
@@ -64,24 +61,22 @@ const themeDark = createTheme(themeBasic, {
   palette: {
     type: 'dark',
     background: {
-      default: colors['blackCharcoal'],
-      paper: colors['black'],
+      default: colors['black'],
+      paper: colors['charcoal'],
     },
     primary: {
-      main: colors['blackCharcoal'],
-      light: colors['black'],
-      dark: colors['blackPure'],
+      main: colors['charcoal'],
+      light: colors['grayDark'],
+      dark: colors['black'],
     },
     text: {
       primary: colors['white'],
-      secondary: colors['whiteOff'],
-      disabled: colors['whiteSemiTransparent'],
-      hint: colors['blackSemiTransparent'],
+      secondary: colors['offWhite'],
     },
   },
   typography: {
     body2: {
-      color: colors['white'],
+      color: colors['offWhite'],
     },
   },
 });

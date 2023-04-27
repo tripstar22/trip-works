@@ -9,14 +9,14 @@ const themeLight = createTheme(themeBasic, {
     MuiLink: {
       styleOverrides: {
         root: {
-          color: colors['black'],
+          color: colors['blueDark'],
         },
       },
     },
     MuiSvgIcon: {
       styleOverrides: {
         root: {
-          fill: colors['blackCharcoal'],
+          fill: colors['blueDark'],
         },
       },
     },
@@ -38,21 +38,18 @@ const themeLight = createTheme(themeBasic, {
                 color: colors['blue'],
               },
             },
-            '& .MuiFormHelperText-root': {
-              color: colors['blackSemiTransparent'],
-            },
             '& .MuiInputBase-input': {
-              color: colors['grayDark'],
+              color: colors['black'],
               '&:hover': {
-                color: colors['blue'],
+                color: colors['blueDark'],
                 '~ fieldset': {
-                  border: '2px solid ' + colors['blue'],
+                  border: '2px solid ' + colors['blueDark'],
                 },
               },
               '&:focus': {
-                color: colors['blue'],
+                color: colors['blueDark'],
                 '~ fieldset': {
-                  border: '2px solid ' + colors['blue'],
+                  border: '2px solid ' + colors['blueDark'],
                 },
               },
             },
@@ -64,24 +61,22 @@ const themeLight = createTheme(themeBasic, {
   palette: {
     type: 'light',
     background: {
-      default: colors['whiteOff'],
+      default: colors['offWhite'],
       paper: colors['white'],
     },
     primary: {
-      main: colors['whiteOff'],
-      light: colors['whitePure'],
-      dark: colors['gray'],
+      main: colors['offWhite'],
+      light: colors['white'],
+      dark: colors['grayLight'],
     },
     text: {
-      primary: colors['black'],
-      secondary: colors['blackCharcoal'],
-      disabled: colors['blackSemiTransparent'],
-      hint: colors['whiteSemiTransparent'],
+      primary: colors['charcoal'],
+      secondary: colors['grayDark'],
     },
   },
   typography: {
     body2: {
-      color: colors['black'],
+      color: colors['charcoal'],
     },
   },
 });

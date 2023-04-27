@@ -3,6 +3,7 @@ import { darken } from '@mui/material/styles';
 
 import {FontSansSerifDefault, FontMonospaceDefault, FontDisplayDefault} from '../fonts';
 import colors from '../vars/colors';
+import gradients from '../vars/gradients';
 
 // Basic theme
 const themeBasic = createTheme({
@@ -10,31 +11,34 @@ const themeBasic = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          backgroundColor: colors['blue'],
+          background: gradients['gradientDefault'],
           color: colors['white'],
           fontWeight: '700',
-          outline: '2px solid transparent',
-          outlineOffset: '3px',
           textTransform: 'initial',
-          '&:hover': {
-            backgroundColor: darken(colors['blueDark'], 0.1),
-          },
-          '&:focus': {
-            backgroundColor: darken(colors['blueDark'], 0.1),
-          },
         },
       },
     },
     MuiFab: {
       styleOverrides: {
         root: {
-          backgroundColor: colors['blue'],
+          background: gradients['gradientDefault'],
         },
       },
     },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '&.contact-me__textfield': {
+            '& .MuiFormHelperText-root': {
+              color: colors['gray'],
+            },
+          },
+        },
+      },
+    }, 
   },
   palette: {
-    divider: colors['grayDark'],
+    divider: colors['gray'],
     error: {
       main: colors['red'],
     },
@@ -42,16 +46,14 @@ const themeBasic = createTheme({
       main: colors['blue'],
       light: colors['blueLight'],
       dark: colors['blueDark'],
-      contrastText: colors['white'],
+      contrastText: colors['blue'],
     },
     success: {
       main: colors['green'],
     },
     text: {
-      primary: colors['white'],
-      secondary: colors['whiteOff'],
-      disabled: colors['whiteSemiTransparent'],
-      hint: colors['blackSemiTransparent'],
+      disabled: colors['gray'],
+      hint: colors['grayDark'],
     },
   },
   typography: {

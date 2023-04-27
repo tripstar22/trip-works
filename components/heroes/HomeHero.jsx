@@ -7,19 +7,19 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 function HomeHero() {
-  function aniTypeHandler() {
+  function animateTypeHandler() {
     useEffect(() => {
-      const aniElement = document.getElementById('jsAniTypeElement');
+      const animateElement = document.getElementById('jsAnimateType');
       const options = {
         startDelay: 200,
         strings: ['Front End ^300 Engineer'],
         typeSpeed: 50,
       };
 
-      const aniType = new Typed(aniElement, options);
+      const animateType = new Typed(animateElement, options);
 
       return () => {
-        aniType.destroy();
+        animateType.destroy();
       };
     });
   }
@@ -34,9 +34,9 @@ function HomeHero() {
             </Typography>
             <Typography
               component="h2"
-              id="jsAniTypeElement"
+              id="jsAnimateType"
               gutterBottom
-              onLoad={aniTypeHandler()}
+              onLoad={animateTypeHandler()}
               variant="h4"
             ></Typography>
           </Grid>

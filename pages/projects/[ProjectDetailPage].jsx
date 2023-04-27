@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ContactMe from '../../components/global/ContactMe';
+import Contact from '../../components/global/Contact';
 import ProjectDetail from '../../components/project-detail/ProjectDetail';
 import RepositoryCta from '../components/global/RepositoryCta';
 
@@ -8,7 +8,7 @@ function ProjectDetailPage() {
   return (
     <div>
       <ProjectDetail />
-      <ContactMe />
+      <Contact />
       <RepositoryCta />
     </div>
   );

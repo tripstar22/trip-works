@@ -9,13 +9,13 @@ import Typography from '@mui/material/Typography';
 import ButtonAction from '../ui/buttons/ButtonAction';
 import ButtonLink from '../ui/buttons/ButtonLink';
 
-function ContactMe() {
+function Contact() {
   return (
     <section id="contact" className="contact-me">
       <Container maxWidth="lg">
         <Grid container spacing={0}>
           <Grid item xs={12}>
-            <Typography variant="h2" component="h2" gutterBottom>
+            <Typography component="h2" gutterBottom variant="h2">
               Y‘all ready to code?
             </Typography>
             <ButtonLink href="/">View Résumé</ButtonLink>
@@ -84,4 +84,4 @@ function ContactMe() {
   );
 }
 
-export default ContactMe;
+export default Contact;

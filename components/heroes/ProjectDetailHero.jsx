@@ -10,10 +10,10 @@ function ProjectDetailHero() {
       <Container maxWidth="lg">
         <Grid container spacing={0}>
           <Grid item xs={12}>
-            <Typography variant="h1" component="h1" gutterBottom>
+            <Typography component="h1" gutterBottom variant="h1">
               Project Title Here
             </Typography>
-            <Typography variant="h4" component="h2" gutterBottom>
+            <Typography component="h2" gutterBottom variant="h4">
               My Role: <span>Front End Engineer</span>
             </Typography>
           </Grid>

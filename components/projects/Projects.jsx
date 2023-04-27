@@ -8,13 +8,13 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
-function ProjectsFeatured() {
+function Projects() {
   return (
     <section id="work">
       <Container maxWidth="lg">
         <Grid container spacing={0}>
           <Grid item xs={12}>
-            <Typography variant="h2" component="h3" gutterBottom>
+            <Typography component="h4" gutterBottom variant="h3">
               Work
             </Typography>
           </Grid>
@@ -24,25 +24,26 @@ function ProjectsFeatured() {
             <Card>
               <CardActionArea>
                 <CardMedia
+                  alt="write description here"
                   component="img"
                   height="220"
                   image="https://picsum.photos/300/200"
-                  alt="write description here"
                 />
                 <CardContent>
-                  <Typography variant="h5" component="h4" gutterBottom>
+                  <Typography component="h5" gutterBottom variant="h5">
                     Lorem ipsum dolor
                   </Typography>
-                  <Typography variant="h6" component="h5" gutterBottom>
+                  <Typography component="h6" gutterBottom variant="h6">
                     My Role: <span>Front End Engineer</span>
                   </Typography>
-                  <Typography variant="body1" gutterBottom>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                  <Typography gutterBottom variant="body1">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Faucibus nisl tincidunt eget nullam non nisi est.
                     Elementum facilisis leo vel fringilla est ullamcorper eget
                     nulla facilisi.
                   </Typography>
-                  <Typography variant="body2" gutterBottom>
+                  <Typography gutterBottom variant="body2">
                     Learn More
                   </Typography>
                 </CardContent>
@@ -53,24 +54,25 @@ function ProjectsFeatured() {
             <Card>
               <CardActionArea>
                 <CardMedia
+                  alt="write description here"
                   component="img"
                   height="220"
                   image="https://picsum.photos/300/200"
-                  alt="write description here"
                 />
                 <CardContent>
-                  <Typography variant="h5" component="h4" gutterBottom>
+                  <Typography component="h5" gutterBottom variant="h5">
                     Vestibulum mattis ullamcorper
                   </Typography>
-                  <Typography variant="h6" component="h5" gutterBottom>
+                  <Typography component="h6" gutterBottom variant="h6">
                     My Role: <span>Front End Engineer</span>
                   </Typography>
-                  <Typography variant="body1" gutterBottom>
+                  <Typography gutterBottom variant="body1">
                     Faucibus nisl tincidunt eget nullam non nisi est. Elementum
                     facilisis leo vel fringilla est ullamcorper eget nulla
-                    facilisi. Laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt. Urna cursus eget nunc scelerisque.
+                    facilisi. Laoreet suspendisse interdum consectetur libero id
+                    faucibus nisl tincidunt. Urna cursus eget nunc scelerisque.
                   </Typography>
-                  <Typography variant="body2" gutterBottom>
+                  <Typography gutterBottom variant="body2">
                     Learn More
                   </Typography>
                 </CardContent>
@@ -81,26 +83,26 @@ function ProjectsFeatured() {
             <Card>
               <CardActionArea>
                 <CardMedia
+                  alt="write description here"
                   component="img"
                   height="220"
                   image="https://picsum.photos/300/200"
-                  alt="write description here"
                 />
                 <CardContent>
-                  <Typography variant="h5" component="h4" gutterBottom>
+                  <Typography component="h5" gutterBottom variant="h5">
                     Quis eleifend quam
                   </Typography>
-                  <Typography variant="h6" component="h5" gutterBottom>
+                  <Typography component="h6" gutterBottom variant="h6">
                     My Role: <span>Front End Engineer</span>
                   </Typography>
-                  <Typography variant="body1" gutterBottom>
+                  <Typography gutterBottom variant="body1">
                     Fermentum leo vel orci porta non pulvinar. Feugiat in
                     fermentum posuere urna nec tincidunt praesent. Viverra
                     accumsan in nisl nisi scelerisque eu. Phasellus faucibus
                     scelerisque eleifend donec. In est ante in nibh mauris
                     cursus. Diam ut venenatis tellus in metus vulputate eu.
                   </Typography>
-                  <Typography variant="body2" gutterBottom>
+                  <Typography gutterBottom variant="body2">
                     Learn More
                   </Typography>
                 </CardContent>
@@ -113,4 +115,4 @@ function ProjectsFeatured() {
   );
 }
 
-export default ProjectsFeatured;
+export default Projects;

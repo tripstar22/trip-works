@@ -1,18 +1,18 @@
 import * as React from 'react';
 
-import AboutMe from '../components/about/AboutMe';
-import ContactMe from '../components/global/ContactMe';
+import About from '../components/about/About';
+import Contact from '../components/global/Contact';
 import HomeHero from '../components/heroes/HomeHero';
-import ProjectsFeatured from '../components/projects/ProjectsFeatured';
+import Projects from '../components/projects/Projects';
 import RepositoryCta from '../components/global/RepositoryCta';
 
 function IndexPage() {
   return (
     <>
       <HomeHero />
-      <AboutMe />
-      <ProjectsFeatured />
-      <ContactMe />
+      <About />
+      <Projects />
+      <Contact />
       <RepositoryCta />
     </>
   );

@@ -6,7 +6,7 @@ const gradientGenerator = (color1, color2) => {
 };
 
 const gradients = {
-  'gradientDefault': gradientGenerator(colors['blueDark'], colors['blueLight']),
+  'gradientDefault': gradientGenerator(colors['tealDark'], colors['tealLight']),
 };
 
 export default gradients;

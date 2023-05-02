@@ -1,9 +1,8 @@
 import * as React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
-import { FontSansSerifDefault } from '../src/styles/js/fonts';
-import themeLight from '../src/styles/js/themes/themeLight';
-import themeDark from '../src/styles/js/themes/themeDark';
+import { FontSansSerifDefault } from '../src/styles/js/fonts/fonts';
+import themeDefault from '../src/styles/js/themes/themeDefault';
 import createEmotionCache from '../src/styles/js/createEmotionCache';
 
 export default class MyDocument extends Document {
@@ -12,7 +11,7 @@ export default class MyDocument extends Document {
       <Html lang="en" className={FontSansSerifDefault.className}>
         <Head>
           {/* PWA primary color */}
-          <meta name="theme-color" content={themeDark.palette.primary.main} />
+          <meta name="theme-color" content={themeDefault.palette.primary.main} />
           <link rel="shortcut icon" href="/favicon.ico" />
           <meta name="emotion-insertion-point" content="" />
           {this.props.emotionStyleTags}

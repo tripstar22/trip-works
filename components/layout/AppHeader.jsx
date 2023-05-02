@@ -57,19 +57,6 @@ function AppHeader() {
               <div>Logo goes here</div>
             </AppLink>
           </Grid>
-          <Grid item xs={3}>
-            <span>
-              <WbSunnyOutlined fontSize="small" />
-            </span>
-            <FormControlLabel
-              control={<Switch size="small" />}
-              label="toggle theme"
-              labelPlacement="top"
-            />
-            <span>
-              <Brightness3 fontSize="small" />
-            </span>
-          </Grid>
         </Grid>
       </AppBar>
     </HideHeaderOnScroll>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ProjectDetailHero from '../heroes/ProjectDetailHero';
+import ProjectDetailHero from '../heroes/ProjectDetailHero/ProjectDetailHero';
 import ProjectDetailContent from './ProjectDetailContent';
 
 function ProjectDetail() {

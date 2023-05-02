@@ -5,7 +5,7 @@ export const FontSansSerifDefault = Source_Sans_Pro({
   weight: ['400', '700'],
   subsets: ['latin'],
   display: 'swap',
-  fallback: ['Times New Roman', 'Garamond', 'serif'],
+  fallback: ['Arial', 'sans-serif'],
 });
 export const FontMonospaceDefault = Roboto_Mono({
   weight: ['300', '400'],

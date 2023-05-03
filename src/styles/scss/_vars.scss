@@ -1,5 +1,4 @@
-/*** colors ***/
-
+/* colors */
 $black: #212121;
 $charcoal: #303030;
 $gray: #BDBDBD;
@@ -12,3 +11,15 @@ $teal: #00695C;
 $tealDark: #004D40;
 $tealLight: #26A69A;
 $white: #FAFAFA;
+
+
+/* screen sizes */
+$screen-xs: 0px;
+$screen-sm: 600px;
+$screen-md: 900px;
+$screen-lg: 1200px;
+$screen-xl: 1536px;
+
+
+/* transitions */
+$transitionDefault: 0.25s ease-in-out;

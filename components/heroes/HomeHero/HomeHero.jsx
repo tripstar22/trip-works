@@ -1,16 +1,20 @@
+/* react imports */
 import React, { useEffect } from 'react';
 
+/* library imports */
 import { Link } from 'react-scroll';
 import Typed from 'typed.js';
 
+/* mui icon imports */
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
+/* mui imports */
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import AppLink from '../../ui/AppLink';
 import Typography from '@mui/material/Typography';
 
-import classes from '../styles/hero.module.scss';
+/* styles imports */
+import classes from '../styles/_hero.module.scss';
 
 function HomeHero() {
   function animateTypeHandler() {

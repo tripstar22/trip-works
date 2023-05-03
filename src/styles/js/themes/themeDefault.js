@@ -130,18 +130,18 @@ themeDefault = createTheme(themeDefault, {
   typography: {
     body1: {
       fontFamily: FontSansSerifDefault.style.fontFamily,
-      fontSize: 14,
+      fontSize: 16,
       [themeDefault.breakpoints.up('md')]: {
-        fontSize: 16,
+        fontSize: 18,
       },
     },
     body2: {
       color: colors['charcoal'],
       fontFamily: FontSansSerifDefault.style.fontFamily,
-      fontSize: 12,
+      fontSize: 14,
       textDecoration: 'underline',
       [themeDefault.breakpoints.up('md')]: {
-        fontSize: 14,
+        fontSize: 16,
       },
     },
     fontFamily: FontSansSerifDefault.style.fontFamily,
@@ -150,13 +150,7 @@ themeDefault = createTheme(themeDefault, {
       fontFamily: FontDisplayDefault,
       fontSize: 64,
       [themeDefault.breakpoints.up('sm')]: {
-        fontSize: 72,
-      },
-      [themeDefault.breakpoints.up('md')]: {
         fontSize: 96,
-      },
-      [themeDefault.breakpoints.up('lg')]: {
-        fontSize: 120,
       },
     },
     h2: {
@@ -172,30 +166,28 @@ themeDefault = createTheme(themeDefault, {
     },
     h3: {
       fontFamily: FontMonospaceDefault.style.fontFamily,
-      fontSize: 36,
+      fontSize: 32,
       fontWeight: 300,
-      [themeDefault.breakpoints.up('sm')]: {
-        fontSize: 42,
-      },
       [themeDefault.breakpoints.up('md')]: {
-        fontSize: 48,
+        fontSize: 40,
+        paddingBottom: 20,
       },
     },
     h4: {
       fontFamily: FontMonospaceDefault.style.fontFamily,
-      fontSize: 28,
+      fontSize: 24,
       fontWeight: 300,
       [themeDefault.breakpoints.up('md')]: {
         fontSize: 32,
       },
-      [themeDefault.breakpoints.up('lg')]: {
-        fontSize: 36,
-      },
     },
     h5: {
       fontFamily: FontMonospaceDefault.style.fontFamily,
-      fontSize: 24,
+      fontSize: 20,
       fontWeight: 300,
+      [themeDefault.breakpoints.up('md')]: {
+        fontSize: 24,
+      },
     },
     h6: {
       fontFamily: FontMonospaceDefault.style.fontFamily,
@@ -205,31 +197,6 @@ themeDefault = createTheme(themeDefault, {
         fontSize: 20,
       },
     },
-    // [themeDefault.breakpoints.up('md')]: {
-    //   h1: {
-    //     fontSize: 72,
-    //   },
-    // },
-    // [themeDefault.breakpoints.up('lg')]: {
-    //   h1: {
-    //     fontSize: 500,
-    //   },
-    //   h2: {
-    //     fontSize: 60,
-    //   },
-    //   h3: {
-    //     fontSize: 48,
-    //   },
-    //   h4: {
-    //     fontSize: 36,
-    //   },
-    //   h5: {
-    //     fontSize: 30,
-    //   },
-    //   h6: {
-    //     fontSize: 24,
-    //   },
-    // },
   },
 });
 

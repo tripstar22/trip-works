@@ -1,12 +1,17 @@
+/* react imports */
 import React from 'react';
 
+/* mui imports */
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
+/* styles imports */
+import classes from './styles/_location.module.scss';
+
 function Location() {
   return (
-    <section>
+    <section className={classes.location}>
       <Container maxWidth="lg">
         <Grid container spacing={0}>
           <Grid item xs={12} md={4}>

@@ -3,6 +3,7 @@
 /* imports */
 @import '../../../src/styles/scss/vars/colors';
 @import '../../../src/styles/scss/vars/screen-sizes';
+@import '../../../src/styles/scss/vars/transitions';
 
 /* keyframe animations */
 @keyframes animateArrow {
@@ -42,15 +43,24 @@
   text-align: center;
 
   &_arrow,
-  &_background {
+  &_background,
+  &_scroll_link {
     left: 50%;
     position: absolute;
   }
+  &_arrow,
+  &_scroll_link {
+    height: 40px;
+    width: 40px;
+  }
   &_arrow {
-    animation: animateArrow 2s ease-in-out infinite;
-    bottom: 40px;
     fill: $white;
-    z-index: 10;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    &:hover {
+      fill: $white;
+    }
   }
   &_background {
     animation: animateGradient 15s ease-in-out infinite;
@@ -68,15 +78,29 @@
   &_heading,
   &_subheading {
     color: $white;
-    text-shadow: rgba(48, 48, 48, 0.4) 2px 2px 5px;
+    text-shadow: rgba(48, 48, 48, 0.45) 2px 2px 10px;
   }
   &_heading {
-    padding-top: 50px;
+    padding-top: 100px;
+  }
+  &_scroll_link {
+    animation: animateArrow 2s ease-in-out infinite;
+    border: 2px solid transparent;
+    border-radius: 100%;
+    bottom: 40px;
+    cursor: pointer;
+    transition: border $transitionDefault;
+    z-index: 10;
+
+    &:focus {
+      border: 1px solid $white;
+      outline: none;
+    }
   }
 
-  &__home {
+  &___home {
     background-color: $tealLight;
-    min-height: 400px;
+    min-height: 600px;
     overflow: hidden;
     position: relative;
   }
@@ -91,13 +115,10 @@
   Small Screens & Up (min-width: 600px)
 =================================================== */
 
-@media screen and (min-width: $screen-sm) {
-  
-  .hero {
-    
-    &_heading {
-      padding-top: 150px;
-    }
+.hero {
+
+  &_heading {
+    padding-top: 150px;
   }
 }
 
@@ -114,7 +135,7 @@
   
   .hero {
 
-    &__home {
+    &___home {
       min-height: 100vh;
     }
   }

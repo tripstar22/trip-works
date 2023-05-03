@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 
+import { Link } from 'react-scroll';
 import Typed from 'typed.js';
 
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import AppLink from '../../ui/AppLink';
 import Typography from '@mui/material/Typography';
 
 import classes from '../styles/hero.module.scss';
@@ -30,7 +32,7 @@ function HomeHero() {
   }
 
   return (
-    <section className={`${classes.hero} ${classes.hero__home}`}>
+    <section className={`${classes.hero} ${classes.hero___home}`}>
       <div className={classes.hero_background} />
       <Container maxWidth="lg">
         <Grid container spacing={0}>
@@ -53,10 +55,18 @@ function HomeHero() {
                 variant="h4"
               ></Typography>
             </div>
-            <KeyboardArrowDownIcon 
-              className={classes.hero_arrow}
-              fontSize="large"
-            />
+            <Link 
+              className={classes.hero_scroll_link}
+              duration={250}
+              smooth={true}
+              spy={true}
+              tabIndex="0"
+              to="about"
+            >
+              <KeyboardArrowDownIcon 
+                className={classes.hero_arrow}
+              />
+            </Link>
           </Grid>
         </Grid>
       </Container>

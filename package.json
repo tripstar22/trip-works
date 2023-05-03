@@ -21,6 +21,7 @@
     "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-scroll": "^1.8.9",
     "typed.js": "^2.0.132"
   },
   "devDependencies": {

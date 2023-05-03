@@ -15,6 +15,7 @@ themeDefault = createTheme(themeDefault, {
         root: {
           background: gradients['gradientDefault'],
           color: colors['white'],
+          fontFamily: FontSansSerifDefault.style.fontFamily,
           fontWeight: '700',
           textTransform: 'initial',
         },
@@ -66,7 +67,8 @@ themeDefault = createTheme(themeDefault, {
               },
             },
             '& .MuiFormHelperText-root': {
-              color: colors['gray'],
+              color: colors['grayDark'],
+              fontFamily: FontSansSerifDefault.style.fontFamily,
             },
             '& .MuiFormLabel-root': {
               color: colors['grayDark'],
@@ -128,42 +130,81 @@ themeDefault = createTheme(themeDefault, {
   typography: {
     body1: {
       fontFamily: FontSansSerifDefault.style.fontFamily,
+      fontSize: 14,
+      [themeDefault.breakpoints.up('md')]: {
+        fontSize: 16,
+      },
     },
     body2: {
       color: colors['charcoal'],
       fontFamily: FontSansSerifDefault.style.fontFamily,
-      fontSize: 14,
+      fontSize: 12,
       textDecoration: 'underline',
+      [themeDefault.breakpoints.up('md')]: {
+        fontSize: 14,
+      },
     },
     fontFamily: FontSansSerifDefault.style.fontFamily,
     fontSize: 16,
     h1: {
       fontFamily: FontDisplayDefault,
-      fontSize: 120,
+      fontSize: 64,
+      [themeDefault.breakpoints.up('sm')]: {
+        fontSize: 72,
+      },
+      [themeDefault.breakpoints.up('md')]: {
+        fontSize: 96,
+      },
+      [themeDefault.breakpoints.up('lg')]: {
+        fontSize: 120,
+      },
     },
     h2: {
       fontFamily: FontMonospaceDefault.style.fontFamily,
+      fontSize: 40,
       fontWeight: 300,
+      [themeDefault.breakpoints.up('sm')]: {
+        fontSize: 48,
+      },
+      [themeDefault.breakpoints.up('md')]: {
+        fontSize: 64,
+      },
     },
     h3: {
       fontFamily: FontMonospaceDefault.style.fontFamily,
+      fontSize: 36,
       fontWeight: 300,
+      [themeDefault.breakpoints.up('sm')]: {
+        fontSize: 42,
+      },
+      [themeDefault.breakpoints.up('md')]: {
+        fontSize: 48,
+      },
     },
     h4: {
       fontFamily: FontMonospaceDefault.style.fontFamily,
+      fontSize: 28,
       fontWeight: 300,
+      [themeDefault.breakpoints.up('md')]: {
+        fontSize: 32,
+      },
+      [themeDefault.breakpoints.up('lg')]: {
+        fontSize: 36,
+      },
     },
     h5: {
       fontFamily: FontMonospaceDefault.style.fontFamily,
+      fontSize: 24,
       fontWeight: 300,
     },
     h6: {
       fontFamily: FontMonospaceDefault.style.fontFamily,
+      fontSize: 18,
       fontWeight: 300,
+      [themeDefault.breakpoints.up('md')]: {
+        fontSize: 20,
+      },
     },
-    // [themeDefault.breakpoints.up('sm')]: {
-
-    // },
     // [themeDefault.breakpoints.up('md')]: {
     //   h1: {
     //     fontSize: 72,

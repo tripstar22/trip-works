@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import AppHeader from './AppHeader';
-import AppFooter from './AppFooter';
+import AppFooter from './AppFooter/AppFooter';
+import AppHeader from './AppHeader/AppHeader';
 import BackToTop from '../utilities/BackToTop';
 
 function AppLayout(props) {

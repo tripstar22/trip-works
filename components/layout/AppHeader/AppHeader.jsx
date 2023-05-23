@@ -1,20 +1,24 @@
+/* react imports */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import Brightness3 from '@mui/icons-material/Brightness3';
-import WbSunnyOutlined from '@mui/icons-material/WbSunnyOutlined';
-
+/* mui imports */
 import AppBar from '@mui/material/AppBar';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/icons-material/Menu';
 import Slide from '@mui/material/Slide';
-import Switch from '@mui/material/Switch';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
-import AppLink from '../ui/AppLink';
-import AppMenu from './AppMenu';
+/* custom component imports */
+import AppLink from '../../ui/AppLink';
+import AppMenu from '../AppMenu/AppMenu';
+
+/* svg imports */
+import Logo from '../../../src/svg/logo.svg';
+
+/* styles imports */
+import classes from './styles/_header.module.scss';
 
 function HideHeaderOnScroll(props) {
   const { children } = props;
@@ -45,19 +49,27 @@ function AppHeader() {
   return (
     <HideHeaderOnScroll>
       <AppBar>
-        <Grid container spacing={0}>
-          <Grid item xs={3}>
-            <IconButton aria-label="open menu" onClick={handlerMenuOpen}>
-              <Menu />
-            </IconButton>
-            <AppMenu menuOpen={menuOpen} handlerMenuClose={handlerMenuClose} />
+        <div className={classes.header}>
+          <Grid 
+            alignItems="center"
+            container 
+            spacing={0}
+          >
+            <Grid item xs={3}>
+              <IconButton aria-label="open menu" onClick={handlerMenuOpen}>
+                <Menu />
+              </IconButton>
+              <AppMenu menuOpen={menuOpen} handlerMenuClose={handlerMenuClose} />
+            </Grid>
+            <Grid item xs={6}>
+              <div className={classes.header_logo}>
+                <AppLink className={classes.header_link} href="/">
+                  <Logo />
+                </AppLink>
+              </div>
+            </Grid>
           </Grid>
-          <Grid item xs={6}>
-            <AppLink href="/">
-              <div>Logo goes here</div>
-            </AppLink>
-          </Grid>
-        </Grid>
+        </div>
       </AppBar>
     </HideHeaderOnScroll>
   );

@@ -40,12 +40,12 @@
 
   &_arrow,
   &_background,
-  &_scroll_link {
+  &_scrollLink {
     left: 50%;
     position: absolute;
   }
   &_arrow,
-  &_scroll_link {
+  &_scrollLink {
     height: 40px;
     width: 40px;
   }
@@ -79,7 +79,7 @@
   &_heading {
     padding-top: 100px;
   }
-  &_scroll_link {
+  &_scrollLink {
     animation: animateArrow 2s ease-in-out infinite;
     border: 2px solid transparent;
     border-radius: 100%;
@@ -111,10 +111,13 @@
   Small Screens & Up (min-width: 600px)
 =================================================== */
 
-.hero {
+@media screen and (min-width: $screen-sm) {
+  
+  .hero {
 
-  &_heading {
-    padding-top: 150px;
+    &_heading {
+      padding-top: 150px;
+    }
   }
 }
 

@@ -14,13 +14,15 @@ import classes from './styles/_about.module.scss';
 
 function About() {
   return (
-    <section id="about" className={`section section___nopaddingbottom ${classes.about}`}>
+    <section id="about" className={`section section___noPaddingBottom ${classes.about}`}>
       <Container maxWidth="lg">
         <Grid container spacing={0}>
-          <Grid item xs={12} md={4}>
-            <div className={classes.about_image} />
+          <Grid item xs={12} sm={4}>
+            <div className={classes.about_image}>
+              <div className={classes.about_imageImage} />
+            </div>
           </Grid>
-          <Grid item xs={12} md={8}>
+          <Grid item xs={12} sm={8}>
             <div className={classes.about_content}>
               <Typography 
                 className={classes.about_heading}
@@ -28,8 +30,8 @@ function About() {
                 gutterBottom 
                 variant="h3"
               >
-                <span>Trip Pruitt: </span>
-                <span id="textRotating">Rotating Text here</span>
+                <span className={classes.about_headingText}>Trip Pruitt: </span>
+                <span className={classes.about_headingText} id="textRotating">Rotating Text here</span>
               </Typography>
               <Typography gutterBottom variant="body1">
                 From inner city Boston to Alabama fraternities, I’ve never found a place I wasn’t able to fit in.

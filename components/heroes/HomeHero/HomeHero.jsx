@@ -17,13 +17,14 @@ import Typography from '@mui/material/Typography';
 import classes from '../styles/_hero.module.scss';
 
 function HomeHero() {
-  function animateTypeHandler() {
+
+  const handlerAnimateType = () => {
     useEffect(() => {
       const animateElement = document.getElementById('animateType');
       const options = {
         showCursor: false,
         startDelay: 200,
-        strings: ['Front End ^300 Engineer'],
+        strings: ['Front-End ^300 Engineer'],
         typeSpeed: 50,
       };
 
@@ -33,7 +34,7 @@ function HomeHero() {
         animateType.destroy();
       };
     });
-  }
+  };
 
   return (
     <section className={`${classes.hero} ${classes.hero___home}`}>
@@ -55,12 +56,12 @@ function HomeHero() {
                 component="h2"
                 id="animateType"
                 gutterBottom
-                onLoad={animateTypeHandler()}
+                onLoad={handlerAnimateType()}
                 variant="h4"
               ></Typography>
             </div>
             <Link 
-              className={classes.hero_scroll_link}
+              className={classes.hero_scrollLink}
               duration={250}
               smooth={true}
               spy={true}

@@ -168,9 +168,13 @@ themeDefault = createTheme(themeDefault, {
       fontFamily: FontMonospaceDefault.style.fontFamily,
       fontSize: 32,
       fontWeight: 300,
+      paddingBottom: 10,
       [themeDefault.breakpoints.up('md')]: {
         fontSize: 40,
         paddingBottom: 20,
+      },
+      [themeDefault.breakpoints.up('lg')]: {
+        paddingBottom: 30,
       },
     },
     h4: {

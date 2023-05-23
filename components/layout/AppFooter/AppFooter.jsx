@@ -12,7 +12,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
-import AppLink from '../ui/AppLink';
+import AppLink from '../../ui/AppLink';
 
 function AppFooter() {
   return (

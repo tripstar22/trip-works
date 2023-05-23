@@ -5,7 +5,7 @@ import Link from '@mui/material/Link';
 
 function AppLink(props) {
   const { children } = props;
-  return <Link href={props.href}>{children}</Link>;
+  return <Link className={props.className} href={props.href}>{children}</Link>;
 }
 
 AppLink.propTypes = {

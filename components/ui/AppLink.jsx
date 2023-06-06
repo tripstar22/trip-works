@@ -1,11 +1,13 @@
+/* react imports */
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Link from '@mui/material/Link';
+/* next.js imports */
+import Link from 'next/link';
 
 function AppLink(props) {
   const { children } = props;
-  return <Link className={props.className} href={props.href}>{children}</Link>;
+  return <Link className={props.className} href={props.href} onClick={props.onClick}>{children}</Link>;
 }
 
 AppLink.propTypes = {

@@ -1,8 +1,11 @@
+/* react imports */
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/* mui icon imports */
 import KeyboardArrowUp from '@mui/icons-material/KeyboardArrowUp';
 
+/* mui imports */
 import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
 import Fade from '@mui/material/Fade';

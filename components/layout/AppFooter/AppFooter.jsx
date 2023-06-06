@@ -1,8 +1,11 @@
+/* react imports */
 import React from 'react';
 
+/* mui icon imports */
 import GitHub from '@mui/icons-material/GitHub';
 import LinkedIn from '@mui/icons-material/LinkedIn';
 
+/* mui imports */
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
@@ -12,6 +15,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
+/* custom component imports */
 import AppLink from '../../ui/AppLink';
 
 function AppFooter() {

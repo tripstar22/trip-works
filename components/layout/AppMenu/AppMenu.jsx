@@ -1,48 +1,67 @@
+/* react imports */
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/* mui icon imports */
 import Close from '@mui/icons-material/Close';
 
+/* mui imports */
 import Drawer from '@mui/material/Drawer';
+import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 
+/* custom component imports */
 import AppLink from '../../ui/AppLink';
+
+/* styles imports */
+import classes from './styles/_appmenu.module.scss';
 
 function AppMenu({ handlerMenuClose, menuOpen }) {
   return (
-    <div>
+    <div className={classes.appmenu}>
       <Drawer anchor="left" open={menuOpen}>
-        <IconButton aria-label="close menu" onClick={handlerMenuClose}>
-          <Close />
-        </IconButton>
+        <Grid container>
+          <Grid 
+            className={classes.appmenu_grid}
+            item 
+            xs={12}
+          >
+            <IconButton 
+              aria-label="close menu" 
+              onClick={handlerMenuClose}
+            >
+              <Close />
+            </IconButton>
+          </Grid>
+        </Grid>
         <nav>
           <List>
-            <ListItem>
-              <ListItemButton>
+            <ListItem className={classes.appmenu_listItem}>
+              <ListItemButton className={classes.appmenu_listItemButton}>
                 <AppLink href="/">Home</AppLink>
               </ListItemButton>
             </ListItem>
-            <ListItem>
-              <ListItemButton>
-                <AppLink href="/#about">About</AppLink>
+            <ListItem className={classes.appmenu_listItem}>
+              <ListItemButton className={classes.appmenu_listItemButton}>
+                <AppLink href="/#about" onClick={handlerMenuClose}>About</AppLink>
               </ListItemButton>
             </ListItem>
-            <ListItem>
-              <ListItemButton>
-                <AppLink href="/#work">Work</AppLink>
+            <ListItem className={classes.appmenu_listItem}>
+              <ListItemButton className={classes.appmenu_listItemButton}>
+                <AppLink href="/#work" onClick={handlerMenuClose}>Work</AppLink>
               </ListItemButton>
             </ListItem>
-            <ListItem>
-              <ListItemButton>
-                <AppLink href="/#contact">Contact</AppLink>
+            <ListItem className={classes.appmenu_listItem}>
+              <ListItemButton className={classes.appmenu_listItemButton}>
+                <AppLink href="/#contact" onClick={handlerMenuClose}>Contact</AppLink>
               </ListItemButton>
             </ListItem>
-            <ListItem>
-              <ListItemButton>
-                <AppLink href="/">View Résumé</AppLink>
+            <ListItem className={classes.appmenu_listItem}>
+              <ListItemButton className={classes.appmenu_listItemButton}>
+                <AppLink href="/" onClick={handlerMenuClose}>View Résumé</AppLink>
               </ListItemButton>
             </ListItem>
           </List>

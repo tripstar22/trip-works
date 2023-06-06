@@ -44,6 +44,8 @@ function AppHeader() {
 
   const handlerMenuClose = () => {
     setMenuOpen(false);
+    console.log(false);
+    console.log('setMenuOpen: ' + setMenuOpen);
   };
 
   return (
@@ -51,7 +53,7 @@ function AppHeader() {
       <AppBar>
         <div className={classes.header}>
           <Grid 
-            alignItems="center"
+            className={classes.header_grid}
             container 
             spacing={0}
           >
@@ -59,7 +61,7 @@ function AppHeader() {
               <IconButton aria-label="open menu" onClick={handlerMenuOpen}>
                 <Menu />
               </IconButton>
-              <AppMenu menuOpen={menuOpen} handlerMenuClose={handlerMenuClose} />
+              <AppMenu handlerMenuClose={handlerMenuClose} menuOpen={menuOpen} />
             </Grid>
             <Grid item xs={6}>
               <div className={classes.header_logo}>

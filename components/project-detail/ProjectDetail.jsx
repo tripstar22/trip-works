@@ -1,5 +1,7 @@
+/* react imports */
 import React from 'react';
 
+/* custom component imports */
 import ProjectDetailHero from '../heroes/ProjectDetailHero/ProjectDetailHero';
 import ProjectDetailContent from './ProjectDetailContent';
 

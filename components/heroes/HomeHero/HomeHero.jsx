@@ -1,9 +1,8 @@
 /* react imports */
-import React, { useEffect } from 'react';
+import React from 'react';
 
 /* library imports */
 import { Link } from 'react-scroll';
-import Typed from 'typed.js';
 
 /* mui icon imports */
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -13,28 +12,13 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
+/* custom module imports */
+import aniType from '../../../modules/aniType';
+
 /* styles imports */
 import classes from '../styles/_hero.module.scss';
 
 function HomeHero() {
-
-  const handlerAnimateType = () => {
-    useEffect(() => {
-      const animateElement = document.getElementById('animateType');
-      const options = {
-        showCursor: false,
-        startDelay: 200,
-        strings: ['Front-End ^300 Engineer'],
-        typeSpeed: 50,
-      };
-
-      const animateType = new Typed(animateElement, options);
-
-      return () => {
-        animateType.destroy();
-      };
-    });
-  };
 
   return (
     <section className={`${classes.hero} ${classes.hero___home}`}>
@@ -54,9 +38,9 @@ function HomeHero() {
               <Typography
                 className={classes.hero_subheading}
                 component="h2"
-                id="animateType"
+                id="aniHeroHeading"
                 gutterBottom
-                onLoad={handlerAnimateType()}
+                onLoad={aniType(false, 200, 'aniHeroHeading', 50, ['Front-End ^300 Engineer'])}
                 variant="h4"
               ></Typography>
             </div>

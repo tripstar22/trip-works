@@ -44,8 +44,6 @@ function AppHeader() {
 
   const handlerMenuClose = () => {
     setMenuOpen(false);
-    console.log(false);
-    console.log('setMenuOpen: ' + setMenuOpen);
   };
 
   return (

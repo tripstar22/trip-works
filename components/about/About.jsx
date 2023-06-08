@@ -17,12 +17,12 @@ function About() {
     <section id="about" className={`section section___noPaddingBottom ${classes.about}`}>
       <Container maxWidth="lg">
         <Grid container spacing={0}>
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={5} md={4}>
             <div className={classes.about_image}>
               <div className={classes.about_imageImage} />
             </div>
           </Grid>
-          <Grid item xs={12} sm={8}>
+          <Grid item xs={12} sm={7} md={8}>
             <div className={classes.about_content}>
               <Typography 
                 className={classes.about_heading}

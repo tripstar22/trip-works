@@ -9,6 +9,9 @@ import Typography from '@mui/material/Typography';
 /* styles imports */
 import classes from './styles/_location.module.scss';
 
+// User-Agent: (localhost:8080, trip.pruitt.works@gmail.com)
+// https://api.weather.gov/points/33.753746,-84.386330
+
 function Location() {
   return (
     <section className={classes.location}>

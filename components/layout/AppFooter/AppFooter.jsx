@@ -47,27 +47,27 @@ function AppFooter() {
           <Grid item xs={12} md={4}>
             <nav>
               <List>
-                <ListItem>
+                <ListItem className={classes.footer_listItem}>
                   <ListItemButton>
                     <AppLink href="/">Home</AppLink>
                   </ListItemButton>
                 </ListItem>
-                <ListItem>
+                <ListItem className={classes.footer_listItem}>
                   <ListItemButton>
                     <AppLink href="/#about">About</AppLink>
                   </ListItemButton>
                 </ListItem>
-                <ListItem>
+                <ListItem className={classes.footer_listItem}>
                   <ListItemButton>
                     <AppLink href="/#work">Work</AppLink>
                   </ListItemButton>
                 </ListItem>
-                <ListItem>
+                <ListItem className={classes.footer_listItem}>
                   <ListItemButton>
                     <AppLink href="/#contact">Contact</AppLink>
                   </ListItemButton>
                 </ListItem>
-                <ListItem>
+                <ListItem className={classes.footer_listItem}>
                   <ListItemButton>
                     <AppLink href="/">View Résumé</AppLink>
                   </ListItemButton>

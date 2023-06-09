@@ -4,7 +4,7 @@ import About from '../components/about/About';
 import Contact from '../components/global/Contact';
 import HomeHero from '../components/heroes/HomeHero/HomeHero';
 import Projects from '../components/projects/Projects';
-import RepositoryCta from '../components/global/RepositoryCta';
+import RepositoryCta from '../components/global/RepositoryCta/RepositoryCta';
 
 function IndexPage() {
   return (

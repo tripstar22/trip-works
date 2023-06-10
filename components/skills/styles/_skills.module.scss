@@ -1,29 +1,30 @@
-/*** repositoryCta ***/
+/*** skills ***/
 
 /* imports */
-@import '../../../../src/styles/scss/vars';
+@import '../../../src/styles/scss/vars';
 
 /* ===================================================
   All Screen Sizes
 =================================================== */
 
-.repositoryCta {
+.skills {
   background-color: $tealDark;
   color: $white;
-  padding: 40px 0 55px;
+  padding: 70px 0 40px;
 
   &_heading {
-    padding-bottom: 5px;
+    padding-bottom: 40px;
+    text-align: center;
   }
-  &_link {
-    color: $white;
-    transition: opacity $transitionDefault;
-
-    &:hover,
-    &:focus {
-      color: $white;
-      opacity: 0.65;
-    }
+  &_icon {
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    width: 40%;
+  }
+  &_section {
+    padding-bottom: 40px;
+    text-align: center;
   }
 }
 
@@ -36,7 +37,16 @@
   Small Screens & Up (min-width: 600px)
 =================================================== */
 
+@media screen and (min-width: $screen-sm) {
 
+  .skills {
+    padding: 70px 0 50px;
+
+    &_icon {
+      width: 30%;
+    }
+  }
+}
 
 /* ===================================================
   END Small Screens & Up (min-width: 600px)
@@ -49,8 +59,8 @@
 
 @media screen and (min-width: $screen-md) {
 
-  .repositoryCta {
-    text-align: center;
+  .skills {
+    padding: 80px 0 60px;
   }
 }
 

@@ -22,7 +22,7 @@ import aniType from '../../../modules/aniType';
 import AppLink from '../../ui/AppLink';
 
 /* svg imports */
-import LogoSecondary from '../../../src/svg/logoSecondary.svg';
+import LogoSecondary from '../../../src/svg/logos/logoSecondary.svg';
 
 /* styles imports */
 import classes from './styles/_footer.module.scss';

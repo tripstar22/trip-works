@@ -2,7 +2,7 @@ import React from 'react';
 
 import Contact from '../../components/global/Contact';
 import ProjectDetail from '../../components/project-detail/ProjectDetail';
-import RepositoryCta from '../../components/global/RepositoryCta';
+import RepositoryCta from '../../components/global/RepositoryCta/RepositoryCta';
 
 function ProjectDetailPage() {
   return (

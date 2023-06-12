@@ -59,9 +59,8 @@
     }
   }
   &_background {
-    animation: animateGradient 15s ease-in-out infinite;
-    background-color: $tealDark;
-    background: radial-gradient(circle farthest-side at center center, $tealDark 0%, rgba(0, 77, 64, 0) 100%);
+    background-color: $teal;
+    background: radial-gradient(circle, $teal 0%, $teal 40%, $tealDark 100%);
     height: 100%;
     top: 50%;
     transform: translate(-50%, -50%);

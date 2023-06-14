@@ -40,7 +40,16 @@ function HomeHero() {
                 component="h2"
                 id="aniHeroHeading"
                 gutterBottom
-                onLoad={aniType(false, 200, 'aniHeroHeading', 50, ['Front-End ^300 Engineer'])}
+                onLoad={aniType(
+                  false, 
+                  0,
+                  false, 
+                  200, 
+                  'aniHeroHeading', 
+                  false, 
+                  50, 
+                  ['Front-End ^300 Engineer']
+                )}
                 variant="h4"
               ></Typography>
             </div>

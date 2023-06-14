@@ -38,7 +38,16 @@ function AppFooter() {
               component="h3"
               gutterBottom 
               id="aniFooterHeading"
-              onLoad={aniType(false, 200, 'aniFooterHeading', 50, ['Front-End ^300 Engineer'])}
+              onLoad={aniType(
+                false, 
+                0, 
+                false, 
+                200, 
+                'aniFooterHeading', 
+                false, 
+                50, 
+                ['Front-End ^300 Engineer']
+              )}
               variant="h4"  
             >
               Trip Pruitt - Front End Engineer

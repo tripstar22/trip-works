@@ -6,6 +6,9 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
+/* custom module imports */
+import aniType from '../../modules/aniType';
+
 /* custom component imports */
 import Location from '../location/Location';
 
@@ -31,7 +34,22 @@ function About() {
                 variant="h3"
               >
                 <span className={classes.about_headingText}>Trip Pruitt: </span>
-                <span className={classes.about_headingText} id="textRotating">Rotating Text here</span>
+                <span 
+                  className={classes.about_headingText} 
+                  id="aniTextRotating"
+                  onLoad={aniType(
+                    true, 
+                    25,
+                    false, 
+                    200, 
+                    'aniTextRotating', 
+                    true, 
+                    50, 
+                    ['TEAM ^50 PLAYER', 'SELF PROCLAIMED ^150 GRILL MASTER', 'NON-DISCRIMINATORY BEER ^100 APPRECIATOR', 'HAS A DIRE WOLF ^100 NAMED RILEY', 'LOVES ^50 KELSEY', 'OG ^150 BAMA FAN', 'ONE OF FOUR ^100 KIDS', 'CAN FIT IN ^150 ANYWHERE', 'NOT GOING TO ^100 RAGE QUIT', 'THE TRIP ^50 IS SHORT FOR ^100 TRIPLE']
+                  )}
+                >
+                  Rotating Text here
+                </span>
               </Typography>
               <Typography gutterBottom variant="body1">
                 From inner city Boston to Alabama fraternities, I’ve never found a place I wasn’t able to fit in.

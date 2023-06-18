@@ -11,7 +11,7 @@ import classes from './_repositoryCta.module.scss';
 
 function RepositoryCta() {
   return (
-    <section className={classes.repositoryCta}>
+    <section className={`section section___paddingSmall ${classes.repositoryCta}`}>
       <Container maxWidth="lg">
         <Grid 
           justifyContent="center"

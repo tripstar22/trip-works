@@ -1,4 +1,4 @@
-/*** about ***/
+/*** location ***/
 
 /* imports */
 @import '../../src/styles/scss/vars';
@@ -9,7 +9,6 @@
 
 .location {
   background-color: $offWhite;
-  padding-bottom: 40px;
 }
 
 /* ===================================================
@@ -32,12 +31,7 @@
   Medium Screens & Up (min-width: 900px)
 =================================================== */
 
-@media screen and (min-width: $screen-sm) {
-  
-  .location {
-    padding-bottom: 60px;
-  }
-}
+
 
 /* ===================================================
   END Medium Screens & Up (min-width: 900px)
@@ -48,12 +42,7 @@
   Large Screens & Up (min-width: 1200px)
 =================================================== */
 
-@media screen and (min-width: $screen-lg) {
-  
-  .location {
-    padding-bottom: 100px;
-  }
-}
+
 
 /* ===================================================
   END Large Screens & Up (min-width: 1200px)

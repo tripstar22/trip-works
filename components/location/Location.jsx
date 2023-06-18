@@ -15,7 +15,7 @@ import classes from './_location.module.scss';
 
 function Location() {
   return (
-    <section className={classes.location}>
+    <section className={`section section___paddingSmall ${classes.location}`}>
       <Container maxWidth="lg">
         <Grid container spacing={0}>
           <Grid item xs={12} md={4}>

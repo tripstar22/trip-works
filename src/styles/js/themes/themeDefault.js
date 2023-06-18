@@ -99,7 +99,7 @@ themeDefault = createTheme(themeDefault, {
   palette: {
     type: 'light',
     background: {
-      default: colors['offWhite'],
+      default: colors['white'],
       paper: colors['white'],
     },
     divider: colors['gray'],

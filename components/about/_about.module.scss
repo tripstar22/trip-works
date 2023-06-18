@@ -8,14 +8,19 @@
 =================================================== */
 
 .about {
-  background-color: $white;
   
+  &_container {
+    padding-bottom: 30px;
+  }
   &_content {
     box-sizing: border-box;
     display: block;
     margin: 0 auto;
     padding-bottom: 40px;
     width: 100%;
+  }
+  &_heading {
+    min-height: 125px;
   }
   &_image {
     height: 100%;
@@ -61,10 +66,16 @@
   Medium Screens & Up (min-width: 900px)
 =================================================== */
 
-@media screen and (min-width: $screen-sm) {
+@media screen and (min-width: $screen-md) {
   
   .about {
 
+    &_container {
+      padding-bottom: 40px;
+    }
+    &_heading {
+      min-height: 165px;
+    }
     &_image {
       min-height: 400px;
       padding-right: 60px;
@@ -81,7 +92,18 @@
   Large Screens & Up (min-width: 1200px)
 =================================================== */
 
+@media screen and (min-width: $screen-lg) {
 
+  .about {
+
+    &_container {
+      padding-bottom: 50px;
+    }
+    &_heading {
+      min-height: 125px;
+    }
+  }
+}
 
 /* ===================================================
   END Large Screens & Up (min-width: 1200px)

@@ -10,9 +10,12 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
+/* styles imports */
+import classes from './_projects.module.scss';
+
 function Projects() {
   return (
-    <section id="work">
+    <section id="work" className={`section ${classes.projects}`}>
       <Container maxWidth="lg">
         <Grid container spacing={0}>
           <Grid item xs={12}>

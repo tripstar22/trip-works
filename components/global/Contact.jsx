@@ -12,9 +12,12 @@ import Typography from '@mui/material/Typography';
 import ButtonAction from '../ui/ButtonAction';
 import ButtonLink from '../ui/ButtonLink';
 
+/* styles imports */
+import classes from './_contact.module.scss';
+
 function Contact() {
   return (
-    <section id="contact" className="contact-me">
+    <section id="contact" className={`section ${classes.contact}`}>
       <Container maxWidth="lg">
         <Grid container spacing={0}>
           <Grid item xs={12}>

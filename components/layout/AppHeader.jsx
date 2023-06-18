@@ -11,14 +11,14 @@ import Slide from '@mui/material/Slide';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
 /* custom component imports */
-import AppLink from '../../ui/AppLink';
-import AppMenu from '../AppMenu/AppMenu';
+import AppLink from '../ui/AppLink';
+import AppMenu from './AppMenu';
 
 /* svg imports */
-import Logo from '../../../src/svg/logos/logo.svg';
+import Logo from '../../src/svg/logos/logo.svg';
 
 /* styles imports */
-import classes from './styles/_header.module.scss';
+import classes from './_header.module.scss';
 
 function HideHeaderOnScroll(props) {
   const { children } = props;

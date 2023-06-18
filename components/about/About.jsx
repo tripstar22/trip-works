@@ -13,7 +13,7 @@ import aniType from '../../modules/aniType';
 import Location from '../location/Location';
 
 /* styles imports */
-import classes from './styles/_about.module.scss';
+import classes from './_about.module.scss';
 
 function About() {
   return (
@@ -33,9 +33,8 @@ function About() {
                 gutterBottom 
                 variant="h3"
               >
-                <span className={classes.about_headingText}>Trip Pruitt: </span>
-                <span 
-                  className={classes.about_headingText} 
+                <span>Trip Pruitt: </span>
+                <span  
                   id="aniTextRotating"
                   onLoad={aniType(
                     true, 
@@ -45,7 +44,7 @@ function About() {
                     'aniTextRotating', 
                     true, 
                     50, 
-                    ['TEAM ^50 PLAYER', 'SELF PROCLAIMED ^150 GRILL MASTER', 'NON-DISCRIMINATORY BEER ^100 APPRECIATOR', 'HAS A DIRE WOLF ^100 NAMED RILEY', 'LOVES ^50 KELSEY', 'OG ^150 BAMA FAN', 'ONE OF FOUR ^100 KIDS', 'CAN FIT IN ^150 ANYWHERE', 'NOT GOING TO ^100 RAGE QUIT', 'THE TRIP ^50 IS SHORT FOR ^100 TRIPLE']
+                    ['Team ^50 player', 'Self proclaimed ^150 grill master', 'Non-discriminatory beer ^100 appreciator', 'Has a dire wolf ^100 named Riley', 'Loves ^50 Kelsey', 'OG ^150 Bama fan', 'One of four ^100 kids', 'Can fit in ^150 anywhere', 'Not going to ^100 rage quit', 'The Trip ^50 is short for ^100 triple']
                   )}
                 >
                   Rotating Text here

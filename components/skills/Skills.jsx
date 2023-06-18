@@ -17,7 +17,7 @@ import IconReact from '../../src/svg/icons/iconReact.svg';
 import IconScss from '../../src/svg/icons/iconScss.svg';
 
 /* styles imports */
-import classes from './styles/_skills.module.scss';
+import classes from './_skills.module.scss';
 
 function Skills() {
   return (

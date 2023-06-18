@@ -7,7 +7,7 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 /* styles imports */
-import classes from './styles/_repositoryCta.module.scss';
+import classes from './_repositoryCta.module.scss';
 
 function RepositoryCta() {
   return (

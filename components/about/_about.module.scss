@@ -1,30 +1,31 @@
-/*** skills ***/
+/*** about ***/
 
 /* imports */
-@import '../../../src/styles/scss/vars';
+@import '../../src/styles/scss/vars';
 
 /* ===================================================
   All Screen Sizes
 =================================================== */
 
-.skills {
-  background-color: $tealDark;
-  color: $white;
-  padding: 70px 0 40px;
-
-  &_heading {
-    padding-bottom: 40px;
-    text-align: center;
-  }
-  &_icon {
+.about {
+  background-color: $white;
+  
+  &_content {
+    box-sizing: border-box;
     display: block;
     margin: 0 auto;
-    padding-bottom: 10px;
-    width: 40%;
-  }
-  &_section {
     padding-bottom: 40px;
-    text-align: center;
+    width: 100%;
+  }
+  &_image {
+    height: 100%;
+    min-height: 400px;
+    padding-bottom: 40px;
+  }
+  &_imageImage {
+    background-color: blue;
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -38,12 +39,15 @@
 =================================================== */
 
 @media screen and (min-width: $screen-sm) {
-
-  .skills {
-    padding: 70px 0 50px;
-
-    &_icon {
-      width: 30%;
+  
+  .about {
+  
+    &_content {
+      padding-bottom: 60px;
+    }
+    &_image {
+      min-height: 300px;
+      padding-right: 30px;
     }
   }
 }
@@ -57,10 +61,14 @@
   Medium Screens & Up (min-width: 900px)
 =================================================== */
 
-@media screen and (min-width: $screen-md) {
+@media screen and (min-width: $screen-sm) {
+  
+  .about {
 
-  .skills {
-    padding: 80px 0 60px;
+    &_image {
+      min-height: 400px;
+      padding-right: 60px;
+    }
   }
 }
 

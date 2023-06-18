@@ -9,8 +9,8 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 
 /* custom component imports */
-import ButtonAction from '../ui/buttons/ButtonAction';
-import ButtonLink from '../ui/buttons/ButtonLink';
+import ButtonAction from '../ui/ButtonAction';
+import ButtonLink from '../ui/ButtonLink';
 
 function Contact() {
   return (

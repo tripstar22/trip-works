@@ -14,10 +14,10 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 
 /* custom component imports */
-import AppLink from '../../ui/AppLink';
+import AppLink from '../ui/AppLink';
 
 /* styles imports */
-import classes from './styles/_appmenu.module.scss';
+import classes from './_appmenu.module.scss';
 
 function AppMenu({ handlerMenuClose, menuOpen }) {
   return (

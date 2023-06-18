@@ -1,29 +1,37 @@
-/*** repositoryCta ***/
+/*** header ***/
 
 /* imports */
-@import '../../../../src/styles/scss/vars';
+@import '../../src/styles/scss/vars';
 
 /* ===================================================
   All Screen Sizes
 =================================================== */
 
-.repositoryCta {
-  background-color: $tealDark;
-  color: $white;
-  padding: 40px 0 55px;
-
-  &_heading {
-    padding-bottom: 5px;
+.header {
+  padding: 5px 0;
+  
+  &_grid {
+    align-items: center;
   }
   &_link {
-    color: $white;
-    transition: opacity $transitionDefault;
+    background-color: transparent;
+    border-radius: 100%;
+    display: block;
+    padding: 10px;
+    transition: background-color $transitionDefault;
+
+    svg {
+      display: block;
+    }
 
     &:hover,
     &:focus {
-      color: $white;
-      opacity: 0.65;
+      background-color: rgba(0,0,0,0.04);
     }
+  }
+  &_logo {
+    margin: 0 auto;
+    width: 100px;
   }
 }
 
@@ -36,7 +44,15 @@
   Small Screens & Up (min-width: 600px)
 =================================================== */
 
+@media screen and (min-width: $screen-sm) {
 
+  .header {
+
+    &_logo {
+      width: 110px;
+    }
+  }
+}
 
 /* ===================================================
   END Small Screens & Up (min-width: 600px)
@@ -49,8 +65,11 @@
 
 @media screen and (min-width: $screen-md) {
 
-  .repositoryCta {
-    text-align: center;
+  .header {
+
+    &_logo {
+      width: 120px;
+    }
   }
 }
 

@@ -22,7 +22,7 @@ function Projects() {
           </Grid>
         </Grid>
         <Grid container spacing={4}>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <Card>
               <CardActionArea>
                 <CardMedia
@@ -52,7 +52,7 @@ function Projects() {
               </CardActionArea>
             </Card>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <Card>
               <CardActionArea>
                 <CardMedia
@@ -81,7 +81,7 @@ function Projects() {
               </CardActionArea>
             </Card>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <Card>
               <CardActionArea>
                 <CardMedia

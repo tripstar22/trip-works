@@ -1,37 +1,30 @@
-/*** header ***/
+/*** skills ***/
 
 /* imports */
-@import '../../../../src/styles/scss/vars';
+@import '../../src/styles/scss/vars';
 
 /* ===================================================
   All Screen Sizes
 =================================================== */
 
-.header {
-  padding: 5px 0;
-  
-  &_grid {
-    align-items: center;
+.skills {
+  background-color: $tealDark;
+  color: $white;
+  padding: 70px 0 40px;
+
+  &_heading {
+    padding-bottom: 40px;
+    text-align: center;
   }
-  &_link {
-    background-color: transparent;
-    border-radius: 100%;
+  &_icon {
     display: block;
-    padding: 10px;
-    transition: background-color $transitionDefault;
-
-    svg {
-      display: block;
-    }
-
-    &:hover,
-    &:focus {
-      background-color: rgba(0,0,0,0.04);
-    }
-  }
-  &_logo {
     margin: 0 auto;
-    width: 100px;
+    padding-bottom: 10px;
+    width: 40%;
+  }
+  &_section {
+    padding-bottom: 40px;
+    text-align: center;
   }
 }
 
@@ -46,10 +39,11 @@
 
 @media screen and (min-width: $screen-sm) {
 
-  .header {
+  .skills {
+    padding: 70px 0 50px;
 
-    &_logo {
-      width: 110px;
+    &_icon {
+      width: 30%;
     }
   }
 }
@@ -65,11 +59,8 @@
 
 @media screen and (min-width: $screen-md) {
 
-  .header {
-
-    &_logo {
-      width: 120px;
-    }
+  .skills {
+    padding: 80px 0 60px;
   }
 }
 

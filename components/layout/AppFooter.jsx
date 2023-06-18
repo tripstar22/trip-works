@@ -16,16 +16,16 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
 /* custom module imports */
-import aniType from '../../../modules/aniType';
+import aniType from '../../modules/aniType';
 
 /* custom component imports */
-import AppLink from '../../ui/AppLink';
+import AppLink from '../ui/AppLink';
 
 /* svg imports */
-import LogoSecondary from '../../../src/svg/logos/logoSecondary.svg';
+import LogoSecondary from '../../src/svg/logos/logoSecondary.svg';
 
 /* styles imports */
-import classes from './styles/_footer.module.scss';
+import classes from './_footer.module.scss';
 
 function AppFooter() {
   return (

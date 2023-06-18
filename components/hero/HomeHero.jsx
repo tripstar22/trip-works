@@ -13,10 +13,10 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 /* custom module imports */
-import aniType from '../../../modules/aniType';
+import aniType from '../../modules/aniType';
 
 /* styles imports */
-import classes from '../styles/_hero.module.scss';
+import classes from './_hero.module.scss';
 
 function HomeHero() {
 

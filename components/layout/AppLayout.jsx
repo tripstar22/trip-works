@@ -3,8 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 /* custom component imports */
-import AppFooter from './AppFooter/AppFooter';
-import AppHeader from './AppHeader/AppHeader';
+import AppFooter from './AppFooter';
+import AppHeader from './AppHeader';
 import BackToTop from '../utilities/BackToTop';
 
 function AppLayout(props) {

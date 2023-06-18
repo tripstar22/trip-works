@@ -1,32 +1,29 @@
-/*** about ***/
+/*** repositoryCta ***/
 
 /* imports */
-@import '../../../src/styles/scss/vars';
+@import '../../src/styles/scss/vars';
 
 /* ===================================================
   All Screen Sizes
 =================================================== */
 
-.about {
-  background-color: $white;
-  
-  &_content {
-    box-sizing: border-box;
-    display: block;
-    margin: 0 auto;
-    padding-bottom: 40px;
-    width: 100%;
+.repositoryCta {
+  background-color: $tealDark;
+  color: $white;
+  padding: 40px 0 55px;
+
+  &_heading {
+    padding-bottom: 5px;
   }
-  &_image {
-    // background-color: red;
-    height: 100%;
-    min-height: 400px;
-    padding-bottom: 40px;
-  }
-  &_imageImage {
-    background-color: blue;
-    height: 100%;
-    width: 100%;
+  &_link {
+    color: $white;
+    transition: opacity $transitionDefault;
+
+    &:hover,
+    &:focus {
+      color: $white;
+      opacity: 0.65;
+    }
   }
 }
 
@@ -39,19 +36,7 @@
   Small Screens & Up (min-width: 600px)
 =================================================== */
 
-@media screen and (min-width: $screen-sm) {
-  
-  .about {
-  
-    &_content {
-      padding-bottom: 60px;
-    }
-    &_image {
-      min-height: 300px;
-      padding-right: 30px;
-    }
-  }
-}
+
 
 /* ===================================================
   END Small Screens & Up (min-width: 600px)
@@ -62,14 +47,10 @@
   Medium Screens & Up (min-width: 900px)
 =================================================== */
 
-@media screen and (min-width: $screen-sm) {
-  
-  .about {
+@media screen and (min-width: $screen-md) {
 
-    &_image {
-      min-height: 400px;
-      padding-right: 60px;
-    }
+  .repositoryCta {
+    text-align: center;
   }
 }
 

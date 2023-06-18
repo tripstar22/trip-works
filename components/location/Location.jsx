@@ -7,10 +7,11 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 /* styles imports */
-import classes from './styles/_location.module.scss';
+import classes from './_location.module.scss';
 
 // User-Agent: (localhost:8080, trip.pruitt.works@gmail.com)
 // https://api.weather.gov/points/33.753746,-84.386330
+// https://api.weather.gov/gridpoints/FFC/51,87/forecast/hourly
 
 function Location() {
   return (

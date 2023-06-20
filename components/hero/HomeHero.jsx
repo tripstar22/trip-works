@@ -28,7 +28,7 @@ function HomeHero() {
           <Grid item xs={12}>
             <div className={classes.hero_content}>
               <Typography 
-                className={classes.hero_heading}
+                className={`${classes.hero_heading} ${classes.hero_heading___home}`}
                 component="h1" 
                 gutterBottom 
                 variant="h1"
@@ -36,7 +36,7 @@ function HomeHero() {
                 Trip Pruitt
               </Typography>
               <Typography
-                className={classes.hero_subheading}
+                className={`${classes.hero_subheading} ${classes.hero_subheading___home}`}
                 component="h2"
                 id="aniHeroHeading"
                 gutterBottom

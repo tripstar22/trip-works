@@ -45,11 +45,9 @@ function About() {
                       'aniTextRotating', 
                       true, 
                       50, 
-                      ['Team ^50 player', 'Self proclaimed ^150 grill master', 'Non-discriminatory beer ^100 appreciator', 'Has a dire wolf ^100 named Riley', 'Loves ^50 Kelsey', 'OG ^150 Bama fan', 'One of four ^100 kids', 'Can fit in ^150 anywhere', 'Not going to ^100 rage quit', 'The Trip ^50 is short for ^100 triple']
+                      ['Team ^50 player', 'Self proclaimed ^150 grill master', 'Non-discriminatory beer ^100 appreciator', 'Has a dire wolf ^100 named Riley', 'Loves ^50 Kelsey', 'OG ^150 Bama fan', 'One of four ^100 kids', 'Can fit in ^150 anywhere', 'Not going to ^100 rage quit', 'The Trip ^50 is because I’m ^100 the III']
                     )}
-                  >
-                    Rotating Text here
-                  </span>
+                  ></span>
                 </Typography>
                 <Typography gutterBottom variant="body1">
                   From inner city Boston to Alabama fraternities, I’ve never found a place I wasn’t able to fit in.

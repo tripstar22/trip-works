@@ -149,6 +149,7 @@ themeDefault = createTheme(themeDefault, {
     h1: {
       fontFamily: FontDisplayDefault,
       fontSize: 64,
+      lineHeight: 1,
       [themeDefault.breakpoints.up('sm')]: {
         fontSize: 96,
       },
@@ -157,20 +158,25 @@ themeDefault = createTheme(themeDefault, {
       fontFamily: FontMonospaceDefault.style.fontFamily,
       fontSize: 40,
       fontWeight: 300,
+      lineHeight: 1.1,
+      paddingBottom: 20,
       [themeDefault.breakpoints.up('sm')]: {
         fontSize: 48,
       },
       [themeDefault.breakpoints.up('md')]: {
         fontSize: 64,
+        paddingBottom: 30,
       },
     },
     h3: {
       fontFamily: FontMonospaceDefault.style.fontFamily,
       fontSize: 32,
       fontWeight: 300,
+      lineHeight: 1.1,
       paddingBottom: 10,
       [themeDefault.breakpoints.up('md')]: {
         fontSize: 40,
+        lineHeight: 1.2,
         paddingBottom: 20,
       },
       [themeDefault.breakpoints.up('lg')]: {
@@ -181,14 +187,19 @@ themeDefault = createTheme(themeDefault, {
       fontFamily: FontMonospaceDefault.style.fontFamily,
       fontSize: 24,
       fontWeight: 300,
+      lineHeight: 1,
+      paddingBottom: 10,
       [themeDefault.breakpoints.up('md')]: {
         fontSize: 32,
+        paddingBottom: 20,
       },
     },
     h5: {
       fontFamily: FontMonospaceDefault.style.fontFamily,
       fontSize: 20,
       fontWeight: 300,
+      lineHeight: 1.3,
+      paddingBottom: 20,
       [themeDefault.breakpoints.up('md')]: {
         fontSize: 24,
       },
@@ -197,8 +208,11 @@ themeDefault = createTheme(themeDefault, {
       fontFamily: FontMonospaceDefault.style.fontFamily,
       fontSize: 18,
       fontWeight: 300,
+      lineHeight: 1.4,
+      paddingBottom: 10,
       [themeDefault.breakpoints.up('md')]: {
         fontSize: 20,
+        paddingBottom: 20,
       },
     },
   },

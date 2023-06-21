@@ -51,6 +51,11 @@ function AppMenu({ handlerMenuClose, menuOpen }) {
             </ListItem>
             <ListItem className={classes.appmenu_listItem}>
               <ListItemButton className={classes.appmenu_listItemButton}>
+                <AppLink href="/#skills" onClick={handlerMenuClose}>Skills</AppLink>
+              </ListItemButton>
+            </ListItem>
+            <ListItem className={classes.appmenu_listItem}>
+              <ListItemButton className={classes.appmenu_listItemButton}>
                 <AppLink href="/#work" onClick={handlerMenuClose}>Work</AppLink>
               </ListItemButton>
             </ListItem>

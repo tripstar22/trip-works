@@ -17,7 +17,7 @@ import classes from './_about.module.scss';
 
 function About() {
   return (
-    <section id="about" className={`section section___noPaddingBottom ${classes.about}`}>
+    <section className={`section section___noPaddingBottom ${classes.about}`} id="about">
       <div className={classes.about_container}>
         <Container maxWidth="lg">
           <Grid container spacing={0}>
@@ -34,7 +34,7 @@ function About() {
                   gutterBottom 
                   variant="h3"
                 >
-                  <span>Trip Pruitt: </span>
+                  <span className={classes.about_name}>Trip Pruitt: </span>
                   <span  
                     id="aniTextRotating"
                     onLoad={aniType(

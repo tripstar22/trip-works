@@ -8,7 +8,7 @@ export const FontSansSerifDefault = Source_Sans_Pro({
   fallback: ['Arial', 'sans-serif'],
 });
 export const FontMonospaceDefault = Roboto_Mono({
-  weight: ['300'],
+  weight: ['300', '400'],
   subsets: ['latin'],
   display: 'swap',
   fallback: ['Lucida Console', 'monospace'],

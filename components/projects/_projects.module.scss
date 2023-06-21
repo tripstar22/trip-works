@@ -9,6 +9,19 @@
 
 .projects {
   
+  &_heading {
+    text-align: center;
+  }
+  &_more {
+    color: $charcoal;
+    font-size: 14px;
+    padding-top: 10px;
+    text-decoration: underline;
+  }
+  &_projectHeading {
+    font-weight: 400;
+    padding-bottom: 0;
+  }
 }
 
 /* ===================================================
@@ -20,7 +33,23 @@
   Small Screens & Up (min-width: 600px)
 =================================================== */
 
+@media screen and (min-width: $screen-sm) {
 
+  .projects {
+
+    &_card {
+      align-items: stretch;
+      display: flex;
+      min-height: 100%;
+    }
+    &_link {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
+}
 
 /* ===================================================
   END Small Screens & Up (min-width: 600px)
@@ -31,7 +60,15 @@
   Medium Screens & Up (min-width: 900px)
 =================================================== */
 
+@media screen and (min-width: $screen-md) {
 
+  .projects {
+
+    &_more {
+      font-size: 16px;
+    }
+  }
+}
 
 /* ===================================================
   END Medium Screens & Up (min-width: 900px)

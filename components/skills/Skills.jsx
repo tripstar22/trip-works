@@ -21,7 +21,7 @@ import classes from './_skills.module.scss';
 
 function Skills() {
   return (
-    <section className={`section ${classes.skills}`}>
+    <section className={`section ${classes.skills}`} id="skills">
       <Container maxWidth="lg">
         <Grid container spacing={0}>
           <Grid item xs={12}>

@@ -135,15 +135,6 @@ themeDefault = createTheme(themeDefault, {
         fontSize: 18,
       },
     },
-    body2: {
-      color: colors['charcoal'],
-      fontFamily: FontSansSerifDefault.style.fontFamily,
-      fontSize: 14,
-      textDecoration: 'underline',
-      [themeDefault.breakpoints.up('md')]: {
-        fontSize: 16,
-      },
-    },
     fontFamily: FontSansSerifDefault.style.fontFamily,
     fontSize: 16,
     h1: {
@@ -170,17 +161,17 @@ themeDefault = createTheme(themeDefault, {
     },
     h3: {
       fontFamily: FontMonospaceDefault.style.fontFamily,
-      fontSize: 32,
+      fontSize: 36,
       fontWeight: 300,
       lineHeight: 1.1,
-      paddingBottom: 10,
+      paddingBottom: 20,
       [themeDefault.breakpoints.up('md')]: {
         fontSize: 40,
         lineHeight: 1.2,
-        paddingBottom: 20,
+        paddingBottom: 30,
       },
       [themeDefault.breakpoints.up('lg')]: {
-        paddingBottom: 30,
+        paddingBottom: 40,
       },
     },
     h4: {
@@ -211,7 +202,6 @@ themeDefault = createTheme(themeDefault, {
       lineHeight: 1.4,
       paddingBottom: 10,
       [themeDefault.breakpoints.up('md')]: {
-        fontSize: 20,
         paddingBottom: 20,
       },
     },

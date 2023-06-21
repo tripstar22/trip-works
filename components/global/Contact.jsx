@@ -17,7 +17,7 @@ import classes from './_contact.module.scss';
 
 function Contact() {
   return (
-    <section id="contact" className={`section ${classes.contact}`}>
+    <section className={`section ${classes.contact}`} id="contact">
       <Container maxWidth="lg">
         <Grid container spacing={0}>
           <Grid item xs={12}>

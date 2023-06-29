@@ -17,6 +17,9 @@ import AppMenu from './AppMenu';
 /* svg imports */
 import Logo from '../../src/svg/logos/logo.svg';
 
+/* custom module imports */
+import linkTo from '../../modules/linkTo';
+
 /* styles imports */
 import classes from './_header.module.scss';
 
@@ -38,32 +41,33 @@ HideHeaderOnScroll.propTypes = {
 function AppHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handlerMenuOpen = () => {
+  const toggleOpen = function handlerMenuOpen () {
     setMenuOpen(true);
   };
 
-  const handlerMenuClose = () => {
+  const toggleClose = function handlerMenuClose (event) {
     setMenuOpen(false);
+    console.log(event);
+    linkTo(event, event.currentTarget);
   };
 
   return (
     <HideHeaderOnScroll>
       <AppBar>
         <div className={classes.header}>
-          <Grid 
-            className={classes.header_grid}
-            container 
-            spacing={0}
-          >
+          <Grid container spacing={0} className={classes.header_grid}>
             <Grid item xs={3}>
-              <IconButton aria-label="open menu" onClick={handlerMenuOpen}>
+              <IconButton aria-label="open menu" onClick={toggleOpen}>
                 <Menu />
               </IconButton>
-              <AppMenu handlerMenuClose={handlerMenuClose} menuOpen={menuOpen} />
+              <AppMenu toggleClose={toggleClose} menuOpen={menuOpen} />
             </Grid>
             <Grid item xs={6}>
               <div className={classes.header_logo}>
-                <AppLink className={classes.header_link} href="/">
+                <AppLink 
+                  href="/" 
+                  className={classes.header_link} 
+                >
                   <Logo />
                 </AppLink>
               </div>

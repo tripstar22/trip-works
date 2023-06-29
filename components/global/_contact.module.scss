@@ -9,6 +9,14 @@
 
 .contact {
   background-color: $offWhite;
+
+  &_link {
+
+    &:hover,
+    &:focus {
+      color: $white;
+    }
+  }
 }
 
 /* ===================================================

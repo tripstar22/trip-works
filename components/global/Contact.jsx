@@ -24,7 +24,7 @@ function Contact() {
             <Typography component="h2" gutterBottom variant="h2">
               Y‘all ready to code?
             </Typography>
-            <ButtonLink href="/">View Résumé</ButtonLink>
+            <ButtonLink href="/" className={classes.contact_link}>View Résumé</ButtonLink>
           </Grid>
         </Grid>
         <Paper elevation={2}>

@@ -1,9 +1,6 @@
 /* react imports */
 import React from 'react';
 
-/* library imports */
-import { Link } from 'react-scroll';
-
 /* mui icon imports */
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
@@ -12,14 +9,17 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
+/* custom component imports */
+import AppLink from '../ui/AppLink';
+
 /* custom module imports */
 import aniType from '../../modules/aniType';
+import aniScroll from '../../modules/aniScroll';
 
 /* styles imports */
 import classes from './_hero.module.scss';
 
 function HomeHero() {
-
   return (
     <section className={`${classes.hero} ${classes.hero___home}`}>
       <div className={classes.hero_background} />
@@ -53,18 +53,15 @@ function HomeHero() {
                 variant="h4"
               ></Typography>
             </div>
-            <Link 
+            <AppLink
+              href="#about" 
               className={classes.hero_scrollLink}
-              duration={250}
-              smooth={true}
-              spy={true}
-              tabIndex="0"
-              to="about"
+              dataFunctionality="scroll-on-homepage" 
+              dataTarget="about" 
+              onClick={aniScroll}
             >
-              <KeyboardArrowDownIcon 
-                className={classes.hero_arrow}
-              />
-            </Link>
+              <KeyboardArrowDownIcon className={classes.hero_arrow} />
+            </AppLink>
           </Grid>
         </Grid>
       </Container>

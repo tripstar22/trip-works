@@ -7,11 +7,20 @@ import Link from 'next/link';
 
 function AppLink(props) {
   const { children } = props;
-  return <Link className={props.className} href={props.href} onClick={props.onClick}>{children}</Link>;
+  return <Link 
+          href={props.href}
+          className={props.className} 
+          data-functionality={props.dataFunctionality}
+          data-target={props.dataTarget}
+          onClick={props.onClick}
+          scroll={false}
+        >
+          {children}
+        </Link>;
 }
 
 AppLink.propTypes = {
-  children: PropTypes.any.isRequired,
+  children: PropTypes.any,
 };
 
 export default AppLink;

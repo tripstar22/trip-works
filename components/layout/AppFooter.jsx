@@ -24,6 +24,9 @@ import AppLink from '../ui/AppLink';
 /* svg imports */
 import LogoSecondary from '../../src/svg/logos/logoSecondary.svg';
 
+/* custom module imports */
+import aniScroll from '../../modules/aniScroll';
+
 /* styles imports */
 import classes from './_footer.module.scss';
 
@@ -58,27 +61,73 @@ function AppFooter() {
               <List>
                 <ListItem className={classes.footer_listItem}>
                   <ListItemButton>
-                    <AppLink href="/">Home</AppLink>
+                    <AppLink
+                      href="/" 
+                      dataFunctionality="" 
+                      dataTarget="" 
+                      onClick={aniScroll}
+                    >
+                      Home
+                    </AppLink>
                   </ListItemButton>
                 </ListItem>
                 <ListItem className={classes.footer_listItem}>
                   <ListItemButton>
-                    <AppLink href="/#about">About</AppLink>
+                    <AppLink 
+                      href="/#about" 
+                      dataFunctionality="scroll-on-homepage" 
+                      dataTarget="about" 
+                      onClick={aniScroll}
+                    >
+                      About
+                    </AppLink>
                   </ListItemButton>
                 </ListItem>
                 <ListItem className={classes.footer_listItem}>
                   <ListItemButton>
-                    <AppLink href="/#work">Work</AppLink>
+                    <AppLink 
+                      href="/#skills" 
+                      dataFunctionality="scroll-on-homepage" 
+                      dataTarget="skills" 
+                      onClick={aniScroll}
+                    >
+                      Skills
+                    </AppLink>
                   </ListItemButton>
                 </ListItem>
                 <ListItem className={classes.footer_listItem}>
                   <ListItemButton>
-                    <AppLink href="/#contact">Contact</AppLink>
+                    <AppLink 
+                      href="/#work" 
+                      dataFunctionality="scroll-on-homepage" 
+                      dataTarget="work" 
+                      onClick={aniScroll}
+                    >
+                      Work
+                    </AppLink>
                   </ListItemButton>
                 </ListItem>
                 <ListItem className={classes.footer_listItem}>
                   <ListItemButton>
-                    <AppLink href="/">View Résumé</AppLink>
+                    <AppLink 
+                      href="/#contact" 
+                      dataFunctionality="scroll-on-homepage" 
+                      dataTarget="contact" 
+                      onClick={aniScroll}
+                    >
+                      Contact
+                    </AppLink>
+                  </ListItemButton>
+                </ListItem>
+                <ListItem className={classes.footer_listItem}>
+                  <ListItemButton>
+                    <AppLink 
+                      href="/" 
+                      dataFunctionality="" 
+                      dataTarget=""
+                    >
+                      View Résumé
+                    </AppLink>
                   </ListItemButton>
                 </ListItem>
               </List>

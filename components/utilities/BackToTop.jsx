@@ -11,49 +11,37 @@ import Fab from '@mui/material/Fab';
 import Fade from '@mui/material/Fade';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
-function ScrollTop(props) {
-  const { children } = props;
+/* custom component imports */
+import AppLink from '../ui/AppLink';
+
+/* custom module imports */
+import aniScroll from '../../modules/aniScroll';
+
+/* styles imports */
+import classes from './_backtotop.module.scss';
+
+function BackToTop() {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 100,
   });
 
-  const handlerScrollTop = (event) => {
-    const anchor = (event.target.ownerDocument || document).querySelector(
-      '#page-top'
-    );
-
-    if (anchor) {
-      anchor.scrollIntoView({
-        block: 'center',
-      });
-    }
-  };
-
   return (
-    <Fade in={trigger}>
-      <Box
-        onClick={handlerScrollTop}
-        role="presentation"
-        sx={{ position: "fixed", bottom: 16, right: 16 }}
-      >
-        {children}
-      </Box>
-    </Fade>
-  );
-}
-
-ScrollTop.propTypes = {
-  children: PropTypes.element.isRequired,
-};
-
-function BackToTop() {
-  return (
-    <ScrollTop>
-      <Fab size="small" aria-label="scroll back to top">
-        <KeyboardArrowUp />
-      </Fab>
-    </ScrollTop>
+    // <Fade in={trigger}>
+    //   <Box ref="presentation">
+        <AppLink 
+          href="#page-top" 
+          className={classes.backtotop}
+          dataFunctionality="scroll-top"
+          dataTarget="page-top" 
+          onClick={aniScroll}
+        >
+          <Fab aria-label="scroll back to top" size="small">
+            <KeyboardArrowUp className={classes.backtotop_icon} tab-index="-1" />
+          </Fab>
+        </AppLink>
+    //   </Box>
+    // </Fade>
   );
 }
 

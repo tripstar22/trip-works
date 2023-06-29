@@ -1,10 +1,14 @@
+/* 
+  DESCRIPTION: Created to leverage Typed.js library to animate certain text elements within app.
+*/
+
 /* react imports */
 import { useEffect } from 'react';
 
 /* library imports */
 import Typed from 'typed.js';
 
-const aniType = function handlerAnimatedText (
+const aniType = function handlerAnimatedType (
   backspace, 
   backspaceSpeed, 
   cursor, 

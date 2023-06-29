@@ -1,25 +1,26 @@
-/*** appmenu ***/
+/*** backtotop ***/
 
 /* imports */
-@import '../../src/styles/scss/vars';
+@import '../../../../src/styles/scss/vars';
 
 /* ===================================================
   All Screen Sizes
 =================================================== */
 
-.appmenu {
+.backtotop {
+  bottom: 16px;
+  font-size: inherit;
+  position: fixed;
+  right: 16px;
+  z-index: 1;
   
-  &_grid {
-    display: flex;
-    justify-content: flex-end;
-    padding: 0 10px;
-  }
-  &_listItem {
-    padding: 0;
-    width: 100%;
-  }
-  &_listItemButton {
-    padding: 10px 25px;
+  &_icon {
+    fill: $white;
+
+    &:hover,
+    &:focus {
+      fill: $white;
+    }
   }
 }
 
@@ -43,15 +44,7 @@
   Medium Screens & Up (min-width: 900px)
 =================================================== */
 
-@media screen and (min-width: $screen-md) {
 
-  .appmenu {
-
-    &_listItemButton {
-      padding: 10px 45px;
-    }
-  }
-}
 
 /* ===================================================
   END Medium Screens & Up (min-width: 900px)

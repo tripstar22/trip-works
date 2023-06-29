@@ -13,18 +13,30 @@ themeDefault = createTheme(themeDefault, {
     MuiButton: {
       styleOverrides: {
         root: {
-          background: gradients['gradientDefault'],
+          backgroundColor: colors['teal'],
           color: colors['white'],
           fontFamily: FontSansSerifDefault.style.fontFamily,
           fontWeight: '700',
           textTransform: 'initial',
+          '&:hover': {
+            backgroundColor: colors['tealDark'],
+          },
+          '&:focus': {
+            backgroundColor: colors['tealDark'],
+          },
         },
       },
     },
     MuiFab: {
       styleOverrides: {
         root: {
-          background: gradients['gradientDefault'],
+          backgroundColor: colors['teal'],
+          '&:hover': {
+            backgroundColor: colors['tealDark'],
+          },
+          '&:focus': {
+            backgroundColor: colors['tealDark'],
+          },
         },
       },
     },

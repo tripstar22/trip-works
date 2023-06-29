@@ -19,20 +19,13 @@ import AppLink from '../ui/AppLink';
 /* styles imports */
 import classes from './_appmenu.module.scss';
 
-function AppMenu({ handlerMenuClose, menuOpen }) {
+function AppMenu({ toggleClose, menuOpen }) {
   return (
     <div className={classes.appmenu}>
       <Drawer anchor="left" open={menuOpen}>
         <Grid container>
-          <Grid 
-            className={classes.appmenu_grid}
-            item 
-            xs={12}
-          >
-            <IconButton 
-              aria-label="close menu" 
-              onClick={handlerMenuClose}
-            >
+          <Grid item xs={12} className={classes.appmenu_grid}>
+            <IconButton aria-label="close menu" onClick={toggleClose}>
               <Close />
             </IconButton>
           </Grid>
@@ -41,32 +34,74 @@ function AppMenu({ handlerMenuClose, menuOpen }) {
           <List>
             <ListItem className={classes.appmenu_listItem}>
               <ListItemButton className={classes.appmenu_listItemButton}>
-                <AppLink href="/">Home</AppLink>
+                <AppLink 
+                  href="/" 
+                  dataFunctionality="" 
+                  dataTarget="" 
+                  onClick={toggleClose}
+                >
+                  Home
+                </AppLink>
               </ListItemButton>
             </ListItem>
             <ListItem className={classes.appmenu_listItem}>
               <ListItemButton className={classes.appmenu_listItemButton}>
-                <AppLink href="/#about" onClick={handlerMenuClose}>About</AppLink>
+                <AppLink 
+                  href="/#about" 
+                  dataFunctionality="scroll-on-homepage" 
+                  dataTarget="about" 
+                  onClick={toggleClose}
+                >
+                  About
+                </AppLink>
               </ListItemButton>
             </ListItem>
             <ListItem className={classes.appmenu_listItem}>
               <ListItemButton className={classes.appmenu_listItemButton}>
-                <AppLink href="/#skills" onClick={handlerMenuClose}>Skills</AppLink>
+                <AppLink 
+                  href="/#skills" 
+                  dataFunctionality="scroll-on-homepage" 
+                  dataTarget="skills" 
+                  onClick={toggleClose}
+                >
+                  Skills
+                </AppLink>
               </ListItemButton>
             </ListItem>
             <ListItem className={classes.appmenu_listItem}>
               <ListItemButton className={classes.appmenu_listItemButton}>
-                <AppLink href="/#work" onClick={handlerMenuClose}>Work</AppLink>
+                <AppLink 
+                  href="/#work" 
+                  dataFunctionality="scroll-on-homepage" 
+                  dataTarget="work" 
+                  onClick={toggleClose}
+                >
+                  Work
+                </AppLink>
               </ListItemButton>
             </ListItem>
             <ListItem className={classes.appmenu_listItem}>
               <ListItemButton className={classes.appmenu_listItemButton}>
-                <AppLink href="/#contact" onClick={handlerMenuClose}>Contact</AppLink>
+                <AppLink 
+                  href="/#contact" 
+                  dataFunctionality="scroll-on-homepage" 
+                  dataTarget="contact" 
+                  onClick={toggleClose}
+                >
+                  Contact
+                </AppLink>
               </ListItemButton>
             </ListItem>
             <ListItem className={classes.appmenu_listItem}>
               <ListItemButton className={classes.appmenu_listItemButton}>
-                <AppLink href="/" onClick={handlerMenuClose}>View Résumé</AppLink>
+                <AppLink 
+                  href="/" 
+                  dataFunctionality="" 
+                  dataTarget="" 
+                  onClick={toggleClose}
+                >
+                  View Résumé
+                </AppLink>
               </ListItemButton>
             </ListItem>
           </List>
@@ -77,7 +112,7 @@ function AppMenu({ handlerMenuClose, menuOpen }) {
 }
 
 AppMenu.propTypes = {
-  handlerMenuClose: PropTypes.func.isRequired,
+  toggleClose: PropTypes.func.isRequired,
   menuOpen: PropTypes.bool.isRequired,
 };
 

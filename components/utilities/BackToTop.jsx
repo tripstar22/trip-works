@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import KeyboardArrowUp from '@mui/icons-material/KeyboardArrowUp';
 
 /* mui imports */
-import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
 import Fade from '@mui/material/Fade';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
@@ -27,8 +26,8 @@ function BackToTop() {
   });
 
   return (
-    // <Fade in={trigger}>
-    //   <Box ref="presentation">
+    <Fade in={trigger}>
+      <div>
         <AppLink 
           href="#page-top" 
           className={classes.backtotop} 
@@ -39,8 +38,8 @@ function BackToTop() {
             <KeyboardArrowUp className={classes.backtotop_icon} tab-index="-1" />
           </Fab>
         </AppLink>
-    //   </Box>
-    // </Fade>
+      </div>
+    </Fade>
   );
 }
 

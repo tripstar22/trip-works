@@ -35,7 +35,7 @@ function Projects() {
         </Grid>
         <ResponsiveMasonry columnsCountBreakPoints={{350: 1, 599: 2, 899: 3}}>
           <Masonry gutter="30px">
-            <div>
+            <article>
               <Card className={classes.projects_card}>
                 <CardActionArea className={classes.projects_link}>
                   <CardMedia
@@ -68,8 +68,8 @@ function Projects() {
                   </CardContent>
                 </CardActionArea>
               </Card>
-            </div>
-            <div>
+            </article>
+            <article>
               <Card className={classes.projects_card}>
                 <CardActionArea className={classes.projects_link}>
                   <CardMedia
@@ -102,8 +102,8 @@ function Projects() {
                   </CardContent>
                 </CardActionArea>
               </Card>
-            </div>
-            <div>
+            </article>
+            <article>
               <Card className={classes.projects_card}>
                 <CardActionArea className={classes.projects_link}>
                   <CardMedia
@@ -136,8 +136,8 @@ function Projects() {
                   </CardContent>
                 </CardActionArea>
               </Card>
-            </div>
-            <div>
+            </article>
+            <article>
               <Card className={classes.projects_card}>
                 <CardActionArea className={classes.projects_link}>
                   <CardMedia
@@ -170,8 +170,8 @@ function Projects() {
                   </CardContent>
                 </CardActionArea>
               </Card>
-            </div>
-            <div>
+            </article>
+            <article>
               <Card className={classes.projects_card}>
                 <CardActionArea className={classes.projects_link}>
                   <CardMedia
@@ -190,7 +190,7 @@ function Projects() {
                       Count Covid
                     </Typography>
                     <Typography component="h6" gutterBottom variant="h6">
-                      My Role: <span>Lead Front End Engineer</span>
+                      My Role: <span>Front End Engineer</span>
                     </Typography>
                     <Typography gutterBottom variant="body1">
                       <TextTruncate
@@ -204,8 +204,8 @@ function Projects() {
                   </CardContent>
                 </CardActionArea>
               </Card>
-            </div>
-            <div>
+            </article>
+            <article>
               <Card className={classes.projects_card}>
                 <CardActionArea className={classes.projects_link}>
                   <CardMedia
@@ -238,7 +238,7 @@ function Projects() {
                   </CardContent>
                 </CardActionArea>
               </Card>
-            </div>
+            </article>
           </Masonry>
         </ResponsiveMasonry>
       </Container>

@@ -26,7 +26,8 @@
 
   &_arrow,
   &_background,
-  &_scrollLink {
+  &_scrollLink,
+  &_video {
     left: 50%;
     position: absolute;
   }
@@ -45,8 +46,7 @@
     }
   }
   &_background {
-    background-color: $teal;
-    background: radial-gradient(circle, $teal 0%, $teal 40%, $tealDark 100%);
+    background-color: rgba(33, 33, 33, 0.2);
     height: 100%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -59,7 +59,7 @@
   &_heading,
   &_subheading {
     color: $white;
-    text-shadow: rgba(48, 48, 48, 0.45) 2px 2px 10px;
+    text-shadow: rgba(33, 33, 33, 0.65) 2px 2px 10px;
   }
   &_heading {
 
@@ -88,9 +88,12 @@
       padding-bottom: 0;
     }
   }
+  &_video {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 
   &___home {
-    background-color: $tealLight;
     min-height: 600px;
     overflow: hidden;
     position: relative;

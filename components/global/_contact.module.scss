@@ -8,12 +8,51 @@
 =================================================== */
 
 .contact {
-  background-color: $offWhite;
+  overflow: hidden;
+  position: relative;
 
+  &_background,
+  &_video {
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &_background {
+    background-color: rgba(33, 33, 33, 0.2);
+    width: 100%;
+  }
+  &_buttonContainer {
+    text-align: center;
+
+    &___paddingBottom {
+      padding-bottom: 40px;
+    }
+  }
+  &_container {
+    background-color: transparent;
+    backdrop-filter: blur(40px);
+    padding: 50px 0;
+  }
+  &_heading,
   &_link {
+    position: relative;
+  }
+  &_heading {
+    color: $white;
+    text-align: center;
+  }
+  &_link {
+    background-color: $offWhite;
+    color: $teal;
+    transition: background-color $transitionDefault,
+                color $transitionDefault;
+    z-index: 1;
 
     &:hover,
     &:focus {
+      // background-color: $teal;
       color: $white;
     }
   }
@@ -39,7 +78,21 @@
   Medium Screens & Up (min-width: 900px)
 =================================================== */
 
+@media screen and (min-width: $screen-md) {
 
+  .contact {
+
+    &_buttonContainer {
+
+      &___paddingBottom {
+        padding-bottom: 50px;
+      }
+    }
+    &_container {
+      padding: 70px 0;
+    }
+  }
+}
 
 /* ===================================================
   END Medium Screens & Up (min-width: 900px)
@@ -50,7 +103,15 @@
   Large Screens & Up (min-width: 1200px)
 =================================================== */
 
-
+@media screen and (min-width: $screen-lg) {
+  
+  .contact {
+    
+    &_container {
+      padding: 80px 0;
+    }
+  }
+}
 
 /* ===================================================
   END Large Screens & Up (min-width: 1200px)

@@ -27,7 +27,7 @@ function RepositoryCta() {
               Interested in how I built my portfolio site?
             </Typography>
             <Typography gutterBottom variant="body1">
-              You can <a className={classes.repositoryCta_link} href="https://github.com/tripstar22/trip-works" target="_blank">view my repo on GitHub</a> to learn more about the tech stack, and logic that I used to create it!
+              You can <a href="https://github.com/tripstar22/trip-works" target="_blank">view my repo on GitHub</a> to learn more about the tech stack, and logic that I used to create it!
             </Typography>
           </Grid>
         </Grid>

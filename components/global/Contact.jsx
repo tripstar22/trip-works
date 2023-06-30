@@ -12,22 +12,51 @@ import Typography from '@mui/material/Typography';
 import ButtonAction from '../ui/ButtonAction';
 import ButtonLink from '../ui/ButtonLink';
 
+/* custom module imports */
+import aniType from '../../modules/aniType';
+
 /* styles imports */
 import classes from './_contact.module.scss';
 
 function Contact() {
   return (
     <section className={`section ${classes.contact}`} id="contact">
+      <video 
+        autoPlay="autoplay"
+        className={classes.contact_video} 
+        loop={true}
+        muted={true}
+      >
+        <source src="/movies/misty-forest-2.mp4" type="video/mp4" />
+        <p>Your browser does not support HTML5 video.</p>
+      </video>
+      <div className={classes.contact_background} />
       <Container maxWidth="lg">
         <Grid container spacing={0}>
           <Grid item xs={12}>
-            <Typography component="h2" gutterBottom variant="h2">
-              Y‘all ready to code?
-            </Typography>
-            <ButtonLink href="/" className={classes.contact_link}>View Résumé</ButtonLink>
+            <Typography 
+              className={classes.contact_heading}
+              component="h2" 
+              gutterBottom 
+              id="aniContactHeading"
+              onLoad={aniType(
+                false, 
+                0,
+                false, 
+                200, 
+                'aniContactHeading', 
+                false, 
+                50, 
+                ['Y‘all ready ^100 to code?']
+              )}
+              variant="h2"
+            />
+            <div className={`${classes.contact_buttonContainer} ${classes.contact_buttonContainer___paddingBottom}`}>
+              <ButtonLink href="/" className={classes.contact_link}>View Résumé</ButtonLink>
+            </div>
           </Grid>
         </Grid>
-        <Paper elevation={2}>
+        <Paper className={classes.contact_container} elevation={2}>
           <Container maxWidth="md">
             <form>
               <Grid container spacing={4}>
@@ -79,7 +108,9 @@ function Contact() {
                   />
                 </Grid>
                 <Grid item xs={12}>
-                  <ButtonAction>Submit</ButtonAction>
+                  <div className={classes.contact_buttonContainer}>
+                    <ButtonAction>Submit</ButtonAction>
+                  </div>
                 </Grid>
               </Grid>
             </form>

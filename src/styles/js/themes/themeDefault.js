@@ -71,35 +71,35 @@ themeDefault = createTheme(themeDefault, {
         root: {
           '&.contact-me__textfield': {
             '& fieldset': {
-              border: '2px solid ' + colors['grayDark'],
+              border: '2px solid ' + colors['white'],
             },
             '&:hover': {
               '& .MuiFormLabel-root': {
-                color: colors['teal'],
+                color: colors['white'],
               },
             },
             '& .MuiFormHelperText-root': {
-              color: colors['grayDark'],
+              color: colors['white'],
               fontFamily: FontSansSerifDefault.style.fontFamily,
             },
             '& .MuiFormLabel-root': {
-              color: colors['grayDark'],
+              color: colors['white'],
               '&.Mui-focused': {
-                color: colors['teal'],
+                color: colors['white'],
               },
             },
             '& .MuiInputBase-input': {
-              color: colors['black'],
+              color: colors['white'],
               '&:hover': {
-                color: colors['tealDark'],
+                color: colors['white'],
                 '~ fieldset': {
-                  border: '2px solid ' + colors['tealDark'],
+                  border: '2px solid ' + colors['white'],
                 },
               },
               '&:focus': {
-                color: colors['tealDark'],
+                color: colors['white'],
                 '~ fieldset': {
-                  border: '2px solid ' + colors['tealDark'],
+                  border: '2px solid ' + colors['white'],
                 },
               },
             },

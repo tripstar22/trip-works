@@ -8,22 +8,7 @@
 =================================================== */
 
 .repositoryCta {
-  background-color: $tealDark;
-  color: $white;
-
-  &_heading {
-    padding-bottom: 5px;
-  }
-  &_link {
-    color: $white;
-    transition: opacity $transitionDefault;
-
-    &:hover,
-    &:focus {
-      color: $white;
-      opacity: 0.65;
-    }
-  }
+  background-color: $offWhite;
 }
 
 /* ===================================================

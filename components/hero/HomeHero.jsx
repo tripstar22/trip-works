@@ -22,6 +22,15 @@ import classes from './_hero.module.scss';
 function HomeHero() {
   return (
     <section className={`${classes.hero} ${classes.hero___home}`}>
+      <video 
+        autoPlay="autoplay"
+        className={classes.hero_video} 
+        loop={true}
+        muted={true}
+      >
+        <source src="/movies/forest-path.mp4" type="video/mp4" />
+        <p>Your browser does not support HTML5 video.</p>
+      </video>
       <div className={classes.hero_background} />
       <Container maxWidth="lg">
         <Grid container spacing={0}>
@@ -51,7 +60,7 @@ function HomeHero() {
                   ['Front-End ^300 Engineer']
                 )}
                 variant="h4"
-              ></Typography>
+              />
             </div>
             <AppLink
               href="#about" 

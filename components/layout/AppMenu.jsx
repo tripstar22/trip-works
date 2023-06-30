@@ -36,8 +36,6 @@ function AppMenu({ toggleClose, menuOpen }) {
               <ListItemButton className={classes.appmenu_listItemButton}>
                 <AppLink 
                   href="/" 
-                  dataFunctionality="" 
-                  dataTarget="" 
                   onClick={toggleClose}
                 >
                   Home
@@ -48,8 +46,6 @@ function AppMenu({ toggleClose, menuOpen }) {
               <ListItemButton className={classes.appmenu_listItemButton}>
                 <AppLink 
                   href="/#about" 
-                  dataFunctionality="scroll-on-homepage" 
-                  dataTarget="about" 
                   onClick={toggleClose}
                 >
                   About
@@ -60,8 +56,6 @@ function AppMenu({ toggleClose, menuOpen }) {
               <ListItemButton className={classes.appmenu_listItemButton}>
                 <AppLink 
                   href="/#skills" 
-                  dataFunctionality="scroll-on-homepage" 
-                  dataTarget="skills" 
                   onClick={toggleClose}
                 >
                   Skills
@@ -72,8 +66,6 @@ function AppMenu({ toggleClose, menuOpen }) {
               <ListItemButton className={classes.appmenu_listItemButton}>
                 <AppLink 
                   href="/#work" 
-                  dataFunctionality="scroll-on-homepage" 
-                  dataTarget="work" 
                   onClick={toggleClose}
                 >
                   Work
@@ -84,8 +76,6 @@ function AppMenu({ toggleClose, menuOpen }) {
               <ListItemButton className={classes.appmenu_listItemButton}>
                 <AppLink 
                   href="/#contact" 
-                  dataFunctionality="scroll-on-homepage" 
-                  dataTarget="contact" 
                   onClick={toggleClose}
                 >
                   Contact
@@ -96,8 +86,6 @@ function AppMenu({ toggleClose, menuOpen }) {
               <ListItemButton className={classes.appmenu_listItemButton}>
                 <AppLink 
                   href="/" 
-                  dataFunctionality="" 
-                  dataTarget="" 
                   onClick={toggleClose}
                 >
                   View Résumé

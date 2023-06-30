@@ -17,9 +17,6 @@ import AppMenu from './AppMenu';
 /* svg imports */
 import Logo from '../../src/svg/logos/logo.svg';
 
-/* custom module imports */
-import linkTo from '../../modules/linkTo';
-
 /* styles imports */
 import classes from './_header.module.scss';
 
@@ -47,8 +44,6 @@ function AppHeader() {
 
   const toggleClose = function handlerMenuClose (event) {
     setMenuOpen(false);
-    console.log(event);
-    linkTo(event, event.currentTarget);
   };
 
   return (

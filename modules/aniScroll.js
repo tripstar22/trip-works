@@ -1,11 +1,18 @@
 /* 
-  DESCRIPTION: Created to animate scroll, as well as handle logic of scrolling, or not scrolling based on current route. 
+  DESCRIPTION: Created to animate scroll if user clicks on specific elements. 
 */
 
-import linkTo from './linkTo';
+const scrollTarget = function scrollToTargetElement (e, eventTarget) {
+
+  let dataTarget = eventTarget.dataset.target;
+  let targetElement = document.getElementById(dataTarget);
+
+  e.preventDefault();
+  targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+};
 
 const aniScroll = function handlerAnimatePageScroll (event) {
-  linkTo(event, event.currentTarget);
+  scrollTarget(event, event.currentTarget);
 };
 
 export default aniScroll;

@@ -10,7 +10,6 @@ function AppLink(props) {
   return <Link 
           href={props.href}
           className={props.className} 
-          data-functionality={props.dataFunctionality}
           data-target={props.dataTarget}
           onClick={props.onClick}
           scroll={false}

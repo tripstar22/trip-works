@@ -31,8 +31,7 @@ function BackToTop() {
     //   <Box ref="presentation">
         <AppLink 
           href="#page-top" 
-          className={classes.backtotop}
-          dataFunctionality="scroll-top"
+          className={classes.backtotop} 
           dataTarget="page-top" 
           onClick={aniScroll}
         >

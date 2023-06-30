@@ -55,8 +55,7 @@ function HomeHero() {
             </div>
             <AppLink
               href="#about" 
-              className={classes.hero_scrollLink}
-              dataFunctionality="scroll-on-homepage" 
+              className={classes.hero_scrollLink} 
               dataTarget="about" 
               onClick={aniScroll}
             >

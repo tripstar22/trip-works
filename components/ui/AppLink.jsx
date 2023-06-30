@@ -8,10 +8,12 @@ import Link from 'next/link';
 function AppLink(props) {
   const { children } = props;
   return <Link 
-          href={props.href}
           className={props.className} 
-          data-target={props.dataTarget}
-          onClick={props.onClick}
+          data-target={props.dataTarget} 
+          href={props.href} 
+          onClick={props.onClick} 
+          rel={props.rel} 
+          target={props.target}
         >
           {children}
         </Link>;

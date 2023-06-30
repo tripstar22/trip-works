@@ -85,8 +85,10 @@ function AppMenu({ toggleClose, menuOpen }) {
             <ListItem className={classes.appmenu_listItem}>
               <ListItemButton className={classes.appmenu_listItemButton}>
                 <AppLink 
-                  href="/" 
-                  onClick={toggleClose}
+                  href="/files/trip-pruitt-resume.pdf" 
+                  onClick={toggleClose} 
+                  rel="noopener noreferrer" 
+                  target="_blank" 
                 >
                   View Résumé
                 </AppLink>

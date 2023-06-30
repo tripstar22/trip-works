@@ -52,8 +52,13 @@
 
     &:hover,
     &:focus {
-      // background-color: $teal;
       color: $white;
+    }
+    &:hover {
+      background-color: $teal;
+    }
+    &:focus {
+      background-color: $tealDark;
     }
   }
 }

@@ -7,7 +7,14 @@ import Button from '@mui/material/Button';
 
 function ButtonLink(props) {
   const { children } = props;
-  return <Button href={props.href} className={props.className} target="_blank">{children}</Button>;
+  return <Button 
+            className={props.className} 
+            href={props.href} 
+            rel={props.rel} 
+            target={props.target}
+         >
+              {children}
+          </Button>;
 }
 
 ButtonLink.propTypes = {

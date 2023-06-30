@@ -52,7 +52,14 @@ function Contact() {
               variant="h2"
             />
             <div className={`${classes.contact_buttonContainer} ${classes.contact_buttonContainer___paddingBottom}`}>
-              <ButtonLink href="/" className={classes.contact_link}>View Résumé</ButtonLink>
+              <ButtonLink 
+                className={classes.contact_link} 
+                href="/files/trip-pruitt-resume.pdf" 
+                rel="noopener noreferrer" 
+                target="_blank"
+              >
+                View Résumé
+              </ButtonLink>
             </div>
           </Grid>
         </Grid>

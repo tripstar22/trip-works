@@ -1,6 +1,5 @@
 /* react imports */
 import React from 'react';
-import PropTypes from 'prop-types';
 
 /* mui icon imports */
 import KeyboardArrowUp from '@mui/icons-material/KeyboardArrowUp';
@@ -35,7 +34,7 @@ function BackToTop() {
           onClick={aniScroll}
         >
           <Fab aria-label="scroll back to top" size="small">
-            <KeyboardArrowUp className={classes.backtotop_icon} tab-index="-1" />
+            <KeyboardArrowUp className={classes.backtotop_icon} />
           </Fab>
         </AppLink>
       </div>

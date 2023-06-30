@@ -5,10 +5,10 @@
 const scrollTarget = function scrollToTargetElement (e, eventTarget) {
 
   let dataTarget = eventTarget.dataset.target;
-  let targetElement = document.getElementById(dataTarget);
+  let element = document.getElementById(dataTarget);
 
   e.preventDefault();
-  targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  element.scrollIntoView({ behavior: 'smooth' });
 };
 
 const aniScroll = function handlerAnimatePageScroll (event) {

@@ -12,7 +12,6 @@ function AppLink(props) {
           className={props.className} 
           data-target={props.dataTarget}
           onClick={props.onClick}
-          scroll={false}
         >
           {children}
         </Link>;

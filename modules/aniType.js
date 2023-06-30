@@ -1,5 +1,5 @@
 /* 
-  DESCRIPTION: Created to leverage Typed.js library to animate certain text elements within app.
+  DESCRIPTION: Created to leverage Typed.js library, and animate certain text elements within app.
 */
 
 /* react imports */

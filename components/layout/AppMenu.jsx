@@ -88,7 +88,7 @@ function AppMenu({ toggleClose, menuOpen }) {
                   href="/files/trip-pruitt-resume.pdf" 
                   onClick={toggleClose} 
                   rel="noopener noreferrer" 
-                  target="_blank" 
+                  target="_blank"
                 >
                   View Résumé
                 </AppLink>

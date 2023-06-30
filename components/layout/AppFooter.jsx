@@ -104,7 +104,9 @@ function AppFooter() {
                 <ListItem className={classes.footer_listItem}>
                   <ListItemButton>
                     <AppLink 
-                      href="/"
+                      href="/files/trip-pruitt-resume.pdf"  
+                      rel="noopener noreferrer" 
+                      target="_blank"
                     >
                       View Résumé
                     </AppLink>

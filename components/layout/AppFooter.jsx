@@ -36,19 +36,19 @@ function AppFooter() {
             <Typography
               className={classes.footer_heading}
               component="h3"
-              gutterBottom 
+              gutterBottom
               id="aniFooterHeading"
               onLoad={aniType(
-                false, 
-                0, 
-                false, 
-                200, 
-                'aniFooterHeading', 
-                false, 
-                50, 
+                false,
+                0,
+                false,
+                200,
+                'aniFooterHeading',
+                false,
+                50,
                 ['Front-End ^300 Engineer']
               )}
-              variant="h4"  
+              variant="h4"
             >
               Trip Pruitt - Front End Engineer
             </Typography>
@@ -58,54 +58,34 @@ function AppFooter() {
               <List>
                 <ListItem className={classes.footer_listItem}>
                   <ListItemButton>
+                    <AppLink href="/">Home</AppLink>
+                  </ListItemButton>
+                </ListItem>
+                <ListItem className={classes.footer_listItem}>
+                  <ListItemButton>
+                    <AppLink href="/#about">About</AppLink>
+                  </ListItemButton>
+                </ListItem>
+                <ListItem className={classes.footer_listItem}>
+                  <ListItemButton>
+                    <AppLink href="/#skills">Skills</AppLink>
+                  </ListItemButton>
+                </ListItem>
+                <ListItem className={classes.footer_listItem}>
+                  <ListItemButton>
+                    <AppLink href="/#work">Work</AppLink>
+                  </ListItemButton>
+                </ListItem>
+                <ListItem className={classes.footer_listItem}>
+                  <ListItemButton>
+                    <AppLink href="/#contact">Contact</AppLink>
+                  </ListItemButton>
+                </ListItem>
+                <ListItem className={classes.footer_listItem}>
+                  <ListItemButton>
                     <AppLink
-                      href="/"
-                    >
-                      Home
-                    </AppLink>
-                  </ListItemButton>
-                </ListItem>
-                <ListItem className={classes.footer_listItem}>
-                  <ListItemButton>
-                    <AppLink 
-                      href="/#about"
-                    >
-                      About
-                    </AppLink>
-                  </ListItemButton>
-                </ListItem>
-                <ListItem className={classes.footer_listItem}>
-                  <ListItemButton>
-                    <AppLink 
-                      href="/#skills"
-                    >
-                      Skills
-                    </AppLink>
-                  </ListItemButton>
-                </ListItem>
-                <ListItem className={classes.footer_listItem}>
-                  <ListItemButton>
-                    <AppLink 
-                      href="/#work"
-                    >
-                      Work
-                    </AppLink>
-                  </ListItemButton>
-                </ListItem>
-                <ListItem className={classes.footer_listItem}>
-                  <ListItemButton>
-                    <AppLink 
-                      href="/#contact"
-                    >
-                      Contact
-                    </AppLink>
-                  </ListItemButton>
-                </ListItem>
-                <ListItem className={classes.footer_listItem}>
-                  <ListItemButton>
-                    <AppLink 
-                      href="/files/trip-pruitt-resume.pdf"  
-                      rel="noopener noreferrer" 
+                      href="/files/trip-pruitt-resume.pdf"
+                      rel="noopener noreferrer"
                       target="_blank"
                     >
                       View Résumé
@@ -119,10 +99,10 @@ function AppFooter() {
             <Stack direction="row" spacing={1}>
               <div className={classes.footer_social}>
                 <a
-                  href="http://www.linkedin.com/in/trip-pruitt-430b2b58"
+                  href="http://www.linkedin.com/in/trip-pruitt"
                   aria-label="View LinkedIn Profile"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   <IconButton aria-label="linkedin">
                     <LinkedIn />
@@ -132,7 +112,7 @@ function AppFooter() {
                   href="https://github.com/tripstar22/"
                   aria-label="View GitHub Profile"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   <IconButton aria-label="github">
                     <GitHub />

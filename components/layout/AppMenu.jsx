@@ -34,60 +34,45 @@ function AppMenu({ toggleClose, menuOpen }) {
           <List>
             <ListItem className={classes.appmenu_listItem}>
               <ListItemButton className={classes.appmenu_listItemButton}>
-                <AppLink 
-                  href="/" 
-                  onClick={toggleClose}
-                >
+                <AppLink href="/" onClick={toggleClose}>
                   Home
                 </AppLink>
               </ListItemButton>
             </ListItem>
             <ListItem className={classes.appmenu_listItem}>
               <ListItemButton className={classes.appmenu_listItemButton}>
-                <AppLink 
-                  href="/#about" 
-                  onClick={toggleClose}
-                >
+                <AppLink href="/#about" onClick={toggleClose}>
                   About
                 </AppLink>
               </ListItemButton>
             </ListItem>
             <ListItem className={classes.appmenu_listItem}>
               <ListItemButton className={classes.appmenu_listItemButton}>
-                <AppLink 
-                  href="/#skills" 
-                  onClick={toggleClose}
-                >
+                <AppLink href="/#skills" onClick={toggleClose}>
                   Skills
                 </AppLink>
               </ListItemButton>
             </ListItem>
             <ListItem className={classes.appmenu_listItem}>
               <ListItemButton className={classes.appmenu_listItemButton}>
-                <AppLink 
-                  href="/#work" 
-                  onClick={toggleClose}
-                >
+                <AppLink href="/#work" onClick={toggleClose}>
                   Work
                 </AppLink>
               </ListItemButton>
             </ListItem>
             <ListItem className={classes.appmenu_listItem}>
               <ListItemButton className={classes.appmenu_listItemButton}>
-                <AppLink 
-                  href="/#contact" 
-                  onClick={toggleClose}
-                >
+                <AppLink href="/#contact" onClick={toggleClose}>
                   Contact
                 </AppLink>
               </ListItemButton>
             </ListItem>
             <ListItem className={classes.appmenu_listItem}>
               <ListItemButton className={classes.appmenu_listItemButton}>
-                <AppLink 
-                  href="/files/trip-pruitt-resume.pdf" 
-                  onClick={toggleClose} 
-                  rel="noopener noreferrer" 
+                <AppLink
+                  href="/files/trip-pruitt-resume.pdf"
+                  onClick={toggleClose}
+                  rel="noopener noreferrer"
                   target="_blank"
                 >
                   View Résumé

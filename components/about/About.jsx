@@ -17,7 +17,10 @@ import classes from './_about.module.scss';
 
 function About() {
   return (
-    <section className={`section section___noPaddingBottom ${classes.about}`} id="about">
+    <section
+      className={`section section___noPaddingBottom ${classes.about}`}
+      id="about"
+    >
       <div className={classes.about_container}>
         <Container maxWidth="lg">
           <Grid container spacing={0}>
@@ -28,29 +31,41 @@ function About() {
             </Grid>
             <Grid item xs={12} sm={7} md={8}>
               <div className={classes.about_content}>
-                <Typography 
+                <Typography
                   className={classes.about_heading}
-                  component="h3" 
-                  gutterBottom 
+                  component="h3"
+                  gutterBottom
                   variant="h3"
                 >
                   <span className={classes.about_name}>Trip Pruitt: </span>
-                  <span  
+                  <span
                     id="aniTextRotating"
                     onLoad={aniType(
-                      true, 
+                      true,
                       25,
-                      false, 
-                      200, 
-                      'aniTextRotating', 
-                      true, 
-                      50, 
-                      ['Team ^50 player', 'Self proclaimed ^150 grill master', 'Non-discriminatory beer ^100 appreciator', 'Has a dire wolf ^100 named Riley', 'Loves ^50 Kelsey', 'OG ^150 Bama fan', 'One of four ^100 kids', 'Can fit in ^150 anywhere', 'Not going to ^100 rage quit', 'The Trip ^50 is because I’m ^100 the III']
+                      false,
+                      200,
+                      'aniTextRotating',
+                      true,
+                      50,
+                      [
+                        'Team ^50 player',
+                        'Self proclaimed ^150 grill master',
+                        'Non-discriminatory beer ^100 appreciator',
+                        'Has a dire wolf ^100 named Riley',
+                        'Loves ^50 Kelsey',
+                        'OG ^150 Bama fan',
+                        'One of four ^100 kids',
+                        'Can fit in ^150 anywhere',
+                        'Not going to ^100 rage quit',
+                        'The Trip ^50 is because I’m ^100 the III',
+                      ]
                     )}
                   ></span>
                 </Typography>
                 <Typography gutterBottom variant="body1">
-                  From inner city Boston to Alabama fraternities, I’ve never found a place I wasn’t able to fit in.
+                  From inner city Boston to Alabama fraternities, I’ve never
+                  found a place I wasn’t able to fit in.
                 </Typography>
                 <Typography gutterBottom variant="body1">
                   Product of being a Navy brat, I guess.

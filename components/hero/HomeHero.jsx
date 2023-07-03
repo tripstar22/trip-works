@@ -11,6 +11,7 @@ import Typography from '@mui/material/Typography';
 
 /* custom component imports */
 import AppLink from '../ui/AppLink';
+import BackgroundVideo from '../ui/BackgroundVideo';
 
 /* custom module imports */
 import aniType from '../../modules/aniType';
@@ -22,24 +23,21 @@ import classes from './_hero.module.scss';
 function HomeHero() {
   return (
     <section className={`${classes.hero} ${classes.hero___home}`}>
-      <video 
+      <BackgroundVideo
         autoPlay="autoplay"
-        className={classes.hero_video} 
         loop={true}
         muted={true}
-      >
-        <source src="/movies/forest-path.mp4" type="video/mp4" />
-        <p>Your browser does not support HTML5 video.</p>
-      </video>
-      <div className={classes.hero_background} />
+        src="/movies/forest-path.mp4"
+        type="video/mp4"
+      />
       <Container maxWidth="lg">
         <Grid container spacing={0}>
           <Grid item xs={12}>
             <div className={classes.hero_content}>
-              <Typography 
+              <Typography
                 className={`${classes.hero_heading} ${classes.hero_heading___home}`}
-                component="h1" 
-                gutterBottom 
+                component="h1"
+                gutterBottom
                 variant="h1"
               >
                 Trip Pruitt
@@ -50,22 +48,22 @@ function HomeHero() {
                 id="aniHeroHeading"
                 gutterBottom
                 onLoad={aniType(
-                  false, 
+                  false,
                   0,
-                  false, 
-                  200, 
-                  'aniHeroHeading', 
-                  false, 
-                  50, 
+                  false,
+                  200,
+                  'aniHeroHeading',
+                  false,
+                  50,
                   ['Front-End ^300 Engineer']
                 )}
                 variant="h4"
               />
             </div>
             <AppLink
-              href="#about" 
-              className={classes.hero_scrollLink} 
-              dataTarget="about" 
+              href="#about"
+              className={classes.hero_scrollLink}
+              dataTarget="about"
               onClick={aniScroll}
             >
               <KeyboardArrowDownIcon className={classes.hero_arrow} />

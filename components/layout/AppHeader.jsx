@@ -25,7 +25,7 @@ function HideHeaderOnScroll(props) {
   const trigger = useScrollTrigger();
 
   return (
-    <Slide appear={false} direction='down' in={!trigger}>
+    <Slide appear={false} direction="down" in={!trigger}>
       {children}
     </Slide>
   );
@@ -38,11 +38,11 @@ HideHeaderOnScroll.propTypes = {
 function AppHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleOpen = function handlerMenuOpen () {
+  const toggleOpen = function handlerMenuOpen() {
     setMenuOpen(true);
   };
 
-  const toggleClose = function handlerMenuClose (event) {
+  const toggleClose = function handlerMenuClose(event) {
     setMenuOpen(false);
   };
 
@@ -59,10 +59,7 @@ function AppHeader() {
             </Grid>
             <Grid item xs={6}>
               <div className={classes.header_logo}>
-                <AppLink 
-                  href="/" 
-                  className={classes.header_link} 
-                >
+                <AppLink href="/" className={classes.header_link}>
                   <Logo />
                 </AppLink>
               </div>

@@ -7,16 +7,18 @@ import Link from 'next/link';
 
 function AppLink(props) {
   const { children } = props;
-  return <Link 
-          className={props.className} 
-          data-target={props.dataTarget} 
-          href={props.href} 
-          onClick={props.onClick} 
-          rel={props.rel} 
-          target={props.target}
-        >
-          {children}
-        </Link>;
+  return (
+    <Link
+      className={props.className}
+      data-target={props.dataTarget}
+      href={props.href}
+      onClick={props.onClick}
+      rel={props.rel}
+      target={props.target}
+    >
+      {children}
+    </Link>
+  );
 }
 
 AppLink.propTypes = {

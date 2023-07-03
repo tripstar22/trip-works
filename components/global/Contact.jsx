@@ -9,6 +9,7 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 
 /* custom component imports */
+import BackgroundVideo from '../ui/BackgroundVideo';
 import ButtonAction from '../ui/ButtonAction';
 import ButtonLink from '../ui/ButtonLink';
 
@@ -21,41 +22,40 @@ import classes from './_contact.module.scss';
 function Contact() {
   return (
     <section className={`section ${classes.contact}`} id="contact">
-      <video 
+      <BackgroundVideo
         autoPlay="autoplay"
-        className={classes.contact_video} 
         loop={true}
         muted={true}
-      >
-        <source src="/movies/misty-forest-2.mp4" type="video/mp4" />
-        <p>Your browser does not support HTML5 video.</p>
-      </video>
-      <div className={classes.contact_background} />
+        src="/movies/misty-forest.mp4"
+        type="video/mp4"
+      />
       <Container maxWidth="lg">
         <Grid container spacing={0}>
           <Grid item xs={12}>
-            <Typography 
+            <Typography
               className={classes.contact_heading}
-              component="h2" 
-              gutterBottom 
+              component="h2"
+              gutterBottom
               id="aniContactHeading"
               onLoad={aniType(
-                false, 
+                false,
                 0,
-                false, 
-                200, 
-                'aniContactHeading', 
-                false, 
-                50, 
+                false,
+                200,
+                'aniContactHeading',
+                false,
+                50,
                 ['Y‘all ready ^100 to code?']
               )}
               variant="h2"
             />
-            <div className={`${classes.contact_buttonContainer} ${classes.contact_buttonContainer___paddingBottom}`}>
-              <ButtonLink 
-                className={classes.contact_link} 
-                href="/files/trip-pruitt-resume.pdf" 
-                rel="noopener noreferrer" 
+            <div
+              className={`${classes.contact_buttonContainer} ${classes.contact_buttonContainer___paddingBottom}`}
+            >
+              <ButtonLink
+                className={classes.contact_link}
+                href="/files/trip-pruitt-resume.pdf"
+                rel="noopener noreferrer"
                 target="_blank"
               >
                 View Résumé
@@ -95,12 +95,12 @@ function Contact() {
                   />
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <TextField 
+                  <TextField
                     className="contact-me__textfield"
                     fullWidth
-                    helperText="Company name is required" 
+                    helperText="Company name is required"
                     label="Company"
-                    required 
+                    required
                   />
                 </Grid>
                 <Grid item xs={12}>

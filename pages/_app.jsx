@@ -1,9 +1,18 @@
+/* react imports */
 import * as React from 'react';
 import PropTypes from 'prop-types';
+
+/* next.js imports */
 import Head from 'next/head';
+
+/* mui imports */
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+
+/* emotion imports */
 import { CacheProvider } from '@emotion/react';
+
+/* src imports */
 import createEmotionCache from '../src/styles/js/createEmotionCache';
 import '../src/styles/scss/_fonts.scss';
 import '../src/styles/scss/_utilities.scss';
@@ -11,6 +20,7 @@ import '../src/styles/scss/global/_base.scss';
 import '../src/styles/scss/global/_section.scss';
 import themeDefault from '../src/styles/js/themes/themeDefault';
 
+/* custom component imports */
 import AppLayout from '../components/layout/AppLayout';
 
 // Client-side cache, shared for the whole session of the user in the browser.

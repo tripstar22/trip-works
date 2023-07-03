@@ -9,6 +9,10 @@ const scrollTarget = function scrollToTargetElement (e, eventTarget) {
 
   e.preventDefault();
   element.scrollIntoView({ behavior: 'smooth' });
+
+  // update url hash 
+  let newHash = '#' + dataTarget;
+  history.pushState({}, '', newHash);
 };
 
 const aniScroll = function handlerAnimatePageScroll (event) {

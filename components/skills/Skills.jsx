@@ -25,10 +25,10 @@ function Skills() {
       <Container maxWidth="lg">
         <Grid container spacing={0}>
           <Grid item xs={12}>
-            <Typography 
+            <Typography
               className={classes.skills_heading}
-              component="h4" 
-              gutterBottom 
+              component="h4"
+              gutterBottom
               variant="h3"
             >
               Skills

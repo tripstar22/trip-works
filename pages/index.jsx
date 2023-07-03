@@ -1,5 +1,7 @@
+/* react imports */
 import * as React from 'react';
 
+/* custom component imports */
 import About from '../components/about/About';
 import Contact from '../components/global/Contact';
 import HomeHero from '../components/hero/HomeHero';

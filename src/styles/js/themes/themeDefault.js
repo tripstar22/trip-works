@@ -2,7 +2,6 @@ import { createTheme } from '@mui/material/styles';
 
 import {FontSansSerifDefault, FontMonospaceDefault, FontDisplayDefault} from '../fonts/fonts';
 import colors from '../vars/colors';
-import gradients from '../vars/gradients';
 
 // must initialize theme first in order to access breakpoints within theme styles
 let themeDefault = createTheme();

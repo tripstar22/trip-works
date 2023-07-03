@@ -1,5 +1,7 @@
+/* react imports */
 import React from 'react';
 
+/* custom component imports */
 import Contact from '../../components/global/Contact';
 import ProjectDetail from '../../components/project-detail/ProjectDetail';
 import RepositoryCta from '../../components/global/RepositoryCta';

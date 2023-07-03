@@ -11,18 +11,6 @@
   overflow: hidden;
   position: relative;
 
-  &_background,
-  &_video {
-    height: 100%;
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-  &_background {
-    background-color: rgba(33, 33, 33, 0.2);
-    width: 100%;
-  }
   &_buttonContainer {
     text-align: center;
 

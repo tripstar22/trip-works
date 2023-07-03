@@ -25,9 +25,7 @@
   text-align: center;
 
   &_arrow,
-  &_background,
-  &_scrollLink,
-  &_video {
+  &_scrollLink {
     left: 50%;
     position: absolute;
   }
@@ -44,13 +42,6 @@
     &:hover {
       fill: $white;
     }
-  }
-  &_background {
-    background-color: rgba(33, 33, 33, 0.2);
-    height: 100%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
   }
   &_content {
     position: relative;
@@ -87,10 +78,6 @@
     &___home {
       padding-bottom: 0;
     }
-  }
-  &_video {
-    top: 50%;
-    transform: translate(-50%, -50%);
   }
 
   &___home {

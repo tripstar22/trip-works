@@ -14,6 +14,7 @@ const colors = {
   'green': green[700],
   'offWhite': grey[100],
   'red': red[700],
+  'smoke': '#E6E5E5',
   'teal': teal[800],
   'tealDark': teal[900],
   'tealLight': teal[400],

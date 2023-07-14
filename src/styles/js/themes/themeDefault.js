@@ -146,6 +146,14 @@ themeDefault = createTheme(themeDefault, {
         fontSize: 18,
       },
     },
+    body2: {
+      fontFamily: FontSansSerifDefault.style.fontFamily,
+      fontSize: 20,
+      fontWeight: 700,
+      [themeDefault.breakpoints.up('md')]: {
+        fontSize: 22,
+      },
+    },
     fontFamily: FontSansSerifDefault.style.fontFamily,
     fontSize: 16,
     h1: {

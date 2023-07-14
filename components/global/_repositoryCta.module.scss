@@ -8,7 +8,8 @@
 =================================================== */
 
 .repositoryCta {
-  background-color: $offWhite;
+  background-color: $smoke;
+  text-align: center;
 }
 
 /* ===================================================
@@ -31,12 +32,7 @@
   Medium Screens & Up (min-width: 900px)
 =================================================== */
 
-@media screen and (min-width: $screen-md) {
 
-  .repositoryCta {
-    text-align: center;
-  }
-}
 
 /* ===================================================
   END Medium Screens & Up (min-width: 900px)

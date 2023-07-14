@@ -8,7 +8,19 @@
 =================================================== */
 
 .location {
-  background-color: $offWhite;
+  background-color: $smoke;
+
+  &_heading,
+  &_weather {
+    text-align: center;
+  }
+  &_weatherLocation {
+    display: block;
+    font-weight: 400;
+  }
+  &_weatherText {
+    font-weight: 700;
+  }
 }
 
 /* ===================================================
@@ -20,7 +32,15 @@
   Small Screens & Up (min-width: 600px)
 =================================================== */
 
+@media screen and (min-width: $screen-sm) {
 
+  .location {
+
+    &_heading {
+      text-align: left;
+    }
+  }
+}
 
 /* ===================================================
   END Small Screens & Up (min-width: 600px)

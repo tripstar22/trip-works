@@ -1,6 +1,9 @@
 /* react imports */
 import * as React from 'react';
 
+/* dotenv import */
+import 'dotenv/config';
+
 /* custom component imports */
 import About from '../components/about/About';
 import Contact from '../components/global/Contact';

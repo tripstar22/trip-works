@@ -1,18 +1,14 @@
-/*** utilities ***/
+/*** projectDetailSlider ***/
+
+/* imports */
+@import '../../src/styles/scss/vars';
 
 /* ===================================================
   All Screen Sizes
 =================================================== */
 
-.sr-only {
-  border: 0;
-  clip: rect(0,0,0,0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
+.projectDetailSlider {
+  padding-bottom: 60px;
 }
 
 /* ===================================================
@@ -35,7 +31,14 @@
   Medium Screens & Up (min-width: 900px)
 =================================================== */
 
-
+@media screen and (min-width: $screen-md) {
+  
+  .projectDetailSlider {
+    margin-left: 10%;
+    padding-bottom: 80px;
+    width: 90%;
+  }
+}
 
 /* ===================================================
   END Medium Screens & Up (min-width: 900px)
@@ -46,7 +49,10 @@
   Large Screens & Up (min-width: 1200px)
 =================================================== */
 
+@media screen and (min-width: $screen-lg) {
+  
 
+}
 
 /* ===================================================
   END Large Screens & Up (min-width: 1200px)

@@ -8,18 +8,37 @@
 =================================================== */
 
 .location {
-  background-color: $smoke;
+  background-color: $offWhite;
 
   &_heading,
   &_weather {
     text-align: center;
   }
-  &_weatherLocation {
+  &_image {
     display: block;
-    font-weight: 400;
+    margin: 0 auto;
+    width: 64px;
   }
+  &_temp,
   &_weatherText {
     font-weight: 700;
+  }
+  &_temp {
+    display: inline-block;
+    font-size: 40px;
+    line-height: 1;
+    position: relative;
+    right: -6px
+  }
+  &_weather {
+    padding-top: 20px;
+  }
+  &_weatherCurrent {
+    font-weight: 600;
+  }
+  &_weatherLocation {
+    display: block;
+    padding-bottom: 5px;
   }
 }
 
@@ -39,6 +58,13 @@
     &_heading {
       text-align: left;
     }
+    &_temp {
+      font-size: 48px;
+      right: -13px;
+    }
+    &_weather {
+      padding-top: 0;
+    }
   }
 }
 
@@ -51,7 +77,16 @@
   Medium Screens & Up (min-width: 900px)
 =================================================== */
 
+@media screen and (min-width: $screen-sm) {
 
+  .location {
+
+    &_temp {
+      font-size: 64px;
+      right: -11px;
+    }
+  }
+}
 
 /* ===================================================
   END Medium Screens & Up (min-width: 900px)

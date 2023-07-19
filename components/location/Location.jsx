@@ -1,6 +1,9 @@
 /* react imports */
 import React from 'react';
 
+/* libray imports */
+import useSWR from 'swr';
+
 /* mui imports */
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -9,28 +12,29 @@ import Typography from '@mui/material/Typography';
 /* styles imports */
 import classes from './_location.module.scss';
 
+// write a fetcher function to wrap the native fetch function and return the result of a call to url in json format
+const fetchWeatherData = (url) => fetch(url).then((res) => res.json());
+
 function Location() {
 
-  // const weatherData = function handlerLoadWeatherData() {
-  //   fetch('/api/weatherForecast')
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setWeatherItems(data.feedback);
-  //     });
-  // };
+  // set up SWR to run the fetchWeatherData function when calling "/api/weatherForecast"
+  // there are 3 possible states: (1) loading when data is null (2) ready when the data is returned (3) error when there was an error fetching the data
+  const { data, error } = useSWR('/api/weatherForecast', fetchWeatherData);
 
+  // handle the error state
+  if (error) return <div>Failed to load</div>;
+  // handle the loading state
+  if (!data) return <div>Loading...</div>;
+  // handle the ready state and display the result contained in the data object mapped to the structure of the json file
   return (
-    <section
-      className={`section section___paddingSmall ${classes.location}`}
-      onLoad={weatherData()}
-    >
+    <section className={`section section___paddingSmall ${classes.location}`}>
       <Container maxWidth="lg">
         <Grid alignItems="center" container spacing={0}>
           <Grid item xs={12} sm={7} md={8}>
             <Typography
               className={classes.location_heading}
               component="h5"
-              variant="h5"
+              variant="h4"
             >
               I currently live in the Greater Metro Atlanta area, and am also
               open to remote work!
@@ -40,25 +44,29 @@ function Location() {
             <div className={classes.location_weather}>
               <Typography
                 className={classes.location_weatherText}
+                variant="body2"
+              >
+                Current Weather Forecast:{' '}
+              </Typography>
+              <Typography
+                className={classes.location_weatherLocation}
                 gutterBottom
                 variant="body1"
               >
-                Current Weather Forecast:{' '}
-                <span className={classes.location_weatherLocation}>
-                  City, Region
-                </span>
+                {data[0].location}
               </Typography>
               <img
-                src=""
+                src={data[0].icon}
                 alt="current weather icon"
                 className={classes.location_image}
               />
-              <div className={classes.location_temp}>00&deg;</div>
-              <Typography gutterBottom variant="body1">
-                00&#37; Humidity
-              </Typography>
-              <Typography gutterBottom variant="body2">
-                Current Conditions
+              <div className={classes.location_temp}>{data[0].temp}&deg;</div>
+              <Typography
+                className={classes.location_weatherCurrent}
+                gutterBottom
+                variant="body1"
+              >
+                {data[0].conditions}
               </Typography>
             </div>
           </Grid>

@@ -15,6 +15,13 @@ a {
   &:focus {
     color: $tealDark;
   }
+  &:focus {
+    outline: dotted $tealDark;
+  }
+}
+
+.wrapper {
+  padding-top: 80px; // height of sticky header
 }
 
 /* ===================================================
@@ -26,7 +33,12 @@ a {
   Small Screens & Up (min-width: 600px)
 =================================================== */
 
-
+@media screen and (min-width: $screen-sm) {
+  
+  .wrapper {
+    padding-top: 86px; // height of sticky header
+  }
+}
 
 /* ===================================================
   END Small Screens & Up (min-width: 600px)
@@ -37,7 +49,12 @@ a {
   Medium Screens & Up (min-width: 900px)
 =================================================== */
 
-
+@media screen and (min-width: $screen-md) {
+  
+  .wrapper {
+    padding-top: 92px; // height of sticky header
+  }
+}
 
 /* ===================================================
   END Medium Screens & Up (min-width: 900px)

@@ -21,8 +21,6 @@
 =================================================== */
 
 .hero {
-  padding-top: 51px; // height of sticky header
-  text-align: center;
 
   &_arrow,
   &_scrollLink {
@@ -49,14 +47,21 @@
   }
   &_heading,
   &_subheading {
-    color: $white;
-    text-shadow: rgba(33, 33, 33, 0.65) 2px 2px 10px;
+
+    &___home {
+      color: $white;
+      text-shadow: rgba(33, 33, 33, 0.65) 2px 2px 10px;
+    }
   }
   &_heading {
 
     &___home {
       padding-bottom: 0;
       padding-top: 100px;
+    }
+    &___project {
+      color: $tealDark;
+      margin-bottom: 10px;
     }
   }
   &_scrollLink {
@@ -78,12 +83,19 @@
     &___home {
       padding-bottom: 0;
     }
+    &___project {
+      padding-bottom: 30px;
+    }
   }
 
   &___home {
     min-height: 600px;
     overflow: hidden;
     position: relative;
+    text-align: center;
+  }
+  &___project {
+    padding-top: 60px;
   }
 }
 
@@ -101,7 +113,10 @@
   .hero {
 
     &_heading {
-      padding-top: 150px;
+
+      &___home {
+        padding-top: 150px;
+      }
     }
   }
 }
@@ -120,11 +135,23 @@
   .hero {
 
     &_heading {
-      font-size: 120px;
+
+      &___home {
+        font-size: 120px;
+      }
+    }
+    &_subheading {
+
+      &___project {
+        padding-bottom: 40px;
+      }
     }
 
     &___home {
-      min-height: 100vh;
+      min-height: calc(100vh - 92px);
+    }
+    &___project {
+      padding-top: 80px;
     }
   }
 }
@@ -141,10 +168,12 @@
 @media screen and (min-width: $screen-lg) {
   
   .hero {
-    min-height: 100vh;
 
     &_heading {
-      padding-top: 200px;
+
+      &___home {
+        padding-top: 200px;
+      }
     }
   }
 }

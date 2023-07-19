@@ -11,15 +11,17 @@ function AppLayout(props) {
   const { children } = props;
   return (
     <>
-      <span className="sr-only">
-        <a href="#page-top">Skip to Content</a>
+      <span className="srOnly">
+        <a href="#pageTop" className="pageTop">Skip to Content</a>
       </span>
-      <AppHeader />
-      <main id="page-top">
-        {children}
-        <BackToTop />
-      </main>
-      <AppFooter />
+      <div className="wrapper">
+        <AppHeader />
+        <main id="pageTop">
+          {children}
+          <BackToTop />
+        </main>
+        <AppFooter />
+      </div>
     </>
   );
 }

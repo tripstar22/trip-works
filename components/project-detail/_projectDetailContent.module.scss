@@ -1,4 +1,4 @@
-/*** pagenotfound ***/
+/*** projectDetailContent ***/
 
 /* imports */
 @import '../../src/styles/scss/vars';
@@ -7,32 +7,11 @@
   All Screen Sizes
 =================================================== */
 
-.pagenotfound {
-  overflow: hidden;
-  position: relative;
+.projectDetailContent {
+  padding-bottom: 60px;
 
-  &_container {
-    padding: 80px 0;
-  }
-  &_inner,
-  &_link {
-    color: $white;
-  }
-  &_inner {
-    background-color: transparent;
-    backdrop-filter: blur(40px);
-    padding: 50px 0;
-    position: relative;
-    text-align: center;
-    z-index: 1;
-  }
-  &_link {
-    transition: opacity $transitionDefault;
-    
-    &:hover,
-    &:focus {
-      color: $white;
-    }
+  &_text {
+    padding-bottom: 30px;
   }
 }
 
@@ -45,15 +24,7 @@
   Small Screens & Up (min-width: 600px)
 =================================================== */
 
-@media screen and (min-width: $screen-sm) {
 
-  .pagenotfound {
-
-    &_container {
-      padding: 150px 0;
-    }
-  }
-}
 
 /* ===================================================
   END Small Screens & Up (min-width: 600px)
@@ -65,11 +36,12 @@
 =================================================== */
 
 @media screen and (min-width: $screen-md) {
+  
+  .projectDetailContent {
+    padding-bottom: 80px;
 
-  .pagenotfound {
-
-    &_inner {
-      padding: 70px 0;
+    &_text {
+      padding-bottom: 0;
     }
   }
 }
@@ -85,12 +57,7 @@
 
 @media screen and (min-width: $screen-lg) {
   
-  .pagenotfound {
-    
-    &_inner {
-      padding: 80px 0;
-    }
-  }
+
 }
 
 /* ===================================================

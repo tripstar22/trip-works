@@ -148,10 +148,10 @@ themeDefault = createTheme(themeDefault, {
     },
     body2: {
       fontFamily: FontSansSerifDefault.style.fontFamily,
-      fontSize: 20,
+      fontSize: 18,
       fontWeight: 700,
       [themeDefault.breakpoints.up('md')]: {
-        fontSize: 22,
+        fontSize: 20,
       },
     },
     fontFamily: FontSansSerifDefault.style.fontFamily,
@@ -160,7 +160,7 @@ themeDefault = createTheme(themeDefault, {
       fontFamily: FontDisplayDefault,
       fontSize: 64,
       lineHeight: 1,
-      [themeDefault.breakpoints.up('sm')]: {
+      [themeDefault.breakpoints.up('md')]: {
         fontSize: 96,
       },
     },
@@ -197,7 +197,7 @@ themeDefault = createTheme(themeDefault, {
       fontFamily: FontMonospaceDefault.style.fontFamily,
       fontSize: 24,
       fontWeight: 300,
-      lineHeight: 1,
+      lineHeight: 1.4,
       paddingBottom: 10,
       [themeDefault.breakpoints.up('md')]: {
         fontSize: 32,

@@ -28,13 +28,13 @@ function BackToTop() {
     <Fade in={trigger}>
       <div>
         <AppLink
-          href="#page-top"
-          className={classes.backtotop}
-          dataTarget="page-top"
+          href="#pageTop"
+          className={classes.backToTop}
+          dataTarget="pageTop"
           onClick={aniScroll}
         >
           <Fab aria-label="scroll back to top" size="small">
-            <KeyboardArrowUp className={classes.backtotop_icon} />
+            <KeyboardArrowUp className={classes.backToTop_icon} />
           </Fab>
         </AppLink>
       </div>

@@ -7,21 +7,19 @@ import AppFooter from './AppFooter';
 import AppHeader from './AppHeader';
 import BackToTop from '../utilities/BackToTop';
 
-function AppLayout(props) {
+function AppLayout (props) {
   const { children } = props;
   return (
     <>
       <span className="srOnly">
         <a href="#pageTop" className="pageTop">Skip to Content</a>
       </span>
-      <div className="wrapper">
-        <AppHeader />
-        <main id="pageTop">
-          {children}
-          <BackToTop />
-        </main>
-        <AppFooter />
-      </div>
+      <AppHeader />
+      <main id="pageTop">
+        {children}
+        <BackToTop />
+      </main>
+      <AppFooter />
     </>
   );
 }

@@ -20,7 +20,7 @@ import aniScroll from '../../modules/aniScroll';
 /* styles imports */
 import classes from './_hero.module.scss';
 
-function HomeHero() {
+function HomeHero () {
   return (
     <section className={`${classes.hero} ${classes.hero___home}`}>
       <BackgroundVideo

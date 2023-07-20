@@ -15,7 +15,7 @@ import classes from './_location.module.scss';
 // write a fetcher function to wrap the native fetch function and return the result of a call to url in json format
 const fetchWeatherData = (url) => fetch(url).then((res) => res.json());
 
-function Location() {
+function Location () {
 
   // set up SWR to run the fetchWeatherData function when calling "/api/weatherForecast"
   // there are 3 possible states: (1) loading when data is null (2) ready when the data is returned (3) error when there was an error fetching the data

@@ -1,101 +1,75 @@
-/*** appSlider ***/
-
-/* These styles need to be in the global scss folder since they are not items specifically written out within a components html markup. Css modules will skip over any styles that are not associated with a class that is written out in an associated component. */
+/*** carousel ***/
 
 /* imports */
-@import '../vars';
+@import '../../src/styles/scss/vars';
 
 /* ===================================================
   All Screen Sizes
 =================================================== */
 
-.appSlider {
-
-  &_dots {
-    display: block;
-    left: 50%;
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-    text-align: center;
-
-    li, 
-    li button {
-      height: 20px;
-      width: 20px;
-    }
-    li {
-      display: inline-block;
-      line-height: 0;
-      margin: 0 5px;
-      position: relative;
-    }
-    li.slick-active button {
-
-      &::before {
-        opacity: 1;
-      }
-    }
-    li button {
-      appearance: none;
-      background-color: transparent;
-      border: 0;
-      color: transparent;
-      cursor: pointer;
-      font-size: 0;
-      line-height: 0;
-      padding: 5px;
-      position: relative;
-
-      &::before {
-        background-color: $black;
-        border-radius: 100%;
-        content: "";
-        height: 10px;
-        left: 50%;
-        line-height: 20px;
-        position: absolute;
-        opacity: 0.65;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        transition: opacity $transitionDefault;
-        width: 10px;
-      }
-    }
-  }
+.carousel {
+  margin: 0 auto;
+  padding-bottom: 60px;
+  width: 94%;
 }
 
 /* ===================================================
   END All Screen Sizes
 =================================================== */
 
+
 /* ===================================================
   Small Screens & Up (min-width: 600px)
 =================================================== */
+
+
 
 /* ===================================================
   END Small Screens & Up (min-width: 600px)
 =================================================== */
 
+
 /* ===================================================
   Medium Screens & Up (min-width: 900px)
 =================================================== */
+
+@media screen and (min-width: $screen-md) {
+  
+  .carousel {
+    margin: 0 7%;
+    padding-bottom: 0;
+    width: 86%;
+  }
+}
 
 /* ===================================================
   END Medium Screens & Up (min-width: 900px)
 =================================================== */
 
+
 /* ===================================================
   Large Screens & Up (min-width: 1200px)
 =================================================== */
+
+@media screen and (min-width: $screen-lg) {
+  
+  .carousel {
+    margin: 0 0 0 10%;
+    padding-bottom: 0;
+    width: 90%;
+  }
+}
 
 /* ===================================================
   END Large Screens & Up (min-width: 1200px)
 =================================================== */
 
+
 /* ===================================================
   Extra-Large Screens & Up (min-width: 1536px)
 =================================================== */
+
+
 
 /* ===================================================
   END Extra-Large Screens & Up (min-width: 1536px)

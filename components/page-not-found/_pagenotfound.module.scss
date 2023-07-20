@@ -9,6 +9,7 @@
 
 .pagenotfound {
   overflow: hidden;
+  padding-top: 80px; // height of sticky header
   position: relative;
 
   &_container {
@@ -48,6 +49,7 @@
 @media screen and (min-width: $screen-sm) {
 
   .pagenotfound {
+    padding-top: 86px; // height of sticky header
 
     &_container {
       padding: 150px 0;
@@ -67,6 +69,7 @@
 @media screen and (min-width: $screen-md) {
 
   .pagenotfound {
+    padding-top: 92px; // height of sticky header
 
     &_inner {
       padding: 70px 0;

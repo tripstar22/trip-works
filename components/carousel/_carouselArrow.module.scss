@@ -1,26 +1,34 @@
-/*** base ***/
+/*** carouselArrow ***/
 
 /* imports */
-@import '../vars';
+@import '../../src/styles/scss/vars';
 
 /* ===================================================
   All Screen Sizes
 =================================================== */
 
-a, 
-button {
-  
-  &:focus {
-    outline: dotted $tealDark;
-  }
-}
-a {
-  color: $teal;
-  transition: color $transitionDefault;
+.carouselArrow {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0;
+  position: absolute;
+  top: 39%;
+  z-index: 1;
 
-  &:hover,
-  &:focus {
-    color: $tealDark;
+  &_icon {
+    fill: $black;
+
+    &:hover {
+      fill: $black;
+    }
+  }
+
+  &___next {
+    right: -35px;
+  }
+  &___prev {
+    left: -35px;
   }
 }
 
@@ -44,7 +52,18 @@ a {
   Medium Screens & Up (min-width: 900px)
 =================================================== */
 
+@media screen and (min-width: $screen-md) {
 
+  .carouselArrow {
+
+    &___next {
+      right: -30px;
+    }
+    &___prev {
+      left: -30px;
+    }
+  }
+}
 
 /* ===================================================
   END Medium Screens & Up (min-width: 900px)
@@ -55,7 +74,18 @@ a {
   Large Screens & Up (min-width: 1200px)
 =================================================== */
 
+@media screen and (min-width: $screen-lg) {
 
+  .carouselArrow {
+
+    &___next {
+      right: -35px;
+    }
+    &___prev {
+      left: -35px;
+    }
+  }
+}
 
 /* ===================================================
   END Large Screens & Up (min-width: 1200px)

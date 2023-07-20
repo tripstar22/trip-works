@@ -14,7 +14,7 @@ import BackgroundVideo from '../ui/BackgroundVideo';
 /* styles imports */
 import classes from './_pagenotfound.module.scss';
 
-function PageNotFound() {
+function PageNotFound () {
   return (
     <section className={classes.pagenotfound}>
       <BackgroundVideo

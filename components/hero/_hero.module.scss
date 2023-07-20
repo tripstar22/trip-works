@@ -21,6 +21,7 @@
 =================================================== */
 
 .hero {
+  padding-top: 80px; // height of sticky header
 
   &_arrow,
   &_scrollLink {
@@ -87,15 +88,15 @@
       padding-bottom: 30px;
     }
   }
+  &_text {
+    padding-top: 60px;
+  }
 
   &___home {
     min-height: 600px;
     overflow: hidden;
     position: relative;
     text-align: center;
-  }
-  &___project {
-    padding-top: 60px;
   }
 }
 
@@ -111,6 +112,7 @@
 @media screen and (min-width: $screen-sm) {
   
   .hero {
+    padding-top: 86px; // height of sticky header
 
     &_heading {
 
@@ -133,6 +135,7 @@
 @media screen and (min-width: $screen-md) {
   
   .hero {
+    padding-top: 92px; // height of sticky header
 
     &_heading {
 
@@ -146,12 +149,12 @@
         padding-bottom: 40px;
       }
     }
+    &_text {
+      padding-top: 80px;
+    }
 
     &___home {
       min-height: calc(100vh - 92px);
-    }
-    &___project {
-      padding-top: 80px;
     }
   }
 }

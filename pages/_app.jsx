@@ -19,7 +19,7 @@ import 'dotenv/config';
 import createEmotionCache from '../src/styles/js/createEmotionCache';
 import '../src/styles/scss/_fonts.scss';
 import '../src/styles/scss/global/_base.scss';
-import '../src/styles/scss/global/_appSlider.scss';
+import '../src/styles/scss/global/_appCarousel.scss';
 import '../src/styles/scss/global/_section.scss';
 import '../src/styles/scss/global/_utilities.scss';
 import themeDefault from '../src/styles/js/themes/themeDefault';

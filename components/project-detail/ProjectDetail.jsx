@@ -5,7 +5,7 @@ import React from 'react';
 import ProjectDetailHero from '../hero/ProjectDetailHero';
 import ProjectDetailContent from './ProjectDetailContent';
 
-function ProjectDetail() {
+function ProjectDetail () {
   return (
     <div>
       <ProjectDetailHero />

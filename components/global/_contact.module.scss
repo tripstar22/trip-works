@@ -31,6 +31,13 @@
     color: $white;
     text-align: center;
   }
+  &_link,
+  &_submit {
+
+    &:focus {
+      outline: none;
+    }
+  }
   &_link {
     background-color: $offWhite;
     color: $teal;

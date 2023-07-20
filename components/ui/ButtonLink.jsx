@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 /* mui imports */
 import Button from '@mui/material/Button';
 
-function ButtonLink(props) {
+function ButtonLink (props) {
   const { children } = props;
   return (
     <Button

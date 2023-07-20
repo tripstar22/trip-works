@@ -20,7 +20,7 @@ import Logo from '../../src/svg/logos/logo.svg';
 /* styles imports */
 import classes from './_header.module.scss';
 
-function HideHeaderOnScroll(props) {
+function HideHeaderOnScroll (props) {
   const { children } = props;
   const trigger = useScrollTrigger();
 
@@ -35,14 +35,14 @@ HideHeaderOnScroll.propTypes = {
   children: PropTypes.element.isRequired,
 };
 
-function AppHeader() {
+function AppHeader () {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleOpen = function handlerMenuOpen() {
+  const toggleOpen = function handlerMenuOpen () {
     setMenuOpen(true);
   };
 
-  const toggleClose = function handlerMenuClose(event) {
+  const toggleClose = function handlerMenuClose (event) {
     setMenuOpen(false);
   };
 

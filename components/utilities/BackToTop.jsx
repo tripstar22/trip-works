@@ -18,7 +18,7 @@ import aniScroll from '../../modules/aniScroll';
 /* styles imports */
 import classes from './_backtotop.module.scss';
 
-function BackToTop() {
+function BackToTop () {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 100,

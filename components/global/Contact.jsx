@@ -19,7 +19,7 @@ import aniType from '../../modules/aniType';
 /* styles imports */
 import classes from './_contact.module.scss';
 
-function Contact() {
+function Contact () {
   return (
     <section className={`section ${classes.contact}`} id="contact">
       <BackgroundVideo
@@ -116,7 +116,7 @@ function Contact() {
                 </Grid>
                 <Grid item xs={12}>
                   <div className={classes.contact_buttonContainer}>
-                    <ButtonAction>Submit</ButtonAction>
+                    <ButtonAction className={classes.contact_submit}>Submit</ButtonAction>
                   </div>
                 </Grid>
               </Grid>

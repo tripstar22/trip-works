@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 /* styles imports */
 import classes from './_repositoryCta.module.scss';
 
-function RepositoryCta() {
+function RepositoryCta () {
   return (
     <section
       className={`section section___paddingSmall ${classes.repositoryCta}`}

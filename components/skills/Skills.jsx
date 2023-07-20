@@ -19,7 +19,7 @@ import IconScss from '../../src/svg/icons/iconScss.svg';
 /* styles imports */
 import classes from './_skills.module.scss';
 
-function Skills() {
+function Skills () {
   return (
     <section className={`section ${classes.skills}`} id="skills">
       <Container maxWidth="lg">

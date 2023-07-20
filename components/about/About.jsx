@@ -15,7 +15,7 @@ import Location from '../location/Location';
 /* styles imports */
 import classes from './_about.module.scss';
 
-function About() {
+function About () {
   return (
     <section
       className={`section section___noPaddingBottom ${classes.about}`}

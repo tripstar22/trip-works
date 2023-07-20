@@ -13,22 +13,29 @@ import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardMedia from '@mui/material/CardMedia';
 
-/* styles imports */
-import classes from './_projectDetailSlider.module.scss';
+/* custom component imports */
+import CarouselArrowNext from './CarouselArrowNext';
+import CarouselArrowPrev from './CarouselArrowPrev';
 
-function ProjectDetailSlider() {
+/* styles imports */
+import classes from './_carousel.module.scss';
+
+function Carousel () {
   var sliderSettings = {
     dots: true,
-    dotsClass: 'appSlider_dots',
+    dotsClass: 'appCarousel_dots',
+    fade: true,
+    nextArrow: <CarouselArrowNext />,
+    prevArrow: <CarouselArrowPrev />,
     speed: 250,
   };
 
   return (
-    <div className={`${classes.projectDetailSlider} appSlider`}>
-      <Slider {...sliderSettings} className={classes.projectDetailSlider_slider}>
-        <div className={classes.projectDetailSlider_slide}>
-          <Card className={classes.projectDetailSlider_card}>
-            <CardActionArea className={classes.projectDetailSlider_link}>
+    <div className={`${classes.carousel} appSlider`}>
+      <Slider {...sliderSettings} className={classes.carousel_slider}>
+        <div className={classes.carousel_slide}>
+          <Card className={classes.carousel_card}>
+            <CardActionArea className={classes.carousel_link}>
               <CardMedia
                 alt="write description here"
                 component="img"
@@ -38,9 +45,9 @@ function ProjectDetailSlider() {
             </CardActionArea>
           </Card>
         </div>
-        <div className={classes.projectDetailSlider_slide}>
-          <Card className={classes.projectDetailSlider_card}>
-            <CardActionArea className={classes.projectDetailSlider_link}>
+        <div className={classes.carousel_slide}>
+          <Card className={classes.carousel_card}>
+            <CardActionArea className={classes.carousel_link}>
               <CardMedia
                 alt="write description here"
                 component="img"
@@ -50,9 +57,9 @@ function ProjectDetailSlider() {
             </CardActionArea>
           </Card>
         </div>
-        <div className={classes.projectDetailSlider_slide}>
-          <Card className={classes.projectDetailSlider_card}>
-            <CardActionArea className={classes.projectDetailSlider_link}>
+        <div className={classes.carousel_slide}>
+          <Card className={classes.carousel_card}>
+            <CardActionArea className={classes.carousel_link}>
               <CardMedia
                 alt="write description here"
                 component="img"
@@ -67,4 +74,4 @@ function ProjectDetailSlider() {
   );
 }
 
-export default ProjectDetailSlider;
+export default Carousel;

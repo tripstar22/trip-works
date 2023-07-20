@@ -17,7 +17,7 @@ import Typography from '@mui/material/Typography';
 /* styles imports */
 import classes from './_projects.module.scss';
 
-function Projects() {
+function Projects () {
   return (
     <section id="work" className={`section ${classes.projects}`}>
       <Container maxWidth="lg">

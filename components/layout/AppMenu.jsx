@@ -19,7 +19,7 @@ import AppLink from '../ui/AppLink';
 /* styles imports */
 import classes from './_appmenu.module.scss';
 
-function AppMenu({ toggleClose, menuOpen }) {
+function AppMenu ({ toggleClose, menuOpen }) {
   return (
     <div className={classes.appmenu}>
       <Drawer anchor="left" open={menuOpen}>

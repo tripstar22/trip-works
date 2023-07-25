@@ -11,6 +11,11 @@
   margin: 0 auto;
   padding-bottom: 60px;
   width: 94%;
+
+  &_link {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 /* ===================================================

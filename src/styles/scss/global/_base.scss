@@ -7,13 +7,6 @@
   All Screen Sizes
 =================================================== */
 
-a, 
-button {
-  
-  &:focus {
-    outline: dotted $tealDark;
-  }
-}
 a {
   color: $teal;
   transition: color $transitionDefault;

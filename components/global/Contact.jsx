@@ -116,7 +116,7 @@ function Contact () {
                 </Grid>
                 <Grid item xs={12}>
                   <div className={classes.contact_buttonContainer}>
-                    <ButtonAction className={classes.contact_submit}>Submit</ButtonAction>
+                    <ButtonAction>Submit</ButtonAction>
                   </div>
                 </Grid>
               </Grid>

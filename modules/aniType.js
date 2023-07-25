@@ -8,16 +8,16 @@ import { useEffect } from 'react';
 /* library imports */
 import Typed from 'typed.js';
 
-const aniType = function handlerAnimatedType (
-  backspace, 
-  backspaceSpeed, 
-  cursor, 
-  delay, 
-  element, 
-  infinite, 
-  speed, 
+const aniType = function handlerAnimatedType(
+  backspace,
+  backspaceSpeed,
+  cursor,
+  delay,
+  element,
+  infinite,
+  speed,
   text
-  ) {
+) {
   useEffect(() => {
     const animatedElement = document.getElementById(element);
     const animatedOptions = {

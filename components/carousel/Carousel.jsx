@@ -1,5 +1,5 @@
 /* react imports */
-import React from 'react';
+import React, { useState } from 'react';
 
 /* library imports */
 import Slider from 'react-slick';
@@ -14,13 +14,25 @@ import CardActionArea from '@mui/material/CardActionArea';
 import CardMedia from '@mui/material/CardMedia';
 
 /* custom component imports */
+import AppModal from '../app-modal/AppModal';
 import CarouselArrowNext from './CarouselArrowNext';
 import CarouselArrowPrev from './CarouselArrowPrev';
 
 /* styles imports */
 import classes from './_carousel.module.scss';
 
-function Carousel () {
+function Carousel() {
+  const [open, setOpen] = useState(false);
+
+  const toggleModalOpen = function handlerToggleModalOpen() {
+    setOpen(true);
+  };
+
+  const toggleModalClose = function handlerToggleModalClose() {
+    console.log(false);
+    setOpen(false);
+  };
+
   var sliderSettings = {
     dots: true,
     dotsClass: 'appCarousel_dots',
@@ -31,11 +43,14 @@ function Carousel () {
   };
 
   return (
-    <div className={`${classes.carousel} appSlider`}>
+    <div className={`${classes.carousel} appCarousel`}>
       <Slider {...sliderSettings} className={classes.carousel_slider}>
         <div className={classes.carousel_slide}>
           <Card className={classes.carousel_card}>
-            <CardActionArea className={classes.carousel_link}>
+            <CardActionArea
+              className={classes.carousel_link}
+              onClick={toggleModalOpen}
+            >
               <CardMedia
                 alt="write description here"
                 component="img"
@@ -70,6 +85,7 @@ function Carousel () {
           </Card>
         </div>
       </Slider>
+      {open && <AppModal open={open} modalOff={toggleModalClose} />}
     </div>
   );
 }

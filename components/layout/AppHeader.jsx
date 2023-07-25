@@ -20,7 +20,7 @@ import Logo from '../../src/svg/logos/logo.svg';
 /* styles imports */
 import classes from './_header.module.scss';
 
-function HideHeaderOnScroll (props) {
+function HideHeaderOnScroll(props) {
   const { children } = props;
   const trigger = useScrollTrigger();
 
@@ -35,14 +35,14 @@ HideHeaderOnScroll.propTypes = {
   children: PropTypes.element.isRequired,
 };
 
-function AppHeader () {
+function AppHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleOpen = function handlerMenuOpen () {
+  const toggleMenuOpen = function handlerToggleMenuOpen() {
     setMenuOpen(true);
   };
 
-  const toggleClose = function handlerMenuClose (event) {
+  const toggleMenuClose = function handlerToggleMenuClose() {
     setMenuOpen(false);
   };
 
@@ -52,10 +52,10 @@ function AppHeader () {
         <div className={classes.header}>
           <Grid container spacing={0} className={classes.header_grid}>
             <Grid item xs={3}>
-              <IconButton aria-label="open menu" onClick={toggleOpen}>
+              <IconButton onClick={toggleMenuOpen} aria-label="open menu">
                 <Menu />
               </IconButton>
-              <AppMenu toggleClose={toggleClose} menuOpen={menuOpen} />
+              <AppMenu menuOpen={menuOpen} toggleMenuClose={toggleMenuClose} />
             </Grid>
             <Grid item xs={6}>
               <div className={classes.header_logo}>

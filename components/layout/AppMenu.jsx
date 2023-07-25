@@ -19,13 +19,13 @@ import AppLink from '../ui/AppLink';
 /* styles imports */
 import classes from './_appmenu.module.scss';
 
-function AppMenu ({ toggleClose, menuOpen }) {
+function AppMenu({ menuOpen, toggleMenuClose }) {
   return (
     <div className={classes.appmenu}>
       <Drawer anchor="left" open={menuOpen}>
         <Grid container>
           <Grid item xs={12} className={classes.appmenu_grid}>
-            <IconButton aria-label="close menu" onClick={toggleClose}>
+            <IconButton aria-label="close menu" onClick={toggleMenuClose}>
               <Close />
             </IconButton>
           </Grid>
@@ -34,35 +34,35 @@ function AppMenu ({ toggleClose, menuOpen }) {
           <List>
             <ListItem className={classes.appmenu_listItem}>
               <ListItemButton className={classes.appmenu_listItemButton}>
-                <AppLink href="/" onClick={toggleClose}>
+                <AppLink href="/" onClick={toggleMenuClose}>
                   Home
                 </AppLink>
               </ListItemButton>
             </ListItem>
             <ListItem className={classes.appmenu_listItem}>
               <ListItemButton className={classes.appmenu_listItemButton}>
-                <AppLink href="/#about" onClick={toggleClose}>
+                <AppLink href="/#about" onClick={toggleMenuClose}>
                   About
                 </AppLink>
               </ListItemButton>
             </ListItem>
             <ListItem className={classes.appmenu_listItem}>
               <ListItemButton className={classes.appmenu_listItemButton}>
-                <AppLink href="/#skills" onClick={toggleClose}>
+                <AppLink href="/#skills" onClick={toggleMenuClose}>
                   Skills
                 </AppLink>
               </ListItemButton>
             </ListItem>
             <ListItem className={classes.appmenu_listItem}>
               <ListItemButton className={classes.appmenu_listItemButton}>
-                <AppLink href="/#work" onClick={toggleClose}>
+                <AppLink href="/#work" onClick={toggleMenuClose}>
                   Work
                 </AppLink>
               </ListItemButton>
             </ListItem>
             <ListItem className={classes.appmenu_listItem}>
               <ListItemButton className={classes.appmenu_listItemButton}>
-                <AppLink href="/#contact" onClick={toggleClose}>
+                <AppLink href="/#contact" onClick={toggleMenuClose}>
                   Contact
                 </AppLink>
               </ListItemButton>
@@ -71,7 +71,7 @@ function AppMenu ({ toggleClose, menuOpen }) {
               <ListItemButton className={classes.appmenu_listItemButton}>
                 <AppLink
                   href="/files/trip-pruitt-resume.pdf"
-                  onClick={toggleClose}
+                  onClick={toggleMenuClose}
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -87,8 +87,8 @@ function AppMenu ({ toggleClose, menuOpen }) {
 }
 
 AppMenu.propTypes = {
-  toggleClose: PropTypes.func.isRequired,
   menuOpen: PropTypes.bool.isRequired,
+  toggleMenuClose: PropTypes.func.isRequired,
 };
 
 export default AppMenu;

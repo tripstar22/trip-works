@@ -25,7 +25,7 @@ function AppMenu({ menuOpen, toggleMenuClose }) {
       <Drawer anchor="left" open={menuOpen}>
         <Grid container>
           <Grid item xs={12} className={classes.appmenu_grid}>
-            <IconButton aria-label="close menu" onClick={toggleMenuClose}>
+            <IconButton onClick={toggleMenuClose} aria-label="close menu">
               <Close />
             </IconButton>
           </Grid>

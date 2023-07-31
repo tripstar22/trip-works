@@ -46,12 +46,10 @@ function AppFooter () {
                 'aniFooterHeading',
                 false,
                 50,
-                ['Front-End ^300 Engineer']
+                ['Frontend ^200 Engineer']
               )}
               variant="h4"
-            >
-              Trip Pruitt - Front End Engineer
-            </Typography>
+            />
           </Grid>
           <Grid item xs={12} md={4}>
             <nav>

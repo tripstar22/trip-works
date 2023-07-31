@@ -9,6 +9,13 @@ let themeDefault = createTheme();
 // basic theme
 themeDefault = createTheme(themeDefault, {
   components: {
+    MuiBackdrop: {
+      styleOverrides: {
+        root: {
+          backgroundColor: 'rgba(0, 0, 0, 0.7)',
+        },
+      },
+    },
     MuiButton: {
       styleOverrides: {
         root: {
@@ -166,13 +173,10 @@ themeDefault = createTheme(themeDefault, {
     },
     h2: {
       fontFamily: FontMonospaceDefault.style.fontFamily,
-      fontSize: 40,
+      fontSize: 44,
       fontWeight: 300,
       lineHeight: 1.1,
       paddingBottom: 20,
-      [themeDefault.breakpoints.up('sm')]: {
-        fontSize: 48,
-      },
       [themeDefault.breakpoints.up('md')]: {
         fontSize: 64,
         paddingBottom: 30,
@@ -180,13 +184,13 @@ themeDefault = createTheme(themeDefault, {
     },
     h3: {
       fontFamily: FontMonospaceDefault.style.fontFamily,
-      fontSize: 36,
+      fontSize: 32,
       fontWeight: 300,
-      lineHeight: 1.1,
+      lineHeight: 1.2,
       paddingBottom: 20,
       [themeDefault.breakpoints.up('md')]: {
-        fontSize: 40,
-        lineHeight: 1.2,
+        fontSize: 42,
+        lineHeight: 1.4,
         paddingBottom: 30,
       },
       [themeDefault.breakpoints.up('lg')]: {
@@ -200,19 +204,16 @@ themeDefault = createTheme(themeDefault, {
       lineHeight: 1.4,
       paddingBottom: 10,
       [themeDefault.breakpoints.up('md')]: {
-        fontSize: 32,
+        fontSize: 30,
         paddingBottom: 20,
       },
     },
     h5: {
       fontFamily: FontMonospaceDefault.style.fontFamily,
-      fontSize: 20,
+      fontSize: 22,
       fontWeight: 300,
       lineHeight: 1.3,
       paddingBottom: 20,
-      [themeDefault.breakpoints.up('md')]: {
-        fontSize: 24,
-      },
     },
     h6: {
       fontFamily: FontMonospaceDefault.style.fontFamily,

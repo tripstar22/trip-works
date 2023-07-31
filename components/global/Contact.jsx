@@ -32,23 +32,25 @@ function Contact () {
       <Container maxWidth="lg">
         <Grid container spacing={0}>
           <Grid item xs={12}>
-            <Typography
-              className={classes.contact_heading}
-              component="h2"
-              gutterBottom
-              id="aniContactHeading"
-              onLoad={aniType(
-                false,
-                0,
-                false,
-                200,
-                'aniContactHeading',
-                false,
-                50,
-                ['Y‘all ready ^100 to code?']
-              )}
-              variant="h2"
-            />
+            <div className={classes.contact_heading}>
+              <Typography
+                className={classes.contact_headingHeading}
+                component="h2"
+                gutterBottom
+                id="aniContactHeading"
+                onLoad={aniType(
+                  false,
+                  0,
+                  false,
+                  200,
+                  'aniContactHeading',
+                  false,
+                  50,
+                  ['Let‘s connect']
+                )}
+                variant="h2"
+              />
+            </div>
             <div
               className={`${classes.contact_buttonContainer} ${classes.contact_buttonContainer___paddingBottom}`}
             >

@@ -77,7 +77,7 @@
   Medium Screens & Up (min-width: 900px)
 =================================================== */
 
-@media screen and (min-width: $screen-sm) {
+@media screen and (min-width: $screen-md) {
 
   .location {
 
@@ -97,7 +97,15 @@
   Large Screens & Up (min-width: 1200px)
 =================================================== */
 
+@media screen and (min-width: $screen-md) {
 
+  .location {
+
+    &_heading {
+      width: 85%;
+    }
+  }
+}
 
 /* ===================================================
   END Large Screens & Up (min-width: 1200px)

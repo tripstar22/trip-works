@@ -6,10 +6,13 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
+/* custom module imports */
+import aniType from '../../modules/aniType';
+
 /* styles imports */
 import classes from './_hero.module.scss';
 
-function ProjectDetailHero () {
+function ProjectDetailHero() {
   return (
     <section className={classes.hero}>
       <Container maxWidth="lg">
@@ -31,9 +34,20 @@ function ProjectDetailHero () {
                 variant="h4"
               >
                 My Role:{' '}
-                <span className={classes.hero_subheadingJob}>
-                  Lead Front End Engineer
-                </span>
+                <span
+                  className={classes.hero_subheadingJob}
+                  id="aniJobTitle"
+                  onLoad={aniType(
+                    false,
+                    0,
+                    false,
+                    200,
+                    'aniJobTitle',
+                    false,
+                    50,
+                    ['Lead Front End Engineer']
+                  )}
+                />
               </Typography>
             </div>
           </Grid>

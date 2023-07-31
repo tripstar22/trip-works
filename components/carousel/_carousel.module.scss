@@ -9,8 +9,8 @@
 
 .carousel {
   margin: 0 auto;
-  padding-bottom: 60px;
-  width: 94%;
+  padding-bottom: 0;
+  width: 100%;
 
   &_link {
     position: relative;
@@ -38,14 +38,7 @@
   Medium Screens & Up (min-width: 900px)
 =================================================== */
 
-@media screen and (min-width: $screen-md) {
-  
-  .carousel {
-    margin: 0 7%;
-    padding-bottom: 0;
-    width: 86%;
-  }
-}
+
 
 /* ===================================================
   END Medium Screens & Up (min-width: 900px)
@@ -56,14 +49,7 @@
   Large Screens & Up (min-width: 1200px)
 =================================================== */
 
-@media screen and (min-width: $screen-lg) {
-  
-  .carousel {
-    margin: 0 0 0 10%;
-    padding-bottom: 0;
-    width: 90%;
-  }
-}
+
 
 /* ===================================================
   END Large Screens & Up (min-width: 1200px)

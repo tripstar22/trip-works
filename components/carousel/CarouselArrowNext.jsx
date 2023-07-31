@@ -1,24 +1,23 @@
 /* react imports */
 import React from 'react';
 
-/* mui icon imports */
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+/* mui imports */
+import IconButton from '@mui/material/IconButton';
 
 /* styles imports */
 import classes from './_carouselArrow.module.scss';
 
-function CarouselArrowNext (props) {
-  const { onClick } = props;
+function CarouselArrowNext(props) {
+  const { children, onClick } = props;
 
   return (
-    <button
-      aria-label="next"
+    <IconButton
       className={`${classes.carouselArrow} ${classes.carouselArrow___next}`}
       onClick={onClick}
-      type="button"
+      aria-label="next"
     >
-      <KeyboardArrowRightIcon className={classes.carouselArrow_icon} />
-    </button>
+      {children}
+    </IconButton>
   );
 }
 

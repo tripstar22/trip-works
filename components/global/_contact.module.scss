@@ -23,11 +23,14 @@
     backdrop-filter: blur(40px);
     padding: 50px 0;
   }
-  &_heading,
+  &_heading {
+    min-height: 69px;
+  }
+  &_headingHeading,
   &_link {
     position: relative;
   }
-  &_heading {
+  &_headingHeading {
     color: $white;
     text-align: center;
   }
@@ -83,6 +86,9 @@
     }
     &_container {
       padding: 70px 0;
+    }
+    &_heading {
+      min-height: 101px;
     }
   }
 }

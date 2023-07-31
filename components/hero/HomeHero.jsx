@@ -55,7 +55,7 @@ function HomeHero () {
                   'aniHeroHeading',
                   false,
                   50,
-                  ['Front-End ^300 Engineer']
+                  ['Frontend ^200 Engineer']
                 )}
                 variant="h4"
               />

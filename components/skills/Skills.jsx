@@ -6,6 +6,9 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
+/* custom module imports */
+import aniType from '../../modules/aniType';
+
 /* svg imports */
 import IconAdobeCC from '../../src/svg/icons/iconAdobeCC.svg';
 import IconGit from '../../src/svg/icons/iconGit.svg';
@@ -19,21 +22,34 @@ import IconScss from '../../src/svg/icons/iconScss.svg';
 /* styles imports */
 import classes from './_skills.module.scss';
 
-function Skills () {
+function Skills() {
   return (
     <section className={`section ${classes.skills}`} id="skills">
       <Container maxWidth="lg">
-        <Grid container spacing={0}>
-          <Grid item xs={12}>
-            <Typography
-              className={classes.skills_heading}
-              component="h4"
-              gutterBottom
-              variant="h3"
-            >
-              Skills
-            </Typography>
+        <Grid container spacing={0} justifyContent="center">
+          <Grid item xs={12} md={10}>
+            <div className={classes.skills_heading}>
+              <Typography
+                className={classes.skills_headingHeading}
+                component="h3"
+                gutterBottom
+                id="aniSkillsHeading"
+                onLoad={aniType(
+                  false,
+                  0,
+                  false,
+                  200,
+                  'aniSkillsHeading',
+                  false,
+                  50,
+                  ['A few of my frontend skills']
+                )}
+                variant="h3"
+              />
+            </div>
           </Grid>
+        </Grid>
+        <Grid container spacing={0}>
           <Grid item xs={6} md={3}>
             <div className={classes.skills_section}>
               <div className={classes.skills_icon}>

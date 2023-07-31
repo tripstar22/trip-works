@@ -10,7 +10,6 @@
 =================================================== */
 
 .appCarousel {
-
   &_dots {
     display: block;
     left: 50%;
@@ -19,7 +18,7 @@
     padding-left: 0;
     text-align: center;
 
-    li, 
+    li,
     li button {
       height: 20px;
       width: 20px;
@@ -31,7 +30,6 @@
       position: relative;
     }
     li.slick-active button {
-
       &::before {
         opacity: 1;
       }
@@ -52,9 +50,9 @@
       }
 
       &::before {
-        background-color: $black;
+        background-color: $white;
         border-radius: 100%;
-        content: "";
+        content: '';
         height: 10px;
         left: 50%;
         line-height: 20px;

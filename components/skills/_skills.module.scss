@@ -12,6 +12,10 @@
   color: $white;
 
   &_heading {
+    min-height: 168px;
+    padding-bottom: 60px;
+  }
+  &_headingHeading {
     text-align: center;
   }
   &_icon {
@@ -39,8 +43,11 @@
 
   .skills {
 
+    &_heading {
+      min-height: 130px;
+    }
     &_icon {
-      width: 25%;
+      width: 20%;
     }
   }
 }
@@ -54,7 +61,18 @@
   Medium Screens & Up (min-width: 900px)
 =================================================== */
 
+@media screen and (min-width: $screen-md) {
 
+  .skills {
+
+    &_heading {
+      min-height: 89px;
+    }
+    &_icon {
+      width: 25%;
+    }
+  }
+}
 
 /* ===================================================
   END Medium Screens & Up (min-width: 900px)

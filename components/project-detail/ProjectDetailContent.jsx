@@ -6,9 +6,6 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
-/* custom component imports */
-import Carousel from '../carousel/Carousel';
-
 /* styles imports */
 import classes from './_projectDetailContent.module.scss';
 
@@ -17,7 +14,7 @@ function ProjectDetailContent() {
     <main className={classes.projectDetailContent}>
       <Container maxWidth="lg">
         <Grid container spacing={0}>
-          <Grid item xs={12} md={6} lg={7}>
+          <Grid item xs={12}>
             <Typography
               className={classes.projectDetailContent_text}
               gutterBottom
@@ -38,9 +35,6 @@ function ProjectDetailContent() {
               enim nunc faucibus a pellentesque sit amet porttitor eget. Vitae
               purus faucibus ornare suspendisse sed.
             </Typography>
-          </Grid>
-          <Grid item xs={12} md={6} lg={5}>
-            <Carousel />
           </Grid>
         </Grid>
       </Container>

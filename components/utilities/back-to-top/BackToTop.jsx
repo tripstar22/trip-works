@@ -10,10 +10,10 @@ import Fade from '@mui/material/Fade';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
 /* custom component imports */
-import AppLink from '../ui/AppLink';
+import AppLink from '../../ui/app-link/AppLink';
 
 /* custom module imports */
-import aniScroll from '../../modules/aniScroll';
+import aniScroll from '../../../modules/aniScroll';
 
 /* styles imports */
 import classes from './_backtotop.module.scss';

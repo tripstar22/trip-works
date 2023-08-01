@@ -60,10 +60,6 @@
       padding-bottom: 0;
       padding-top: 100px;
     }
-    &___project {
-      color: $tealDark;
-      margin-bottom: 10px;
-    }
   }
   &_scrollLink {
     animation: animateArrow 2s ease-in-out infinite;
@@ -84,16 +80,6 @@
     &___home {
       padding-bottom: 0;
     }
-    &___project {
-      font-weight: 400;
-      padding-bottom: 30px;
-    }
-  }
-  &_subheadingJob {
-    font-weight: 300;
-  }
-  &_text {
-    padding-top: 60px;
   }
 
   &___home {
@@ -146,15 +132,6 @@
       &___home {
         font-size: 120px;
       }
-    }
-    &_subheading {
-
-      &___project {
-        padding-bottom: 40px;
-      }
-    }
-    &_text {
-      padding-top: 80px;
     }
 
     &___home {

@@ -5,14 +5,14 @@ import React from 'react';
 import IconButton from '@mui/material/IconButton';
 
 /* styles imports */
-import classes from './_carouselArrow.module.scss';
+import classes from './_carousel.module.scss';
 
 function CarouselArrowPrev(props) {
   const { children, onClick } = props;
 
   return (
     <IconButton
-      className={`${classes.carouselArrow} ${classes.carouselArrow___prev}`}
+      className={`${classes.carousel_arrow} ${classes.carousel_arrow___prev}`}
       onClick={onClick}
       aria-label="previous"
     >

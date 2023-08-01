@@ -14,9 +14,6 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
-/* custom module imports */
-import aniType from '../../modules/aniType';
-
 /* styles imports */
 import classes from './_projects.module.scss';
 
@@ -26,27 +23,14 @@ function Projects() {
       <Container maxWidth="lg">
         <Grid container spacing={0} justifyContent="center">
           <Grid item xs={12} md={10}>
-            <div className={classes.projects_heading}>
-              <Typography
-                className={classes.projects_headingHeading}
-                component="h3"
-                gutterBottom
-                id="aniWorkHeading"
-                onLoad={aniType(
-                  false,
-                  0,
-                  false,
-                  200,
-                  'aniWorkHeading',
-                  false,
-                  50,
-                  [
-                    'Work',
-                  ]
-                )}
-                variant="h3"
-              />
-            </div>
+            <Typography
+              className={classes.projects_heading}
+              component="h3"
+              gutterBottom
+              variant="h3"
+            >
+              Work
+            </Typography>
           </Grid>
         </Grid>
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 599: 2, 899: 3 }}>

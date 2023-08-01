@@ -25,7 +25,7 @@ import '../src/styles/scss/global/_utilities.scss';
 import themeDefault from '../src/styles/js/themes/themeDefault';
 
 /* custom component imports */
-import AppLayout from '../components/layout/AppLayout';
+import AppLayout from '../components/app-layout/AppLayout';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();

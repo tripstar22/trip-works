@@ -1,15 +1,27 @@
-/*** repositoryCta ***/
+/*** backToTop ***/
 
 /* imports */
-@import '../../src/styles/scss/vars';
+@import '../../../src/styles/scss/vars';
 
 /* ===================================================
   All Screen Sizes
 =================================================== */
 
-.repositoryCta {
-  background-color: $offWhite;
-  text-align: center;
+.backToTop {
+  bottom: 16px;
+  font-size: inherit;
+  position: fixed;
+  right: 16px;
+  z-index: 1;
+  
+  &_icon {
+    fill: $white;
+
+    &:hover,
+    &:focus {
+      fill: $white;
+    }
+  }
 }
 
 /* ===================================================

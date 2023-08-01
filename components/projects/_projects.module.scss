@@ -20,10 +20,6 @@
     }
   }
   &_heading {
-    min-height: 284px;
-    padding-bottom: 60px;
-  }
-  &_headingHeading {
     text-align: center;
   }
   &_more {
@@ -58,9 +54,6 @@
       display: flex;
       min-height: 100%;
     }
-    &_heading {
-      min-height: 207px;
-    }
     &_link {
       display: flex;
       flex: 1 1 auto;
@@ -83,9 +76,6 @@
 
   .projects {
 
-    &_heading {
-      min-height: 282px;
-    }
     &_more {
       font-size: 16px;
     }
@@ -101,15 +91,7 @@
   Large Screens & Up (min-width: 1200px)
 =================================================== */
 
-@media screen and (min-width: $screen-lg) {
 
-  .projects {
-
-    &_heading {
-      min-height: 223px;
-    }
-  }
-}
 
 /* ===================================================
   END Large Screens & Up (min-width: 1200px)

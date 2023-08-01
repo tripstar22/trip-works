@@ -1,4 +1,4 @@
-/*** appModal ***/
+/*** app modal ***/
 
 /* imports */
 @import '../../src/styles/scss/vars';
@@ -7,7 +7,7 @@
   All Screen Sizes
 =================================================== */
 
-.appModal {
+.appmodal {
   position: relative;
   height: 100vh;
   width: 100%;
@@ -56,7 +56,7 @@
 
 @media screen and (min-width: $screen-md) {
 
-  .appModal {
+  .appmodal {
 
     &_container {
       width: 80%;

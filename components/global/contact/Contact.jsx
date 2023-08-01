@@ -9,17 +9,14 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 
 /* custom component imports */
-import BackgroundVideo from '../ui/BackgroundVideo';
-import ButtonAction from '../ui/ButtonAction';
-import ButtonLink from '../ui/ButtonLink';
-
-/* custom module imports */
-import aniType from '../../modules/aniType';
+import BackgroundVideo from '../../ui/background-video/BackgroundVideo';
+import ButtonAction from '../../ui/button-action/ButtonAction';
+import ButtonLink from '../../ui/button-link/ButtonLink';
 
 /* styles imports */
 import classes from './_contact.module.scss';
 
-function Contact () {
+function Contact() {
   return (
     <section className={`section ${classes.contact}`} id="contact">
       <BackgroundVideo
@@ -32,25 +29,14 @@ function Contact () {
       <Container maxWidth="lg">
         <Grid container spacing={0}>
           <Grid item xs={12}>
-            <div className={classes.contact_heading}>
-              <Typography
-                className={classes.contact_headingHeading}
-                component="h2"
-                gutterBottom
-                id="aniContactHeading"
-                onLoad={aniType(
-                  false,
-                  0,
-                  false,
-                  200,
-                  'aniContactHeading',
-                  false,
-                  50,
-                  ['Let‘s connect']
-                )}
-                variant="h2"
-              />
-            </div>
+            <Typography
+              className={classes.contact_heading}
+              component="h2"
+              gutterBottom
+              variant="h2"
+            >
+              Let‘s connect
+            </Typography>
             <div
               className={`${classes.contact_buttonContainer} ${classes.contact_buttonContainer___paddingBottom}`}
             >

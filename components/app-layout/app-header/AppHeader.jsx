@@ -11,14 +11,14 @@ import Slide from '@mui/material/Slide';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
 /* custom component imports */
-import AppLink from '../ui/AppLink';
-import AppMenu from './AppMenu';
+import AppLink from '../../ui/app-link/AppLink';
+import AppMenu from '../app-menu/AppMenu';
 
 /* svg imports */
-import Logo from '../../src/svg/logos/logo.svg';
+import Logo from '../../../src/svg/logos/logo.svg';
 
 /* styles imports */
-import classes from './_header.module.scss';
+import classes from './_appheader.module.scss';
 
 function HideHeaderOnScroll(props) {
   const { children } = props;
@@ -49,8 +49,8 @@ function AppHeader() {
   return (
     <HideHeaderOnScroll>
       <AppBar>
-        <div className={classes.header}>
-          <Grid container spacing={0} className={classes.header_grid}>
+        <div className={classes.appheader}>
+          <Grid container spacing={0} className={classes.appheader_grid}>
             <Grid item xs={3}>
               <IconButton onClick={toggleMenuOpen} aria-label="open menu">
                 <Menu />
@@ -58,8 +58,8 @@ function AppHeader() {
               <AppMenu menuOpen={menuOpen} toggleMenuClose={toggleMenuClose} />
             </Grid>
             <Grid item xs={6}>
-              <div className={classes.header_logo}>
-                <AppLink href="/" className={classes.header_link}>
+              <div className={classes.appheader_logo}>
+                <AppLink href="/" className={classes.appheader_link}>
                   <Logo />
                 </AppLink>
               </div>

@@ -1,4 +1,4 @@
-/*** projectDetailContent ***/
+/*** projectdetail ***/
 
 /* imports */
 @import '../../src/styles/scss/vars';
@@ -7,11 +7,22 @@
   All Screen Sizes
 =================================================== */
 
-.projectDetailContent {
-  padding-bottom: 60px;
+.projectdetail {
+  padding: 80px 0 60px; // 80px is height of sticky header
 
-  &_text {
+  &_heading {
+    color: $tealDark;
+    margin-bottom: 10px;
+  }
+  &_subheading {
+    font-weight: 400;
     padding-bottom: 30px;
+  }
+  &_content {
+    padding-bottom: 30px;
+  }
+  &_titleSection {
+    padding-top: 60px;
   }
 }
 
@@ -24,7 +35,12 @@
   Small Screens & Up (min-width: 600px)
 =================================================== */
 
-
+@media screen and (min-width: $screen-sm) {
+  
+  .projectdetail {
+    padding-top: 86px; // height of sticky header
+  }
+}
 
 /* ===================================================
   END Small Screens & Up (min-width: 600px)
@@ -37,11 +53,20 @@
 
 @media screen and (min-width: $screen-md) {
   
-  .projectDetailContent {
-    padding-bottom: 80px;
+  .projectdetail {
+    padding: 92px 0 80px; // 92px is height of sticky header
 
-    &_text {
+    &_subheading {
+      padding-bottom: 40px;
+    }
+    &_subheadingJob {
+      font-weight: 300;
+    }
+    &_content {
       padding-bottom: 0;
+    }
+    &_titleSection {
+      padding-top: 80px;
     }
   }
 }
@@ -55,10 +80,7 @@
   Large Screens & Up (min-width: 1200px)
 =================================================== */
 
-@media screen and (min-width: $screen-lg) {
-  
 
-}
 
 /* ===================================================
   END Large Screens & Up (min-width: 1200px)

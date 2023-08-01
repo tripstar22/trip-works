@@ -14,7 +14,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 
 /* custom component imports */
-import AppLink from '../ui/AppLink';
+import AppLink from '../../ui/app-link/AppLink';
 
 /* styles imports */
 import classes from './_appmenu.module.scss';

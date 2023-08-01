@@ -8,8 +8,8 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
 /* custom component imports */
-import AppLink from '../ui/AppLink';
-import BackgroundVideo from '../ui/BackgroundVideo';
+import AppLink from '../ui/app-link/AppLink';
+import BackgroundVideo from '../ui/background-video/BackgroundVideo';
 
 /* styles imports */
 import classes from './_pagenotfound.module.scss';

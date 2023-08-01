@@ -3,9 +3,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 /* custom component imports */
-import AppFooter from './AppFooter';
-import AppHeader from './AppHeader';
-import BackToTop from '../utilities/BackToTop';
+import AppFooter from './app-footer/AppFooter';
+import AppHeader from './app-header/AppHeader';
+import BackToTop from '../utilities/back-to-top/BackToTop';
 
 function AppLayout (props) {
   const { children } = props;

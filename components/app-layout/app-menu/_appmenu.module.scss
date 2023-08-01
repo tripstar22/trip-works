@@ -1,38 +1,25 @@
-/*** header ***/
+/*** app menu ***/
 
 /* imports */
-@import '../../src/styles/scss/vars';
+@import '../../../src/styles/scss/vars';
 
 /* ===================================================
   All Screen Sizes
 =================================================== */
 
-.header {
-  background-color: $white;
-  padding: 5px 0;
+.appmenu {
   
   &_grid {
-    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 10px;
   }
-  &_link {
-    background-color: transparent;
-    border-radius: 100%;
-    display: block;
-    padding: 10px;
-    transition: background-color $transitionDefault;
-
-    svg {
-      display: block;
-    }
-
-    &:hover,
-    &:focus {
-      background-color: rgba(0,0,0,0.04);
-    }
+  &_listItem {
+    padding: 0;
+    width: 100%;
   }
-  &_logo {
-    margin: 0 auto;
-    width: 100px;
+  &_listItemButton {
+    padding: 10px 25px;
   }
 }
 
@@ -45,15 +32,7 @@
   Small Screens & Up (min-width: 600px)
 =================================================== */
 
-@media screen and (min-width: $screen-sm) {
 
-  .header {
-
-    &_logo {
-      width: 110px;
-    }
-  }
-}
 
 /* ===================================================
   END Small Screens & Up (min-width: 600px)
@@ -66,10 +45,10 @@
 
 @media screen and (min-width: $screen-md) {
 
-  .header {
+  .appmenu {
 
-    &_logo {
-      width: 120px;
+    &_listItemButton {
+      padding: 10px 45px;
     }
   }
 }

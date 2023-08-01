@@ -12,10 +12,6 @@
   color: $white;
 
   &_heading {
-    min-height: 168px;
-    padding-bottom: 60px;
-  }
-  &_headingHeading {
     text-align: center;
   }
   &_icon {
@@ -43,9 +39,6 @@
 
   .skills {
 
-    &_heading {
-      min-height: 130px;
-    }
     &_icon {
       width: 20%;
     }
@@ -65,9 +58,6 @@
 
   .skills {
 
-    &_heading {
-      min-height: 89px;
-    }
     &_icon {
       width: 25%;
     }

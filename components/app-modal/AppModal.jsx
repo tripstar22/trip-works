@@ -16,32 +16,25 @@ import Modal from '@mui/material/Modal';
 import Carousel from '../carousel/Carousel';
 
 /* styles imports */
-import classes from './_appModal.module.scss';
-import classesArrow from '../carousel/_carouselArrow.module.scss';
-import classesCarousel from '../carousel/_carousel.module.scss';
+import classes from './_appmodal.module.scss';
 
 function AppModal({ open, toggleModalClose }) {
-
   return (
     <Modal
       onClose={toggleModalClose}
       open={open}
       aria-label="project modal carousel"
     >
-      <div className={classes.appModal}>
-        <div className={classes.appModal_container}>
-          <div
-            className={`${classesCarousel.carousel} ${classesCarousel.carousel___modal} appCarousel appCarousel___modal`}
-          >
-            <Carousel />
-          </div>
+      <div className={classes.appmodal}>
+        <div className={classes.appmodal_container}>
+          <Carousel />
         </div>
         <IconButton
-          className={classes.appModal_close}
+          className={classes.appmodal_close}
           onClick={toggleModalClose}
           aria-label="close modal"
         >
-          <Close className={classes.appModal_closeIcon} />
+          <Close className={classes.appmodal_closeIcon} />
         </IconButton>
       </div>
     </Modal>

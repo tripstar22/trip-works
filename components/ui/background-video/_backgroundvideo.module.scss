@@ -1,29 +1,35 @@
-/*** footer ***/
+/*** backgroundvideo ***/
 
 /* imports */
-@import '../../src/styles/scss/vars';
+@import '../../../src/styles/scss/vars';
 
 /* ===================================================
   All Screen Sizes
 =================================================== */
 
-.footer {
-  background-color: $white;
-  box-shadow: 0px 2px 4px -1px rgba($blackPure, 0.2), 0px 4px 5px 0px rgba($blackPure, 0.14), 0px 1px 10px 0px rgba($blackPure, 0.12);
-  overflow: hidden;
-  padding: 40px 0 60px;
-  position: relative;
+.backgroundvideo {
 
-  &_heading {
-    padding-left: 30px;
-  }
-  &_logo {
-    bottom: 0;
+  &_background,
+  &_heading,
+  &_video {
+    left: 50%;
     position: absolute;
-    right: 0;
+    transform: translate(-50%, -50%);
   }
-  &_social {
-    padding-left: 20px;
+  &_background,
+  &_video {
+    height: 100%;
+    object-fit: cover;
+    top: 50%;
+    width: 100%;
+  }
+  &_background {
+    background-color: rgba(33, 33, 33, 0.4);
+  }
+  &_heading {
+    top: 20px;
+    font-weight: 400;
+    z-index: 1;
   }
 }
 
@@ -36,18 +42,7 @@
   Small Screens & Up (min-width: 600px)
 =================================================== */
 
-@media screen and (min-width: $screen-sm) {
 
-  .footer {
-
-    &_logo {
-      bottom: -50px;
-      position: absolute;
-      right: -80px;
-      width: 360px;
-    }
-  }
-}
 
 /* ===================================================
   END Small Screens & Up (min-width: 600px)
@@ -58,28 +53,7 @@
   Medium Screens & Up (min-width: 900px)
 =================================================== */
 
-@media screen and (min-width: $screen-md) {
 
-  .footer {
-    padding: 40px 0 60px;
-
-    &_heading,
-    &_social {
-      padding-left: 0;
-    }
-    &_heading {
-      text-align: center;
-    }
-    &_logo {
-      bottom: -60px;
-      right: -80px;
-      width: 400px;
-    }
-    &_social {
-      padding-top: 15px;
-    }
-  }
-}
 
 /* ===================================================
   END Medium Screens & Up (min-width: 900px)

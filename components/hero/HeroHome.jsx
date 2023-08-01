@@ -10,8 +10,8 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 /* custom component imports */
-import AppLink from '../ui/AppLink';
-import BackgroundVideo from '../ui/BackgroundVideo';
+import AppLink from '../ui/app-link/AppLink';
+import BackgroundVideo from '../ui/background-video/BackgroundVideo';
 
 /* custom module imports */
 import aniType from '../../modules/aniType';
@@ -20,7 +20,7 @@ import aniScroll from '../../modules/aniScroll';
 /* styles imports */
 import classes from './_hero.module.scss';
 
-function HomeHero () {
+function HeroHome () {
   return (
     <section className={`${classes.hero} ${classes.hero___home}`}>
       <BackgroundVideo
@@ -75,4 +75,4 @@ function HomeHero () {
   );
 }
 
-export default HomeHero;
+export default HeroHome;

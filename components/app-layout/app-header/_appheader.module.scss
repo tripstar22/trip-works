@@ -1,56 +1,38 @@
-/*** contact ***/
+/*** app header ***/
 
 /* imports */
-@import '../../src/styles/scss/vars';
+@import '../../../src/styles/scss/vars';
 
 /* ===================================================
   All Screen Sizes
 =================================================== */
 
-.contact {
-  overflow: hidden;
-  position: relative;
-
-  &_buttonContainer {
-    text-align: center;
-
-    &___paddingBottom {
-      padding-bottom: 40px;
-    }
+.appheader {
+  background-color: $white;
+  padding: 5px 0;
+  
+  &_grid {
+    align-items: center;
   }
-  &_container {
+  &_link {
     background-color: transparent;
-    backdrop-filter: blur(40px);
-    padding: 50px 0;
-  }
-  &_heading {
-    min-height: 69px;
-  }
-  &_headingHeading,
-  &_link {
-    position: relative;
-  }
-  &_headingHeading {
-    color: $white;
-    text-align: center;
-  }
-  &_link {
-    background-color: $offWhite;
-    color: $teal;
-    transition: background-color $transitionDefault,
-                color $transitionDefault;
-    z-index: 1;
+    border-radius: 100%;
+    display: block;
+    padding: 10px;
+    transition: background-color $transitionDefault;
+
+    svg {
+      display: block;
+    }
 
     &:hover,
     &:focus {
-      color: $white;
+      background-color: rgba(0,0,0,0.04);
     }
-    &:hover {
-      background-color: $teal;
-    }
-    &:focus {
-      background-color: $tealDark;
-    }
+  }
+  &_logo {
+    margin: 0 auto;
+    width: 100px;
   }
 }
 
@@ -63,7 +45,15 @@
   Small Screens & Up (min-width: 600px)
 =================================================== */
 
+@media screen and (min-width: $screen-sm) {
 
+  .appheader {
+
+    &_logo {
+      width: 110px;
+    }
+  }
+}
 
 /* ===================================================
   END Small Screens & Up (min-width: 600px)
@@ -76,19 +66,10 @@
 
 @media screen and (min-width: $screen-md) {
 
-  .contact {
+  .appheader {
 
-    &_buttonContainer {
-
-      &___paddingBottom {
-        padding-bottom: 50px;
-      }
-    }
-    &_container {
-      padding: 70px 0;
-    }
-    &_heading {
-      min-height: 101px;
+    &_logo {
+      width: 120px;
     }
   }
 }
@@ -102,15 +83,7 @@
   Large Screens & Up (min-width: 1200px)
 =================================================== */
 
-@media screen and (min-width: $screen-lg) {
-  
-  .contact {
-    
-    &_container {
-      padding: 80px 0;
-    }
-  }
-}
+
 
 /* ===================================================
   END Large Screens & Up (min-width: 1200px)

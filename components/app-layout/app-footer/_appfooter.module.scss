@@ -1,34 +1,29 @@
-/*** carouselArrow ***/
+/*** app footer ***/
 
 /* imports */
-@import '../../src/styles/scss/vars';
+@import '../../../src/styles/scss/vars';
 
 /* ===================================================
   All Screen Sizes
 =================================================== */
 
-.carouselArrow {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 0;
-  position: absolute;
-  top: 39%;
-  z-index: 1;
+.appfooter {
+  background-color: $white;
+  box-shadow: 0px 2px 4px -1px rgba($blackPure, 0.2), 0px 4px 5px 0px rgba($blackPure, 0.14), 0px 1px 10px 0px rgba($blackPure, 0.12);
+  overflow: hidden;
+  padding: 40px 0 60px;
+  position: relative;
 
-  &_icon {
-    fill: $white;
-
-    &:hover {
-      fill: $white;
-    }
+  &_heading {
+    padding-left: 30px;
   }
-
-  &___next {
-    right: -35px;
+  &_logo {
+    bottom: 0;
+    position: absolute;
+    right: 0;
   }
-  &___prev {
-    left: -35px;
+  &_social {
+    padding-left: 20px;
   }
 }
 
@@ -41,7 +36,18 @@
   Small Screens & Up (min-width: 600px)
 =================================================== */
 
+@media screen and (min-width: $screen-sm) {
 
+  .appfooter {
+
+    &_logo {
+      bottom: -50px;
+      position: absolute;
+      right: -80px;
+      width: 360px;
+    }
+  }
+}
 
 /* ===================================================
   END Small Screens & Up (min-width: 600px)
@@ -54,13 +60,23 @@
 
 @media screen and (min-width: $screen-md) {
 
-  .carouselArrow {
+  .appfooter {
+    padding: 40px 0 60px;
 
-    &___next {
-      right: -30px;
+    &_heading,
+    &_social {
+      padding-left: 0;
     }
-    &___prev {
-      left: -30px;
+    &_heading {
+      text-align: center;
+    }
+    &_logo {
+      bottom: -60px;
+      right: -80px;
+      width: 400px;
+    }
+    &_social {
+      padding-top: 15px;
     }
   }
 }
@@ -74,18 +90,7 @@
   Large Screens & Up (min-width: 1200px)
 =================================================== */
 
-@media screen and (min-width: $screen-lg) {
 
-  .carouselArrow {
-
-    &___next {
-      right: -35px;
-    }
-    &___prev {
-      left: -35px;
-    }
-  }
-}
 
 /* ===================================================
   END Large Screens & Up (min-width: 1200px)

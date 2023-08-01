@@ -22,7 +22,6 @@ import CarouselArrowPrev from './CarouselArrowPrev';
 
 /* styles imports */
 import classes from './_carousel.module.scss';
-import classesArrow from './_carouselArrow.module.scss';
 
 function Carousel() {
   var sliderSettings = {
@@ -31,12 +30,12 @@ function Carousel() {
     fade: true,
     nextArrow: (
       <CarouselArrowNext>
-        <ArrowForwardIosIcon className={classesArrow.carouselArrow_icon} />
+        <ArrowForwardIosIcon className={classes.carousel_arrowIcon} />
       </CarouselArrowNext>
     ),
     prevArrow: (
       <CarouselArrowPrev>
-        <ArrowBackIosIcon className={classesArrow.carouselArrow_icon} />
+        <ArrowBackIosIcon className={classes.carousel_arrowIcon} />
       </CarouselArrowPrev>
     ),
     speed: 250,

@@ -12,6 +12,29 @@
   padding-bottom: 0;
   width: 100%;
 
+  &_arrow {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 0;
+    position: absolute;
+    top: 39%;
+    z-index: 1;
+  
+    &___next {
+      right: -35px;
+    }
+    &___prev {
+      left: -35px;
+    }
+  }
+  &_arrowIcon {
+    fill: $white;
+
+    &:hover {
+      fill: $white;
+    }
+  }
   &_link {
     position: relative;
     z-index: 1;
@@ -38,7 +61,21 @@
   Medium Screens & Up (min-width: 900px)
 =================================================== */
 
+@media screen and (min-width: $screen-md) {
 
+  .carousel {
+
+    &_arrow {
+
+      &___next {
+        right: -30px;
+      }
+      &___prev {
+        left: -30px;
+      }
+    }
+  }
+}
 
 /* ===================================================
   END Medium Screens & Up (min-width: 900px)
@@ -49,7 +86,21 @@
   Large Screens & Up (min-width: 1200px)
 =================================================== */
 
+@media screen and (min-width: $screen-lg) {
 
+  .carousel {
+
+    &_arrow {
+
+      &___next {
+        right: -35px;
+      }
+      &___prev {
+        left: -35px;
+      }
+    }
+  }
+}
 
 /* ===================================================
   END Large Screens & Up (min-width: 1200px)

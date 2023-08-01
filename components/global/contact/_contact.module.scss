@@ -1,25 +1,53 @@
-/*** appmenu ***/
+/*** contact ***/
 
 /* imports */
-@import '../../src/styles/scss/vars';
+@import '../../../src/styles/scss/vars';
 
 /* ===================================================
   All Screen Sizes
 =================================================== */
 
-.appmenu {
-  
-  &_grid {
-    display: flex;
-    justify-content: flex-end;
-    padding: 0 10px;
+.contact {
+  overflow: hidden;
+  position: relative;
+
+  &_buttonContainer {
+    text-align: center;
+
+    &___paddingBottom {
+      padding-bottom: 40px;
+    }
   }
-  &_listItem {
-    padding: 0;
-    width: 100%;
+  &_container {
+    background-color: transparent;
+    backdrop-filter: blur(40px);
+    padding: 50px 0;
   }
-  &_listItemButton {
-    padding: 10px 25px;
+  &_heading,
+  &_link {
+    position: relative;
+  }
+  &_heading {
+    color: $white;
+    text-align: center;
+  }
+  &_link {
+    background-color: $offWhite;
+    color: $teal;
+    transition: background-color $transitionDefault,
+                color $transitionDefault;
+    z-index: 1;
+
+    &:hover,
+    &:focus {
+      color: $white;
+    }
+    &:hover {
+      background-color: $teal;
+    }
+    &:focus {
+      background-color: $tealDark;
+    }
   }
 }
 
@@ -45,10 +73,16 @@
 
 @media screen and (min-width: $screen-md) {
 
-  .appmenu {
+  .contact {
 
-    &_listItemButton {
-      padding: 10px 45px;
+    &_buttonContainer {
+
+      &___paddingBottom {
+        padding-bottom: 50px;
+      }
+    }
+    &_container {
+      padding: 70px 0;
     }
   }
 }
@@ -62,7 +96,15 @@
   Large Screens & Up (min-width: 1200px)
 =================================================== */
 
-
+@media screen and (min-width: $screen-lg) {
+  
+  .contact {
+    
+    &_container {
+      padding: 80px 0;
+    }
+  }
+}
 
 /* ===================================================
   END Large Screens & Up (min-width: 1200px)

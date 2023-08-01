@@ -3,16 +3,16 @@ import * as React from 'react';
 
 /* custom component imports */
 import About from '../components/about/About';
-import Contact from '../components/global/Contact';
-import HomeHero from '../components/hero/HomeHero';
+import Contact from '../components/global/contact/Contact';
+import HeroHome from '../components/hero/HeroHome';
 import Projects from '../components/projects/Projects';
-import RepositoryCta from '../components/global/RepositoryCta';
+import RepositoryCta from '../components/global/repository-cta/RepositoryCta';
 import Skills from '../components/skills/Skills';
 
 function IndexPage() {
   return (
     <>
-      <HomeHero />
+      <HeroHome />
       <About />
       <Skills />
       <Projects />

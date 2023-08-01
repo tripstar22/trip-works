@@ -9,6 +9,9 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
+/* custom component imports */
+import RevealOnScroll from '../utilities/reveal-on-scroll/RevealOnScroll';
+
 /* styles imports */
 import classes from './_location.module.scss';
 
@@ -26,35 +29,70 @@ function Location() {
   if (error)
     return (
       <section className={`section section___paddingSmall ${classes.location}`}>
-        <Container maxWidth="lg">
-          <Grid alignItems="center" container spacing={0}>
-            <Grid item xs={12} sm={7} md={8}>
-              <Typography
-                className={classes.location_heading}
-                component="h4"
-                variant="h4"
-              >
-                I currently live in the Greater Metro Atlanta area, and am also open to remote work.
-              </Typography>
-            </Grid>
-            <Grid item xs={12} sm={5} md={4}>
-              <div className={classes.location_weather}>
+        <RevealOnScroll>
+          <Container maxWidth="lg">
+            <Grid alignItems="center" container spacing={0}>
+              <Grid item xs={12} sm={7} md={8}>
                 <Typography
-                  className={classes.location_weatherText}
-                  variant="body2"
+                  className={classes.location_heading}
+                  component="h4"
+                  variant="h4"
                 >
-                  Failed to load.
+                  I currently live in the Greater Metro Atlanta area, and am
+                  also open to remote work.
                 </Typography>
-              </div>
+              </Grid>
+              <Grid item xs={12} sm={5} md={4}>
+                <div className={classes.location_weather}>
+                  <Typography
+                    className={classes.location_weatherText}
+                    variant="body2"
+                  >
+                    Failed to load.
+                  </Typography>
+                </div>
+              </Grid>
             </Grid>
-          </Grid>
-        </Container>
+          </Container>
+        </RevealOnScroll>
       </section>
     );
   // handle the loading state
   if (!data)
     return (
       <section className={`section section___paddingSmall ${classes.location}`}>
+        <RevealOnScroll>
+          <Container maxWidth="lg">
+            <Grid alignItems="center" container spacing={0}>
+              <Grid item xs={12} sm={7} md={8}>
+                <Typography
+                  className={classes.location_heading}
+                  component="h4"
+                  variant="h4"
+                >
+                  I currently live in the Greater Metro Atlanta area, and am
+                  also open to remote work.
+                </Typography>
+              </Grid>
+              <Grid item xs={12} sm={5} md={4}>
+                <div className={classes.location_weather}>
+                  <Typography
+                    className={classes.location_weatherText}
+                    variant="body2"
+                  >
+                    Loading…
+                  </Typography>
+                </div>
+              </Grid>
+            </Grid>
+          </Container>
+        </RevealOnScroll>
+      </section>
+    );
+  // handle the ready state and display the result contained in the data object mapped to the structure of the json file
+  return (
+    <section className={`section section___paddingSmall ${classes.location}`}>
+      <RevealOnScroll>
         <Container maxWidth="lg">
           <Grid alignItems="center" container spacing={0}>
             <Grid item xs={12} sm={7} md={8}>
@@ -63,7 +101,8 @@ function Location() {
                 component="h4"
                 variant="h4"
               >
-                I currently live in the Greater Metro Atlanta area, and am also open to remote work.
+                I currently live in the Greater Metro Atlanta area, and am also
+                open to remote work.
               </Typography>
             </Grid>
             <Grid item xs={12} sm={5} md={4}>
@@ -72,61 +111,33 @@ function Location() {
                   className={classes.location_weatherText}
                   variant="body2"
                 >
-                  Loading…
+                  Current Weather Forecast:{' '}
+                </Typography>
+                <Typography
+                  className={classes.location_weatherLocation}
+                  gutterBottom
+                  variant="body1"
+                >
+                  {data[0].location}
+                </Typography>
+                <img
+                  src={data[0].icon}
+                  alt="current weather icon"
+                  className={classes.location_image}
+                />
+                <div className={classes.location_temp}>{data[0].temp}&deg;</div>
+                <Typography
+                  className={classes.location_weatherCurrent}
+                  gutterBottom
+                  variant="body1"
+                >
+                  {data[0].conditions}
                 </Typography>
               </div>
             </Grid>
           </Grid>
         </Container>
-      </section>
-    );
-  // handle the ready state and display the result contained in the data object mapped to the structure of the json file
-  return (
-    <section className={`section section___paddingSmall ${classes.location}`}>
-      <Container maxWidth="lg">
-        <Grid alignItems="center" container spacing={0}>
-          <Grid item xs={12} sm={7} md={8}>
-            <Typography
-              className={classes.location_heading}
-              component="h4"
-              variant="h4"
-            >
-              I currently live in the Greater Metro Atlanta area, and am also
-              open to remote work.
-            </Typography>
-          </Grid>
-          <Grid item xs={12} sm={5} md={4}>
-            <div className={classes.location_weather}>
-              <Typography
-                className={classes.location_weatherText}
-                variant="body2"
-              >
-                Current Weather Forecast:{' '}
-              </Typography>
-              <Typography
-                className={classes.location_weatherLocation}
-                gutterBottom
-                variant="body1"
-              >
-                {data[0].location}
-              </Typography>
-              <img
-                src={data[0].icon}
-                alt="current weather icon"
-                className={classes.location_image}
-              />
-              <div className={classes.location_temp}>{data[0].temp}&deg;</div>
-              <Typography
-                className={classes.location_weatherCurrent}
-                gutterBottom
-                variant="body1"
-              >
-                {data[0].conditions}
-              </Typography>
-            </div>
-          </Grid>
-        </Grid>
-      </Container>
+      </RevealOnScroll>
     </section>
   );
 }

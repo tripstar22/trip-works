@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 /* next.js imports */
 import Link from 'next/link';
 
-function AppLink (props) {
+function AppLink(props) {
   const { children } = props;
   return (
     <Link

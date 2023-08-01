@@ -16,108 +16,113 @@ import IconNodeJS from '../../src/svg/icons/iconNodeJS.svg';
 import IconReact from '../../src/svg/icons/iconReact.svg';
 import IconScss from '../../src/svg/icons/iconScss.svg';
 
+/* custom component imports */
+import RevealOnScroll from '../utilities/reveal-on-scroll/RevealOnScroll';
+
 /* styles imports */
 import classes from './_skills.module.scss';
 
 function Skills() {
   return (
     <section className={`section ${classes.skills}`} id="skills">
-      <Container maxWidth="lg">
-        <Grid container spacing={0} justifyContent="center">
-          <Grid item xs={12} md={10}>
-            <Typography
-              className={classes.skills_heading}
-              component="h3"
-              gutterBottom
-              variant="h3"
-            >
-              A few of my frontend skills
-            </Typography>
-          </Grid>
-        </Grid>
-        <Grid container spacing={0}>
-          <Grid item xs={6} md={3}>
-            <div className={classes.skills_section}>
-              <div className={classes.skills_icon}>
-                <IconHTML5 />
-              </div>
-              <Typography component="h5" gutterBottom variant="h5">
-                HTML5
+      <RevealOnScroll>
+        <Container maxWidth="lg">
+          <Grid container spacing={0} justifyContent="center">
+            <Grid item xs={12} md={10}>
+              <Typography
+                className={classes.skills_heading}
+                component="h3"
+                gutterBottom
+                variant="h3"
+              >
+                A few of my frontend skills
               </Typography>
-            </div>
+            </Grid>
           </Grid>
-          <Grid item xs={6} md={3}>
-            <div className={classes.skills_section}>
-              <div className={classes.skills_icon}>
-                <IconJavaScript />
+          <Grid container spacing={0}>
+            <Grid item xs={6} md={3}>
+              <div className={classes.skills_section}>
+                <div className={classes.skills_icon}>
+                  <IconHTML5 />
+                </div>
+                <Typography component="h5" gutterBottom variant="h5">
+                  HTML5
+                </Typography>
               </div>
-              <Typography component="h5" gutterBottom variant="h5">
-                JavaScript
-              </Typography>
-            </div>
-          </Grid>
-          <Grid item xs={6} md={3}>
-            <div className={classes.skills_section}>
-              <div className={classes.skills_icon}>
-                <IconReact />
+            </Grid>
+            <Grid item xs={6} md={3}>
+              <div className={classes.skills_section}>
+                <div className={classes.skills_icon}>
+                  <IconJavaScript />
+                </div>
+                <Typography component="h5" gutterBottom variant="h5">
+                  JavaScript
+                </Typography>
               </div>
-              <Typography component="h5" gutterBottom variant="h5">
-                React
-              </Typography>
-            </div>
-          </Grid>
-          <Grid item xs={6} md={3}>
-            <div className={classes.skills_section}>
-              <div className={classes.skills_icon}>
-                <IconNextJS />
+            </Grid>
+            <Grid item xs={6} md={3}>
+              <div className={classes.skills_section}>
+                <div className={classes.skills_icon}>
+                  <IconReact />
+                </div>
+                <Typography component="h5" gutterBottom variant="h5">
+                  React
+                </Typography>
               </div>
-              <Typography component="h5" gutterBottom variant="h5">
-                Next.js
-              </Typography>
-            </div>
-          </Grid>
-          <Grid item xs={6} md={3}>
-            <div className={classes.skills_section}>
-              <div className={classes.skills_icon}>
-                <IconNodeJS />
+            </Grid>
+            <Grid item xs={6} md={3}>
+              <div className={classes.skills_section}>
+                <div className={classes.skills_icon}>
+                  <IconNextJS />
+                </div>
+                <Typography component="h5" gutterBottom variant="h5">
+                  Next.js
+                </Typography>
               </div>
-              <Typography component="h5" gutterBottom variant="h5">
-                Node.js
-              </Typography>
-            </div>
-          </Grid>
-          <Grid item xs={6} md={3}>
-            <div className={classes.skills_section}>
-              <div className={classes.skills_icon}>
-                <IconScss />
+            </Grid>
+            <Grid item xs={6} md={3}>
+              <div className={classes.skills_section}>
+                <div className={classes.skills_icon}>
+                  <IconNodeJS />
+                </div>
+                <Typography component="h5" gutterBottom variant="h5">
+                  Node.js
+                </Typography>
               </div>
-              <Typography component="h5" gutterBottom variant="h5">
-                SCSS
-              </Typography>
-            </div>
-          </Grid>
-          <Grid item xs={6} md={3}>
-            <div className={classes.skills_section}>
-              <div className={classes.skills_icon}>
-                <IconGit />
+            </Grid>
+            <Grid item xs={6} md={3}>
+              <div className={classes.skills_section}>
+                <div className={classes.skills_icon}>
+                  <IconScss />
+                </div>
+                <Typography component="h5" gutterBottom variant="h5">
+                  SCSS
+                </Typography>
               </div>
-              <Typography component="h5" gutterBottom variant="h5">
-                Git
-              </Typography>
-            </div>
-          </Grid>
-          <Grid item xs={6} md={3}>
-            <div className={classes.skills_section}>
-              <div className={classes.skills_icon}>
-                <IconAdobeCC />
+            </Grid>
+            <Grid item xs={6} md={3}>
+              <div className={classes.skills_section}>
+                <div className={classes.skills_icon}>
+                  <IconGit />
+                </div>
+                <Typography component="h5" gutterBottom variant="h5">
+                  Git
+                </Typography>
               </div>
-              <Typography component="h5" gutterBottom variant="h5">
-                Adobe CC
-              </Typography>
-            </div>
+            </Grid>
+            <Grid item xs={6} md={3}>
+              <div className={classes.skills_section}>
+                <div className={classes.skills_icon}>
+                  <IconAdobeCC />
+                </div>
+                <Typography component="h5" gutterBottom variant="h5">
+                  Adobe CC
+                </Typography>
+              </div>
+            </Grid>
           </Grid>
-        </Grid>
-      </Container>
+        </Container>
+      </RevealOnScroll>
     </section>
   );
 }

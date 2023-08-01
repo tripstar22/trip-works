@@ -27,7 +27,7 @@ import LogoSecondary from '../../../src/svg/logos/logoSecondary.svg';
 /* styles imports */
 import classes from './_appfooter.module.scss';
 
-function AppFooter () {
+function AppFooter() {
   return (
     <footer className={classes.appfooter}>
       <Container maxWidth="lg">

@@ -10,11 +10,12 @@ import Typography from '@mui/material/Typography';
 /* custom component imports */
 import AppLink from '../ui/app-link/AppLink';
 import BackgroundVideo from '../ui/background-video/BackgroundVideo';
+import RevealOnScroll from '../utilities/reveal-on-scroll/RevealOnScroll';
 
 /* styles imports */
 import classes from './_pagenotfound.module.scss';
 
-function PageNotFound () {
+function PageNotFound() {
   return (
     <section className={classes.pagenotfound}>
       <BackgroundVideo
@@ -24,28 +25,30 @@ function PageNotFound () {
         src="/movies/misty-flythrough.mp4"
         type="video/mp4"
       />
-      <div className={classes.pagenotfound_container}>
-        <Container maxWidth="lg">
-          <Paper className={classes.pagenotfound_inner} elevation={2}>
-            <Container maxWidth="md">
-              <Grid container spacing={0}>
-                <Grid item xs={12}>
-                  <Typography component="h1" gutterBottom variant="h1">
-                    Sorry, this page does not exist, or has been removed.
-                  </Typography>
-                  <Typography component="h6" gutterBottom variant="h6">
-                    Feel free to visit the{' '}
-                    <AppLink className={classes.pagenotfound_link} href="/">
-                      home page
-                    </AppLink>
-                    .
-                  </Typography>
+      <RevealOnScroll dataEnd="top 10%" dataStart="30% bottom">
+        <div className={classes.pagenotfound_container}>
+          <Container maxWidth="lg">
+            <Paper className={classes.pagenotfound_inner} elevation={2}>
+              <Container maxWidth="md">
+                <Grid container spacing={0}>
+                  <Grid item xs={12}>
+                    <Typography component="h1" gutterBottom variant="h1">
+                      Sorry, this page does not exist, or has been removed.
+                    </Typography>
+                    <Typography component="h6" gutterBottom variant="h6">
+                      Feel free to visit the{' '}
+                      <AppLink className={classes.pagenotfound_link} href="/">
+                        home page
+                      </AppLink>
+                      .
+                    </Typography>
+                  </Grid>
                 </Grid>
-              </Grid>
-            </Container>
-          </Paper>
-        </Container>
-      </div>
+              </Container>
+            </Paper>
+          </Container>
+        </div>
+      </RevealOnScroll>
     </section>
   );
 }

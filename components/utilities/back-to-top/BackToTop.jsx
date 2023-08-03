@@ -9,11 +9,11 @@ import Fab from '@mui/material/Fab';
 import Fade from '@mui/material/Fade';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
-/* custom component imports */
-import AppLink from '../../ui/app-link/AppLink';
-
 /* custom module imports */
 import aniScroll from '../../../modules/aniScroll';
+
+/* custom component imports */
+import AppLink from '../../ui/app-link/AppLink';
 
 /* styles imports */
 import classes from './_backtotop.module.scss';

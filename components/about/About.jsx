@@ -22,7 +22,7 @@ function About() {
       className={`section section___noPaddingBottom ${classes.about}`}
       id="about"
     >
-      <RevealOnScroll aniEnd="top 10%" aniStart="80% bottom">
+      <RevealOnScroll dataEnd="top 10%" dataStart="75% bottom">
         <div className={classes.about_container}>
           <Container maxWidth="lg">
             <Grid container spacing={0}>

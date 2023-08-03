@@ -20,6 +20,7 @@ import aniType from '../../../modules/aniType';
 
 /* custom component imports */
 import AppLink from '../../ui/app-link/AppLink';
+import RevealOnScroll from '../../utilities/reveal-on-scroll/RevealOnScroll';
 
 /* svg imports */
 import LogoSecondary from '../../../src/svg/logos/logoSecondary.svg';
@@ -30,100 +31,102 @@ import classes from './_appfooter.module.scss';
 function AppFooter() {
   return (
     <footer className={classes.appfooter}>
-      <Container maxWidth="lg">
-        <Grid container spacing={0}>
-          <Grid item xs={12}>
-            <Typography
-              className={classes.appfooter_heading}
-              component="h3"
-              gutterBottom
-              id="aniFooterHeading"
-              onLoad={aniType(
-                false,
-                0,
-                false,
-                200,
-                'aniFooterHeading',
-                false,
-                50,
-                ['Frontend ^200 Engineer']
-              )}
-              variant="h4"
-            />
+      <RevealOnScroll dataEnd="top top" dataStart="50% bottom">
+        <Container maxWidth="lg">
+          <Grid container spacing={0}>
+            <Grid item xs={12}>
+              <Typography
+                className={classes.appfooter_heading}
+                component="h3"
+                gutterBottom
+                id="aniFooterHeading"
+                onLoad={aniType(
+                  false,
+                  0,
+                  false,
+                  200,
+                  'aniFooterHeading',
+                  false,
+                  50,
+                  ['Frontend ^200 Engineer']
+                )}
+                variant="h4"
+              />
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <nav>
+                <List>
+                  <ListItem className={classes.appfooter_listItem}>
+                    <ListItemButton>
+                      <AppLink href="/">Home</AppLink>
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem className={classes.appfooter_listItem}>
+                    <ListItemButton>
+                      <AppLink href="/#about">About</AppLink>
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem className={classes.appfooter_listItem}>
+                    <ListItemButton>
+                      <AppLink href="/#skills">Skills</AppLink>
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem className={classes.appfooter_listItem}>
+                    <ListItemButton>
+                      <AppLink href="/#work">Work</AppLink>
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem className={classes.appfooter_listItem}>
+                    <ListItemButton>
+                      <AppLink href="/#contact">Contact</AppLink>
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem className={classes.appfooter_listItem}>
+                    <ListItemButton>
+                      <AppLink
+                        href="/files/trip-pruitt-resume.pdf"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        View Résumé
+                      </AppLink>
+                    </ListItemButton>
+                  </ListItem>
+                </List>
+              </nav>
+            </Grid>
+            <Grid item xs={12} md={3}>
+              <Stack direction="row" spacing={1}>
+                <div className={classes.appfooter_social}>
+                  <a
+                    href="http://www.linkedin.com/in/trip-pruitt"
+                    aria-label="View LinkedIn Profile"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <IconButton aria-label="linkedin">
+                      <LinkedIn />
+                    </IconButton>
+                  </a>
+                  <a
+                    href="https://github.com/tripstar22/"
+                    aria-label="View GitHub Profile"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <IconButton aria-label="github">
+                      <GitHub />
+                    </IconButton>
+                  </a>
+                </div>
+              </Stack>
+            </Grid>
           </Grid>
-          <Grid item xs={12} md={4}>
-            <nav>
-              <List>
-                <ListItem className={classes.appfooter_listItem}>
-                  <ListItemButton>
-                    <AppLink href="/">Home</AppLink>
-                  </ListItemButton>
-                </ListItem>
-                <ListItem className={classes.appfooter_listItem}>
-                  <ListItemButton>
-                    <AppLink href="/#about">About</AppLink>
-                  </ListItemButton>
-                </ListItem>
-                <ListItem className={classes.appfooter_listItem}>
-                  <ListItemButton>
-                    <AppLink href="/#skills">Skills</AppLink>
-                  </ListItemButton>
-                </ListItem>
-                <ListItem className={classes.appfooter_listItem}>
-                  <ListItemButton>
-                    <AppLink href="/#work">Work</AppLink>
-                  </ListItemButton>
-                </ListItem>
-                <ListItem className={classes.appfooter_listItem}>
-                  <ListItemButton>
-                    <AppLink href="/#contact">Contact</AppLink>
-                  </ListItemButton>
-                </ListItem>
-                <ListItem className={classes.appfooter_listItem}>
-                  <ListItemButton>
-                    <AppLink
-                      href="/files/trip-pruitt-resume.pdf"
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      View Résumé
-                    </AppLink>
-                  </ListItemButton>
-                </ListItem>
-              </List>
-            </nav>
-          </Grid>
-          <Grid item xs={12} md={3}>
-            <Stack direction="row" spacing={1}>
-              <div className={classes.appfooter_social}>
-                <a
-                  href="http://www.linkedin.com/in/trip-pruitt"
-                  aria-label="View LinkedIn Profile"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <IconButton aria-label="linkedin">
-                    <LinkedIn />
-                  </IconButton>
-                </a>
-                <a
-                  href="https://github.com/tripstar22/"
-                  aria-label="View GitHub Profile"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <IconButton aria-label="github">
-                    <GitHub />
-                  </IconButton>
-                </a>
-              </div>
-            </Stack>
-          </Grid>
-        </Grid>
-      </Container>
-      <div className={classes.appfooter_logo}>
-        <LogoSecondary className={classes.appfooter_logoLogo} />
-      </div>
+        </Container>
+        <div className={classes.appfooter_logo}>
+          <LogoSecondary className={classes.appfooter_logoLogo} />
+        </div>
+      </RevealOnScroll>
     </footer>
   );
 }

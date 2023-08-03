@@ -25,7 +25,7 @@ import classes from './_skills.module.scss';
 function Skills() {
   return (
     <section className={`section ${classes.skills}`} id="skills">
-      <RevealOnScroll>
+      <RevealOnScroll dataEnd="top 10%" dataStart="90% bottom">
         <Container maxWidth="lg">
           <Grid container spacing={0} justifyContent="center">
             <Grid item xs={12} md={10}>

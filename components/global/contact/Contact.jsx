@@ -27,7 +27,7 @@ function Contact() {
         src="/movies/misty-forest.mp4"
         type="video/mp4"
       />
-      <RevealOnScroll>
+      <RevealOnScroll dataEnd="top 10%" dataStart="30% bottom">
         <Container maxWidth="lg">
           <Grid container spacing={0}>
             <Grid item xs={12}>

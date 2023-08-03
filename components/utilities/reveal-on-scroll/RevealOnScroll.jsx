@@ -1,5 +1,5 @@
 /* react imports */
-import React, { useRef } from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 /* custom module imports */
@@ -9,26 +9,29 @@ function RevealOnScroll(props) {
   const aniSection = useRef(null);
   const { children } = props;
 
-  // define props here, so they can be referenced in aniFade call
-  const aniEnd = {
-    end: props.aniEnd,
-  };
-  const aniStart = {
-    start: props.aniStart,
-  };
+  useLayoutEffect(() => {
+    // get window width and call gsap ScrollTrigger animations if user is in desktop view
+    const browserWindowWidth = window.innerWidth;
 
-  aniFade(aniEnd.end, aniStart.start, '.aniFade', aniSection);
+    if (browserWindowWidth > 899) {
+      aniFade('.revealonscroll_target', aniSection);
+    }
+  }, []);
 
   return (
-    <div aniEnd aniStart ref={aniSection}>
-      <div className="aniFade">{children}</div>
+    <div className="revealonscroll" ref={aniSection}>
+      <div
+        className="revealonscroll_target"
+        data-end={props.dataEnd}
+        data-start={props.dataStart}
+      >
+        {children}
+      </div>
     </div>
   );
 }
 
 RevealOnScroll.propTypes = {
-  aniEnd: PropTypes.string,
-  aniStart: PropTypes.string,
   children: PropTypes.any.isRequired,
 };
 

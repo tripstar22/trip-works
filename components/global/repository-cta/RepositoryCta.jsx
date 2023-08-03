@@ -17,7 +17,7 @@ function RepositoryCta() {
     <section
       className={`section section___paddingSmall ${classes.repositoryCta}`}
     >
-      <RevealOnScroll>
+      <RevealOnScroll dataEnd="top top" dataStart="bottom bottom">
         <Container maxWidth="lg">
           <Grid justifyContent="center" container spacing={0}>
             <Grid item xs={12}>

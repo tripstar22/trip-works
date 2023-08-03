@@ -23,7 +23,7 @@ import classes from './_projects.module.scss';
 function Projects() {
   return (
     <section id="work" className={`section ${classes.projects}`}>
-      <RevealOnScroll>
+      <RevealOnScroll dataEnd="top 10%" dataStart="25% bottom">
         <Container maxWidth="lg">
           <Grid container spacing={0} justifyContent="center">
             <Grid item xs={12} md={10}>

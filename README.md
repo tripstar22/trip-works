@@ -58,18 +58,18 @@
 
 #### GSAP ScrollTrigger
 - [GSAP ScrollTrigger](https://greensock.com/docs/v3/Plugins/ScrollTrigger) is being used to trigger animations on certain elements as the user scrolls through a view. I created a reusable JavaScript module to handle this functionality which can be found in `modules/aniFade.js`, and a component to handle these animations in `components/utilities/reveal-on-scroll/RevealOnScroll.jsx`.
-  - *** Note: ** Using the `ScrollTrigger` plugin requires that I also include the standard [GSAP](https://github.com/greensock/GSAP) library. *
-  - *** Note: ** This functionality is currently a work in progress. *
+  - ***Note:** Using the `ScrollTrigger` plugin requires that I also include the standard [GSAP](https://github.com/greensock/GSAP) library.*
+  - ***Note:** This functionality is currently a work in progress.*
 
 #### react-responsive-masonry
 - [react-responsive-masonry](https://github.com/cedricdelpoux/react-responsive-masonry) is being used for the layout of featured work, which can be found in `components/projects/Projects.jsx`. 
-  - *** Note: ** MUI has included a masonry component of their own in the time since this project was created. The version of MUI that I am using is still very relevant, and `react-responsive-masonry` is a lightweight library, so I elected to add it to the project rather than upgrade MUI which would potentially break other items in the project. *
+  - ***Note:** MUI has included a masonry component of their own in the time since this project was created. The version of MUI that I am using is still very relevant, and `react-responsive-masonry` is a lightweight library, so I elected to add it to the project rather than upgrade MUI which would potentially break other items in the project.*
 
 #### Slick carousel / react-slick
 - The React version ([react-slick](https://github.com/akiran/react-slick)) of Slick Carouel is being used for featured media items in `components/carousel/Carousel.jsx`. 
 - Since Slick generates some of the `html` for the library at build time, I had to target some carousel classes in a global `scss` file, rather than at the component level. You can find these styles in `src/styles/scss/global/_appCarousel.scss`. Those styles are then imported into `pages/_app.jsx`.
-  - *** Note: ** Using `react-slick` requires that I also add the standard version of [slick-carousel](https://www.npmjs.com/package/slick-carousel) to the project in order to access the base carousel styles. You can view the imports for the Slick Carousel styles in `components/carousel/Carousel.jsx`.  *
-  - *** Note: ** This functionality is currently a work in progress. *
+  - ***Note:** Using `react-slick` requires that I also add the standard version of [slick-carousel](https://www.npmjs.com/package/slick-carousel) to the project in order to access the base carousel styles. You can view the imports for the Slick Carousel styles in `components/carousel/Carousel.jsx`.*
+  - ***Note:** This functionality is currently a work in progress.*
 
 #### react-text-truncate
 - [react-text-truncate](https://github.com/ShinyChang/react-text-truncate) is being used to limit the amount of characters displayed for each featured work item's summary in `components/projects/Projects.jsx`.

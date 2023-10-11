@@ -15,7 +15,7 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 /* custom component imports */
-import RevealOnScroll from '../utilities/reveal-on-scroll/RevealOnScroll';
+import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 
 /* styles imports */
 import classes from './_projects.module.scss';
@@ -23,7 +23,14 @@ import classes from './_projects.module.scss';
 function Projects() {
   return (
     <section id="work" className={`section ${classes.projects}`}>
-      <RevealOnScroll dataEnd="top 10%" dataStart="25% bottom">
+      <RevealOnScroll
+        aniTyped={true}
+        end="top 10%"
+        speed={1.25}
+        start="25% bottom"
+        text="Look what I can do!"
+        textElement="#aniTextWork"
+      >
         <Container maxWidth="lg">
           <Grid container spacing={0} justifyContent="center">
             <Grid item xs={12} md={10}>
@@ -31,10 +38,9 @@ function Projects() {
                 className={classes.projects_heading}
                 component="h3"
                 gutterBottom
+                id="aniTextWork"
                 variant="h3"
-              >
-                Work
-              </Typography>
+              />
             </Grid>
           </Grid>
           <ResponsiveMasonry

@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 /* custom component imports */
 import AppLink from '../ui/app-link/AppLink';
 import BackgroundVideo from '../ui/background-video/BackgroundVideo';
-import RevealOnScroll from '../utilities/reveal-on-scroll/RevealOnScroll';
+import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 
 /* styles imports */
 import classes from './_pagenotfound.module.scss';
@@ -25,7 +25,7 @@ function PageNotFound() {
         src="/movies/misty-flythrough.mp4"
         type="video/mp4"
       />
-      <RevealOnScroll dataEnd="top 10%" dataStart="30% bottom">
+      <RevealOnScroll end="top 10%" start="30% bottom">
         <div className={classes.pagenotfound_container}>
           <Container maxWidth="lg">
             <Paper className={classes.pagenotfound_inner} elevation={2}>

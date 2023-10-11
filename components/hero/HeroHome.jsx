@@ -10,13 +10,12 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 /* custom module imports */
-import aniType from '../../modules/aniType';
-import aniScroll from '../../modules/aniScroll';
+import aniScroll from '../utilities/ani-scroll/aniScroll';
 
 /* custom component imports */
 import AppLink from '../ui/app-link/AppLink';
 import BackgroundVideo from '../ui/background-video/BackgroundVideo';
-import RevealOnScroll from '../utilities/reveal-on-scroll/RevealOnScroll';
+import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 
 /* styles imports */
 import classes from './_hero.module.scss';
@@ -31,7 +30,14 @@ function HeroHome() {
         src="/movies/forest-path.mp4"
         type="video/mp4"
       />
-      <RevealOnScroll dataEnd="top top" dataStart="bottom bottom">
+      <RevealOnScroll
+        aniTyped={true}
+        end="top top"
+        speed={1.25}
+        start="bottom bottom"
+        text="Frontend Engineer"
+        textElement="#aniHeroHeading"
+      >
         <Container maxWidth="lg">
           <Grid container spacing={0}>
             <Grid item xs={12}>
@@ -49,16 +55,6 @@ function HeroHome() {
                   component="h2"
                   id="aniHeroHeading"
                   gutterBottom
-                  onLoad={aniType(
-                    false,
-                    0,
-                    false,
-                    200,
-                    'aniHeroHeading',
-                    false,
-                    50,
-                    ['Frontend ^200 Engineer']
-                  )}
                   variant="h4"
                 />
               </div>

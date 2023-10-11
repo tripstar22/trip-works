@@ -15,12 +15,9 @@ import ListItemButton from '@mui/material/ListItemButton';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
-/* custom module imports */
-import aniType from '../../../modules/aniType';
-
 /* custom component imports */
 import AppLink from '../../ui/app-link/AppLink';
-import RevealOnScroll from '../../utilities/reveal-on-scroll/RevealOnScroll';
+import RevealOnScroll from '../../ui/reveal-on-scroll/RevealOnScroll';
 
 /* svg imports */
 import LogoSecondary from '../../../src/svg/logos/logoSecondary.svg';
@@ -31,7 +28,14 @@ import classes from './_appfooter.module.scss';
 function AppFooter() {
   return (
     <footer className={classes.appfooter}>
-      <RevealOnScroll dataEnd="top top" dataStart="50% bottom">
+      <RevealOnScroll
+        aniTyped={true}
+        end="top top"
+        speed={1.25}
+        start="50% bottom"
+        text="Frontend Engineer"
+        textElement="#aniFooterHeading"
+      >
         <Container maxWidth="lg">
           <Grid container spacing={0}>
             <Grid item xs={12}>
@@ -40,16 +44,6 @@ function AppFooter() {
                 component="h3"
                 gutterBottom
                 id="aniFooterHeading"
-                onLoad={aniType(
-                  false,
-                  0,
-                  false,
-                  200,
-                  'aniFooterHeading',
-                  false,
-                  50,
-                  ['Frontend ^200 Engineer']
-                )}
                 variant="h4"
               />
             </Grid>

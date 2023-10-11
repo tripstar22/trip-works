@@ -17,7 +17,7 @@ import IconReact from '../../src/svg/icons/iconReact.svg';
 import IconScss from '../../src/svg/icons/iconScss.svg';
 
 /* custom component imports */
-import RevealOnScroll from '../utilities/reveal-on-scroll/RevealOnScroll';
+import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 
 /* styles imports */
 import classes from './_skills.module.scss';
@@ -25,7 +25,14 @@ import classes from './_skills.module.scss';
 function Skills() {
   return (
     <section className={`section ${classes.skills}`} id="skills">
-      <RevealOnScroll dataEnd="top 10%" dataStart="90% bottom">
+      <RevealOnScroll
+        aniTyped={true}
+        end="top 10%"
+        speed={1.5}
+        start="90% bottom"
+        text="A few of my frontend skills"
+        textElement="#aniTextSkills"
+      >
         <Container maxWidth="lg">
           <Grid container spacing={0} justifyContent="center">
             <Grid item xs={12} md={10}>
@@ -33,10 +40,9 @@ function Skills() {
                 className={classes.skills_heading}
                 component="h3"
                 gutterBottom
+                id="aniTextSkills"
                 variant="h3"
-              >
-                A few of my frontend skills
-              </Typography>
+              />
             </Grid>
           </Grid>
           <Grid container spacing={0}>

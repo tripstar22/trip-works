@@ -14,7 +14,7 @@ const scrollTarget = function scrollToTargetElement(e, eventTarget) {
   history.pushState({}, '', newHash);
 };
 
-const aniScroll = function handlerAnimatePageScroll(event) {
+function aniScroll(event) {
   scrollTarget(event, event.currentTarget);
 };
 

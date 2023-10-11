@@ -1,29 +1,30 @@
 /* react imports */
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 /* custom module imports */
-import aniFade from '../../../modules/aniFade';
+import aniFade from '../../utilities/ani-fade/aniFade';
 
 function RevealOnScroll(props) {
   const aniSection = useRef(null);
   const { children } = props;
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     // get window width and call gsap ScrollTrigger animations if user is in desktop view
-    const browserWindowWidth = window.innerWidth;
 
-    if (browserWindowWidth > 899) {
-      aniFade('.revealonscroll_target', aniSection);
-    }
+    aniFade('.revealonscroll_target', aniSection);
   }, []);
 
   return (
     <div className="revealonscroll" ref={aniSection}>
       <div
         className="revealonscroll_target"
-        data-end={props.dataEnd}
-        data-start={props.dataStart}
+        data-ani-typed={props.aniTyped}
+        data-end={props.end}
+        data-speed={props.speed}
+        data-start={props.start}
+        data-text={props.text}
+        data-text-element={props.textElement}
       >
         {children}
       </div>

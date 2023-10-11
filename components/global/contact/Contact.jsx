@@ -12,7 +12,7 @@ import Typography from '@mui/material/Typography';
 import BackgroundVideo from '../../ui/background-video/BackgroundVideo';
 import ButtonAction from '../../ui/button-action/ButtonAction';
 import ButtonLink from '../../ui/button-link/ButtonLink';
-import RevealOnScroll from '../../utilities/reveal-on-scroll/RevealOnScroll';
+import RevealOnScroll from '../../ui/reveal-on-scroll/RevealOnScroll';
 
 /* styles imports */
 import classes from './_contact.module.scss';
@@ -27,7 +27,14 @@ function Contact() {
         src="/movies/misty-forest.mp4"
         type="video/mp4"
       />
-      <RevealOnScroll dataEnd="top 10%" dataStart="30% bottom">
+      <RevealOnScroll
+        aniTyped={true}
+        end="top 10%"
+        speed={1.5}
+        start="30% bottom"
+        text="Let‘s connect"
+        textElement="#aniTextContact"
+      >
         <Container maxWidth="lg">
           <Grid container spacing={0}>
             <Grid item xs={12}>
@@ -35,10 +42,9 @@ function Contact() {
                 className={classes.contact_heading}
                 component="h2"
                 gutterBottom
+                id="aniTextContact"
                 variant="h2"
-              >
-                Let‘s connect
-              </Typography>
+              />
               <div
                 className={`${classes.contact_buttonContainer} ${classes.contact_buttonContainer___paddingBottom}`}
               >

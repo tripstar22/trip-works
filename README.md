@@ -53,13 +53,15 @@
 
 ### Other Third-Party Libraries
 
-#### Typed.js
-- [Typed.js](https://github.com/mattboldt/typed.js) is being used to animate certain text elements in the app. I created a reusable JavaScript module to handle this functionality which can be found in `modules/aniType.js`.
-
 #### GSAP ScrollTrigger
 - [GSAP ScrollTrigger](https://greensock.com/docs/v3/Plugins/ScrollTrigger) is being used to trigger animations on certain elements as the user scrolls through a view. I created a reusable JavaScript module to handle this functionality which can be found in `modules/aniFade.js`, and a component to handle these animations in `components/utilities/reveal-on-scroll/RevealOnScroll.jsx`.
   - ***Note:** Using the `ScrollTrigger` plugin requires that I also include the standard [GSAP](https://github.com/greensock/GSAP) library.*
-  - ***Note:** This functionality is currently a work in progress.*
+
+#### GSAP TextPlugin
+- [GSAP TextPlugin](https://gsap.com/docs/v3/Plugins/TextPlugin/) is being used to animate certain text elements in the app.
+- This functionality is used in conjunction with GSAP ScrollTrigger in `modules/aniFade.js`.
+- Like the ScrollTrigger functionality, the functionality is used in the `RevealOnScroll` component found in `components/utilities/reveal-on-scroll/RevealOnScroll.jsx`.
+   - ***Note:** Using the `TextPlugin` plugin requires that I also include the standard [GSAP](https://github.com/greensock/GSAP) library.*
 
 #### react-responsive-masonry
 - [react-responsive-masonry](https://github.com/cedricdelpoux/react-responsive-masonry) is being used for the layout of featured work, which can be found in `components/projects/Projects.jsx`. 

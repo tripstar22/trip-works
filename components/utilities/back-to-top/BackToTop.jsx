@@ -10,7 +10,7 @@ import Fade from '@mui/material/Fade';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
 /* custom module imports */
-import aniScroll from '../../../modules/aniScroll';
+import aniScroll from '../ani-scroll/aniScroll';
 
 /* custom component imports */
 import AppLink from '../../ui/app-link/AppLink';
@@ -18,7 +18,7 @@ import AppLink from '../../ui/app-link/AppLink';
 /* styles imports */
 import classes from './_backtotop.module.scss';
 
-function BackToTop () {
+function BackToTop() {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 100,

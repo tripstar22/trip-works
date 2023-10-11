@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 
 /* custom component imports */
 import AppModal from '../app-modal/AppModal';
-import RevealOnScroll from '../utilities/reveal-on-scroll/RevealOnScroll';
+import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 
 /* styles imports */
 import classes from './_gallery.module.scss';
@@ -29,13 +29,23 @@ function Gallery() {
 
   return (
     <section className={`section ${classes.gallery}`}>
-      <RevealOnScroll dataEnd="top top" dataStart="50% bottom">
+      <RevealOnScroll
+        aniTyped={true}
+        end="top top"
+        speed={1.25}
+        start="50% bottom"
+        text="Gallery"
+        textElement="#aniTextGallery"
+      >
         <Container maxWidth="lg">
           <Grid container spacing={4}>
             <Grid item xs={12}>
-              <Typography component="h3" gutterBottom variant="h3">
-                Gallery
-              </Typography>
+              <Typography
+                component="h3"
+                gutterBottom
+                id="aniTextGallery"
+                variant="h3"
+              />
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
               <Card>

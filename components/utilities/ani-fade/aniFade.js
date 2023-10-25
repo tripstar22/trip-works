@@ -2,7 +2,7 @@
   DESCRIPTION: Created to animate fade effect with gsap ScrollTrigger. 
 */
 
-/* library imports */
+/* third party library imports */
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { TextPlugin } from 'gsap/dist/TextPlugin';

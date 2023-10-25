@@ -10,8 +10,6 @@ function RevealOnScroll(props) {
   const { children } = props;
 
   useEffect(() => {
-    // get window width and call gsap ScrollTrigger animations if user is in desktop view
-
     aniFade('.revealonscroll_target', aniSection);
   }, []);
 

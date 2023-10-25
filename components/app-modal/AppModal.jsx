@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-/* library imports */
+/* third party library imports */
 import Slider from 'react-slick';
 
 /* mui icon imports */

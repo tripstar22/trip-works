@@ -1,7 +1,7 @@
 /* react imports */
 import React from 'react';
 
-/* library imports */
+/* third party library imports */
 import TextTruncate from 'react-text-truncate';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 

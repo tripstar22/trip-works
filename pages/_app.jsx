@@ -12,9 +12,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 /* emotion imports */
 import { CacheProvider } from '@emotion/react';
 
-/* dotenv import */
-import 'dotenv/config';
-
 /* src imports */
 import createEmotionCache from '../src/styles/js/createEmotionCache';
 import '../src/styles/scss/_fonts.scss';

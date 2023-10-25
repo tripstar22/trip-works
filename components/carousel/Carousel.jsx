@@ -1,7 +1,7 @@
 /* react imports */
 import React from 'react';
 
-/* library imports */
+/* third party library imports */
 import Slider from 'react-slick';
 
 /* library styles imports */

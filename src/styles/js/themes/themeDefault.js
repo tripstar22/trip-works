@@ -26,9 +26,11 @@ themeDefault = createTheme(themeDefault, {
           textTransform: 'initial',
           '&:hover': {
             backgroundColor: colors['tealDark'],
+            color: colors['white'],
           },
           '&:focus': {
             backgroundColor: colors['tealDark'],
+            color: colors['white'],
           },
         },
       },

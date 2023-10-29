@@ -14,6 +14,7 @@
     "@emotion/react": "latest",
     "@emotion/server": "latest",
     "@emotion/styled": "latest",
+    "@madebyconnor/rich-text-to-jsx": "^2.2.2",
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
     "@next/font": "^13.1.1",

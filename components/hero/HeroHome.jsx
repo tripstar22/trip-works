@@ -20,8 +20,8 @@ import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 /* styles imports */
 import classes from './_hero.module.scss';
 
-function HeroHome({ dataContent }) {
-  const { appTitle, appSubtitle } = dataContent;
+function HeroHome({ homeHeroContent }) {
+  const { appTitle, appSubtitle } = homeHeroContent;
 
   return (
     <section className={`${classes.hero} ${classes.hero___home}`}>

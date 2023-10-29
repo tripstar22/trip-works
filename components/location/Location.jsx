@@ -20,7 +20,9 @@ const fetchData = function fetchWeatherAPIData(url) {
   return fetch(url).then((res) => res.json());
 };
 
-function Location() {
+function Location({ locationSectionContent }) {
+  const { locationHeading } = locationSectionContent;
+
   // set up SWR to run the fetchData when calling "/api/weatherForecast"
   // there are 3 possible states: (1) error when there was an error fetching the data (2) loading when data is null (3) ready when the data is returned
   const { data, error } = useSWR('/api/weather-forecast/weatherForecast', fetchData);
@@ -38,8 +40,7 @@ function Location() {
                   component="h4"
                   variant="h4"
                 >
-                  I currently live in the Greater Metro Atlanta area, and am
-                  also open to remote work.
+                  {locationHeading}
                 </Typography>
               </Grid>
               <Grid item xs={12} sm={5} md={4}>
@@ -70,8 +71,7 @@ function Location() {
                   component="h4"
                   variant="h4"
                 >
-                  I currently live in the Greater Metro Atlanta area, and am
-                  also open to remote work.
+                  {locationHeading}
                 </Typography>
               </Grid>
               <Grid item xs={12} sm={5} md={4}>

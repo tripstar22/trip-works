@@ -1,19 +1,30 @@
 /* react imports */
 import React from 'react';
 
+/* third party library imports */
+import RichText from '@madebyconnor/rich-text-to-jsx';
+
 /* mui imports */
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 /* custom component imports */
-import Location from '../location/Location';
 import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 
 /* styles imports */
 import classes from './_about.module.scss';
 
-function About() {
+function About({ aboutSectionContent }) {
+  const { aboutHeading, aboutContent } = aboutSectionContent;
+
+  // check if aboutContent is defined and contains content
+  // if (!aboutContent || !Array.isArray(aboutContent.content)) {
+  //   return null; // handle the case when aboutContent is not properly defined
+  // }
+
+  // const aboutContentItems = aboutContent.content;
+
   return (
     <section
       className={`section section___noPaddingBottom ${classes.about}`}
@@ -24,7 +35,7 @@ function About() {
         end="top 10%"
         speed={1.25}
         start="75% bottom"
-        text="Who I am"
+        text={aboutHeading}
         textElement="#aniTextAbout"
       >
         <div className={classes.about_container}>
@@ -44,28 +55,13 @@ function About() {
                     id="aniTextAbout"
                     variant="h3"
                   />
-                  <Typography gutterBottom variant="body1">
-                    From inner city Boston to Alabama fraternities, I’ve never found a place I wasn’t able to fit in.
-                  </Typography>
-                  <Typography gutterBottom variant="body1">
-                    Product of being a Navy brat, I guess.
-                  </Typography>
-                  <Typography gutterBottom variant="body1">
-                    I’m adaptable.
-                  </Typography>
-                  <Typography gutterBottom variant="body1">
-                    I’ll talk sports and grill anywhere and with anyone.
-                  </Typography>
-                  <Typography gutterBottom variant="body1">
-                    I approach software engineering the same way.
-                  </Typography>
+                  <RichText richText={aboutContent} />
                 </div>
               </Grid>
             </Grid>
           </Container>
         </div>
       </RevealOnScroll>
-      <Location />
     </section>
   );
 }

@@ -21,7 +21,7 @@ import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 import classes from './_hero.module.scss';
 
 function HeroHome({ homeHeroContent }) {
-  const { appTitle, appSubtitle } = homeHeroContent;
+  const { subtitle, title, } = homeHeroContent;
 
   return (
     <section className={`${classes.hero} ${classes.hero___home}`}>
@@ -37,7 +37,7 @@ function HeroHome({ homeHeroContent }) {
         end="top top"
         speed={1.25}
         start="bottom bottom"
-        text={appSubtitle}
+        text={subtitle}
         textElement="#aniHeroHeading"
       >
         <Container maxWidth="lg">
@@ -50,7 +50,7 @@ function HeroHome({ homeHeroContent }) {
                   gutterBottom
                   variant="h1"
                 >
-                  {appTitle}
+                  {title}
                 </Typography>
                 <Typography
                   className={`${classes.hero_subheading} ${classes.hero_subheading___home}`}

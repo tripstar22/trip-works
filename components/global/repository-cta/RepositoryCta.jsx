@@ -16,9 +16,8 @@ import RevealOnScroll from '../../ui/reveal-on-scroll/RevealOnScroll';
 /* styles imports */
 import classes from './_repositoryCta.module.scss';
 
-function RepositoryCta({ repositoryCtaSectionContent }) {
-  const { repositoryCtaHeading, repositoryCtaContent, repositoryCtaLink } =
-    repositoryCtaSectionContent;
+function RepositoryCta({ repositoryCtaContent }) {
+  const { content, cta, heading } = repositoryCtaContent;
 
   return (
     <section
@@ -29,13 +28,15 @@ function RepositoryCta({ repositoryCtaSectionContent }) {
           <Grid justifyContent="center" container spacing={0}>
             <Grid item xs={12}>
               <Typography component="h5" gutterBottom variant="h5">
-                {repositoryCtaHeading}
+                {heading}
               </Typography>
               <div className={classes.repositoryCta_content}>
-                <RichText richText={repositoryCtaContent} />
+                <Typography gutterBottom variant="body1">
+                  {content}
+                </Typography>
               </div>
-              <ButtonLink href={repositoryCtaLink.href} target="_blank">
-                {repositoryCtaLink.text}
+              <ButtonLink href={cta.href} target={cta.target}>
+                {cta.text}
               </ButtonLink>
             </Grid>
           </Grid>

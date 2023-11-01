@@ -13,6 +13,7 @@ import Location from '../components/location/Location';
 import Projects from '../components/projects/Projects';
 import RepositoryCta from '../components/global/repository-cta/RepositoryCta';
 import Skills from '../components/skills/Skills';
+import { Main } from 'next/document';
 
 export async function getStaticProps() {
   const client = contentful.createClient({
@@ -21,32 +22,14 @@ export async function getStaticProps() {
   });
 
   try {
-    const homeHeroResponse = await client.getEntry(
-      process.env.NEXT_PUBLIC_CONTENTFUL_HOME_HERO_ID
+    const contentPrimaryResponse = await client.getEntry(
+      process.env.NEXT_PUBLIC_CONTENTFUL_CONTENT_PRIMARY
     );
-    const homeHeroContent = homeHeroResponse.fields;
-
-    const aboutSectionResponse = await client.getEntry(
-      process.env.NEXT_PUBLIC_CONTENTFUL_ABOUT_ID
-    );
-    const aboutSectionContent = aboutSectionResponse.fields;
-
-    const locationResponse = await client.getEntry(
-      process.env.NEXT_PUBLIC_CONTENTFUL_LOCATION_ID
-    );
-    const locationSectionContent = locationResponse.fields;
-
-    const repositoryCtaResponse = await client.getEntry(
-      process.env.NEXT_PUBLIC_CONTENTFUL_REPOSITORY_CTA_ID
-    );
-    const repositoryCtaSectionContent = repositoryCtaResponse.fields;
+    const contentPrimary = contentPrimaryResponse.fields;
 
     return {
       props: {
-        aboutSectionContent,
-        homeHeroContent,
-        locationSectionContent,
-        repositoryCtaSectionContent,
+        contentPrimary,
       },
     };
   } catch (error) {
@@ -54,10 +37,7 @@ export async function getStaticProps() {
 
     return {
       props: {
-        aboutSectionContent: null,
-        homeHeroContent: null,
-        locationSectionContent: null,
-        repositoryCtaSectionContent: null,
+        contentPrimary: null,
       },
     };
   }
@@ -65,28 +45,23 @@ export async function getStaticProps() {
 
 function IndexPage(props) {
   const { pageProp } = props;
-  const {
-    aboutSectionContent,
-    homeHeroContent,
-    locationSectionContent,
-    repositoryCtaSectionContent,
-  } = pageProp;
+  const { contentPrimary } = pageProp;
 
-  if (!pageProp) {
+  const { about, contact, location, main, repositoryCta } = contentPrimary.main;
+
+  if (!pageProp || !pageProp.contentPrimary) {
     return <AppLoader />;
   }
 
   return (
     <>
-      <HeroHome homeHeroContent={homeHeroContent} />
-      <About aboutSectionContent={aboutSectionContent} />
-      <Location locationSectionContent={locationSectionContent} />
+      <HeroHome homeHeroContent={main} />
+      <About aboutContent={about} />
+      <Location locationContent={location} />
       <Skills />
       <Projects />
-      <Contact />
-      <RepositoryCta
-        repositoryCtaSectionContent={repositoryCtaSectionContent}
-      />
+      <Contact contactContent={contact} />
+      <RepositoryCta repositoryCtaContent={repositoryCta} />
     </>
   );
 }

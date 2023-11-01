@@ -17,7 +17,9 @@ import RevealOnScroll from '../../ui/reveal-on-scroll/RevealOnScroll';
 /* styles imports */
 import classes from './_contact.module.scss';
 
-function Contact() {
+function Contact({ contactContent }) {
+  const { cta, heading } = contactContent;
+
   return (
     <section className={`section ${classes.contact}`} id="contact">
       <BackgroundVideo
@@ -32,7 +34,7 @@ function Contact() {
         end="top 10%"
         speed={1.5}
         start="30% bottom"
-        text="Let‘s connect"
+        text={heading}
         textElement="#aniTextContact"
       >
         <Container maxWidth="lg">
@@ -50,11 +52,11 @@ function Contact() {
               >
                 <ButtonLink
                   className={classes.contact_link}
-                  href="/files/trip-pruitt-resume.pdf"
-                  rel="noopener noreferrer"
-                  target="_blank"
+                  href={cta.href}
+                  rel={cta.ref}
+                  target={cta.target}
                 >
-                  View Résumé
+                  {cta.text}
                 </ButtonLink>
               </div>
             </Grid>

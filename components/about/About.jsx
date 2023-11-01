@@ -15,15 +15,8 @@ import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 /* styles imports */
 import classes from './_about.module.scss';
 
-function About({ aboutSectionContent }) {
-  const { aboutHeading, aboutContent } = aboutSectionContent;
-
-  // check if aboutContent is defined and contains content
-  // if (!aboutContent || !Array.isArray(aboutContent.content)) {
-  //   return null; // handle the case when aboutContent is not properly defined
-  // }
-
-  // const aboutContentItems = aboutContent.content;
+function About({ aboutContent }) {
+  const { content, heading } = aboutContent;
 
   return (
     <section
@@ -35,7 +28,7 @@ function About({ aboutSectionContent }) {
         end="top 10%"
         speed={1.25}
         start="75% bottom"
-        text={aboutHeading}
+        text={heading}
         textElement="#aniTextAbout"
       >
         <div className={classes.about_container}>
@@ -55,7 +48,11 @@ function About({ aboutSectionContent }) {
                     id="aniTextAbout"
                     variant="h3"
                   />
-                  <RichText richText={aboutContent} />
+                  {content.map((item, index) => (
+                    <Typography key={index} gutterBottom variant="body1">
+                      {item.item}
+                    </Typography>
+                  ))}
                 </div>
               </Grid>
             </Grid>

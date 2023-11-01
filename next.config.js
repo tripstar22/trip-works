@@ -3,7 +3,11 @@ const path = require('path');
 module.exports = {
   reactStrictMode: true,
   sassOptions: {
-    includePaths: [path.join('src/styles/scss/', 'styles')],
+    includePaths: [path.join('src/styles/scss/', 'styles')]
+  },
+  images: {
+    loader: 'cloudinary',
+    path: 'https://res.cloudinary.com/deabacdkh/image/upload'
   },
   webpack(config) {
     config.resolve.fallback = {
@@ -13,8 +17,8 @@ module.exports = {
     config.module.rules.push({
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
-      use: ['@svgr/webpack'],
-    })
+      use: ['@svgr/webpack']
+    });
 
     return config
   },

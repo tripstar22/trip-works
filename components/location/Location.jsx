@@ -22,7 +22,7 @@ const fetchData = function fetchWeatherAPIData(url) {
 
 function Location({ locationContent }) {
   const { heading } = locationContent;
-
+  
   // set up SWR to run the fetchData when calling "/api/weatherForecast"
   // there are 3 possible states: (1) error when there was an error fetching the data (2) loading when data is null (3) ready when the data is returned
   const { data, error } = useSWR('/api/weather-forecast/weatherForecast', fetchData);

@@ -18,7 +18,9 @@ import RevealOnScroll from '../../ui/reveal-on-scroll/RevealOnScroll';
 import classes from './_contact.module.scss';
 
 function Contact({ contactContent }) {
-  const { cta, heading } = contactContent;
+  const { backgroundVideo, cta, heading } = contactContent;
+  const videoUrl = backgroundVideo.fields.file.url;
+  const { ctaHref, ctaRel, ctaTarget, ctaText } = cta;
 
   return (
     <section className={`section ${classes.contact}`} id="contact">
@@ -26,7 +28,7 @@ function Contact({ contactContent }) {
         autoPlay="autoplay"
         loop={true}
         muted={true}
-        src="/movies/misty-forest.mp4"
+        src={videoUrl}
         type="video/mp4"
       />
       <RevealOnScroll
@@ -52,11 +54,11 @@ function Contact({ contactContent }) {
               >
                 <ButtonLink
                   className={classes.contact_link}
-                  href={cta.href}
-                  rel={cta.ref}
-                  target={cta.target}
+                  href={ctaHref}
+                  rel={ctaRel}
+                  target={ctaTarget}
                 >
-                  {cta.text}
+                  {ctaText}
                 </ButtonLink>
               </div>
             </Grid>

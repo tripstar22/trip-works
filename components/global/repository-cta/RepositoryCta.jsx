@@ -1,9 +1,6 @@
 /* react imports */
 import React from 'react';
 
-/* third party library imports */
-import RichText from '@madebyconnor/rich-text-to-jsx';
-
 /* mui imports */
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -16,8 +13,9 @@ import RevealOnScroll from '../../ui/reveal-on-scroll/RevealOnScroll';
 /* styles imports */
 import classes from './_repositoryCta.module.scss';
 
-function RepositoryCta({ repositoryCtaContent }) {
-  const { content, cta, heading } = repositoryCtaContent;
+function RepositoryCta({ repositoryCta }) {
+  const { content, cta, heading } = repositoryCta;
+  const { ctaHref, ctaTarget, ctaText } = cta;
 
   return (
     <section
@@ -35,8 +33,8 @@ function RepositoryCta({ repositoryCtaContent }) {
                   {content}
                 </Typography>
               </div>
-              <ButtonLink href={cta.href} target={cta.target}>
-                {cta.text}
+              <ButtonLink href={ctaHref} target={ctaTarget}>
+                {ctaText}
               </ButtonLink>
             </Grid>
           </Grid>

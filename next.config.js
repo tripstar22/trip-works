@@ -6,8 +6,15 @@ module.exports = {
     includePaths: [path.join('src/styles/scss/', 'styles')]
   },
   images: {
-    loader: 'cloudinary',
-    path: 'https://res.cloudinary.com/deabacdkh/image/upload'
+    dangerouslyAllowSVG: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.ctfassets.net',
+        port: '',
+        pathname: '/vlenfcbgvx7c/*/**',
+      },
+    ]
   },
   webpack(config) {
     config.resolve.fallback = {

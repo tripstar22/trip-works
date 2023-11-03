@@ -1,9 +1,6 @@
 /* react imports */
 import React from 'react';
 
-/* third party library imports */
-import RichText from '@madebyconnor/rich-text-to-jsx';
-
 /* mui imports */
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -16,7 +13,7 @@ import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 import classes from './_about.module.scss';
 
 function About({ aboutContent }) {
-  const { content, heading } = aboutContent;
+  const { heading, content } = aboutContent;
 
   return (
     <section
@@ -48,9 +45,9 @@ function About({ aboutContent }) {
                     id="aniTextAbout"
                     variant="h3"
                   />
-                  {content.map((item, index) => (
+                  {content.content.map((item, index) => (
                     <Typography key={index} gutterBottom variant="body1">
-                      {item.item}
+                      {item.content[0].value}
                     </Typography>
                   ))}
                 </div>

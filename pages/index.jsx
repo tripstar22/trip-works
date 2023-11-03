@@ -13,7 +13,6 @@ import Location from '../components/location/Location';
 import Projects from '../components/projects/Projects';
 import RepositoryCta from '../components/global/repository-cta/RepositoryCta';
 import Skills from '../components/skills/Skills';
-import { Main } from 'next/document';
 
 export async function getStaticProps() {
   const client = contentful.createClient({
@@ -22,14 +21,57 @@ export async function getStaticProps() {
   });
 
   try {
-    const contentPrimaryResponse = await client.getEntry(
-      process.env.NEXT_PUBLIC_CONTENTFUL_CONTENT_PRIMARY
+    // about
+    const aboutContentResponse = await client.getEntry(
+      '5qNHxrgorV0020tJFgu0up'
     );
-    const contentPrimary = contentPrimaryResponse.fields;
+    const aboutContent = aboutContentResponse.fields;
+
+    // contact
+    const contactContentResponse = await client.getEntry(
+      '6QNHyhpaVHS7bgqmfxQg0s'
+    );
+    const contactContent = contactContentResponse.fields;
+
+    // home hero
+    const homeHeroContentResponse = await client.getEntry(
+      '6O60cfV82lAZKjI1vyWoJa'
+    );
+    const homeHeroContent = homeHeroContentResponse.fields;
+
+    // location
+    const locationContentResponse = await client.getEntry(
+      '3zwnDmVEdqsO04rOy2WQIM'
+    );
+    const locationContent = locationContentResponse.fields;
+
+    // repository cta
+    const repositoryCtaResponse = await client.getEntry(
+      '01lx3PqjdVxjp7QLNPaugU'
+    );
+    const repositoryCta = repositoryCtaResponse.fields;
+
+    // skills heading
+    const skillsHeadingResponse = await client.getEntry(
+      'SzzgN6NoZIsDBxcPLHNvO'
+    );
+    const skillsHeading = skillsHeadingResponse.fields;
+
+    // skills items
+    const skillsItemsResponse = await client.getEntries({
+      content_type: 'skillsItems',
+    });
+    const skillsItems = skillsItemsResponse.items;
 
     return {
       props: {
-        contentPrimary,
+        aboutContent,
+        contactContent,
+        homeHeroContent,
+        locationContent,
+        repositoryCta,
+        skillsHeading,
+        skillsItems,
       },
     };
   } catch (error) {
@@ -37,7 +79,13 @@ export async function getStaticProps() {
 
     return {
       props: {
-        contentPrimary: null,
+        aboutContent: null,
+        contactContent: null,
+        homeHeroContent: null,
+        locationContent: null,
+        repositoryCta: null,
+        skillsHeading: null,
+        skillsItems: null,
       },
     };
   }
@@ -45,23 +93,38 @@ export async function getStaticProps() {
 
 function IndexPage(props) {
   const { pageProp } = props;
-  const { contentPrimary } = pageProp;
+  const {
+    aboutContent,
+    contactContent,
+    homeHeroContent,
+    locationContent,
+    repositoryCta,
+    skillsHeading,
+    skillsItems,
+  } = pageProp;
 
-  const { about, contact, location, main, repositoryCta } = contentPrimary.main;
-
-  if (!pageProp || !pageProp.contentPrimary) {
+  if (
+    !pageProp ||
+    !pageProp.aboutContent ||
+    !pageProp.contactContent ||
+    !pageProp.homeHeroContent ||
+    !pageProp.locationContent ||
+    !pageProp.repositoryCta ||
+    !pageProp.skillsHeading ||
+    !pageProp.skillsItems
+  ) {
     return <AppLoader />;
   }
 
   return (
     <>
-      <HeroHome homeHeroContent={main} />
-      <About aboutContent={about} />
-      <Location locationContent={location} />
-      <Skills />
+      <HeroHome homeHeroContent={homeHeroContent} />
+      <About aboutContent={aboutContent} />
+      <Location locationContent={locationContent} />
+      <Skills skillsHeading={skillsHeading} skillsItems={skillsItems} />
       <Projects />
-      <Contact contactContent={contact} />
-      <RepositoryCta repositoryCtaContent={repositoryCta} />
+      <Contact contactContent={contactContent} />
+      <RepositoryCta repositoryCta={repositoryCta} />
     </>
   );
 }

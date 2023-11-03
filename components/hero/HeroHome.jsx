@@ -21,7 +21,8 @@ import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 import classes from './_hero.module.scss';
 
 function HeroHome({ homeHeroContent }) {
-  const { subtitle, title, } = homeHeroContent;
+  const { backgroundVideo, heading, subheading } = homeHeroContent;
+  const videoUrl = backgroundVideo.fields.file.url;
 
   return (
     <section className={`${classes.hero} ${classes.hero___home}`}>
@@ -29,7 +30,7 @@ function HeroHome({ homeHeroContent }) {
         autoPlay="autoplay"
         loop={true}
         muted={true}
-        src="/movies/forest-path.mp4"
+        src={videoUrl}
         type="video/mp4"
       />
       <RevealOnScroll
@@ -37,7 +38,7 @@ function HeroHome({ homeHeroContent }) {
         end="top top"
         speed={1.25}
         start="bottom bottom"
-        text={subtitle}
+        text={subheading}
         textElement="#aniHeroHeading"
       >
         <Container maxWidth="lg">
@@ -50,7 +51,7 @@ function HeroHome({ homeHeroContent }) {
                   gutterBottom
                   variant="h1"
                 >
-                  {title}
+                  {heading}
                 </Typography>
                 <Typography
                   className={`${classes.hero_subheading} ${classes.hero_subheading___home}`}

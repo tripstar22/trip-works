@@ -15,14 +15,18 @@ import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 /* styles imports */
 import classes from './_pagenotfound.module.scss';
 
-function PageNotFound() {
+function PageNotFound({ pageNotFoundContent }) {
+  const { backgroundVideo, heading, link, text } = pageNotFoundContent;
+  const videoUrl = backgroundVideo.fields.file.url;
+  const { linkHref, linkText } = link;
+
   return (
     <section className={classes.pagenotfound}>
       <BackgroundVideo
         autoPlay="autoplay"
         loop={true}
         muted={true}
-        src="/movies/misty-flythrough.mp4"
+        src={videoUrl}
         type="video/mp4"
       />
       <RevealOnScroll end="top 10%" start="30% bottom">
@@ -33,12 +37,15 @@ function PageNotFound() {
                 <Grid container spacing={0}>
                   <Grid item xs={12}>
                     <Typography component="h1" gutterBottom variant="h1">
-                      Sorry, this page does not exist, or has been removed.
+                      {heading}
                     </Typography>
                     <Typography component="h6" gutterBottom variant="h6">
-                      Feel free to visit the{' '}
-                      <AppLink className={classes.pagenotfound_link} href="/">
-                        home page
+                      {text}{' '}
+                      <AppLink
+                        className={classes.pagenotfound_link}
+                        href={linkHref}
+                      >
+                        {linkText}
                       </AppLink>
                       .
                     </Typography>

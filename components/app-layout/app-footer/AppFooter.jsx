@@ -20,7 +20,7 @@ import AppLink from '../../ui/app-link/AppLink';
 import RevealOnScroll from '../../ui/reveal-on-scroll/RevealOnScroll';
 
 /* svg imports */
-import LogoSecondary from '../../../src/svg/logos/logoSecondary.svg';
+import LogoSecondary from '/public/svg/logos/logoSecondary.svg';
 
 /* styles imports */
 import classes from './_appfooter.module.scss';

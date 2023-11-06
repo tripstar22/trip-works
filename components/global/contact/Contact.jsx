@@ -1,5 +1,6 @@
 /* react imports */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /* mui imports */
 import Container from '@mui/material/Container';
@@ -128,5 +129,9 @@ function Contact({ contactContent }) {
     </section>
   );
 }
+
+Contact.propTypes = {
+  contactContent: PropTypes.object.isRequired,
+};
 
 export default Contact;

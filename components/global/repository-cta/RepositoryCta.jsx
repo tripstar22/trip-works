@@ -1,5 +1,6 @@
 /* react imports */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /* mui imports */
 import Container from '@mui/material/Container';
@@ -43,5 +44,9 @@ function RepositoryCta({ repositoryCta }) {
     </section>
   );
 }
+
+RepositoryCta.propTypes = {
+  repositoryCta: PropTypes.object.isRequired,
+};
 
 export default RepositoryCta;

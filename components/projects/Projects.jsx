@@ -1,5 +1,6 @@
 /* react imports */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /* third party library imports */
 import TextTruncate from 'react-text-truncate';
@@ -284,5 +285,9 @@ function Projects({ workHeading }) {
     </section>
   );
 }
+
+Projects.propTypes = {
+  workHeading: PropTypes.object.isRequired,
+};
 
 export default Projects;

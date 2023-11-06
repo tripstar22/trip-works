@@ -1,5 +1,6 @@
 /* react imports */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /* mui icon imports */
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -76,5 +77,9 @@ function HeroHome({ homeHeroContent }) {
     </section>
   );
 }
+
+HeroHome.propTypes = {
+  homeHeroContent: PropTypes.object.isRequired,
+};
 
 export default HeroHome;

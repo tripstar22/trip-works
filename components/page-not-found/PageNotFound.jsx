@@ -1,5 +1,6 @@
 /* react imports */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /* mui imports */
 import Container from '@mui/material/Container';
@@ -59,5 +60,9 @@ function PageNotFound({ pageNotFoundContent }) {
     </section>
   );
 }
+
+PageNotFound.propTypes = {
+  pageNotFoundContent: PropTypes.object.isRequired,
+};
 
 export default PageNotFound;

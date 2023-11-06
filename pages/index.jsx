@@ -6,10 +6,10 @@ const contentful = require('contentful');
 
 /* custom component imports */
 import About from '../components/about/About';
+import AppLayout from '../components/app-layout/AppLayout';
 import AppLoader from '../components/app-loader/AppLoader';
 import Contact from '../components/global/contact/Contact';
-import HeroHome from '../components/hero/HeroHome';
-import Location from '../components/location/Location';
+import HeroHome from '../components/hero/HeroHome'
 import Projects from '../components/projects/Projects';
 import RepositoryCta from '../components/global/repository-cta/RepositoryCta';
 import Skills from '../components/skills/Skills';
@@ -45,6 +45,12 @@ export async function getStaticProps() {
     );
     const locationContent = locationContentResponse.fields;
 
+    // navigation main
+    const navigationMainResponse = await client.getEntry(
+      '15OSvONv0lmHEajKZ0oHFb'
+    );
+    const navigationMain = navigationMainResponse.fields;
+
     // repository cta
     const repositoryCtaResponse = await client.getEntry(
       '01lx3PqjdVxjp7QLNPaugU'
@@ -63,15 +69,23 @@ export async function getStaticProps() {
     });
     const skillsItems = skillsItemsResponse.items;
 
+    // work heading
+    const workHeadingResponse = await client.getEntry(
+      '4D8B7cYwhfl13gL74nIcqa'
+    );
+    const workHeading = workHeadingResponse.fields;
+
     return {
       props: {
         aboutContent,
         contactContent,
         homeHeroContent,
         locationContent,
+        navigationMain,
         repositoryCta,
         skillsHeading,
         skillsItems,
+        workHeading,
       },
     };
   } catch (error) {
@@ -83,9 +97,11 @@ export async function getStaticProps() {
         contactContent: null,
         homeHeroContent: null,
         locationContent: null,
+        navigationMain: null,
         repositoryCta: null,
         skillsHeading: null,
         skillsItems: null,
+        workHeading: null,
       },
     };
   }
@@ -98,9 +114,11 @@ function IndexPage(props) {
     contactContent,
     homeHeroContent,
     locationContent,
+    navigationMain,
     repositoryCta,
     skillsHeading,
     skillsItems,
+    workHeading,
   } = pageProp;
 
   if (
@@ -109,23 +127,24 @@ function IndexPage(props) {
     !pageProp.contactContent ||
     !pageProp.homeHeroContent ||
     !pageProp.locationContent ||
+    !pageProp.navigationMain ||
     !pageProp.repositoryCta ||
     !pageProp.skillsHeading ||
-    !pageProp.skillsItems
+    !pageProp.skillsItems ||
+    !pageProp.workHeading
   ) {
     return <AppLoader />;
   }
 
   return (
-    <>
+    <AppLayout navigationMain={navigationMain}>
       <HeroHome homeHeroContent={homeHeroContent} />
-      <About aboutContent={aboutContent} />
-      <Location locationContent={locationContent} />
+      <About aboutContent={aboutContent} locationContent={locationContent} />
       <Skills skillsHeading={skillsHeading} skillsItems={skillsItems} />
-      <Projects />
+      <Projects workHeading={workHeading} />
       <Contact contactContent={contactContent} />
       <RepositoryCta repositoryCta={repositoryCta} />
-    </>
+    </AppLayout>
   );
 }
 

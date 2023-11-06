@@ -42,7 +42,7 @@ function Skills({ skillsHeading, skillsItems }) {
               <Grid key={index} item xs={6} md={3}>
                 <div className={classes.skills_section}>
                   <div className={classes.skills_icon}>
-                    <img src={'https:' + item.fields.image.fields.file.url} fill={true} alt="" />
+                    <img src={'https:' + item.fields.image.fields.file.url} alt="" />
                   </div>
                   <Typography component="h5" gutterBottom variant="h5">
                     {item.fields.title}

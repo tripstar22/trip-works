@@ -11,7 +11,7 @@ function AppLoader() {
   return (
     <section className={classes.apploader}>
       <div className={classes.apploader_container}>
-        <CircularProgress size={60} />
+        <CircularProgress size={60} className={classes.apploader_loader} />
       </div>
     </section>
   );

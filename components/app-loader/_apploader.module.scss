@@ -21,6 +21,12 @@
     transform: translate(-50%, -50%);
     width: 60px;
   }
+  &_loader {
+    
+    circle {
+      color: $white;
+    }
+  }
 }
 
 /* ===================================================

@@ -20,7 +20,9 @@ import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 /* styles imports */
 import classes from './_projects.module.scss';
 
-function Projects() {
+function Projects({ workHeading }) {
+  const { heading } = workHeading;
+
   return (
     <section id="work" className={`section ${classes.projects}`}>
       <RevealOnScroll
@@ -28,7 +30,7 @@ function Projects() {
         end="top 10%"
         speed={1.25}
         start="25% bottom"
-        text="Look what I can do!"
+        text={heading}
         textElement="#aniTextWork"
       >
         <Container maxWidth="lg">

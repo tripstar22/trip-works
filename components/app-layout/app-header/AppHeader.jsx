@@ -35,7 +35,7 @@ HideHeaderOnScroll.propTypes = {
   children: PropTypes.element.isRequired,
 };
 
-function AppHeader() {
+function AppHeader({ navigationMain }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenuOpen = function handlerToggleMenuOpen() {
@@ -55,7 +55,11 @@ function AppHeader() {
               <IconButton onClick={toggleMenuOpen} aria-label="open menu">
                 <Menu />
               </IconButton>
-              <AppMenu menuOpen={menuOpen} toggleMenuClose={toggleMenuClose} />
+              <AppMenu
+                menuOpen={menuOpen}
+                navigationMain={navigationMain}
+                toggleMenuClose={toggleMenuClose}
+              />
             </Grid>
             <Grid item xs={6}>
               <div className={classes.appheader_logo}>

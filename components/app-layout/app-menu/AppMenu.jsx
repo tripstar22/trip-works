@@ -19,7 +19,7 @@ import AppLink from '../../ui/app-link/AppLink';
 /* styles imports */
 import classes from './_appmenu.module.scss';
 
-function AppMenu({ menuOpen, toggleMenuClose }) {
+function AppMenu({ menuOpen, navigationMain, toggleMenuClose }) {
   return (
     <div className={classes.appmenu}>
       <Drawer anchor="left" open={menuOpen}>
@@ -32,53 +32,20 @@ function AppMenu({ menuOpen, toggleMenuClose }) {
         </Grid>
         <nav>
           <List>
-            <ListItem className={classes.appmenu_listItem}>
-              <ListItemButton className={classes.appmenu_listItemButton}>
-                <AppLink href="/" onClick={toggleMenuClose}>
-                  Home
-                </AppLink>
-              </ListItemButton>
-            </ListItem>
-            <ListItem className={classes.appmenu_listItem}>
-              <ListItemButton className={classes.appmenu_listItemButton}>
-                <AppLink href="/#about" onClick={toggleMenuClose}>
-                  About
-                </AppLink>
-              </ListItemButton>
-            </ListItem>
-            <ListItem className={classes.appmenu_listItem}>
-              <ListItemButton className={classes.appmenu_listItemButton}>
-                <AppLink href="/#skills" onClick={toggleMenuClose}>
-                  Skills
-                </AppLink>
-              </ListItemButton>
-            </ListItem>
-            <ListItem className={classes.appmenu_listItem}>
-              <ListItemButton className={classes.appmenu_listItemButton}>
-                <AppLink href="/#work" onClick={toggleMenuClose}>
-                  Work
-                </AppLink>
-              </ListItemButton>
-            </ListItem>
-            <ListItem className={classes.appmenu_listItem}>
-              <ListItemButton className={classes.appmenu_listItemButton}>
-                <AppLink href="/#contact" onClick={toggleMenuClose}>
-                  Contact
-                </AppLink>
-              </ListItemButton>
-            </ListItem>
-            <ListItem className={classes.appmenu_listItem}>
-              <ListItemButton className={classes.appmenu_listItemButton}>
-                <AppLink
-                  href="/files/trip-pruitt-resume.pdf"
-                  onClick={toggleMenuClose}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  View Résumé
-                </AppLink>
-              </ListItemButton>
-            </ListItem>
+            {navigationMain.items.items.map((item, index) => (
+              <ListItem key={index} className={classes.appmenu_listItem}>
+                <ListItemButton className={classes.appmenu_listItemButton}>
+                  <AppLink
+                    href={item.href}
+                    rel={item.rel}
+                    target={item.target}
+                    onClick={toggleMenuClose}
+                  >
+                    {item.text}
+                  </AppLink>
+                </ListItemButton>
+              </ListItem>
+            ))}
           </List>
         </nav>
       </Drawer>
@@ -88,6 +55,7 @@ function AppMenu({ menuOpen, toggleMenuClose }) {
 
 AppMenu.propTypes = {
   menuOpen: PropTypes.bool.isRequired,
+  navigationMain: PropTypes.object.isRequired,
   toggleMenuClose: PropTypes.func.isRequired,
 };
 

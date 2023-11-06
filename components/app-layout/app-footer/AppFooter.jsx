@@ -1,5 +1,6 @@
 /* react imports */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /* mui icon imports */
 import GitHub from '@mui/icons-material/GitHub';
@@ -25,7 +26,7 @@ import LogoSecondary from '/public/svg/logos/logoSecondary.svg';
 /* styles imports */
 import classes from './_appfooter.module.scss';
 
-function AppFooter() {
+function AppFooter({ navigationMain }) {
   return (
     <footer className={classes.appfooter}>
       <RevealOnScroll
@@ -50,42 +51,22 @@ function AppFooter() {
             <Grid item xs={12} md={4}>
               <nav>
                 <List>
-                  <ListItem className={classes.appfooter_listItem}>
-                    <ListItemButton>
-                      <AppLink href="/">Home</AppLink>
-                    </ListItemButton>
-                  </ListItem>
-                  <ListItem className={classes.appfooter_listItem}>
-                    <ListItemButton>
-                      <AppLink href="/#about">About</AppLink>
-                    </ListItemButton>
-                  </ListItem>
-                  <ListItem className={classes.appfooter_listItem}>
-                    <ListItemButton>
-                      <AppLink href="/#skills">Skills</AppLink>
-                    </ListItemButton>
-                  </ListItem>
-                  <ListItem className={classes.appfooter_listItem}>
-                    <ListItemButton>
-                      <AppLink href="/#work">Work</AppLink>
-                    </ListItemButton>
-                  </ListItem>
-                  <ListItem className={classes.appfooter_listItem}>
-                    <ListItemButton>
-                      <AppLink href="/#contact">Contact</AppLink>
-                    </ListItemButton>
-                  </ListItem>
-                  <ListItem className={classes.appfooter_listItem}>
-                    <ListItemButton>
-                      <AppLink
-                        href="/files/trip-pruitt-resume.pdf"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                      >
-                        View Résumé
-                      </AppLink>
-                    </ListItemButton>
-                  </ListItem>
+                  {navigationMain.items.items.map((item, index) => (
+                    <ListItem
+                      key={index}
+                      className={classes.appfooter_listItem}
+                    >
+                      <ListItemButton>
+                        <AppLink
+                          href={item.href}
+                          rel={item.rel}
+                          target={item.target}
+                        >
+                          {item.text}
+                        </AppLink>
+                      </ListItemButton>
+                    </ListItem>
+                  ))}
                 </List>
               </nav>
             </Grid>
@@ -124,5 +105,9 @@ function AppFooter() {
     </footer>
   );
 }
+
+AppFooter.propTypes = {
+  navigationMain: PropTypes.object.isRequired,
+};
 
 export default AppFooter;

@@ -2,8 +2,8 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-/* custom module imports */
-import aniFade from '../../utilities/ani-fade/aniFade';
+/* custom js animation imports */
+import aniFade from '../../../src/js/ani-fade/aniFade';
 
 function RevealOnScroll(props) {
   const aniSection = useRef(null);
@@ -11,7 +11,8 @@ function RevealOnScroll(props) {
 
   useEffect(() => {
     aniFade('.revealonscroll_target', aniSection);
-  }, []);
+    window.addEventListener('resize', aniFade('.revealonscroll_target', aniSection));
+  }, [children]);
 
   return (
     <div className="revealonscroll" ref={aniSection}>

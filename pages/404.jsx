@@ -16,6 +16,12 @@ export async function getStaticProps() {
   });
 
   try {
+    // footer heading
+    const footerHeadingResponse = await client.getEntry(
+      '7IE5FyfjP2sp1Y5kpC3Q2n'
+    );
+    const footerHeading = footerHeadingResponse.fields;
+
     // navigation main
     const navigationMainResponse = await client.getEntry(
       '15OSvONv0lmHEajKZ0oHFb'
@@ -30,6 +36,7 @@ export async function getStaticProps() {
 
     return {
       props: {
+        footerHeading,
         navigationMain,
         pageNotFoundContent,
       },
@@ -39,6 +46,7 @@ export async function getStaticProps() {
 
     return {
       props: {
+        footerHeading: null,
         navigationMain: null,
         pageNotFoundContent: null,
       },
@@ -48,14 +56,19 @@ export async function getStaticProps() {
 
 function FourZeroFour(props) {
   const { pageProp } = props;
-  const { navigationMain, pageNotFoundContent } = pageProp;
+  const { footerHeading, navigationMain, pageNotFoundContent } = pageProp;
 
-  if (!pageProp || !pageProp.navigationMain || !pageProp.pageNotFoundContent) {
+  if (
+    !pageProp ||
+    !pageProp.footerHeading ||
+    !pageProp.navigationMain ||
+    !pageProp.pageNotFoundContent
+  ) {
     return <AppLoader />;
   }
 
   return (
-    <AppLayout navigationMain={navigationMain}>
+    <AppLayout footerHeading={footerHeading} navigationMain={navigationMain}>
       <PageNotFound pageNotFoundContent={pageNotFoundContent} />
     </AppLayout>
   );

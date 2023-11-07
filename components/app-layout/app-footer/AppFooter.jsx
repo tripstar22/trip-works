@@ -26,7 +26,9 @@ import LogoSecondary from '/public/svg/logos/logoSecondary.svg';
 /* styles imports */
 import classes from './_appfooter.module.scss';
 
-function AppFooter({ navigationMain }) {
+function AppFooter({ footerHeading, navigationMain }) {
+  const { heading } = footerHeading;
+
   return (
     <footer className={classes.appfooter}>
       <RevealOnScroll
@@ -34,7 +36,7 @@ function AppFooter({ navigationMain }) {
         end="top top"
         speed={1.25}
         start="50% bottom"
-        text="Frontend Engineer"
+        text={heading}
         textElement="#aniFooterHeading"
       >
         <Container maxWidth="lg">

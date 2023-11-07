@@ -63,7 +63,7 @@ function AppHeader({ navigationMain }) {
             </Grid>
             <Grid item xs={6}>
               <div className={classes.appheader_logo}>
-                <AppLink href="/" className={classes.appheader_link}>
+                <AppLink href="/" className={classes.appheader_link} ariaLabel="home">
                   <Logo />
                 </AppLink>
               </div>

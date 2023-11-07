@@ -9,6 +9,7 @@ function AppLink(props) {
   const { children } = props;
   return (
     <Link
+      aria-label={props.ariaLabel}
       className={props.className}
       data-target={props.dataTarget}
       href={props.href}

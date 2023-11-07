@@ -8,7 +8,7 @@ import AppHeader from './app-header/AppHeader';
 import BackToTop from '../ui/back-to-top/BackToTop';
 
 function AppLayout(props) {
-  const { children, navigationMain } = props;
+  const { children, footerHeading, navigationMain } = props;
 
   return (
     <>
@@ -22,7 +22,10 @@ function AppLayout(props) {
         {children}
         <BackToTop />
       </main>
-      <AppFooter navigationMain={navigationMain} />
+      <AppFooter
+        footerHeading={footerHeading}
+        navigationMain={navigationMain}
+      />
     </>
   );
 }

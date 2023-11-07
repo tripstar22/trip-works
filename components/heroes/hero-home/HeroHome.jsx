@@ -10,13 +10,13 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
-/* custom module imports */
-import aniScroll from '../utilities/ani-scroll/aniScroll';
+/* custom js animation imports */
+import aniScroll from '../../../src/js/ani-scroll/aniScroll';
 
 /* custom component imports */
-import AppLink from '../ui/app-link/AppLink';
-import BackgroundVideo from '../ui/background-video/BackgroundVideo';
-import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
+import AppLink from '../../ui/app-link/AppLink';
+import BackgroundVideo from '../../ui/background-video/BackgroundVideo';
+import RevealOnScroll from '../../ui/reveal-on-scroll/RevealOnScroll';
 
 /* styles imports */
 import classes from './_hero.module.scss';
@@ -65,6 +65,7 @@ function HeroHome({ homeHeroContent }) {
               <AppLink
                 href="#about"
                 className={classes.hero_scrollLink}
+                ariaLabel="scroll to about"
                 dataTarget="about"
                 onClick={aniScroll}
               >

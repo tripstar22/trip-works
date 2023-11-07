@@ -9,7 +9,7 @@ import About from '../components/about/About';
 import AppLayout from '../components/app-layout/AppLayout';
 import AppLoader from '../components/app-loader/AppLoader';
 import Contact from '../components/global/contact/Contact';
-import HeroHome from '../components/hero/HeroHome'
+import HeroHome from '../components/heroes/hero-home/HeroHome';
 import Projects from '../components/projects/Projects';
 import RepositoryCta from '../components/global/repository-cta/RepositoryCta';
 import Skills from '../components/skills/Skills';
@@ -32,6 +32,12 @@ export async function getStaticProps() {
       '6QNHyhpaVHS7bgqmfxQg0s'
     );
     const contactContent = contactContentResponse.fields;
+
+    // footer heading
+    const footerHeadingResponse = await client.getEntry(
+      '7IE5FyfjP2sp1Y5kpC3Q2n'
+    );
+    const footerHeading = footerHeadingResponse.fields;
 
     // home hero
     const homeHeroContentResponse = await client.getEntry(
@@ -70,15 +76,14 @@ export async function getStaticProps() {
     const skillsItems = skillsItemsResponse.items;
 
     // work heading
-    const workHeadingResponse = await client.getEntry(
-      '4D8B7cYwhfl13gL74nIcqa'
-    );
+    const workHeadingResponse = await client.getEntry('4D8B7cYwhfl13gL74nIcqa');
     const workHeading = workHeadingResponse.fields;
 
     return {
       props: {
         aboutContent,
         contactContent,
+        footerHeading,
         homeHeroContent,
         locationContent,
         navigationMain,
@@ -95,6 +100,7 @@ export async function getStaticProps() {
       props: {
         aboutContent: null,
         contactContent: null,
+        footerHeading: null,
         homeHeroContent: null,
         locationContent: null,
         navigationMain: null,
@@ -112,6 +118,7 @@ function IndexPage(props) {
   const {
     aboutContent,
     contactContent,
+    footerHeading,
     homeHeroContent,
     locationContent,
     navigationMain,
@@ -125,6 +132,7 @@ function IndexPage(props) {
     !pageProp ||
     !pageProp.aboutContent ||
     !pageProp.contactContent ||
+    !pageProp.footerHeading ||
     !pageProp.homeHeroContent ||
     !pageProp.locationContent ||
     !pageProp.navigationMain ||
@@ -137,7 +145,7 @@ function IndexPage(props) {
   }
 
   return (
-    <AppLayout navigationMain={navigationMain}>
+    <AppLayout footerHeading={footerHeading} navigationMain={navigationMain}>
       <HeroHome homeHeroContent={homeHeroContent} />
       <About aboutContent={aboutContent} locationContent={locationContent} />
       <Skills skillsHeading={skillsHeading} skillsItems={skillsItems} />

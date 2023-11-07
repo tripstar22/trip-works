@@ -9,8 +9,8 @@ import Fab from '@mui/material/Fab';
 import Fade from '@mui/material/Fade';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
-/* custom module imports */
-import aniScroll from '../../utilities/ani-scroll/aniScroll';
+/* custom js animation imports */
+import aniScroll from '../../../src/js/ani-scroll/aniScroll';
 
 /* custom component imports */
 import AppLink from '../app-link/AppLink';
@@ -28,6 +28,7 @@ function BackToTop() {
     <Fade in={trigger}>
       <div>
         <AppLink
+          ariaLabel="back to top"
           href="#pageTop"
           className={classes.backToTop}
           dataTarget="pageTop"

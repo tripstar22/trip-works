@@ -22,7 +22,7 @@ function AppLink(props) {
 }
 
 AppLink.propTypes = {
-  children: PropTypes.any,
+  children: PropTypes.any.isRequired,
 };
 
 export default AppLink;

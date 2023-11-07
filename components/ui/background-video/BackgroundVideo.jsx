@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 /* styles imports */
 import classes from './_backgroundvideo.module.scss';
 
-function BackgroundVideo (props) {
+function BackgroundVideo(props) {
   return (
     <div className={classes.backgroundvideo}>
       <video

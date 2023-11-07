@@ -2,7 +2,7 @@
 import React from 'react';
 
 /* third party library imports */
-const contentful = require('contentful');
+import * as contentful from 'contentful';
 
 /* custom component imports */
 import AppLayout from '../components/app-layout/AppLayout';

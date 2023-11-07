@@ -1,8 +1,8 @@
 /* react imports */
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 
 /* third party library imports */
-const contentful = require('contentful');
+import * as contentful from 'contentful';
 
 /* custom component imports */
 import About from '../components/about/About';
@@ -128,19 +128,39 @@ function IndexPage(props) {
     workHeading,
   } = pageProp;
 
-  if (
-    !pageProp ||
-    !pageProp.aboutContent ||
-    !pageProp.contactContent ||
-    !pageProp.footerHeading ||
-    !pageProp.homeHeroContent ||
-    !pageProp.locationContent ||
-    !pageProp.navigationMain ||
-    !pageProp.repositoryCta ||
-    !pageProp.skillsHeading ||
-    !pageProp.skillsItems ||
-    !pageProp.workHeading
-  ) {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // check if all the required data is available
+    if (
+      aboutContent &&
+      contactContent &&
+      footerHeading &&
+      homeHeroContent &&
+      locationContent &&
+      navigationMain &&
+      repositoryCta &&
+      skillsHeading &&
+      skillsItems &&
+      workHeading
+    ) {
+      // set loading to false once the data is available
+      setLoading(false); 
+    }
+  }, [
+    aboutContent,
+    contactContent,
+    footerHeading,
+    homeHeroContent,
+    locationContent,
+    navigationMain,
+    repositoryCta,
+    skillsHeading,
+    skillsItems,
+    workHeading,
+  ]);
+
+  if (loading) {
     return <AppLoader />;
   }
 

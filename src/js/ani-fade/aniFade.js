@@ -30,7 +30,7 @@ function aniFade(aniTarget, scopeRef) {
           scrollTrigger: {
             duration: 750,
             end: aniEnd,
-            markers: true, // *** great for debugging
+            // markers: true, // *** great for debugging
             start: aniStart,
             trigger: ani,
           },
@@ -62,7 +62,7 @@ function aniFade(aniTarget, scopeRef) {
           scrollTrigger: {
             duration: 750,
             end: aniEnd,
-            markers: true, // *** great for debugging 
+            // markers: true, // *** great for debugging 
             onEnter: aniType,
             start: aniStart,
             trigger: ani,

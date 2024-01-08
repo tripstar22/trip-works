@@ -34,9 +34,9 @@ function Contact({ contactContent }) {
       />
       <RevealOnScroll
         aniTyped={true}
-        end="top 10%"
+        end="top top"
         speed={1.5}
-        start="30% bottom"
+        start="bottom bottom"
         text={heading}
         textElement="#aniTextContact"
       >

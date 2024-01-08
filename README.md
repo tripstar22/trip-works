@@ -14,9 +14,13 @@
 - This is a [Next.js](https://nextjs.org/) app that leverages [MUI](https://mui.com/), and other third party libraries.
   - Next.js is a framework for server-rendered React apps.
   - MUI includes its peer dependencies, including `emotion`, the default style engine in MUI v5.
-- I used a Next.js/MUI example for project scaffolding, which I had found [here](https://github.com/mui/material-ui/tree/master/examples/nextjs). ** Unfortuantely that example has been removed from the MUI repo. ** 
+- I used a Next.js/MUI example for project scaffolding, which I had found [here](https://github.com/mui/material-ui/tree/master/examples/nextjs).   
+  - ***Note:** *Unfortuantely that example has been removed from the MUI repo.*
 - I am following the [airbnb style guide](https://github.com/airbnb/javascript) for JavaScript code structure, and using the airbnb ESLint. See `.eslintrc.json`.
 - I am using path imports to [minimize bundle size](https://mui.com/material-ui/guides/minimizing-bundle-size/) by avoiding pulling unused modules into the build.
+
+### CMS
+- I am using the headless CMS, [Contentful](https://www.contentful.com/), for the majority of content.
 
 ### External API
 - I wanted to leverage a third-party API in my app, and decided to use a weather API to display the current weather of my local area.
@@ -49,17 +53,17 @@
 
 ### SVGs
 - I am using the technique outlined [here](https://blog.logrocket.com/import-svgs-next-js-apps/#import-svgs-next-js-using-svgr) to leverage [SVGR](https://github.com/gregberge/svgr) for SVGs in the app.
-- All SVG assets are kept in `src/svg`.
+- SVG assets are kept in `src/svg` unless they are dynamic content from Contentful.
 
 ### Other Third-Party Libraries
 
 #### GSAP ScrollTrigger
-- [GSAP ScrollTrigger](https://greensock.com/docs/v3/Plugins/ScrollTrigger) is being used to trigger animations on certain elements as the user scrolls through a view. I created a reusable JavaScript module to handle this functionality which can be found in `modules/aniFade.js`, and a component to handle these animations in `components/utilities/reveal-on-scroll/RevealOnScroll.jsx`.
+- [GSAP ScrollTrigger](https://greensock.com/docs/v3/Plugins/ScrollTrigger) is being used to trigger animations on certain elements as the user scrolls through a view. I created a reusable JavaScript function to handle this functionality which can be found in `src/js/ani-fade/aniFade.js`, and a component to handle these animations in `components/utilities/reveal-on-scroll/RevealOnScroll.jsx`.
   - ***Note:** Using the `ScrollTrigger` plugin requires that I also include the standard [GSAP](https://github.com/greensock/GSAP) library.*
 
 #### GSAP TextPlugin
 - [GSAP TextPlugin](https://gsap.com/docs/v3/Plugins/TextPlugin/) is being used to animate certain text elements in the app.
-- This functionality is used in conjunction with GSAP ScrollTrigger in `modules/aniFade.js`.
+- This functionality is used in conjunction with GSAP ScrollTrigger in `src/js/ani-fade/aniFade.js`.
 - Like the ScrollTrigger functionality, the functionality is used in the `RevealOnScroll` component found in `components/utilities/reveal-on-scroll/RevealOnScroll.jsx`.
    - ***Note:** Using the `TextPlugin` plugin requires that I also include the standard [GSAP](https://github.com/greensock/GSAP) library.*
 
@@ -79,4 +83,4 @@
 ### Misc
 
 #### aniScroll
-- I created a JavaScript module called `aniScroll` that adds smooth scroll functionality on certain elements. It can be found in `src/js/aniScroll.js`. `aniScroll` is currently imported in the `HeroHome` component (`components/heroes/hero-home/HeroHome.jsx`), and in the `BackToTop` component (`components/ui/back-to-top/BackToTop.jsx`).
+- I created a JavaScript function called `aniScroll` that adds smooth scroll functionality on certain elements. It can be found in `src/js/ani-scroll/aniScroll.js`. `aniScroll` is currently imported in the `HeroHome` component (`components/heroes/hero-home/HeroHome.jsx`), and in the `BackToTop` component (`components/ui/back-to-top/BackToTop.jsx`).

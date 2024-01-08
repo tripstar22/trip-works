@@ -8,9 +8,9 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
 
 /* src imports */
-import { FontSansSerifDefault } from '../src/styles/js/fonts/fonts';
-import themeDefault from '../src/styles/js/themes/themeDefault';
-import createEmotionCache from '../src/styles/js/createEmotionCache';
+import { FontSansSerifDefault } from '../public/js/fonts/fonts';
+import themeDefault from '../public/js/themes/themeDefault';
+import createEmotionCache from '../public/js/createEmotionCache';
 
 export default class MyDocument extends Document {
   render() {

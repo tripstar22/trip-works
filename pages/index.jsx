@@ -1,6 +1,9 @@
 /* react imports */
 import React, { useEffect, useState } from 'react';
 
+/* next.js imports */
+import { useRouter } from 'next/router';
+
 /* third party library imports */
 import * as contentful from 'contentful';
 
@@ -129,10 +132,11 @@ function IndexPage(props) {
   } = pageProp;
 
   const [loading, setLoading] = useState(true);
+  const router = useRouter();
 
   useEffect(() => {
-    // check if all the required data is available
-    if (
+    // check if all the Contentful data is available
+    const contentfulDataLoaded =
       aboutContent &&
       contactContent &&
       footerHeading &&
@@ -142,11 +146,11 @@ function IndexPage(props) {
       repositoryCta &&
       skillsHeading &&
       skillsItems &&
-      workHeading
-    ) {
-      // set loading to false once the data is available
-      setLoading(false); 
-    }
+      workHeading;
+
+    const allLoaded = router.isReady && contentfulDataLoaded;
+
+    setLoading(!allLoaded);
   }, [
     aboutContent,
     contactContent,
@@ -158,6 +162,7 @@ function IndexPage(props) {
     skillsHeading,
     skillsItems,
     workHeading,
+    router.isReady,
   ]);
 
   if (loading) {

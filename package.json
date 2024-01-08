@@ -15,7 +15,7 @@
     "@emotion/server": "latest",
     "@emotion/styled": "latest",
     "@mui/icons-material": "latest",
-    "@mui/material": "latest",
+    "@mui/material": "5.14.17",
     "@next/font": "^13.1.1",
     "axios": "^1.4.0",
     "contentful": "^10.6.3",

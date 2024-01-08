@@ -13,13 +13,13 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider } from '@emotion/react';
 
 /* src imports */
-import createEmotionCache from '../src/styles/js/createEmotionCache';
+import createEmotionCache from '../public/js/createEmotionCache';
 import '../src/styles/scss/_fonts.scss';
 import '../src/styles/scss/global/_base.scss';
 import '../src/styles/scss/global/_appCarousel.scss';
 import '../src/styles/scss/global/_section.scss';
 import '../src/styles/scss/global/_utilities.scss';
-import themeDefault from '../src/styles/js/themes/themeDefault';
+import themeDefault from '../public/js/themes/themeDefault';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();

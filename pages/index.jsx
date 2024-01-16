@@ -171,6 +171,7 @@ function IndexPage(props) {
 
   return (
     <AppLayout footerHeading={footerHeading} navigationMain={navigationMain}>
+      <script type="text/javascript" src="https://form.jotform.com/jsform/240076360593052"></script>
       <HeroHome homeHeroContent={homeHeroContent} />
       <About aboutContent={aboutContent} locationContent={locationContent} />
       <Skills skillsHeading={skillsHeading} skillsItems={skillsItems} />

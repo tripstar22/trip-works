@@ -1,7 +1,7 @@
-import { Source_Sans_Pro, Roboto_Mono } from '@next/font/google';
+import { Open_Sans, Roboto_Mono } from '@next/font/google';
 
 // Google Fonts
-export const FontSansSerifDefault = Source_Sans_Pro({
+export const FontSansSerifDefault = Open_Sans({
   weight: ['400', '600', '700'],
   subsets: ['latin'],
   display: 'swap',

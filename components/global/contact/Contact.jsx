@@ -2,6 +2,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/* third party library imports */
+import JotformEmbed from 'react-jotform-embed';
+
 /* mui imports */
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -66,62 +69,7 @@ function Contact({ contactContent }) {
           </Grid>
           <Paper className={classes.contact_container} elevation={2}>
             <Container maxWidth="md">
-              <form>
-                <Grid container spacing={4}>
-                  <Grid item xs={12} md={6}>
-                    <TextField
-                      className="contact-me__textfield"
-                      fullWidth
-                      helperText="First Name is required"
-                      label="First Name"
-                      required
-                    />
-                  </Grid>
-                  <Grid item xs={12} md={6}>
-                    <TextField
-                      className="contact-me__textfield"
-                      fullWidth
-                      helperText="Last Name is required"
-                      label="Last Name"
-                      required
-                    />
-                  </Grid>
-                  <Grid item xs={12} md={6}>
-                    <TextField
-                      className="contact-me__textfield"
-                      fullWidth
-                      helperText="Email address is required"
-                      label="Email"
-                      required
-                    />
-                  </Grid>
-                  <Grid item xs={12} md={6}>
-                    <TextField
-                      className="contact-me__textfield"
-                      fullWidth
-                      helperText="Company name is required"
-                      label="Company"
-                      required
-                    />
-                  </Grid>
-                  <Grid item xs={12}>
-                    <TextField
-                      className="contact-me__textfield"
-                      fullWidth
-                      helperText="A description is required"
-                      label="How may I help you?"
-                      multiline
-                      required
-                      rows={8}
-                    />
-                  </Grid>
-                  <Grid item xs={12}>
-                    <div className={classes.contact_buttonContainer}>
-                      <ButtonAction>Submit</ButtonAction>
-                    </div>
-                  </Grid>
-                </Grid>
-              </form>
+              <JotformEmbed src="https://form.jotformeu.com/240076360593052" />
             </Container>
           </Paper>
         </Container>

@@ -57,7 +57,7 @@
         left: 50%;
         line-height: 20px;
         position: absolute;
-        opacity: 0.5;
+        opacity: $opacityDefault;
         top: 50%;
         transform: translate(-50%, -50%);
         transition: opacity $transitionDefault;

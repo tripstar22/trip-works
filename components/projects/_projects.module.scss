@@ -10,26 +10,29 @@
 .projects {
   position: static;
   
-  &_card {
+  &_container {
+    pointer-events: none;
 
-    &:hover,
-    &:focus {
+    &:hover {
 
-      .projects_more {
-        color: $tealDark;
+      .projects_link:not(:hover) {
+        opacity: $opacityDefault;
       }
     }
   }
   &_heading {
     text-align: center;
   }
+  &_link {
+    pointer-events: auto;
+    text-decoration: none;
+    transition: opacity $transitionDefault;
+  }
   &_more {
-    color: $charcoal;
     display: block;
     font-size: 14px;
     padding: 10px 0 20px;
     text-decoration: underline;
-    transition: color $transitionDefault;
   }
   &_projectHeading {
     font-weight: 400;

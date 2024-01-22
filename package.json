@@ -20,7 +20,7 @@
     "axios": "^1.4.0",
     "contentful": "^10.6.3",
     "gsap": "^3.12.2",
-    "next": "latest",
+    "next": "13.4.5",
     "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest",

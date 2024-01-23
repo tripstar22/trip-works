@@ -1,5 +1,5 @@
 /* react imports */
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 /* mui icon imports */
@@ -20,6 +20,20 @@ import AppLink from '../../ui/app-link/AppLink';
 import classes from './_appmenu.module.scss';
 
 function AppMenu({ menuOpen, navigationMain, toggleMenuClose }) {
+  useEffect(() => {
+    const checkUrlHash = function handlerCheckUrlHash() {
+      const hash = window.location.hash;
+      const sectionId = hash.substring(hash.indexOf('#') + 1);
+      const targetSection = document.getElementById(sectionId);
+
+      if (targetSection) {
+        targetSection.scrollIntoView();
+      }
+    };
+
+    checkUrlHash();
+  }, []);
+
   return (
     <div className={classes.appmenu}>
       <Drawer anchor="left" open={menuOpen}>
@@ -36,10 +50,11 @@ function AppMenu({ menuOpen, navigationMain, toggleMenuClose }) {
               <ListItem key={index} className={classes.appmenu_listItem}>
                 <ListItemButton className={classes.appmenu_listItemButton}>
                   <AppLink
+                    dataTarget="skills"
                     href={item.href}
+                    onClick={toggleMenuClose}
                     rel={item.rel}
                     target={item.target}
-                    onClick={toggleMenuClose}
                   >
                     {item.text}
                   </AppLink>

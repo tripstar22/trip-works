@@ -23,7 +23,14 @@ function AppLink(props) {
 }
 
 AppLink.propTypes = {
+  ariaLabel: PropTypes.string,
   children: PropTypes.any.isRequired,
+  className: PropTypes.string,
+  dataTarget: PropTypes.string,
+  href: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+  rel: PropTypes.string,
+  target: PropTypes.string,
 };
 
 export default AppLink;

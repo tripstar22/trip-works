@@ -1,20 +1,15 @@
-/* react imports */
-import React from 'react';
-import PropTypes from 'prop-types';
-
 /* third party library imports */
 import JotformEmbed from 'react-jotform-embed';
+import PropTypes from 'prop-types';
 
 /* mui imports */
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
-import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 
 /* custom component imports */
 import BackgroundVideo from '../../ui/background-video/BackgroundVideo';
-import ButtonAction from '../../ui/button-action/ButtonAction';
 import ButtonLink from '../../ui/button-link/ButtonLink';
 import RevealOnScroll from '../../ui/reveal-on-scroll/RevealOnScroll';
 

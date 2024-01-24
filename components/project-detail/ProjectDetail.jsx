@@ -1,6 +1,3 @@
-/* react imports */
-import React from 'react';
-
 /* mui imports */
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';

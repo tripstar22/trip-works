@@ -39,36 +39,39 @@ function aniFade(aniTarget, scopeRef) {
       } else {
 
         // has aniType functionality
+        
+        // check to see if specified element exists in current template
+        if (ani.dataset.textElement) {
+          const aniType = function animateTextTyping() {
 
-        const aniType = function animateTextTyping() {
-
-          // get required data for aniType parameters
-          let textElement = ani.dataset.textElement;
-          let speed = ani.dataset.speed;
-          let text = ani.dataset.text;
-
-          // convert speed value to integer
-          speed = parseInt(speed);
-
-          gsap.to(textElement, {
-            duration: speed,
-            text: text,
+            // get required data for aniType parameters
+            let textElement = ani.dataset.textElement;
+            let speed = ani.dataset.speed;
+            let text = ani.dataset.text;
+  
+            // convert speed value to integer
+            speed = parseInt(speed);
+  
+            gsap.to(textElement, {
+              duration: speed,
+              text: text,
+            });
+          };
+  
+          gsap.to(ani, {
+            ease: 'power2.inOut',
+            opacity: 1,
+            scrollTrigger: {
+              duration: 750,
+              end: aniEnd,
+              // markers: true, // *** great for debugging 
+              onEnter: aniType,
+              start: aniStart,
+              trigger: ani,
+            },
+            startAt: { opacity: 0 },
           });
-        };
-
-        gsap.to(ani, {
-          ease: 'power2.inOut',
-          opacity: 1,
-          scrollTrigger: {
-            duration: 750,
-            end: aniEnd,
-            // markers: true, // *** great for debugging 
-            onEnter: aniType,
-            start: aniStart,
-            trigger: ani,
-          },
-          startAt: { opacity: 0 },
-        });
+        }
       }
     });
   }, scopeRef); // scope

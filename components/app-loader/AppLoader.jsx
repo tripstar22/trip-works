@@ -1,6 +1,3 @@
-/* react imports */
-import React from 'react';
-
 /* mui imports */
 import CircularProgress from '@mui/material/CircularProgress';
 

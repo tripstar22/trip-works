@@ -1,5 +1,7 @@
 /* react imports */
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
+/* third party library imports */
 import PropTypes from 'prop-types';
 
 /* custom js animation imports */
@@ -39,7 +41,13 @@ function RevealOnScroll(props) {
 }
 
 RevealOnScroll.propTypes = {
+  aniTyped: PropTypes.bool,
   children: PropTypes.any.isRequired,
+  end: PropTypes.string.isRequired,
+  speed: PropTypes.number,
+  start: PropTypes.string.isRequired,
+  text: PropTypes.any,
+  textElement: PropTypes.string,
 };
 
 export default RevealOnScroll;

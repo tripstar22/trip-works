@@ -1,6 +1,3 @@
-/* react imports */
-import React from 'react';
-
 /* mui icon imports */
 import KeyboardArrowUp from '@mui/icons-material/KeyboardArrowUp';
 

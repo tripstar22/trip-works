@@ -1,5 +1,7 @@
 /* react imports */
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+
+/* third party library imports */
 import PropTypes from 'prop-types';
 
 /* mui icon imports */
@@ -21,6 +23,7 @@ import classes from './_appmenu.module.scss';
 
 function AppMenu({ menuOpen, navigationMain, toggleMenuClose }) {
   useEffect(() => {
+    // work around to navigate to element IDs in navigation since Next.js Link component navigates to top of page even if ID specified in href
     const checkUrlHash = function handlerCheckUrlHash() {
       const hash = window.location.hash;
       const sectionId = hash.substring(hash.indexOf('#') + 1);
@@ -50,7 +53,6 @@ function AppMenu({ menuOpen, navigationMain, toggleMenuClose }) {
               <ListItem key={index} className={classes.appmenu_listItem}>
                 <ListItemButton className={classes.appmenu_listItemButton}>
                   <AppLink
-                    dataTarget="skills"
                     href={item.href}
                     onClick={toggleMenuClose}
                     rel={item.rel}

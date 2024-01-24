@@ -1,8 +1,5 @@
-/* react imports */
-import React from 'react';
-import PropTypes from 'prop-types';
-
 /* third party library imports */
+import PropTypes from 'prop-types';
 import useSWR from 'swr';
 
 /* mui imports */

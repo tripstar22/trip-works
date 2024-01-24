@@ -1,9 +1,8 @@
-/* react imports */
-import React from 'react';
-import PropTypes from 'prop-types';
-
 /* next.js imports */
 import Link from 'next/link';
+
+/* third party library imports */
+import PropTypes from 'prop-types';
 
 function AppLink(props) {
   const { children } = props;

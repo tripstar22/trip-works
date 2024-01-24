@@ -1,5 +1,4 @@
-/* react imports */
-import React from 'react';
+/* third party library imports */
 import PropTypes from 'prop-types';
 
 /* mui imports */

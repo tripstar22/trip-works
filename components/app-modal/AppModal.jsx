@@ -1,9 +1,5 @@
-/* react imports */
-import React from 'react';
-import PropTypes from 'prop-types';
-
 /* third party library imports */
-import Slider from 'react-slick';
+import PropTypes from 'prop-types';
 
 /* mui icon imports */
 import Close from '@mui/icons-material/Close';

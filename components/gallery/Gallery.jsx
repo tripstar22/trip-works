@@ -1,5 +1,5 @@
 /* react imports */
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 /* mui imports */
 import Card from '@mui/material/Card';

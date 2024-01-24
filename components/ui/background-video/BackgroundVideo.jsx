@@ -1,6 +1,3 @@
-/* react imports */
-import React from 'react';
-
 /* mui imports */
 import Typography from '@mui/material/Typography';
 

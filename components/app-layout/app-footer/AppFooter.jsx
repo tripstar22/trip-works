@@ -1,5 +1,4 @@
-/* react imports */
-import React from 'react';
+/* third party library imports */
 import PropTypes from 'prop-types';
 
 /* mui icon imports */
@@ -109,6 +108,7 @@ function AppFooter({ footerHeading, navigationMain }) {
 }
 
 AppFooter.propTypes = {
+  footerHeading: PropTypes.object.isRequired,
   navigationMain: PropTypes.object.isRequired,
 };
 

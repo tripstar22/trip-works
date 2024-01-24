@@ -1,5 +1,5 @@
-/* react imports */
-import React from 'react';
+/* third party library imports */
+import PropTypes from 'prop-types';
 
 /* mui imports */
 import IconButton from '@mui/material/IconButton';
@@ -20,5 +20,10 @@ function CarouselArrowPrev(props) {
     </IconButton>
   );
 }
+
+CarouselArrowPrev.propTypes = {
+  children: PropTypes.any.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
 
 export default CarouselArrowPrev;

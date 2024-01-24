@@ -1,6 +1,3 @@
-/* react imports */
-import React from 'react';
-
 /* third party library imports */
 import Slider from 'react-slick';
 

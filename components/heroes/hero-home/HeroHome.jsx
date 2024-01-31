@@ -30,6 +30,7 @@ function HeroHome({ homeHeroContent }) {
         autoPlay="autoplay"
         loop={true}
         muted={true}
+        playsInline={true}
         src={videoUrl}
         type="video/mp4"
       />

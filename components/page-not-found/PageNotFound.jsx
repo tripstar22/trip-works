@@ -26,6 +26,7 @@ function PageNotFound({ pageNotFoundContent }) {
         autoPlay="autoplay"
         loop={true}
         muted={true}
+        playsinline={true}
         src={videoUrl}
         type="video/mp4"
       />

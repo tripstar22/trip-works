@@ -10,6 +10,7 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 /* custom component imports */
+import AppLink from '../ui/app-link/AppLink';
 import AppModal from '../app-modal/AppModal';
 import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 
@@ -37,78 +38,135 @@ function Gallery() {
         text="Gallery"
         textElement="#aniTextGallery"
       >
-        <Container maxWidth="lg">
-          <Grid container spacing={4}>
-            <Grid item xs={12}>
-              <Typography
-                component="h3"
-                gutterBottom
-                id="aniTextGallery"
-                variant="h3"
-              />
+        <div className={classes.gallery_container}>
+          <Container maxWidth="lg">
+            <Grid container spacing={4}>
+              <Grid item xs={12}>
+                <Typography
+                  component="h3"
+                  gutterBottom
+                  id="aniTextGallery"
+                  variant="h3"
+                />
+              </Grid>
+              <Grid item xs={12} sm={6} md={4}>
+                <AppLink
+                  href="#"
+                  ariaLabel="thumbnail"
+                  className={classes.gallery_link}
+                  onClick={toggleModalOpen}
+                >
+                  <Card>
+                    <CardActionArea
+                      className={classes.gallery_action}
+                      component="div"
+                      tabIndex={-1}
+                    >
+                      <CardMedia
+                        alt="write description here"
+                        component="img"
+                        height="100%"
+                        image="https://picsum.photos/1800/1013"
+                      />
+                    </CardActionArea>
+                  </Card>
+                </AppLink>
+              </Grid>
+              <Grid item xs={12} sm={6} md={4}>
+                <AppLink
+                  href="#"
+                  ariaLabel="thumbnail"
+                  className={classes.gallery_link}
+                  onClick={toggleModalOpen}
+                >
+                  <Card>
+                    <CardActionArea
+                      className={classes.gallery_action}
+                      component="div"
+                      tabIndex={-1}
+                    >
+                      <CardMedia
+                        alt="write description here"
+                        component="img"
+                        height="100%"
+                        image="https://picsum.photos/1800/1013"
+                      />
+                    </CardActionArea>
+                  </Card>
+                </AppLink>
+              </Grid>
+              <Grid item xs={12} sm={6} md={4}>
+                <AppLink
+                  href="#"
+                  ariaLabel="thumbnail"
+                  className={classes.gallery_link}
+                  onClick={toggleModalOpen}
+                >
+                  <Card>
+                    <CardActionArea
+                      className={classes.gallery_action}
+                      component="div"
+                      tabIndex={-1}
+                    >
+                      <CardMedia
+                        alt="write description here"
+                        component="img"
+                        height="100%"
+                        image="https://picsum.photos/1800/1013"
+                      />
+                    </CardActionArea>
+                  </Card>
+                </AppLink>
+              </Grid>
+              <Grid item xs={12} sm={6} md={4}>
+                <AppLink
+                  href="#"
+                  ariaLabel="thumbnail"
+                  className={classes.gallery_link}
+                  onClick={toggleModalOpen}
+                >
+                  <Card>
+                    <CardActionArea
+                      className={classes.gallery_action}
+                      component="div"
+                      tabIndex={-1}
+                    >
+                      <CardMedia
+                        alt="write description here"
+                        component="img"
+                        height="100%"
+                        image="https://picsum.photos/1800/1013"
+                      />
+                    </CardActionArea>
+                  </Card>
+                </AppLink>
+              </Grid>
+              <Grid item xs={12} sm={6} md={4}>
+                <AppLink
+                  href="#"
+                  ariaLabel="thumbnail"
+                  className={classes.gallery_link}
+                  onClick={toggleModalOpen}
+                >
+                  <Card>
+                    <CardActionArea
+                      className={classes.gallery_action}
+                      component="div"
+                      tabIndex={-1}
+                    >
+                      <CardMedia
+                        alt="write description here"
+                        component="img"
+                        height="100%"
+                        image="https://picsum.photos/1800/1013"
+                      />
+                    </CardActionArea>
+                  </Card>
+                </AppLink>
+              </Grid>
             </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <Card>
-                <CardActionArea onClick={toggleModalOpen}>
-                  <CardMedia
-                    alt="write description here"
-                    component="img"
-                    height="100%"
-                    image="https://picsum.photos/1800/1013"
-                  />
-                </CardActionArea>
-              </Card>
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <Card>
-                <CardActionArea onClick={toggleModalOpen}>
-                  <CardMedia
-                    alt="write description here"
-                    component="img"
-                    height="100%"
-                    image="https://picsum.photos/1800/1013"
-                  />
-                </CardActionArea>
-              </Card>
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <Card>
-                <CardActionArea onClick={toggleModalOpen}>
-                  <CardMedia
-                    alt="write description here"
-                    component="img"
-                    height="100%"
-                    image="https://picsum.photos/1800/1013"
-                  />
-                </CardActionArea>
-              </Card>
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <Card>
-                <CardActionArea onClick={toggleModalOpen}>
-                  <CardMedia
-                    alt="write description here"
-                    component="img"
-                    height="100%"
-                    image="https://picsum.photos/1800/1013"
-                  />
-                </CardActionArea>
-              </Card>
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <Card>
-                <CardActionArea onClick={toggleModalOpen}>
-                  <CardMedia
-                    alt="write description here"
-                    component="img"
-                    height="100%"
-                    image="https://picsum.photos/1800/1013"
-                  />
-                </CardActionArea>
-              </Card>
-            </Grid>
-          </Grid>
-        </Container>
+          </Container>
+        </div>
         {open && <AppModal open={open} toggleModalClose={toggleModalClose} />}
       </RevealOnScroll>
     </section>

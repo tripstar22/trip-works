@@ -135,6 +135,19 @@ function IndexPage(props) {
   const router = useRouter();
 
   useEffect(() => {
+    // create script tag for consoleMessage.js found in public folder
+    const consoleMessageScript = document.createElement('script');
+    consoleMessageScript.async = true;
+    consoleMessageScript.type = 'text/javascript';
+    consoleMessageScript.src = '/js/consoleMessage.js';
+    document.body.appendChild(consoleMessageScript);
+
+    // create script tag for Jotform vendor script
+    const jotformScript = document.createElement('script');
+    jotformScript.type = 'text/javascript';
+    jotformScript.src = 'https://form.jotform.com/jsform/240076360593052';
+    document.body.appendChild(jotformScript);
+
     // check if all the Contentful data is available
     const contentfulDataLoaded =
       aboutContent &&
@@ -151,6 +164,11 @@ function IndexPage(props) {
     const allLoaded = router.isReady && contentfulDataLoaded;
 
     setLoading(!allLoaded);
+
+    return () => {
+      document.body.removeChild(consoleMessageScript);
+      document.body.removeChild(jotformScript);
+    }
   }, [
     aboutContent,
     contactContent,
@@ -171,7 +189,6 @@ function IndexPage(props) {
 
   return (
     <AppLayout footerHeading={footerHeading} navigationMain={navigationMain}>
-      <script type="text/javascript" src="https://form.jotform.com/jsform/240076360593052"></script>
       <HeroHome homeHeroContent={homeHeroContent} />
       <About aboutContent={aboutContent} locationContent={locationContent} />
       <Skills skillsHeading={skillsHeading} skillsItems={skillsItems} />

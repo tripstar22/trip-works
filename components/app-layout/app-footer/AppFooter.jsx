@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 /* mui icon imports */
 import GitHub from '@mui/icons-material/GitHub';
 import LinkedIn from '@mui/icons-material/LinkedIn';
+import XIcon from '@mui/icons-material/X';
 
 /* mui imports */
 import Container from '@mui/material/Container';
@@ -82,6 +83,16 @@ function AppFooter({ footerHeading, navigationMain }) {
                   >
                     <IconButton aria-label="linkedin">
                       <LinkedIn />
+                    </IconButton>
+                  </a>
+                  <a
+                    href="https://twitter.com/TripPruittWorks"
+                    aria-label="View X Profile"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <IconButton aria-label="X">
+                      <XIcon />
                     </IconButton>
                   </a>
                   <a

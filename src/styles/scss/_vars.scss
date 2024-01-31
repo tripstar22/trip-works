@@ -27,5 +27,7 @@ $screen-xl: 1536px;
 
 
 /* default values */
-$opacityDefault: 0.65;
+$borderDefault: 3px solid $teal;
+$boxShadowDefault: 4px 4px 15px 0px rgba($black, 0.75);
+$opacityDefault: 0.75;
 $transitionDefault: 0.25s ease-in-out;

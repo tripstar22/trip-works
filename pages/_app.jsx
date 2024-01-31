@@ -13,12 +13,14 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider } from '@emotion/react';
 
 /* src imports */
-import createEmotionCache from '../public/js/createEmotionCache';
 import '../src/styles/scss/_fonts.scss';
 import '../src/styles/scss/global/_base.scss';
 import '../src/styles/scss/global/_appCarousel.scss';
 import '../src/styles/scss/global/_section.scss';
 import '../src/styles/scss/global/_utilities.scss';
+
+/* public imports */
+import createEmotionCache from '../public/js/createEmotionCache';
 import themeDefault from '../public/js/themes/themeDefault';
 
 // Client-side cache, shared for the whole session of the user in the browser.
@@ -46,10 +48,12 @@ MyApp.propTypes = {
   Component: PropTypes.elementType.isRequired,
   emotionCache: PropTypes.object,
   pageProps: PropTypes.object.isRequired,
+  themeDefault: PropTypes.object,
 };
 
 MyApp.defaultProps = {
   emotionCache: undefined,
+  themeDefault: themeDefault,
 };
 
 export default MyApp;

@@ -13,8 +13,11 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider } from '@emotion/react';
 
 /* src imports */
+/* fonts imported first **/
 import '../src/styles/scss/_fonts.scss';
+/* base styles imported second */
 import '../src/styles/scss/global/_base.scss';
+/* other global styles imported alphabetically */
 import '../src/styles/scss/global/_appCarousel.scss';
 import '../src/styles/scss/global/_section.scss';
 import '../src/styles/scss/global/_utilities.scss';

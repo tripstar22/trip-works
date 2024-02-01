@@ -16,7 +16,7 @@
     &:hover {
 
       .gallery_link:not(:hover) {
-        opacity: $opacityDefault;
+        filter: $filterDefault;
       }
     }
   }
@@ -26,12 +26,18 @@
     display: block;
     pointer-events: auto;
     text-decoration: none;
+    transform-origin: center;
     transition: border $transitionDefault,
                 border-radius $transitionDefault,
                 box-shadow $transitionDefault,
-                opacity $transitionDefault;
+                filter $transitionDefault,
+                transform $transitionDefault;
 
+    &:hover,
     &:focus {
+      transform: scale(1.04);
+    }
+    &:focus-visible {
       border: $borderDefault;
       border-radius: 8px 8px 6px 6px;
       box-shadow: $boxShadowDefault;

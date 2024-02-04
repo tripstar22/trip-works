@@ -21,7 +21,8 @@ import RevealOnScroll from '../../ui/reveal-on-scroll/RevealOnScroll';
 import classes from './_hero.module.scss';
 
 function HeroHome({ homeHeroContent }) {
-  const { backgroundVideo, heading, subheading } = homeHeroContent;
+  const { backgroundVideo, backgroundVideoImage, heading, subheading } = homeHeroContent;
+  const imageUrl = backgroundVideoImage.fields.file.url;
   const videoUrl = backgroundVideo.fields.file.url;
 
   return (
@@ -31,6 +32,7 @@ function HeroHome({ homeHeroContent }) {
         loop={true}
         muted={true}
         playsInline={true}
+        poster={imageUrl}
         src={videoUrl}
         type="video/mp4"
       />

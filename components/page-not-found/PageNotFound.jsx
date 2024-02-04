@@ -16,7 +16,8 @@ import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 import classes from './_pagenotfound.module.scss';
 
 function PageNotFound({ pageNotFoundContent }) {
-  const { backgroundVideo, heading, link, text } = pageNotFoundContent;
+  const { backgroundVideo, backgroundVideoImage, heading, link, text } = pageNotFoundContent;
+  const imageUrl = backgroundVideoImage.fields.file.url;
   const videoUrl = backgroundVideo.fields.file.url;
   const { linkHref, linkText } = link;
 
@@ -26,7 +27,8 @@ function PageNotFound({ pageNotFoundContent }) {
         autoPlay="autoplay"
         loop={true}
         muted={true}
-        playsinline={true}
+        playsInline={true}
+        poster={imageUrl}
         src={videoUrl}
         type="video/mp4"
       />

@@ -17,7 +17,8 @@ import RevealOnScroll from '../../ui/reveal-on-scroll/RevealOnScroll';
 import classes from './_contact.module.scss';
 
 function Contact({ contactContent }) {
-  const { backgroundVideo, cta, heading } = contactContent;
+  const { backgroundVideo, backgroundVideoImage, cta, heading } = contactContent;
+  const imageUrl = backgroundVideoImage.fields.file.url;
   const videoUrl = backgroundVideo.fields.file.url;
   const { ctaHref, ctaRel, ctaTarget, ctaText } = cta;
 
@@ -27,7 +28,8 @@ function Contact({ contactContent }) {
         autoPlay="autoplay"
         loop={true}
         muted={true}
-        playsInline={true}
+        playsinline={true}
+        poster={imageUrl}
         src={videoUrl}
         type="video/mp4"
       />

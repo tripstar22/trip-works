@@ -14,7 +14,8 @@ import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 import classes from './_about.module.scss';
 
 function About({ aboutContent, locationContent }) {
-  const { heading, content } = aboutContent;
+  const { heading, content, image } = aboutContent;
+  console.log(image.fields.file.url);
 
   return (
     <section
@@ -34,20 +35,19 @@ function About({ aboutContent, locationContent }) {
             <Grid container spacing={0}>
               <Grid item xs={12} sm={5} md={4}>
                 <div className={classes.about_image}>
-                  <div className={classes.about_imageImage} />
+                  <img className={classes.about_imageImage} src={image.fields.file.url} alt={image.fields.title} />
                 </div>
               </Grid>
               <Grid item xs={12} sm={7} md={8}>
                 <div className={classes.about_content}>
                   <Typography
-                    className={classes.about_name}
                     component="h3"
                     gutterBottom
                     id="aniTextAbout"
                     variant="h3"
                   />
                   {content.content.map((item, index) => (
-                    <Typography key={index} gutterBottom variant="body1">
+                    <Typography key={index} className={classes.about_text} gutterBottom variant="body1">
                       {item.content[0].value}
                     </Typography>
                   ))}

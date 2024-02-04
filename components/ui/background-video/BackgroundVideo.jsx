@@ -12,10 +12,13 @@ function BackgroundVideo(props) {
     <div className={classes.backgroundvideo}>
       <video
         className={classes.backgroundvideo_video}
+        src={props.src}
         autoPlay={props.autoPlay}
         loop={props.loop}
         muted={props.muted}
-        playsinline={props.playsInline}
+        playsInline={props.playsInline}
+        poster={props.poster}
+        type={props.type}
       >
         <source src={props.src} type={props.type} />
         <Typography
@@ -32,10 +35,13 @@ function BackgroundVideo(props) {
 }
 
 BackgroundVideo.propTypes = {
-  autoPlay: PropTypes.bool,
+  autoPlay: PropTypes.string,
   loop: PropTypes.bool,
   muted: PropTypes.bool.isRequired,
   playsInline: PropTypes.bool.isRequired,
+  poster: PropTypes.string,
+  src: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
 };
 
 export default BackgroundVideo;

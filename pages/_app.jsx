@@ -1,9 +1,11 @@
 /* react imports */
 import * as React from 'react';
-import PropTypes from 'prop-types';
 
 /* next.js imports */
 import Head from 'next/head';
+
+/* third party library imports */
+import PropTypes from 'prop-types';
 
 /* mui imports */
 import { ThemeProvider } from '@mui/material/styles';
@@ -12,7 +14,10 @@ import CssBaseline from '@mui/material/CssBaseline';
 /* emotion imports */
 import { CacheProvider } from '@emotion/react';
 
-/* src imports */
+/* public js imports */
+// import '../public/js/consoleMessage.js';
+
+/* src style imports */
 /* fonts imported first **/
 import '../src/styles/scss/_fonts.scss';
 /* base styles imported second */
@@ -22,7 +27,7 @@ import '../src/styles/scss/global/_appCarousel.scss';
 import '../src/styles/scss/global/_section.scss';
 import '../src/styles/scss/global/_utilities.scss';
 
-/* public imports */
+/* public style imports */
 import createEmotionCache from '../public/js/createEmotionCache';
 import themeDefault from '../public/js/themes/themeDefault';
 
@@ -43,6 +48,8 @@ function MyApp(props) {
         <CssBaseline />
         <Component pageProp={pageProps} />
       </ThemeProvider>
+      <script src="https://form.jotform.com/jsform/240076360593052" type="text/javascript" defer></script>
+      <script src="/js/consoleMessage.js" type="text/javascript" defer></script>
     </CacheProvider>
   );
 }

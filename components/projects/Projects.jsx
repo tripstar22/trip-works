@@ -18,7 +18,7 @@ import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 /* styles imports */
 import classes from './_projects.module.scss';
 
-function Projects({ workHeading }) {
+function Projects({ projectsItems, workHeading }) {
   const { heading } = workHeading;
 
   return (
@@ -48,222 +48,48 @@ function Projects({ workHeading }) {
               columnsCountBreakPoints={{ 350: 1, 599: 2, 899: 3 }}
             >
               <Masonry gutter="30px">
-                <div>
-                  <AppLink
-                    href="/projects/georgia-tech-scheller-college-of-business"
-                    className={classes.projects_link}
-                  >
-                    <Card className={classes.projects_card}>
-                      <CardActionArea component="div" tabIndex={-1}>
-                        <CardMedia
-                          alt="write description here"
-                          component="img"
-                          height="220"
-                          image="https://picsum.photos/300/200"
-                        />
-                        <CardContent>
-                          <Typography
-                            className={classes.projects_projectHeading}
-                            component="h5"
-                            gutterBottom
-                            variant="h5"
-                          >
-                            Georgia Tech Scheller College of Business
-                          </Typography>
-                          <Typography component="h6" gutterBottom variant="h6">
-                            My Role: <span>Lead Front End Engineer</span>
-                          </Typography>
-                          <Typography
-                            className={classes.projects_more}
-                            variant="body1"
-                          >
-                            Learn More
-                          </Typography>
-                        </CardContent>
-                      </CardActionArea>
-                    </Card>
-                  </AppLink>
-                </div>
-                <div>
-                  <AppLink
-                    href="/projects/contec-professional"
-                    className={classes.projects_link}
-                  >
-                    <Card className={classes.projects_card}>
-                      <CardActionArea component="div" tabIndex={-1}>
-                        <CardMedia
-                          alt="write description here"
-                          component="img"
-                          height="220"
-                          image="https://picsum.photos/300/200"
-                        />
-                        <CardContent>
-                          <Typography
-                            className={classes.projects_projectHeading}
-                            component="h5"
-                            gutterBottom
-                            variant="h5"
-                          >
-                            Contec Professional
-                          </Typography>
-                          <Typography component="h6" gutterBottom variant="h6">
-                            My Role: <span>Front End Engineer</span>
-                          </Typography>
-                          <Typography
-                            className={classes.projects_more}
-                            variant="body1"
-                          >
-                            Learn More
-                          </Typography>
-                        </CardContent>
-                      </CardActionArea>
-                    </Card>
-                  </AppLink>
-                </div>
-                <div>
-                  <AppLink
-                    href="/projects/contec-healthcare"
-                    className={classes.projects_link}
-                  >
-                    <Card className={classes.projects_card}>
-                      <CardActionArea component="div" tabIndex={-1}>
-                        <CardMedia
-                          alt="write description here"
-                          component="img"
-                          height="220"
-                          image="https://picsum.photos/300/200"
-                        />
-                        <CardContent>
-                          <Typography
-                            className={classes.projects_projectHeading}
-                            component="h5"
-                            gutterBottom
-                            variant="h5"
-                          >
-                            Contec Healthcare
-                          </Typography>
-                          <Typography component="h6" gutterBottom variant="h6">
-                            My Role: <span>Front End Engineer</span>
-                          </Typography>
-                          <Typography
-                            className={classes.projects_more}
-                            variant="body1"
-                          >
-                            Learn More
-                          </Typography>
-                        </CardContent>
-                      </CardActionArea>
-                    </Card>
-                  </AppLink>
-                </div>
-                <div>
-                  <AppLink
-                    href="/projects/aptos"
-                    className={classes.projects_link}
-                  >
-                    <Card className={classes.projects_card}>
-                      <CardActionArea component="div" tabIndex={-1}>
-                        <CardMedia
-                          alt="write description here"
-                          component="img"
-                          height="220"
-                          image="https://picsum.photos/300/200"
-                        />
-                        <CardContent>
-                          <Typography
-                            className={classes.projects_projectHeading}
-                            component="h5"
-                            gutterBottom
-                            variant="h5"
-                          >
-                            Aptos
-                          </Typography>
-                          <Typography component="h6" gutterBottom variant="h6">
-                            My Role: <span>Lead Front End Engineer</span>
-                          </Typography>
-                          <Typography
-                            className={classes.projects_more}
-                            variant="body1"
-                          >
-                            Learn More
-                          </Typography>
-                        </CardContent>
-                      </CardActionArea>
-                    </Card>
-                  </AppLink>
-                </div>
-                <div>
-                  <AppLink
-                    href="/projects/count-covid"
-                    className={classes.projects_link}
-                  >
-                    <Card className={classes.projects_card}>
-                      <CardActionArea component="div" tabIndex={-1}>
-                        <CardMedia
-                          alt="write description here"
-                          component="img"
-                          height="220"
-                          image="https://picsum.photos/300/200"
-                        />
-                        <CardContent>
-                          <Typography
-                            className={classes.projects_projectHeading}
-                            component="h5"
-                            gutterBottom
-                            variant="h5"
-                          >
-                            Count Covid
-                          </Typography>
-                          <Typography component="h6" gutterBottom variant="h6">
-                            My Role: <span>Front End Engineer</span>
-                          </Typography>
-                          <Typography
-                            className={classes.projects_more}
-                            variant="body1"
-                          >
-                            Learn More
-                          </Typography>
-                        </CardContent>
-                      </CardActionArea>
-                    </Card>
-                  </AppLink>
-                </div>
-                <div>
-                  <AppLink
-                    href="/projects/contec-professional"
-                    className={classes.projects_link}
-                  >
-                    <Card className={classes.projects_card}>
-                      <CardActionArea component="div" tabIndex={-1}>
-                        <CardMedia
-                          alt="write description here"
-                          component="img"
-                          height="220"
-                          image="https://picsum.photos/300/200"
-                        />
-                        <CardContent>
-                          <Typography
-                            className={classes.projects_projectHeading}
-                            component="h5"
-                            gutterBottom
-                            variant="h5"
-                          >
-                            Contec Professional
-                          </Typography>
-                          <Typography component="h6" gutterBottom variant="h6">
-                            My Role: <span>Front End Engineer</span>
-                          </Typography>
-                          <Typography
-                            className={classes.projects_more}
-                            variant="body1"
-                          >
-                            Learn More
-                          </Typography>
-                        </CardContent>
-                      </CardActionArea>
-                    </Card>
-                  </AppLink>
-                </div>
+                {projectsItems.map((item, index) => (
+                  <div key={index}>
+                    <AppLink
+                      href={item.fields.url}
+                      className={classes.projects_link}
+                    >
+                      <Card className={classes.projects_card}>
+                        <CardActionArea component="div" tabIndex={-1}>
+                          <CardMedia
+                            alt={item.fields.featuredImage.fields.title}
+                            component="img"
+                            height="220"
+                            image={item.fields.featuredImage.fields.file.url}
+                          />
+                          <CardContent>
+                            <Typography
+                              className={classes.projects_projectHeading}
+                              component="h5"
+                              gutterBottom
+                              variant="h5"
+                            >
+                              {item.fields.title}
+                            </Typography>
+                            <Typography
+                              component="h6"
+                              gutterBottom
+                              variant="h6"
+                            >
+                              My Role: <span>{item.fields.role}</span>
+                            </Typography>
+                            <Typography
+                              className={classes.projects_more}
+                              variant="body1"
+                            >
+                              Learn More
+                            </Typography>
+                          </CardContent>
+                        </CardActionArea>
+                      </Card>
+                    </AppLink>
+                  </div>
+                ))}
               </Masonry>
             </ResponsiveMasonry>
           </div>

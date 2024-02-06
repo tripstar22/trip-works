@@ -60,6 +60,12 @@ export async function getStaticProps() {
     );
     const navigationMain = navigationMainResponse.fields;
 
+    // projects
+    const projectsResponse = await client.getEntries({
+      content_type: 'projects',
+    });
+    const projectsItems = projectsResponse.items;
+
     // repository cta
     const repositoryCtaResponse = await client.getEntry(
       '01lx3PqjdVxjp7QLNPaugU'
@@ -90,6 +96,7 @@ export async function getStaticProps() {
         homeHeroContent,
         locationContent,
         navigationMain,
+        projectsItems,
         repositoryCta,
         skillsHeading,
         skillsItems,
@@ -107,6 +114,7 @@ export async function getStaticProps() {
         homeHeroContent: null,
         locationContent: null,
         navigationMain: null,
+        projectsItems: null,
         repositoryCta: null,
         skillsHeading: null,
         skillsItems: null,
@@ -125,6 +133,7 @@ function IndexPage(props) {
     homeHeroContent,
     locationContent,
     navigationMain,
+    projectsItems,
     repositoryCta,
     skillsHeading,
     skillsItems,
@@ -143,6 +152,7 @@ function IndexPage(props) {
       homeHeroContent &&
       locationContent &&
       navigationMain &&
+      projectsItems &&
       repositoryCta &&
       skillsHeading &&
       skillsItems &&
@@ -158,6 +168,7 @@ function IndexPage(props) {
     homeHeroContent,
     locationContent,
     navigationMain,
+    projectsItems,
     repositoryCta,
     skillsHeading,
     skillsItems,
@@ -174,7 +185,7 @@ function IndexPage(props) {
       <HeroHome homeHeroContent={homeHeroContent} />
       <About aboutContent={aboutContent} locationContent={locationContent} />
       <Skills skillsHeading={skillsHeading} skillsItems={skillsItems} />
-      <Projects workHeading={workHeading} />
+      <Projects projectsItems={projectsItems} workHeading={workHeading} />
       <Contact contactContent={contactContent} />
       <RepositoryCta repositoryCta={repositoryCta} />
     </AppLayout>

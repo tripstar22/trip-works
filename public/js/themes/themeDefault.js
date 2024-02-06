@@ -35,6 +35,13 @@ themeDefault = createTheme(themeDefault, {
         },
       },
     },
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          paddingBottom: '0',
+        },
+      },
+    },
     MuiFab: {
       styleOverrides: {
         root: {

@@ -18,11 +18,14 @@ import RepositoryCta from '../../components/global/repository-cta/RepositoryCta'
 export async function getStaticPaths() {
   return {
     paths: [
-      '/projects/georgia-tech-scheller-college-of-business',
-      '/projects/contec-professional',
-      '/projects/contec-healthcare',
       '/projects/aptos',
-      '/projects/count-covid'
+      '/projects/contec-healthcare',
+      '/projects/count-covid',
+      '/projects/georgia-tech-scheller-college-of-business',
+      '/projects/removery',
+      '/projects/rescue-pledge',
+      '/projects/smallwood',
+      '/projects/south-downtown'
     ],
     fallback: false,
   }

@@ -15,7 +15,6 @@ import classes from './_about.module.scss';
 
 function About({ aboutContent, locationContent }) {
   const { heading, content, image } = aboutContent;
-  console.log(image.fields.file.url);
 
   return (
     <section

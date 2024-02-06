@@ -4,12 +4,13 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 /* custom component imports */
+import Gallery from '../gallery/Gallery';
 import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 
 /* styles imports */
 import classes from './_projectdetail.module.scss';
 
-function ProjectDetail() {
+function ProjectDetail({ project }) {
   return (
     <div className={classes.projectdetail}>
       <RevealOnScroll
@@ -17,7 +18,7 @@ function ProjectDetail() {
         end="top top"
         speed={1.75}
         start="30% bottom"
-        text="Lead Front End Engineer"
+        text={project.fields.role}
         textElement="#aniJobTitle"
       >
         <section className={classes.projectdetail_titleSection}>
@@ -30,7 +31,7 @@ function ProjectDetail() {
                   gutterBottom
                   variant="h1"
                 >
-                  Georgia Tech Scheller College of Business
+                  {project.fields.title}
                 </Typography>
                 <Typography
                   className={classes.projectdetail_subheading}
@@ -48,6 +49,7 @@ function ProjectDetail() {
             </Grid>
           </Container>
         </section>
+        <Gallery project={project} />
       </RevealOnScroll>
     </div>
   );

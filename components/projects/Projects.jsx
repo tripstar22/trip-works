@@ -51,7 +51,7 @@ function Projects({ projectsItems, workHeading }) {
                 {projectsItems.map((item, index) => (
                   <div key={index}>
                     <AppLink
-                      href={item.fields.url}
+                      href={`/projects/${item.fields.slug}`}
                       className={classes.projects_link}
                     >
                       <Card className={classes.projects_card}>

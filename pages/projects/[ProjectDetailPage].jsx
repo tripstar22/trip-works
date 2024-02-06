@@ -11,27 +11,32 @@ import * as contentful from 'contentful';
 import AppLayout from '../../components/app-layout/AppLayout';
 import AppLoader from '../../components/app-loader/AppLoader';
 import Contact from '../../components/global/contact/Contact';
-import Gallery from '../../components/gallery/Gallery';
 import ProjectDetail from '../../components/project-detail/ProjectDetail';
 import RepositoryCta from '../../components/global/repository-cta/RepositoryCta';
 
 export async function getStaticPaths() {
+  const client = contentful.createClient({
+    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
+  });
+
+  // projects
+  const projectsResponse = await client.getEntries({
+    content_type: 'projects',
+  });
+
+  // project paths
+  const paths = projectsResponse.items.map((item) => ({
+    params: { ProjectDetailPage: item.fields.slug },
+  }));
+
   return {
-    paths: [
-      '/projects/aptos',
-      '/projects/contec-healthcare',
-      '/projects/count-covid',
-      '/projects/georgia-tech-scheller-college-of-business',
-      '/projects/removery',
-      '/projects/rescue-pledge',
-      '/projects/smallwood',
-      '/projects/south-downtown'
-    ],
+    paths,
     fallback: false,
-  }
+  };
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ params }) {
   const client = contentful.createClient({
     space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
     accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
@@ -56,6 +61,13 @@ export async function getStaticProps() {
     );
     const navigationMain = navigationMainResponse.fields;
 
+    // project
+    const project = await client.getEntries({
+      content_type: 'projects',
+      'fields.slug': params.ProjectDetailPage,
+    });
+    console.log(project.items[0].fields.media[0].fields);
+
     // repository cta
     const repositoryCtaResponse = await client.getEntry(
       '01lx3PqjdVxjp7QLNPaugU'
@@ -67,6 +79,7 @@ export async function getStaticProps() {
         contactContent,
         footerHeading,
         navigationMain,
+        project: project.items[0],
         repositoryCta,
       },
     };
@@ -78,6 +91,7 @@ export async function getStaticProps() {
         contactContent: null,
         footerHeading: null,
         navigationMain: null,
+        project: null,
         repositoryCta: null,
       },
     };
@@ -91,6 +105,7 @@ function ProjectDetailPage(props) {
     contactContent,
     footerHeading,
     navigationMain,
+    project,
     repositoryCta,
   } = pageProp;
 
@@ -103,6 +118,7 @@ function ProjectDetailPage(props) {
       contactContent &&
       footerHeading &&
       navigationMain &&
+      project &&
       repositoryCta;
 
     const allLoaded = router.isReady && contentfulDataLoaded;
@@ -112,6 +128,7 @@ function ProjectDetailPage(props) {
     contactContent,
     footerHeading,
     navigationMain,
+    project,
     repositoryCta,
     router.isReady,
   ]);
@@ -122,9 +139,11 @@ function ProjectDetailPage(props) {
 
   return (
     <AppLayout footerHeading={footerHeading} navigationMain={navigationMain}>
-      <script type="text/javascript" src="https://form.jotform.com/jsform/240076360593052"></script>
-      <ProjectDetail />
-      <Gallery />
+      <script
+        type="text/javascript"
+        src="https://form.jotform.com/jsform/240076360593052"
+      ></script>
+      <ProjectDetail project={project} />
       <Contact contactContent={contactContent} />
       <RepositoryCta repositoryCta={repositoryCta} />
     </AppLayout>

@@ -9,6 +9,7 @@
 
 .gallery {
   background-color: $offWhite;
+  padding-top: 60px;
 
   &_container {
     pointer-events: none;
@@ -19,6 +20,10 @@
         filter: $filterDefault;
       }
     }
+  }
+  &_heading {
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
   &_link {
     border: 3px solid transparent;
@@ -66,7 +71,16 @@
   Medium Screens & Up (min-width: 900px)
 =================================================== */
 
+@media screen and (min-width: $screen-md) {
 
+  .gallery {
+    padding-top: 80px;
+
+    &_heading {
+      padding-bottom: 10px;
+    }
+  }
+}
 
 /* ===================================================
   END Medium Screens & Up (min-width: 900px)
@@ -77,7 +91,16 @@
   Large Screens & Up (min-width: 1200px)
 =================================================== */
 
+@media screen and (min-width: $screen-lg) {
 
+  .gallery {
+    padding-top: 80px;
+
+    &_heading {
+      padding-bottom: 10px;
+    }
+  }
+}
 
 /* ===================================================
   END Large Screens & Up (min-width: 1200px)

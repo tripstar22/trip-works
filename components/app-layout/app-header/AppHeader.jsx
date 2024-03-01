@@ -1,10 +1,10 @@
-/* react imports */
+// * react imports *
 import { useState } from 'react';
 
-/* third party library imports */
+// * third party library imports *
 import PropTypes from 'prop-types';
 
-/* mui imports */
+// * mui imports *
 import AppBar from '@mui/material/AppBar';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
@@ -12,14 +12,14 @@ import Menu from '@mui/icons-material/Menu';
 import Slide from '@mui/material/Slide';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
-/* custom component imports */
+// * custom component imports *
 import AppLink from '../../ui/app-link/AppLink';
 import AppMenu from '../app-menu/AppMenu';
 
-/* svg imports */
+// * svg imports *
 import Logo from '/public/svg/logos/logo.svg';
 
-/* styles imports */
+// * styles imports *
 import classes from './_appheader.module.scss';
 
 function HideHeaderOnScroll(props) {
@@ -38,12 +38,13 @@ HideHeaderOnScroll.propTypes = {
 };
 
 function AppHeader({ navigationMain }) {
+  // * state *
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // * handlers *
   const toggleMenuOpen = function handlerToggleMenuOpen() {
     setMenuOpen(true);
   };
-
   const toggleMenuClose = function handlerToggleMenuClose() {
     setMenuOpen(false);
   };

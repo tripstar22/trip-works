@@ -1,22 +1,23 @@
-/* third party library imports */
+// * third party library imports *
 import JotformEmbed from 'react-jotform-embed';
 import PropTypes from 'prop-types';
 
-/* mui imports */
+// * mui imports *
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
-/* custom component imports */
+// * custom component imports *
 import BackgroundVideo from '../../ui/background-video/BackgroundVideo';
 import ButtonLink from '../../ui/button-link/ButtonLink';
 import RevealOnScroll from '../../ui/reveal-on-scroll/RevealOnScroll';
 
-/* styles imports */
+// * styles imports *
 import classes from './_contact.module.scss';
 
 function Contact({ contactContent }) {
+  // * cms content *
   const { backgroundVideo, backgroundVideoImage, cta, heading } = contactContent;
   const imageUrl = backgroundVideoImage.fields.file.url;
   const videoUrl = backgroundVideo.fields.file.url;
@@ -28,7 +29,7 @@ function Contact({ contactContent }) {
         autoPlay="autoplay"
         loop={true}
         muted={true}
-        playsinline={true}
+        playsInline={true}
         poster={imageUrl}
         src={videoUrl}
         type="video/mp4"
@@ -37,7 +38,7 @@ function Contact({ contactContent }) {
         aniTyped={true}
         end="top top"
         speed={1.5}
-        start="bottom bottom"
+        start="60% bottom"
         text={heading}
         textElement="#aniTextContact"
       >
@@ -67,7 +68,9 @@ function Contact({ contactContent }) {
           </Grid>
           <Paper className={classes.contact_container} elevation={2}>
             <Container maxWidth="md">
-              <JotformEmbed src="https://form.jotformeu.com/240076360593052" />
+              <div id="contactForm">
+                <JotformEmbed src="https://form.jotformeu.com/240076360593052" />
+              </div>
             </Container>
           </Paper>
         </Container>

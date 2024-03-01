@@ -1,12 +1,12 @@
-/* third party library imports */
+// * third party library imports *
 import PropTypes from 'prop-types';
 
-/* mui icon imports */
+// * mui icon imports *
 import GitHub from '@mui/icons-material/GitHub';
 import LinkedIn from '@mui/icons-material/LinkedIn';
 import XIcon from '@mui/icons-material/X';
 
-/* mui imports */
+// * mui imports *
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
@@ -16,17 +16,18 @@ import ListItemButton from '@mui/material/ListItemButton';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
-/* custom component imports */
+// * custom component imports *
 import AppLink from '../../ui/app-link/AppLink';
 import RevealOnScroll from '../../ui/reveal-on-scroll/RevealOnScroll';
 
-/* svg imports */
+// * svg imports *
 import LogoSecondary from '/public/svg/logos/logoSecondary.svg';
 
-/* styles imports */
+// * styles imports *
 import classes from './_appfooter.module.scss';
 
 function AppFooter({ footerHeading, navigationMain }) {
+  // * cms content *
   const { heading } = footerHeading;
 
   return (
@@ -35,7 +36,7 @@ function AppFooter({ footerHeading, navigationMain }) {
         aniTyped={true}
         end="top top"
         speed={1.25}
-        start="50% bottom"
+        start="bottom bottom"
         text={heading}
         textElement="#aniFooterHeading"
       >

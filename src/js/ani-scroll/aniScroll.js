@@ -1,5 +1,5 @@
 /* 
-  DESCRIPTION: Created to animate scroll if user clicks on specific elements. 
+  # DESCRIPTION: Created to animate scroll if user clicks on specific elements. #
 */
 
 const scrollTarget = function scrollToTargetElement(e, eventTarget) {
@@ -9,7 +9,7 @@ const scrollTarget = function scrollToTargetElement(e, eventTarget) {
   e.preventDefault();
   element.scrollIntoView({ behavior: 'smooth' });
 
-  // update url hash
+  // * update url hash *
   let newHash = '#' + dataTarget;
   history.pushState({}, '', newHash);
 };

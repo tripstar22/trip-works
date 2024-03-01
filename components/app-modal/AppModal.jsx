@@ -1,17 +1,17 @@
-/* third party library imports */
+// * third party library imports *
 import PropTypes from 'prop-types';
 
-/* mui icon imports */
+// * mui icon imports *
 import Close from '@mui/icons-material/Close';
 
-/* mui imports */
+// * mui imports *
 import IconButton from '@mui/material/IconButton';
 import Modal from '@mui/material/Modal';
 
-/* custom component imports */
+// * custom component imports *
 import Carousel from '../carousel/Carousel';
 
-/* styles imports */
+// * styles imports *
 import classes from './_appmodal.module.scss';
 
 function AppModal({ open, toggleModalClose }) {

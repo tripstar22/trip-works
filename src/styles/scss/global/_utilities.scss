@@ -1,4 +1,6 @@
-/*** utilities ***/
+/*
+  # utilities #
+*/
 
 /* ===================================================
   All Screen Sizes
@@ -18,6 +20,10 @@
   padding: 0;
   position: absolute;
   width: 1px;
+}
+.visibilityHidden {
+  opacity: 0;
+  visibility: hidden;
 }
 
 /* ===================================================

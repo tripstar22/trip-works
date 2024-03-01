@@ -1,27 +1,28 @@
-/* third party library imports */
+// * third party library imports *
 import Slider from 'react-slick';
 
-/* library styles imports */
+// * library styles imports *
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-/* mui icon imports */
+// * mui icon imports *
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
-/* mui imports */
+// * mui imports *
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 
-/* custom component imports */
+// * custom component imports *
 import CarouselArrowNext from './CarouselArrowNext';
 import CarouselArrowPrev from './CarouselArrowPrev';
 
-/* styles imports */
+// * styles imports *
 import classes from './_carousel.module.scss';
 
 function Carousel() {
-  var sliderSettings = {
+  // * carousel settings *
+  const sliderSettings = {
     dots: true,
     dotsClass: 'appCarousel_dots',
     fade: true,

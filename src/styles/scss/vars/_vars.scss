@@ -1,6 +1,8 @@
-/*** vars ***/
+/*
+  # vars #
+*/
 
-/* colors */
+// * colors *
 $blackPure: #000000;
 $black: #212121;
 $charcoal: #303030;
@@ -18,7 +20,7 @@ $white: #FAFAFA;
 $whitePure: #FFFFFF;
 
 
-/* screen sizes */
+// * screen sizes *
 $screen-xs: 0px;
 $screen-sm: 600px;
 $screen-md: 900px;
@@ -26,7 +28,12 @@ $screen-lg: 1200px;
 $screen-xl: 1536px;
 
 
-/* default values */
+// * z-index values *
+$zIndexAppLoader: 1200; // * Above highest know z-index in MUI styles which is 1100 for the AppBar *
+
+
+// * miscellaneous default values *
+$blurDefault: blur(40px);
 $borderDefault: 3px solid $teal;
 $boxShadowDefault: 4px 4px 15px 0px rgba($black, 0.75);
 $filterDefault: grayscale(100%) opacity(0.75);

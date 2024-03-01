@@ -1,11 +1,12 @@
-/* third party library imports */
+// * third party library imports *
 import PropTypes from 'prop-types';
 
-/* mui imports */
+// * mui imports *
 import Button from '@mui/material/Button';
 
 function ButtonAction(props) {
   const { children } = props;
+
   return <Button variant="contained">{children}</Button>;
 }
 

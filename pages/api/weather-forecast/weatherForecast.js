@@ -1,4 +1,4 @@
-/* Node.js imports */
+// * node.js imports *
 import fs from 'fs';
 import path from 'path';
 
@@ -43,7 +43,7 @@ const weatherForecast = async function weatherForecastDataRequest(req, res) {
       conditions: weatherConditions,
     };
 
-    // store data by updating data/weather-forecast/weather-forecast.json
+    // * store data by updating data/weather-forecast/weather-forecast.json *
     const filePath = path.join(process.cwd(), 'data', 'weather-forecast', 'weather-forecast.json');
     const fileData = fs.readFileSync(filePath, 'utf8');
     const weatherData = JSON.parse(fileData);

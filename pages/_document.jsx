@@ -1,16 +1,16 @@
-/* react imports */
+// * react imports *
 import * as React from 'react';
 
-/* next.js imports */
+// * next.js imports *
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
-/* emotion imports */
+// * emotion imports *
 import createEmotionServer from '@emotion/server/create-instance';
 
-/* src imports */
-import { FontSansSerifDefault } from '../public/js/fonts/fonts';
-import themeDefault from '../public/js/themes/themeDefault';
-import createEmotionCache from '../public/js/createEmotionCache';
+// * src imports *
+import { FontSansSerifDefault } from '../src/styles/js/fonts/fonts';
+import themeDefault from '../src/styles/js/themes/themeDefault';
+import createEmotionCache from '../src/styles/js/createEmotionCache';
 
 export default class MyDocument extends Document {
   render() {

@@ -1,6 +1,7 @@
+// * google font imports *
 import { Open_Sans, Roboto_Mono } from '@next/font/google';
 
-// Google Fonts
+// * google fonts *
 export const FontSansSerifDefault = Open_Sans({
   weight: ['400', '600', '700'],
   subsets: ['latin'],
@@ -14,5 +15,5 @@ export const FontMonospaceDefault = Roboto_Mono({
   fallback: ['Lucida Console', 'monospace'],
 });
 
-// Local Fonts
+// * local fonts *
 export const FontDisplayDefault = 'Hudson-NY-Serif';

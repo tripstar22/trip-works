@@ -1,13 +1,13 @@
-/* react imports */
+// * react imports *
 import { useEffect, useState } from 'react';
 
-/* next.js imports */
+// * next.js imports *
 import { useRouter } from 'next/router';
 
-/* third party library imports */
+// * third party library imports *
 import * as contentful from 'contentful';
 
-/* custom component imports */
+// * custom component imports *
 import AppLayout from '../../components/app-layout/AppLayout';
 import AppLoader from '../../components/app-loader/AppLoader';
 import Contact from '../../components/global/contact/Contact';
@@ -15,60 +15,61 @@ import ProjectDetail from '../../components/project-detail/ProjectDetail';
 import RepositoryCta from '../../components/global/repository-cta/RepositoryCta';
 
 export async function getStaticPaths() {
+  // * access cms content for project urls *
   const client = contentful.createClient({
     space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
     accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
   });
 
-  // projects
+  // * projects *
   const projectsResponse = await client.getEntries({
     content_type: 'projects',
   });
 
-  // project paths
+  // * project paths *
   const paths = projectsResponse.items.map((item) => ({
     params: { ProjectDetailPage: item.fields.slug },
   }));
 
   return {
     paths,
-    fallback: false,
+    fallback: 'blocking',
   };
 }
 
 export async function getStaticProps({ params }) {
+  // * access cms content *
   const client = contentful.createClient({
     space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
     accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
   });
 
   try {
-    // contact
+    // * contact *
     const contactContentResponse = await client.getEntry(
       '6QNHyhpaVHS7bgqmfxQg0s'
     );
     const contactContent = contactContentResponse.fields;
 
-    // footer heading
+    // * footer heading *
     const footerHeadingResponse = await client.getEntry(
       '7IE5FyfjP2sp1Y5kpC3Q2n'
     );
     const footerHeading = footerHeadingResponse.fields;
 
-    // navigation main
+    // * navigation main *
     const navigationMainResponse = await client.getEntry(
       '15OSvONv0lmHEajKZ0oHFb'
     );
     const navigationMain = navigationMainResponse.fields;
 
-    // project
+    // * project *
     const project = await client.getEntries({
       content_type: 'projects',
       'fields.slug': params.ProjectDetailPage,
     });
-    console.log(project.items[0].fields.media[0].fields);
 
-    // repository cta
+    // * repository cta *
     const repositoryCtaResponse = await client.getEntry(
       '01lx3PqjdVxjp7QLNPaugU'
     );
@@ -99,8 +100,8 @@ export async function getStaticProps({ params }) {
 }
 
 function ProjectDetailPage(props) {
+  // * cms content *
   const { pageProp } = props;
-
   const {
     contactContent,
     footerHeading,
@@ -109,11 +110,15 @@ function ProjectDetailPage(props) {
     repositoryCta,
   } = pageProp;
 
+  // * state *
+  const [documentIsReady, setDocumentIsReady] = useState(false);
   const [loading, setLoading] = useState(true);
+
+  // * router *
   const router = useRouter();
 
   useEffect(() => {
-    // check if all the Contentful data is available
+    // * check if all the Contentful data is available *
     const contentfulDataLoaded =
       contactContent &&
       footerHeading &&
@@ -121,11 +126,32 @@ function ProjectDetailPage(props) {
       project &&
       repositoryCta;
 
-    const allLoaded = router.isReady && contentfulDataLoaded;
+    // * handlers *
+    const onDocReady = function handlerOnDocumentReady() {
+      setDocumentIsReady(true);
+    };
 
-    setLoading(!allLoaded);
+    // * events *
+    document.addEventListener('DOMContentLoaded', onDocReady());
+
+    /* 
+      check for:
+        • cms content loaded, 
+        • document ready,
+        • router ready
+    */
+
+    const allLoaded =
+      contentfulDataLoaded &&
+      documentIsReady &&
+      router.isReady;
+  
+    if (allLoaded) {
+      setLoading(false);
+    }
   }, [
     contactContent,
+    documentIsReady,
     footerHeading,
     navigationMain,
     project,
@@ -139,10 +165,6 @@ function ProjectDetailPage(props) {
 
   return (
     <AppLayout footerHeading={footerHeading} navigationMain={navigationMain}>
-      <script
-        type="text/javascript"
-        src="https://form.jotform.com/jsform/240076360593052"
-      ></script>
       <ProjectDetail project={project} />
       <Contact contactContent={contactContent} />
       <RepositoryCta repositoryCta={repositoryCta} />

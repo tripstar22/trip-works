@@ -1,8 +1,8 @@
-/* react imports */
+// * react imports *
 import React from 'react';
 import PropTypes from 'prop-types';
 
-/* custom component imports */
+// * custom component imports *
 import AppFooter from './app-footer/AppFooter';
 import AppHeader from './app-header/AppHeader';
 import BackToTop from '../ui/back-to-top/BackToTop';

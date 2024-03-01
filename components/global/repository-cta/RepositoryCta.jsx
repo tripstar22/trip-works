@@ -1,19 +1,20 @@
-/* third party library imports */
+// * third party library imports *
 import PropTypes from 'prop-types';
 
-/* mui imports */
+// * mui imports *
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
-/* custom component imports */
+// * custom component imports *
 import ButtonLink from '../../ui/button-link/ButtonLink';
 import RevealOnScroll from '../../ui/reveal-on-scroll/RevealOnScroll';
 
-/* styles imports */
+// * styles imports *
 import classes from './_repositoryCta.module.scss';
 
 function RepositoryCta({ repositoryCta }) {
+  // * cms content
   const { content, cta, heading } = repositoryCta;
   const { ctaHref, ctaTarget, ctaText } = cta;
 
@@ -21,7 +22,7 @@ function RepositoryCta({ repositoryCta }) {
     <section
       className={`section section___paddingSmall ${classes.repositoryCta}`}
     >
-      <RevealOnScroll end="top top" start="bottom bottom">
+      <RevealOnScroll end="top 60%" start="bottom 60%">
         <Container maxWidth="lg">
           <Grid justifyContent="center" container spacing={0}>
             <Grid item xs={12}>

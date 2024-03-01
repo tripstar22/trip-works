@@ -1,7 +1,7 @@
-/* react imports */
+// * react imports 
 import { useState } from 'react';
 
-/* mui imports */
+// * mui imports 
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardMedia from '@mui/material/CardMedia';
@@ -9,20 +9,21 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
-/* custom component imports */
+// * custom component imports 
 import AppLink from '../ui/app-link/AppLink';
 import AppModal from '../app-modal/AppModal';
 
-/* styles imports */
+// * styles imports 
 import classes from './_gallery.module.scss';
 
 function Gallery({ project }) {
+  // * state *
   const [open, setOpen] = useState(false);
 
+  // * handlers *
   const toggleModalOpen = function handlerToggleModalOpen() {
     setOpen(true);
   };
-
   const toggleModalClose = function handlerToggleModalClose() {
     setOpen(false);
   };
@@ -34,7 +35,6 @@ function Gallery({ project }) {
           <Grid container spacing={4}>
             <Grid item xs={12}>
               <Typography
-                id="aniTextGallery"
                 className={classes.gallery_heading}
                 component="h3"
                 gutterBottom

@@ -1,12 +1,16 @@
+// * mui imports *
 import { createTheme } from '@mui/material/styles';
 
+// * font imports *
 import {FontSansSerifDefault, FontMonospaceDefault, FontDisplayDefault} from '../fonts/fonts';
+
+// * variable imports *
 import colors from '../vars/colors';
 
-// must initialize theme first in order to access breakpoints within theme styles
+// * must initialize theme first in order to access breakpoints within theme styles *
 let themeDefault = createTheme();
 
-// basic theme
+// * basic theme *
 themeDefault = createTheme(themeDefault, {
   components: {
     MuiBackdrop: {

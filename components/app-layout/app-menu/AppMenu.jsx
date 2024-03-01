@@ -1,13 +1,13 @@
-/* react imports */
+// * react imports *
 import { useEffect } from 'react';
 
-/* third party library imports */
+// * third party library imports *
 import PropTypes from 'prop-types';
 
-/* mui icon imports */
+// * mui icon imports *
 import Close from '@mui/icons-material/Close';
 
-/* mui imports */
+// * mui imports *
 import Drawer from '@mui/material/Drawer';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
@@ -15,15 +15,18 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 
-/* custom component imports */
+// * custom component imports *
 import AppLink from '../../ui/app-link/AppLink';
 
-/* styles imports */
+// * styles imports *
 import classes from './_appmenu.module.scss';
 
 function AppMenu({ menuOpen, navigationMain, toggleMenuClose }) {
   useEffect(() => {
-    // work around to navigate to element IDs in navigation since Next.js Link component navigates to top of page even if ID specified in href
+    // * handlers *
+    /* 
+      • work around to navigate to element IDs in navigation since Next.js Link component navigates to top of page even if ID specified in href
+    */
     const checkUrlHash = function handlerCheckUrlHash() {
       const hash = window.location.hash;
       const sectionId = hash.substring(hash.indexOf('#') + 1);
@@ -34,7 +37,8 @@ function AppMenu({ menuOpen, navigationMain, toggleMenuClose }) {
       }
     };
 
-    checkUrlHash();
+    // * events *
+    document.addEventListener('DOMContentLoaded', checkUrlHash());
   }, []);
 
   return (

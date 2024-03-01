@@ -1,10 +1,10 @@
-/* third party library imports */
+// * third party library imports *
 import PropTypes from 'prop-types';
 
-/* mui imports */
+// * mui imports *
 import IconButton from '@mui/material/IconButton';
 
-/* styles imports */
+// * styles imports *
 import classes from './_carousel.module.scss';
 
 function CarouselArrowNext(props) {

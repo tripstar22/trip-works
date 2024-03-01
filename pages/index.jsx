@@ -1,13 +1,13 @@
-/* react imports */
+// * react imports *
 import { useEffect, useState } from 'react';
 
-/* next.js imports */
+// * next.js imports *
 import { useRouter } from 'next/router';
 
-/* third party library imports */
+// * third party library imports *
 import * as contentful from 'contentful';
 
-/* custom component imports */
+// * custom component imports *
 import About from '../components/about/About';
 import AppLayout from '../components/app-layout/AppLayout';
 import AppLoader from '../components/app-loader/AppLoader';
@@ -18,73 +18,74 @@ import RepositoryCta from '../components/global/repository-cta/RepositoryCta';
 import Skills from '../components/skills/Skills';
 
 export async function getStaticProps() {
+  // * access cms content *
   const client = contentful.createClient({
     space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
     accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
   });
 
   try {
-    // about
+    // * about *
     const aboutContentResponse = await client.getEntry(
       '5qNHxrgorV0020tJFgu0up'
     );
     const aboutContent = aboutContentResponse.fields;
 
-    // contact
+    // * contact *
     const contactContentResponse = await client.getEntry(
       '6QNHyhpaVHS7bgqmfxQg0s'
     );
     const contactContent = contactContentResponse.fields;
 
-    // footer heading
+    // * footer heading *
     const footerHeadingResponse = await client.getEntry(
       '7IE5FyfjP2sp1Y5kpC3Q2n'
     );
     const footerHeading = footerHeadingResponse.fields;
 
-    // home hero
+    // * home hero *
     const homeHeroContentResponse = await client.getEntry(
       '6O60cfV82lAZKjI1vyWoJa'
     );
     const homeHeroContent = homeHeroContentResponse.fields;
 
-    // location
+    // * location *
     const locationContentResponse = await client.getEntry(
       '3zwnDmVEdqsO04rOy2WQIM'
     );
     const locationContent = locationContentResponse.fields;
 
-    // navigation main
+    // * navigation main *
     const navigationMainResponse = await client.getEntry(
       '15OSvONv0lmHEajKZ0oHFb'
     );
     const navigationMain = navigationMainResponse.fields;
 
-    // projects
+    // * projects *
     const projectsResponse = await client.getEntries({
       content_type: 'projects',
     });
     const projectsItems = projectsResponse.items;
 
-    // repository cta
+    // * repository cta *
     const repositoryCtaResponse = await client.getEntry(
       '01lx3PqjdVxjp7QLNPaugU'
     );
     const repositoryCta = repositoryCtaResponse.fields;
 
-    // skills heading
+    // * skills heading *
     const skillsHeadingResponse = await client.getEntry(
       'SzzgN6NoZIsDBxcPLHNvO'
     );
     const skillsHeading = skillsHeadingResponse.fields;
 
-    // skills items
+    // * skills items *
     const skillsItemsResponse = await client.getEntries({
       content_type: 'skillsItems',
     });
     const skillsItems = skillsItemsResponse.items;
 
-    // work heading
+    // * work heading *
     const workHeadingResponse = await client.getEntry('4D8B7cYwhfl13gL74nIcqa');
     const workHeading = workHeadingResponse.fields;
 
@@ -125,6 +126,7 @@ export async function getStaticProps() {
 }
 
 function IndexPage(props) {
+  // * cms content *
   const { pageProp } = props;
   const {
     aboutContent,
@@ -140,11 +142,15 @@ function IndexPage(props) {
     workHeading,
   } = pageProp;
 
+  // * state *
+  const [documentIsReady, setDocumentIsReady] = useState(false);
   const [loading, setLoading] = useState(true);
+
+  // * router *
   const router = useRouter();
 
   useEffect(() => {
-    // check if all the Contentful data is available
+    // * check if all the Contentful data is available *
     const contentfulDataLoaded =
       aboutContent &&
       contactContent &&
@@ -158,22 +164,43 @@ function IndexPage(props) {
       skillsItems &&
       workHeading;
 
-    const allLoaded = router.isReady && contentfulDataLoaded;
+    // * handlers *
+    const onDocReady = function handlerOnDocumentReady() {
+      setDocumentIsReady(true);
+    };
 
-    setLoading(!allLoaded);
+    // * events *
+    document.addEventListener('DOMContentLoaded', onDocReady());
+
+    /* 
+      check for:
+        • cms content loaded, 
+        • document ready,
+        • router ready
+    */
+
+    const allLoaded =
+      contentfulDataLoaded &&
+      documentIsReady &&
+      router.isReady;
+
+    if (allLoaded) {
+      setLoading(false);
+    }
   }, [
     aboutContent,
     contactContent,
+    documentIsReady,
     footerHeading,
     homeHeroContent,
     locationContent,
     navigationMain,
     projectsItems,
     repositoryCta,
+    router.isReady,
     skillsHeading,
     skillsItems,
     workHeading,
-    router.isReady,
   ]);
 
   if (loading) {
@@ -183,10 +210,15 @@ function IndexPage(props) {
   return (
     <AppLayout footerHeading={footerHeading} navigationMain={navigationMain}>
       <HeroHome homeHeroContent={homeHeroContent} />
-      <About aboutContent={aboutContent} locationContent={locationContent} />
+      <About
+        aboutContent={aboutContent}
+        locationContent={locationContent}
+      />
       <Skills skillsHeading={skillsHeading} skillsItems={skillsItems} />
       <Projects projectsItems={projectsItems} workHeading={workHeading} />
-      <Contact contactContent={contactContent} />
+      <Contact
+        contactContent={contactContent}
+      />
       <RepositoryCta repositoryCta={repositoryCta} />
     </AppLayout>
   );

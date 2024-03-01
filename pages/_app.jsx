@@ -1,37 +1,33 @@
-/* react imports */
+// * react imports *
 import * as React from 'react';
 
-/* next.js imports */
+// * next.js imports *
 import Head from 'next/head';
 
-/* third party library imports */
+// * third party library imports *
 import PropTypes from 'prop-types';
 
-/* mui imports */
+// * mui imports *
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
-/* emotion imports */
+// * emotion imports *
 import { CacheProvider } from '@emotion/react';
 
-/* public js imports */
-// import '../public/js/consoleMessage.js';
-
-/* src style imports */
-/* fonts imported first **/
-import '../src/styles/scss/_fonts.scss';
-/* base styles imported second */
+// * src style imports *
+// fonts imported first
+import '../src/styles/scss/fonts/_fonts.scss';
+// theme imports
+import createEmotionCache from '../src/styles/js/createEmotionCache';
+import themeDefault from '../src/styles/js/themes/themeDefault';
+// base styles imported second
 import '../src/styles/scss/global/_base.scss';
-/* other global styles imported alphabetically */
+// other global styles imported alphabetically
 import '../src/styles/scss/global/_appCarousel.scss';
 import '../src/styles/scss/global/_section.scss';
 import '../src/styles/scss/global/_utilities.scss';
 
-/* public style imports */
-import createEmotionCache from '../public/js/createEmotionCache';
-import themeDefault from '../public/js/themes/themeDefault';
-
-// Client-side cache, shared for the whole session of the user in the browser.
+// * Client-side cache, shared for the whole session of the user in the browser. *
 const clientSideEmotionCache = createEmotionCache();
 
 function MyApp(props) {
@@ -44,11 +40,10 @@ function MyApp(props) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <ThemeProvider theme={themeDefault}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+        {/*** CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. ***/}
         <CssBaseline />
         <Component pageProp={pageProps} />
       </ThemeProvider>
-      <script src="https://form.jotform.com/jsform/240076360593052" type="text/javascript" defer></script>
       <script src="/js/consoleMessage.js" type="text/javascript" defer></script>
     </CacheProvider>
   );

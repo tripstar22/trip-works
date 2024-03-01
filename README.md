@@ -29,7 +29,7 @@
 - I added the [SWR](https://github.com/vercel/swr) library into my project, and used the technique outlined [here](https://vercel.com/guides/loading-static-file-nextjs-api-route) to add the weather data to `components/location/Location.jsx`.  
 
 ### Styles
-- As the project scaffolding uses MUI, there is a theme JavaScript file for the vast majority of global styles, `public/js/themes/themeDefault.js`.
+- As the project scaffolding uses MUI, there is a theme JavaScript file for the vast majority of global styles, `src/styles/js/themes/themeDefault.js`.
 - Next.js comes with built-in support for [CSS Modules](https://nextjs.org/docs/app/building-your-application/styling/css-modules), and they are utilized for component level styles. 
 - Writing css/scss is a strong point for me in my professional repertoire, so I wanted to include them in this app. I found a [blog](https://www.markmakesstuff.com/posts/mui-css-modules) which outlines a strategy of using both a MUI theme and SCSS Modules for React projects, and decided to implement it in my own project.
 - I implemented Sass in this project, and used [this article](https://www.freecodecamp.org/news/how-to-use-sass-with-css-modules-in-next-js/#step-1-installing-sass-in-a-next-js-app) as a guide on how to do so.
@@ -48,8 +48,8 @@
 ```
 
 ### Fonts
-- Next.js allows you to automatically self-host any Google Fonts. They are being imported into the project via the technique found under the Google Fonts heading in this [link](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts). You can find the file where they are being imported here: `public/js/fonts/fonts.js`.
-- I am also hosting one font locally in the project using `@font-face`, which can be found here: `src/styles/scss/_fonts.scss`. It is imported into the project in `pages/_app.jsx`.
+- Next.js allows you to automatically self-host any Google Fonts. They are being imported into the project via the technique found under the Google Fonts heading in this [link](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts). You can find the file where they are being imported here: `src/styles/js/fonts/fonts.js`.
+- I am also hosting one font locally in the project using `@font-face`, which can be found here: `src/styles/scss/fonts/_fonts.scss`. It is imported into the project in `pages/_app.jsx`.
 
 ### SVGs
 - I am using the technique outlined [here](https://blog.logrocket.com/import-svgs-next-js-apps/#import-svgs-next-js-using-svgr) to leverage [SVGR](https://github.com/gregberge/svgr) for SVGs in the app.

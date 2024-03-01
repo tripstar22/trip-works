@@ -1,5 +1,5 @@
 /* 
-  DESCRIPTION: Displays custom message in browser console.
+  # DESCRIPTION: Displays custom message in browser console. #
 */
 
 if (!window.consoleMessage) {
@@ -7,7 +7,7 @@ if (!window.consoleMessage) {
     console.log('%cThanks for checking out my portfolio site!! 😄', 'font-family:sans-serif;font-size:18px;');
   };
 
-  // assign the function to the global window object
+  // * assign the function to the global window object *
   window.consoleMessage = consoleMessage;
 
   consoleMessage();

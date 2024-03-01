@@ -1,7 +1,9 @@
-/*** app menu ***/
+/* 
+  # app menu #
+*/
 
-/* imports */
-@import '../../src/styles/scss/vars';
+// * imports *
+@import '../../src/styles/scss/vars/vars';
 
 /* ===================================================
   All Screen Sizes
@@ -11,8 +13,9 @@
   background-color: $tealDark;
   min-height: 100vh;
   padding-top: 80px;
-  position: relative;
-  z-index: 20;
+  position: fixed;
+  width: 100%;
+  z-index: $zIndexAppLoader;
 
   &_container {
     height: 60px;

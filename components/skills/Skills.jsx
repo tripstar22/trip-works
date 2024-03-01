@@ -1,18 +1,19 @@
-/* third party library imports */
+// * third party library imports *
 import PropTypes from 'prop-types';
 
-/* mui imports */
+// * mui imports *
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
-/* custom component imports */
+// * custom component imports *
 import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 
-/* styles imports */
+// * styles imports *
 import classes from './_skills.module.scss';
 
 function Skills({ skillsHeading, skillsItems }) {
+  // * cms content *
   const { heading } = skillsHeading;
 
   return (
@@ -21,7 +22,7 @@ function Skills({ skillsHeading, skillsItems }) {
         aniTyped={true}
         end="top 10%"
         speed={1.5}
-        start="90% bottom"
+        start="75% bottom"
         text={heading}
         textElement="#aniTextSkills"
       >

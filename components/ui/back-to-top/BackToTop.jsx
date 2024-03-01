@@ -1,21 +1,22 @@
-/* mui icon imports */
+// * mui icon imports *
 import KeyboardArrowUp from '@mui/icons-material/KeyboardArrowUp';
 
-/* mui imports */
+// * mui imports *
 import Fab from '@mui/material/Fab';
 import Fade from '@mui/material/Fade';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
-/* custom js animation imports */
+// * custom js animation imports *
 import aniScroll from '../../../src/js/ani-scroll/aniScroll';
 
-/* custom component imports */
+// * custom component imports *
 import AppLink from '../app-link/AppLink';
 
-/* styles imports */
+// * styles imports *
 import classes from './_backtotop.module.scss';
 
 function BackToTop() {
+  // * scroll trigger settings *
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 100,

@@ -1,21 +1,22 @@
-/* third party library imports */
+// * third party library imports *
 import PropTypes from 'prop-types';
 
-/* mui imports */
+// * mui imports *
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 
-/* custom component imports */
+// * custom component imports *
 import AppLink from '../ui/app-link/AppLink';
 import BackgroundVideo from '../ui/background-video/BackgroundVideo';
 import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 
-/* styles imports */
+// * styles imports *
 import classes from './_pagenotfound.module.scss';
 
 function PageNotFound({ pageNotFoundContent }) {
+  // * cms content *
   const { backgroundVideo, backgroundVideoImage, heading, link, text } = pageNotFoundContent;
   const imageUrl = backgroundVideoImage.fields.file.url;
   const videoUrl = backgroundVideo.fields.file.url;

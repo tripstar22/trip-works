@@ -1,7 +1,9 @@
-/*** pagenotfound ***/
+/*
+  # pagenotfound #
+*/
 
-/* imports */
-@import '../../src/styles/scss/vars';
+// * imports *
+@import '../../src/styles/scss/vars/vars';
 
 /* ===================================================
   All Screen Sizes
@@ -9,7 +11,7 @@
 
 .pagenotfound {
   overflow: hidden;
-  padding-top: 80px; // height of sticky header
+  padding-top: 80px; // * height of sticky header *
   position: relative;
 
   &_container {
@@ -21,7 +23,7 @@
   }
   &_inner {
     background-color: transparent;
-    backdrop-filter: blur(40px);
+    backdrop-filter: $blurDefault;
     padding: 50px 0;
     position: relative;
     text-align: center;
@@ -49,7 +51,7 @@
 @media screen and (min-width: $screen-sm) {
 
   .pagenotfound {
-    padding-top: 86px; // height of sticky header
+    padding-top: 86px; // * height of sticky header *
 
     &_container {
       padding: 150px 0;
@@ -69,7 +71,7 @@
 @media screen and (min-width: $screen-md) {
 
   .pagenotfound {
-    padding-top: 92px; // height of sticky header
+    padding-top: 92px; // * height of sticky header *
 
     &_inner {
       padding: 70px 0;

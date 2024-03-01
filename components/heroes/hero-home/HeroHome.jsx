@@ -1,26 +1,27 @@
-/* third party library imports */
+// * third party library imports *
 import PropTypes from 'prop-types';
 
-/* mui icon imports */
+// * mui icon imports *
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-/* mui imports */
+// * mui imports *
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
-/* custom js animation imports */
+// * custom js animation imports *
 import aniScroll from '../../../src/js/ani-scroll/aniScroll';
 
-/* custom component imports */
+// * custom component imports *
 import AppLink from '../../ui/app-link/AppLink';
 import BackgroundVideo from '../../ui/background-video/BackgroundVideo';
 import RevealOnScroll from '../../ui/reveal-on-scroll/RevealOnScroll';
 
-/* styles imports */
+// * styles imports *
 import classes from './_hero.module.scss';
 
 function HeroHome({ homeHeroContent }) {
+  // * cms content *
   const { backgroundVideo, backgroundVideoImage, heading, subheading } = homeHeroContent;
   const imageUrl = backgroundVideoImage.fields.file.url;
   const videoUrl = backgroundVideo.fields.file.url;

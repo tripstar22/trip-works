@@ -1,9 +1,11 @@
-/*** hero ***/
+/* 
+  # hero #
+*/
 
-/* imports */
-@import '../../../src/styles/scss/vars';
+// * imports *
+@import '../../../src/styles/scss/vars/vars';
 
-/* keyframe animations */
+// * keyframe animations *
 @keyframes animateArrow {
   0%, 20%, 50%, 80%, 100% {
     transform: translate(-50%, 0);
@@ -21,7 +23,7 @@
 =================================================== */
 
 .hero {
-  padding-top: 80px; // height of sticky header
+  padding-top: 80px; // * height of sticky header *
 
   &_arrow,
   &_scrollLink {
@@ -102,7 +104,7 @@
 @media screen and (min-width: $screen-sm) {
   
   .hero {
-    padding-top: 86px; // height of sticky header
+    padding-top: 86px; // * height of sticky header *
 
     &_heading {
 
@@ -125,7 +127,7 @@
 @media screen and (min-width: $screen-md) {
   
   .hero {
-    padding-top: 92px; // height of sticky header
+    padding-top: 92px; // * height of sticky header *
 
     &_heading {
 

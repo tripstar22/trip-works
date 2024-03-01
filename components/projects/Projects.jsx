@@ -1,8 +1,8 @@
-/* third party library imports */
+// * third party library imports *
 import PropTypes from 'prop-types';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
-/* mui imports */
+// * mui imports *
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
@@ -11,14 +11,15 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
-/* custom component imports */
+// * custom component imports *
 import AppLink from '../ui/app-link/AppLink';
 import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 
-/* styles imports */
+// * styles imports *
 import classes from './_projects.module.scss';
 
 function Projects({ projectsItems, workHeading }) {
+  // * cms content *
   const { heading } = workHeading;
 
   return (
@@ -27,7 +28,7 @@ function Projects({ projectsItems, workHeading }) {
         aniTyped={true}
         end="top 10%"
         speed={1.25}
-        start="25% bottom"
+        start="15% bottom"
         text={heading}
         textElement="#aniTextWork"
       >

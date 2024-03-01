@@ -1,19 +1,20 @@
-/* third party library imports */
+// * third party library imports *
 import PropTypes from 'prop-types';
 
-/* mui imports */
+// * mui imports *
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
-/* custom component imports */
+// * custom component imports *
 import Location from '../location/Location';
 import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 
-/* styles imports */
+// * styles imports *
 import classes from './_about.module.scss';
 
 function About({ aboutContent, locationContent }) {
+  // * cms content *
   const { heading, content, image } = aboutContent;
 
   return (
@@ -25,7 +26,7 @@ function About({ aboutContent, locationContent }) {
         aniTyped={true}
         end="top 10%"
         speed={1.25}
-        start="75% bottom"
+        start="60% bottom"
         text={heading}
         textElement="#aniTextAbout"
       >

@@ -1,11 +1,12 @@
-/* next.js imports */
+// * next.js imports *
 import Link from 'next/link';
 
-/* third party library imports */
+// * third party library imports *
 import PropTypes from 'prop-types';
 
 function AppLink(props) {
   const { children } = props;
+
   return (
     <Link
       aria-label={props.ariaLabel}

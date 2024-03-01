@@ -1,9 +1,13 @@
-/*** appSlider ***/
+/* 
+  # appSlider #
+*/
 
-/* These styles need to be in the global scss folder since they are not items specifically written out within a components html markup. Css modules will skip over any styles that are not associated with a class that is written out in an associated component. */
+/* 
+  • These styles need to be in the global scss folder since they are not items specifically written out within a components html markup. Css modules will skip over any styles that are not associated with a class that is written out in an associated component. 
+*/
 
-/* imports */
-@import '../vars';
+// * imports *
+@import '../vars/vars';
 
 /* ===================================================
   All Screen Sizes

@@ -1,13 +1,13 @@
 /* 
-  DESCRIPTION: Created to animate fade effect with gsap ScrollTrigger. 
+  # DESCRIPTION: Created to animate fade effect with gsap ScrollTrigger. #
 */
 
-/* third party library imports */
+// * third party library imports *
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { TextPlugin } from 'gsap/dist/TextPlugin';
 
-/* must register gsap plugins */
+// * must register gsap plugins *
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
 
@@ -16,13 +16,13 @@ function aniFade(aniTarget, scopeRef) {
     const target = self.selector(aniTarget);
 
     target.forEach((ani) => {
-      // get start and end data-attributes from each target element
+      // * get start and end data-attributes from each target element  *
       let aniEnd = ani.dataset.end;
       let aniStart = ani.dataset.start;
 
       if (!ani.dataset.aniTyped) {
 
-        // no aniType functionality
+        // * no aniType functionality *
 
         gsap.to(ani, {
           ease: 'power2.inOut',
@@ -30,7 +30,7 @@ function aniFade(aniTarget, scopeRef) {
           scrollTrigger: {
             duration: 750,
             end: aniEnd,
-            // markers: true, // *** great for debugging
+            // markers: true, // * great for debugging *
             start: aniStart,
             trigger: ani,
           },
@@ -38,24 +38,26 @@ function aniFade(aniTarget, scopeRef) {
         });
       } else {
 
-        // has aniType functionality
+        // * has aniType functionality *
         
-        // check to see if specified element exists in current template
+        // * check to see if specified element exists in current template  *
         if (ani.dataset.textElement) {
           const aniType = function animateTextTyping() {
 
-            // get required data for aniType parameters
+            // * get required data for aniType parameters *
             let textElement = ani.dataset.textElement;
             let speed = ani.dataset.speed;
             let text = ani.dataset.text;
   
-            // convert speed value to integer
+            // * convert speed value to integer *
             speed = parseInt(speed);
   
-            gsap.to(textElement, {
-              duration: speed,
-              text: text,
-            });
+            if (textElement) {
+              gsap.to(textElement, {
+                duration: speed,
+                text: text,
+              });
+            }
           };
   
           gsap.to(ani, {
@@ -64,7 +66,7 @@ function aniFade(aniTarget, scopeRef) {
             scrollTrigger: {
               duration: 750,
               end: aniEnd,
-              // markers: true, // *** great for debugging 
+              // markers: true, // * great for debugging *
               onEnter: aniType,
               start: aniStart,
               trigger: ani,
@@ -74,8 +76,8 @@ function aniFade(aniTarget, scopeRef) {
         }
       }
     });
-  }, scopeRef); // scope
-  return () => ctx.revert(); // cleanup
+  }, scopeRef); // * scope *
+  return () => ctx.revert(); // * cleanup *
 };
 
 export default aniFade;

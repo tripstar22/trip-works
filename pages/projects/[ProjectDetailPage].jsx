@@ -68,6 +68,12 @@ export async function getStaticProps({ params }) {
       content_type: 'projects',
       'fields.slug': params.ProjectDetailPage,
     });
+    // * if project dosen't exist then return not found
+    if (!project.items.length) {
+      return {
+        notFound: true,
+      };
+    }
 
     // * repository cta *
     const repositoryCtaResponse = await client.getEntry(

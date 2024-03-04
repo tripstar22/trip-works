@@ -1,3 +1,6 @@
+// * third party library imports *
+import PropTypes from 'prop-types';
+
 // * mui imports *
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -11,6 +14,11 @@ import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 import classes from './_projectdetail.module.scss';
 
 function ProjectDetail({ project }) {
+  // * cms content *
+  const media = project.fields.media;
+  const role = project.fields.role;
+  const title = project.fields.title;
+
   return (
     <div className={classes.projectdetail}>
       <RevealOnScroll
@@ -18,7 +26,7 @@ function ProjectDetail({ project }) {
         end="top top"
         speed={1.75}
         start="30% bottom"
-        text={project.fields.role}
+        text={role}
         textElement="#aniJobTitle"
       >
         <section className={classes.projectdetail_titleSection}>
@@ -31,7 +39,7 @@ function ProjectDetail({ project }) {
                   gutterBottom
                   variant="h1"
                 >
-                  {project.fields.title}
+                  {title}
                 </Typography>
                 <Typography
                   className={classes.projectdetail_subheading}
@@ -49,10 +57,14 @@ function ProjectDetail({ project }) {
             </Grid>
           </Container>
         </section>
-        <Gallery project={project} />
+        <Gallery media={media} />
       </RevealOnScroll>
     </div>
   );
 }
+
+ProjectDetail.propTypes = {
+  project: PropTypes.object.isRequired,
+};
 
 export default ProjectDetail;

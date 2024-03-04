@@ -14,7 +14,7 @@ import Carousel from '../carousel/Carousel';
 // * styles imports *
 import classes from './_appmodal.module.scss';
 
-function AppModal({ open, toggleModalClose }) {
+function AppModal({ media, open, toggleModalClose }) {
   return (
     <Modal
       onClose={toggleModalClose}
@@ -23,7 +23,7 @@ function AppModal({ open, toggleModalClose }) {
     >
       <div className={classes.appmodal}>
         <div className={classes.appmodal_container}>
-          <Carousel />
+          <Carousel media={media} />
         </div>
         <IconButton
           className={classes.appmodal_close}

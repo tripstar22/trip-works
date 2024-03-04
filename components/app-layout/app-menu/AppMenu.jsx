@@ -1,5 +1,5 @@
 // * react imports *
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 // * third party library imports *
 import PropTypes from 'prop-types';
@@ -22,8 +22,24 @@ import AppLink from '../../ui/app-link/AppLink';
 import classes from './_appmenu.module.scss';
 
 function AppMenu({ menuOpen, navigationMain, toggleMenuClose }) {
+  // * state *
+  const [contactIframeLoaded, setContactIframeLoaded] = useState(false);
+  const [documentIsReady, setDocumentIsReady] = useState(false);
+
   useEffect(() => {
+    let allReady;
+    let contactIframe;
+    let hasContactSection = false; // * Needed in order to properly calculate aniFade if contact iframe is in the view *
+
+    if (document.querySelector('#contactForm iframe')) {
+      hasContactSection = true;
+      contactIframe = document.querySelector('#contactForm iframe');
+    }
+
     // * handlers *
+    const onDocReady = function handlerOnDocumentReady() {
+      setDocumentIsReady(true);
+    };
     /* 
       • work around to navigate to element IDs in navigation since Next.js Link component navigates to top of page even if ID specified in href
     */
@@ -33,13 +49,30 @@ function AppMenu({ menuOpen, navigationMain, toggleMenuClose }) {
       const targetSection = document.getElementById(sectionId);
 
       if (targetSection) {
-        targetSection.scrollIntoView();
+        targetSection.scrollIntoView(true);
       }
     };
 
     // * events *
-    document.addEventListener('DOMContentLoaded', checkUrlHash());
-  }, []);
+    document.addEventListener('DOMContentLoaded', onDocReady());
+    if (hasContactSection) {
+      contactIframe.addEventListener('load', function() {
+        setContactIframeLoaded(true);
+      });
+    }
+
+    if (hasContactSection) {
+      // * document ready and contact iframe loaded *
+      allReady = documentIsReady && contactIframeLoaded;
+    } else {
+      // * document ready *
+      allReady = documentIsReady;
+    }
+
+    if (allReady) {
+      checkUrlHash();
+    }
+  }, [contactIframeLoaded, documentIsReady]);
 
   return (
     <div className={classes.appmenu}>

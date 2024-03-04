@@ -1,7 +1,10 @@
-// * react imports 
+// * react imports
 import { useState } from 'react';
 
-// * mui imports 
+// * third party library imports *
+import PropTypes from 'prop-types';
+
+// * mui imports
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardMedia from '@mui/material/CardMedia';
@@ -9,14 +12,14 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
-// * custom component imports 
+// * custom component imports
 import AppLink from '../ui/app-link/AppLink';
 import AppModal from '../app-modal/AppModal';
 
-// * styles imports 
+// * styles imports
 import classes from './_gallery.module.scss';
 
-function Gallery({ project }) {
+function Gallery({ media }) {
   // * state *
   const [open, setOpen] = useState(false);
 
@@ -43,7 +46,7 @@ function Gallery({ project }) {
                 Gallery
               </Typography>
             </Grid>
-            {project.fields.media.map((item, index) => (
+            {media.map((item, index) => (
               <Grid key={index} item xs={12} sm={6} md={4}>
                 <AppLink
                   href="#"
@@ -57,27 +60,37 @@ function Gallery({ project }) {
                       component="div"
                       tabIndex={-1}
                     >
-                      {/* {item.fields.file.contentType.startsWith("image/") ? (
+                      {item.fields.file.contentType.startsWith('image/') ? (
                         <CardMedia
                           alt={item.fields.title}
                           component="img"
                           height="100%"
                           src={item.fields.file.url}
                         />
-                      ) : item.fields.file.contentType.startsWith("video/") ? (
-                        <video width="100%" height="100%" controls>
-                          <source src={item.fields.file.url} type={item.fields.file.contentType} />
-                          <div>Your browser does not support the video tag.</div>
-                        </video>
+                      ) : item.fields.file.contentType.startsWith('video/') ? (
+                        <div className={classes.gallery_item}>
+                          <CardMedia
+                            alt={item.fields.title}
+                            component="video"
+                            height="100%"
+                            src={item.fields.file.url}
+                          />
+                          <div className={classes.gallery_video}>
+                            <div className={classes.gallery_videoContainer}>
+                              <div className={classes.gallery_videoPlay}>
+                                <div className={classes.gallery_videoPlayTriangle} />
+                              </div>
+                              <Typography className={classes.gallery_videoText}>
+                                Watch Video
+                              </Typography>
+                            </div>
+                          </div>
+                        </div>
                       ) : (
-                        <span>Unsupported media type.</span>
-                      )} */}
-                      <CardMedia
-                        alt={item.fields.title}
-                        component="img"
-                        height="100%"
-                        src={item.fields.thumbnailUrl || item.fields.file.url}
-                      />
+                        <Typography variant="body1">
+                          Unsupported media type.
+                        </Typography>
+                      )}
                     </CardActionArea>
                   </Card>
                 </AppLink>
@@ -86,11 +99,13 @@ function Gallery({ project }) {
           </Grid>
         </Container>
       </div>
-      {open && (
-        <AppModal open={open} toggleModalClose={toggleModalClose} />
-      )}
+      {open && <AppModal open={open} media={media} toggleModalClose={toggleModalClose} />}
     </section>
   );
 }
+
+Gallery.propTypes = {
+  media: PropTypes.array.isRequired,
+};
 
 export default Gallery;

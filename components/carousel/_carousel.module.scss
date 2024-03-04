@@ -37,9 +37,17 @@
       fill: $white;
     }
   }
+  &_image,
+  &_video {
+    height: 100%;
+    width: 100%;
+  }
   &_link {
     position: relative;
     z-index: 1;
+  }
+  &_notSupported {
+    color: $white;
   }
 }
 

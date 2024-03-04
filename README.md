@@ -2,7 +2,7 @@
 
 ## How to Use
 
-1. Download a zip of the repository, then unzip the downloaded folder.
+1. Download the repository.
 2. Navigate to the root folder for the app in your terminal.
 3. Run `npm install`.
 4. Once all dependencies have been installed run `npm run dev` to spin up your local environment.
@@ -75,7 +75,7 @@
 - I am leveraging [react-jotform-embed](https://github.com/xurei/react-jotform-embed) to embed the `iframe` for my contact form that is provided by [Jotform](https://www.jotform.com/). This can be found in `components/global/contact/Contact.jsx`. The majority of the styles for the form had to be created in the Jotform form builder, so they are not in this codebase.
 
 #### react-responsive-masonry
-- [react-responsive-masonry](https://github.com/cedricdelpoux/react-responsive-masonry) is being used for the layout of featured work, which can be found in `components/projects/Projects.jsx`. 
+- [react-responsive-masonry](https://github.com/cedricdelpoux/react-responsive-masonry) is being used for the layout of featured work on the homepage. The specific component for featured work is `components/projects/Projects.jsx`. 
 
 #### Slick carousel / react-slick
 - The React version ([react-slick](https://github.com/akiran/react-slick)) of Slick Carouel is being used for featured media items in `components/carousel/Carousel.jsx`. 

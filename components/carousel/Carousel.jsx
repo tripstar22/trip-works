@@ -10,8 +10,7 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 // * mui imports *
-import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
 
 // * custom component imports *
 import CarouselArrowNext from './CarouselArrowNext';
@@ -20,7 +19,7 @@ import CarouselArrowPrev from './CarouselArrowPrev';
 // * styles imports *
 import classes from './_carousel.module.scss';
 
-function Carousel() {
+function Carousel({ media }) {
   // * carousel settings *
   const sliderSettings = {
     dots: true,
@@ -42,36 +41,30 @@ function Carousel() {
   return (
     <div className={`${classes.carousel} appCarousel`}>
       <Slider {...sliderSettings} className="appCarousel_sliderModal">
-        <div>
-          <Card>
-            <CardMedia
-              alt="write description here"
-              component="img"
-              height="100%"
-              image="https://picsum.photos/1800/1013"
-            />
-          </Card>
-        </div>
-        <div>
-          <Card>
-            <CardMedia
-              alt="write description here"
-              component="img"
-              height="100%"
-              image="https://picsum.photos/1800/1013"
-            />
-          </Card>
-        </div>
-        <div>
-          <Card>
-            <CardMedia
-              alt="write description here"
-              component="img"
-              height="100%"
-              image="https://picsum.photos/1800/1013"
-            />
-          </Card>
-        </div>
+        {media.map((item, index) => (
+          <div key={index}>
+            {item.fields.file.contentType.startsWith('image/') ? (
+              <img src={item.fields.file.url} className={classes.carousel_image} alt={item.fields.title} />
+            ) : item.fields.file.contentType.startsWith('video/') ? (
+              <video className={classes.carousel_video} controls>
+                <source src={item.fields.file.url} type="video/mp4" />
+                <Typography
+                  className={classes.carousel_notSupported}
+                  variant="body1"
+                >
+                  Your browser does not support the video tag.
+                </Typography>
+              </video>
+            ) : (
+              <Typography
+                className={classes.carousel_notSupported}
+                variant="body1"
+              >
+                Unsupported media type.
+              </Typography>
+            )}
+          </div>
+        ))}
       </Slider>
     </div>
   );

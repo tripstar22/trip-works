@@ -23,7 +23,7 @@ function CarouselArrowPrev(props) {
 
 CarouselArrowPrev.propTypes = {
   children: PropTypes.any.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
 };
 
 export default CarouselArrowPrev;

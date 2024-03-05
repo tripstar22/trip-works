@@ -23,7 +23,7 @@ function Carousel({ media }) {
   // * carousel settings *
   const sliderSettings = {
     dots: true,
-    dotsClass: 'appCarousel_dots',
+    dotsClass: 'appCarousel_dots', // * Referenced in src/styles/scss/global/_appCarousel.scss *
     fade: true,
     nextArrow: (
       <CarouselArrowNext>
@@ -32,7 +32,7 @@ function Carousel({ media }) {
     ),
     prevArrow: (
       <CarouselArrowPrev>
-        <ArrowBackIosIcon className={classes.carousel_arrowIcon} />
+        <ArrowBackIosIcon className={`${classes.carousel_arrowIcon} ${classes.carousel_arrowIcon___prev}`} />
       </CarouselArrowPrev>
     ),
     speed: 250,

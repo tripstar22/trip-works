@@ -50,7 +50,7 @@ function Gallery({ media }) {
               <Grid key={index} item xs={12} sm={6} md={4}>
                 <AppLink
                   href="#"
-                  ariaLabel={item.fields.title}
+                  aria-label={item.fields.title}
                   className={classes.gallery_link}
                   onClick={toggleModalOpen}
                 >
@@ -78,7 +78,9 @@ function Gallery({ media }) {
                           <div className={classes.gallery_video}>
                             <div className={classes.gallery_videoContainer}>
                               <div className={classes.gallery_videoPlay}>
-                                <div className={classes.gallery_videoPlayTriangle} />
+                                <div
+                                  className={classes.gallery_videoPlayTriangle}
+                                />
                               </div>
                               <Typography className={classes.gallery_videoText}>
                                 Watch Video
@@ -99,7 +101,13 @@ function Gallery({ media }) {
           </Grid>
         </Container>
       </div>
-      {open && <AppModal open={open} media={media} toggleModalClose={toggleModalClose} />}
+      {open && (
+        <AppModal
+          open={open}
+          media={media}
+          toggleModalClose={toggleModalClose}
+        />
+      )}
     </section>
   );
 }

@@ -68,7 +68,7 @@ function HeroHome({ homeHeroContent }) {
               <AppLink
                 href="#about"
                 className={classes.hero_scrollLink}
-                ariaLabel="scroll to about"
+                aria-label="scroll to about"
                 dataTarget="about"
                 onClick={aniScroll}
               >

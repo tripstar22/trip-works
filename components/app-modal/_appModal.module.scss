@@ -15,9 +15,18 @@
   width: 100%;
 
   &_close {
+    border: 2px solid transparent;
+    color: transparent;
     position: absolute;
-    right: 0;
+    right: 10px;
     top: 10px;
+    transition: border $transitionDefault;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      border: 2px solid $white;
+    }
   }
   &_closeIcon {
     fill: $white;

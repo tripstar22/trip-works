@@ -14,13 +14,14 @@
 =================================================== */
 
 .appCarousel {
+
   &_dots {
     display: block;
-    left: 50%;
     list-style: none;
-    margin: 0;
+    margin: 0 auto;
     padding-left: 0;
     text-align: center;
+    width: 80%;
 
     li,
     li button {
@@ -34,6 +35,7 @@
       position: relative;
     }
     li.slick-active button {
+
       &::before {
         opacity: 1;
       }
@@ -41,27 +43,36 @@
     li button {
       appearance: none;
       background-color: transparent;
-      border: 0;
+      border: 1px solid transparent;
+      border-radius: 100%;
       color: transparent;
       cursor: pointer;
       font-size: 0;
       line-height: 0;
       padding: 5px;
       position: relative;
+      transition: border $transitionDefault;
 
+      &:hover {
+        
+        &::before {
+          opacity: 1;
+        }
+      }
       &:focus {
+        border: 1px solid $white;
         outline: none;
       }
 
       &::before {
         background-color: $white;
         border-radius: 100%;
-        content: '';
+        content: "";
         height: 10px;
         left: 50%;
         line-height: 20px;
         position: absolute;
-        opacity: $opacityDefault;
+        opacity: 0.5;
         top: 50%;
         transform: translate(-50%, -50%);
         transition: opacity $transitionDefault;
@@ -75,33 +86,50 @@
   END All Screen Sizes
 =================================================== */
 
+
 /* ===================================================
   Small Screens & Up (min-width: 600px)
 =================================================== */
+
+@media screen and (min-width: $screen-sm) {
+
+  .appCarousel {
+
+    &_dots {
+      width: 100%;
+    }
+  }
+}
 
 /* ===================================================
   END Small Screens & Up (min-width: 600px)
 =================================================== */
 
+
 /* ===================================================
   Medium Screens & Up (min-width: 900px)
 =================================================== */
+
 
 /* ===================================================
   END Medium Screens & Up (min-width: 900px)
 =================================================== */
 
+
 /* ===================================================
   Large Screens & Up (min-width: 1200px)
 =================================================== */
+
 
 /* ===================================================
   END Large Screens & Up (min-width: 1200px)
 =================================================== */
 
+
 /* ===================================================
   Extra-Large Screens & Up (min-width: 1536px)
 =================================================== */
+
 
 /* ===================================================
   END Extra-Large Screens & Up (min-width: 1536px)

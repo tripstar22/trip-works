@@ -26,7 +26,7 @@ function BackToTop() {
     <Fade in={trigger}>
       <div>
         <AppLink
-          ariaLabel="back to top"
+          aria-label="back to top"
           href="#pageTop"
           className={classes.backToTop}
           dataTarget="pageTop"

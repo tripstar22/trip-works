@@ -29,6 +29,7 @@ function AppModal({ media, open, toggleModalClose }) {
           className={classes.appmodal_close}
           onClick={toggleModalClose}
           aria-label="close modal"
+          tabIndex="0"
         >
           <Close className={classes.appmodal_closeIcon} />
         </IconButton>

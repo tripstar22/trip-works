@@ -53,7 +53,14 @@ function Carousel({ activeSlideIndex, media }) {
                 alt={item.fields.title}
               />
             ) : item.fields.file.contentType.startsWith('video/') ? (
-              <video className={classes.carousel_video} controls>
+              <video
+                className={classes.carousel_video}
+                controls
+                controlsList="disablepictureinpicture"
+                muted
+                playsInline
+                preload="auto"
+              >
                 <source src={item.fields.file.url} type="video/mp4" />
                 <Typography
                   className={classes.carousel_notSupported}

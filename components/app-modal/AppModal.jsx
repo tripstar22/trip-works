@@ -39,7 +39,7 @@ function AppModal({
           className={classes.appmodal_close}
           onClick={toggleModalClose}
           aria-label="close modal"
-          tabIndex="0"
+          tabIndex={0}
         >
           <Close className={classes.appmodal_closeIcon} />
         </IconButton>
@@ -49,7 +49,9 @@ function AppModal({
 }
 
 Modal.propTypes = {
+  activeSlideIndex: PropTypes.number,
   open: PropTypes.bool.isRequired,
+  setCurrentSlide: PropTypes.func,
   toggleModalClose: PropTypes.func,
 };
 

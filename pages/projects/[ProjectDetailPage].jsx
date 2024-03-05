@@ -134,11 +134,16 @@ function ProjectDetailPage(props) {
 
     // * handlers *
     const onDocReady = function handlerOnDocumentReady() {
-      setDocumentIsReady(true);
+      if (document.readyState === 'complete') {
+        setDocumentIsReady(true);
+      }
     };
 
+    // * check if document is already loaded when component mounts *
+    onDocReady();
+
     // * events *
-    document.addEventListener('DOMContentLoaded', onDocReady());
+    document.addEventListener('DOMContentLoaded', onDocReady);
 
     /* 
       check for:
@@ -155,6 +160,10 @@ function ProjectDetailPage(props) {
     if (allLoaded) {
       setLoading(false);
     }
+
+    return () => {
+      document.removeEventListener('DOMContentLoaded', onDocReady);
+    };
   }, [
     contactContent,
     documentIsReady,

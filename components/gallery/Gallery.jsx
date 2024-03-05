@@ -122,9 +122,7 @@ function Gallery({ media }) {
 }
 
 Gallery.propTypes = {
-  activeSlideIndex: PropTypes.number.isRequired,
   media: PropTypes.array.isRequired,
-  setCurrentSlide: PropTypes.func.isRequired,
 };
 
 export default Gallery;

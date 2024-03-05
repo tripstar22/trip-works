@@ -57,6 +57,15 @@ function RevealOnScroll(props) {
       aniFade('.revealonscroll_target', aniSection.current);
       displayAnimatedContent(aniSection.current);
     }
+
+    return () => {
+      document.removeEventListener('DOMContentLoaded', onDocReady);
+      if (hasContactSection) {
+        contactIframe.removeEventListener('load', function() {
+          setContactIframeLoaded(true);
+        });
+      }
+    };
   }, [contactIframeLoaded, documentIsReady, isRendered]);
 
   return (

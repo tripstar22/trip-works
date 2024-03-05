@@ -72,6 +72,15 @@ function AppMenu({ menuOpen, navigationMain, toggleMenuClose }) {
     if (allReady) {
       checkUrlHash();
     }
+
+    return () => {
+      document.removeEventListener('DOMContentLoaded', onDocReady);
+      if (hasContactSection) {
+        contactIframe.removeEventListener('load', function() {
+          setContactIframeLoaded(true);
+        });
+      }
+    };
   }, [contactIframeLoaded, documentIsReady]);
 
   return (

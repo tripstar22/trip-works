@@ -210,15 +210,10 @@ function IndexPage(props) {
   return (
     <AppLayout footerHeading={footerHeading} navigationMain={navigationMain}>
       <HeroHome homeHeroContent={homeHeroContent} />
-      <About
-        aboutContent={aboutContent}
-        locationContent={locationContent}
-      />
+      <About aboutContent={aboutContent} locationContent={locationContent} />
       <Skills skillsHeading={skillsHeading} skillsItems={skillsItems} />
       <Projects projectsItems={projectsItems} workHeading={workHeading} />
-      <Contact
-        contactContent={contactContent}
-      />
+      <Contact contactContent={contactContent} />
       <RepositoryCta repositoryCta={repositoryCta} />
     </AppLayout>
   );

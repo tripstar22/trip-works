@@ -21,9 +21,13 @@ import classes from './_gallery.module.scss';
 
 function Gallery({ media }) {
   // * state *
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const [open, setOpen] = useState(false);
 
   // * handlers *
+  const setCurrentSlide = function handlerSetCurrentSlide(index) {
+    setActiveSlideIndex(index);
+  };
   const toggleModalOpen = function handlerToggleModalOpen() {
     setOpen(true);
   };
@@ -52,7 +56,10 @@ function Gallery({ media }) {
                   href="#"
                   aria-label={item.fields.title}
                   className={classes.gallery_link}
-                  onClick={toggleModalOpen}
+                  onClick={() => {
+                    toggleModalOpen();
+                    setCurrentSlide(index);
+                  }}
                 >
                   <Card>
                     <CardActionArea
@@ -103,8 +110,10 @@ function Gallery({ media }) {
       </div>
       {open && (
         <AppModal
-          open={open}
+          activeSlideIndex={activeSlideIndex}
           media={media}
+          open={open}
+          setCurrentSlide={setCurrentSlide}
           toggleModalClose={toggleModalClose}
         />
       )}
@@ -113,7 +122,9 @@ function Gallery({ media }) {
 }
 
 Gallery.propTypes = {
+  activeSlideIndex: PropTypes.number.isRequired,
   media: PropTypes.array.isRequired,
+  setCurrentSlide: PropTypes.func.isRequired,
 };
 
 export default Gallery;

@@ -19,9 +19,10 @@ import CarouselArrowPrev from './CarouselArrowPrev';
 // * styles imports *
 import classes from './_carousel.module.scss';
 
-function Carousel({ media }) {
+function Carousel({ activeSlideIndex, media }) {
   // * carousel settings *
   const sliderSettings = {
+    initialSlide: activeSlideIndex,
     dots: true,
     dotsClass: 'appCarousel_dots', // * Referenced in src/styles/scss/global/_appCarousel.scss *
     fade: true,
@@ -32,19 +33,25 @@ function Carousel({ media }) {
     ),
     prevArrow: (
       <CarouselArrowPrev>
-        <ArrowBackIosIcon className={`${classes.carousel_arrowIcon} ${classes.carousel_arrowIcon___prev}`} />
+        <ArrowBackIosIcon
+          className={`${classes.carousel_arrowIcon} ${classes.carousel_arrowIcon___prev}`}
+        />
       </CarouselArrowPrev>
     ),
     speed: 250,
   };
 
   return (
-    <div className={`${classes.carousel} appCarousel`}>
+    <div id="appCarousel" className={`${classes.carousel} appCarousel`}>
       <Slider {...sliderSettings} className="appCarousel_sliderModal">
         {media.map((item, index) => (
           <div key={index}>
             {item.fields.file.contentType.startsWith('image/') ? (
-              <img src={item.fields.file.url} className={classes.carousel_image} alt={item.fields.title} />
+              <img
+                src={item.fields.file.url}
+                className={classes.carousel_image}
+                alt={item.fields.title}
+              />
             ) : item.fields.file.contentType.startsWith('video/') ? (
               <video className={classes.carousel_video} controls>
                 <source src={item.fields.file.url} type="video/mp4" />

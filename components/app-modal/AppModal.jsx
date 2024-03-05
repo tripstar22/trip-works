@@ -14,7 +14,13 @@ import Carousel from '../carousel/Carousel';
 // * styles imports *
 import classes from './_appmodal.module.scss';
 
-function AppModal({ media, open, toggleModalClose }) {
+function AppModal({
+  activeSlideIndex,
+  media,
+  open,
+  setCurrentSlide,
+  toggleModalClose,
+}) {
   return (
     <Modal
       onClose={toggleModalClose}
@@ -23,7 +29,11 @@ function AppModal({ media, open, toggleModalClose }) {
     >
       <div className={classes.appmodal}>
         <div className={classes.appmodal_container}>
-          <Carousel media={media} />
+          <Carousel
+            activeSlideIndex={activeSlideIndex}
+            media={media}
+            setCurrentSlide={setCurrentSlide}
+          />
         </div>
         <IconButton
           className={classes.appmodal_close}

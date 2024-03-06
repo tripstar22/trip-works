@@ -31,6 +31,7 @@ function aniFade(aniTarget, scopeRef) {
             duration: 750,
             end: aniEnd,
             // markers: true, // * great for debugging *
+            once: true,
             start: aniStart,
             trigger: ani,
           },
@@ -67,6 +68,7 @@ function aniFade(aniTarget, scopeRef) {
               duration: 750,
               end: aniEnd,
               // markers: true, // * great for debugging *
+              once: true,
               onEnter: aniType,
               start: aniStart,
               trigger: ani,

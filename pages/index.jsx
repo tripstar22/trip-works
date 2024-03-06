@@ -144,12 +144,15 @@ function IndexPage(props) {
 
   // * state *
   const [documentIsReady, setDocumentIsReady] = useState(false);
+  const [isRendered, setIsRendered] = useState(false);
   const [loading, setLoading] = useState(true);
 
   // * router *
   const router = useRouter();
 
   useEffect(() => {
+    let allLoaded = false;
+
     // * check if all the Contentful data is available *
     const contentfulDataLoaded =
       aboutContent &&
@@ -177,16 +180,21 @@ function IndexPage(props) {
     // * events *
     document.addEventListener('DOMContentLoaded', onDocReady);
 
+    // * update state for isRendered once rendered *
+    setIsRendered(true);
+
     /* 
       check for:
         • cms content loaded, 
         • document ready,
+        • isRendered,
         • router ready
     */
 
-    const allLoaded =
+    allLoaded =
       contentfulDataLoaded &&
       documentIsReady &&
+      isRendered &&
       router.isReady;
 
     if (allLoaded) {
@@ -202,6 +210,7 @@ function IndexPage(props) {
     documentIsReady,
     footerHeading,
     homeHeroContent,
+    isRendered,
     locationContent,
     navigationMain,
     projectsItems,
@@ -211,6 +220,16 @@ function IndexPage(props) {
     skillsItems,
     workHeading,
   ]);
+
+  // useEffect(() => {
+  //   if (!loading && window.location.hash) {
+  //     const element = document.querySelector(window.location.hash);
+  //     if (element) {
+  //       element.scrollIntoView({block: 'start' });
+  //       window.history.replaceState(null, null, window.location.pathname);
+  //     }
+  //   }
+  // }, [loading]);
 
   if (loading) {
     return <AppLoader />;

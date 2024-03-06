@@ -118,12 +118,15 @@ function ProjectDetailPage(props) {
 
   // * state *
   const [documentIsReady, setDocumentIsReady] = useState(false);
+  const [isRendered, setIsRendered] = useState(false);
   const [loading, setLoading] = useState(true);
 
   // * router *
   const router = useRouter();
 
   useEffect(() => {
+    let allLoaded = false;
+
     // * check if all the Contentful data is available *
     const contentfulDataLoaded =
       contactContent &&
@@ -145,16 +148,21 @@ function ProjectDetailPage(props) {
     // * events *
     document.addEventListener('DOMContentLoaded', onDocReady);
 
+    // * update state for isRendered once rendered *
+    setIsRendered(true);
+
     /* 
       check for:
         • cms content loaded, 
         • document ready,
+        • isRendered,
         • router ready
     */
 
-    const allLoaded =
+    allLoaded =
       contentfulDataLoaded &&
       documentIsReady &&
+      isRendered &&
       router.isReady;
   
     if (allLoaded) {
@@ -168,6 +176,7 @@ function ProjectDetailPage(props) {
     contactContent,
     documentIsReady,
     footerHeading,
+    isRendered,
     navigationMain,
     project,
     repositoryCta,

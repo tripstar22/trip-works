@@ -31,7 +31,7 @@ function HeroHome({ homeHeroContent }) {
       <BackgroundVideo
         autoPlay="autoplay"
         loop={true}
-        muted={true}
+        // muted
         playsInline={true}
         poster={imageUrl}
         src={videoUrl}
@@ -41,7 +41,7 @@ function HeroHome({ homeHeroContent }) {
         aniTyped={true}
         end="top top"
         speed={1.25}
-        start="bottom bottom"
+        start="top bottom"
         text={subheading}
         textElement="#aniHeroHeading"
       >

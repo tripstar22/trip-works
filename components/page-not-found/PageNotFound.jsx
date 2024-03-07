@@ -27,7 +27,7 @@ function PageNotFound({ pageNotFoundContent }) {
       <BackgroundVideo
         autoPlay="autoplay"
         loop={true}
-        muted={true}
+        // muted
         playsInline={true}
         poster={imageUrl}
         src={videoUrl}

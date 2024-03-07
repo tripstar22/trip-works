@@ -183,6 +183,24 @@ function ProjectDetailPage(props) {
     router.isReady,
   ]);
 
+  useEffect(() => {
+    // * handlers *
+    const routeChangeStart = function handerRouteChangeStart() {
+      setLoading(true);
+    };
+    const routeChangeComplete = function handerRouteChangeComplete() {
+      setLoading(false);
+    };
+    
+    // * events *
+    /* 
+      • use events.on instead of addEventListener as it is the recommended way to listen for route change events in Next.js *
+      • will automatically cleanup event listeners when component is unmounted
+    */
+    router.events.on('routeChangeStart', routeChangeStart);
+    router.events.on('routeChangeComplete', routeChangeComplete);
+  }, [router.events]);
+
   if (loading) {
     return <AppLoader />;
   }

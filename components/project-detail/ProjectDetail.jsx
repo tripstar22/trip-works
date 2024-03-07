@@ -25,7 +25,7 @@ function ProjectDetail({ project }) {
         aniTyped={true}
         end="top top"
         speed={1.75}
-        start="30% bottom"
+        start="top bottom"
         text={role}
         textElement="#aniJobTitle"
       >

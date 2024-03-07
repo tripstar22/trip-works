@@ -64,29 +64,85 @@ function FourZeroFour(props) {
   const { footerHeading, navigationMain, pageNotFoundContent } = pageProp;
 
   // * state *
+  const [documentIsReady, setDocumentIsReady] = useState(false);
+  const [isRendered, setIsRendered] = useState(false);
   const [loading, setLoading] = useState(true);
 
   // * router *
   const router = useRouter();
 
   useEffect(() => {
+    let allLoaded = false;
+
     // * check if all the Contentful data is available *
     const contentfulDataLoaded =
       footerHeading &&
       navigationMain &&
       pageNotFoundContent;
 
-    const allLoaded = router.isReady && contentfulDataLoaded;
+    // * handlers *
+    const onDocReady = function handlerOnDocumentReady() {
+      if (document.readyState === 'complete') {
+        setDocumentIsReady(true);
+      }
+    };
 
-    if (allLoaded && document.readyState === 'complete') {
+    // * check if document is already loaded when component mounts *
+    onDocReady();
+
+    // * events *
+    document.addEventListener('DOMContentLoaded', onDocReady);
+
+    // * update state for isRendered once rendered *
+    setIsRendered(true);
+
+    /* 
+      check for:
+        • cms content loaded, 
+        • document ready,
+        • isRendered,
+        • router ready
+    */
+
+    allLoaded = 
+      contentfulDataLoaded &&
+      documentIsReady &&
+      isRendered &&
+      router.isReady;
+
+    if (allLoaded) {
       setLoading(false);
     }
+
+    return () => {
+      document.removeEventListener('DOMContentLoaded', onDocReady);
+    };
   }, [
+    documentIsReady,
     footerHeading,
+    isRendered,
     navigationMain,
     pageNotFoundContent,
     router.isReady,
   ]);
+
+  useEffect(() => {
+    // * handlers *
+    const routeChangeStart = function handerRouteChangeStart() {
+      setLoading(true);
+    };
+    const routeChangeComplete = function handerRouteChangeComplete() {
+      setLoading(false);
+    };
+    
+    // * events *
+    /* 
+      • use events.on instead of addEventListener as it is the recommended way to listen for route change events in Next.js *
+      • will automatically cleanup event listeners when component is unmounted
+    */
+    router.events.on('routeChangeStart', routeChangeStart);
+    router.events.on('routeChangeComplete', routeChangeComplete);
+  }, [router.events]);
 
   if (loading) {
     return <AppLoader />;

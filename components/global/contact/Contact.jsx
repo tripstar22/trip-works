@@ -28,7 +28,6 @@ function Contact({ contactContent }) {
       <BackgroundVideo
         autoPlay="autoplay"
         loop={true}
-        // muted
         playsInline={true}
         poster={imageUrl}
         src={videoUrl}

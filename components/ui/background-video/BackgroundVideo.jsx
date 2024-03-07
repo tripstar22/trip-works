@@ -41,7 +41,6 @@ function BackgroundVideo(props) {
         ref={videoRef}
         autoPlay={props.autoPlay}
         loop={props.loop}
-        // muted={props.muted}
         playsInline={props.playsInline}
         poster={props.poster}
         type={props.type}
@@ -63,7 +62,6 @@ function BackgroundVideo(props) {
 BackgroundVideo.propTypes = {
   autoPlay: PropTypes.string,
   loop: PropTypes.bool,
-  // muted: PropTypes.string,
   playsInline: PropTypes.bool.isRequired,
   poster: PropTypes.string,
   src: PropTypes.string.isRequired,

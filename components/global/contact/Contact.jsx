@@ -37,7 +37,7 @@ function Contact({ contactContent }) {
         aniTyped={true}
         end="top top"
         speed={1.5}
-        start="60% bottom"
+        start="55% bottom"
         text={heading}
         textElement="#aniTextContact"
       >

@@ -56,7 +56,8 @@ function Gallery({ media }) {
                   href="#"
                   aria-label={item.fields.title}
                   className={classes.gallery_link}
-                  onClick={() => {
+                  onClick={(event) => {
+                    event.preventDefault();
                     toggleModalOpen();
                     setCurrentSlide(index);
                   }}

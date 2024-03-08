@@ -17,6 +17,13 @@
   &_container {
     padding: 80px 0;
   }
+  &_cta {
+    margin: 0 auto;
+    width: 80%;
+  }
+  &_heading {
+    font-size: 44px;
+  }
   &_inner,
   &_link {
     color: $white;
@@ -45,6 +52,25 @@
 
 
 /* ===================================================
+  Screens 350px & Up
+=================================================== */
+
+@media screen and (min-width: 350px) {
+
+  .pagenotfound {
+
+    &_heading {
+      font-size: 64px;
+    }
+  }
+}
+
+/* ===================================================
+  END Screens 350px & Up
+=================================================== */
+
+
+/* ===================================================
   Small Screens & Up (min-width: 600px)
 =================================================== */
 
@@ -55,6 +81,9 @@
 
     &_container {
       padding: 150px 0;
+    }
+    &_cta {
+      width: 100%;
     }
   }
 }
@@ -73,6 +102,9 @@
   .pagenotfound {
     padding-top: 92px; // * height of sticky header *
 
+    &_heading {
+      font-size: 96px;
+    }
     &_inner {
       padding: 70px 0;
     }

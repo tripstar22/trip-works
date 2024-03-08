@@ -22,7 +22,7 @@ function Skills({ skillsHeading, skillsItems }) {
         aniTyped={true}
         end="top 10%"
         speed={1.5}
-        start="75% bottom"
+        start="70% bottom"
         text={heading}
         textElement="#aniTextSkills"
       >

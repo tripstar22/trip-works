@@ -39,19 +39,26 @@ function PageNotFound({ pageNotFoundContent }) {
               <Container maxWidth="md">
                 <Grid container spacing={0}>
                   <Grid item xs={12}>
-                    <Typography component="h1" gutterBottom variant="h1">
+                    <Typography 
+                      className={classes.pagenotfound_heading}
+                      component="h1"
+                      gutterBottom
+                      variant="h1"
+                    >
                       {heading}
                     </Typography>
-                    <Typography component="h6" gutterBottom variant="h6">
-                      {text}{' '}
-                      <AppLink
-                        className={classes.pagenotfound_link}
-                        href={linkHref}
-                      >
-                        {linkText}
-                      </AppLink>
-                      .
-                    </Typography>
+                    <div className={classes.pagenotfound_cta}>
+                      <Typography component="h6" gutterBottom variant="h6">
+                        {text}{' '}
+                        <AppLink
+                          className={classes.pagenotfound_link}
+                          href={linkHref}
+                        >
+                          {linkText}
+                        </AppLink>
+                        .
+                      </Typography>
+                    </div>
                   </Grid>
                 </Grid>
               </Container>

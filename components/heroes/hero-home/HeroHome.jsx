@@ -58,6 +58,7 @@ function HeroHome({ homeHeroContent }) {
                 </Typography>
                 <Typography
                   className={`${classes.hero_subheading} ${classes.hero_subheading___home}`}
+                  aria-label={subheading}
                   component="h2"
                   id="aniHeroHeading"
                   gutterBottom
@@ -67,7 +68,7 @@ function HeroHome({ homeHeroContent }) {
               <AppLink
                 href="#about"
                 className={classes.hero_scrollLink}
-                aria-label="scroll to about"
+                ariaLabel="scroll to about"
                 dataTarget="about"
                 onClick={aniScroll}
               >

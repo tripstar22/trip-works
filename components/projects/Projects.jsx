@@ -37,6 +37,7 @@ function Projects({ projectsItems, workHeading }) {
             <Grid item xs={12} md={10}>
               <Typography
                 className={classes.projects_heading}
+                aria-label={heading}
                 component="h3"
                 gutterBottom
                 id="aniTextWork"

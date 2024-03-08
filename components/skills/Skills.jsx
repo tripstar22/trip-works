@@ -31,6 +31,7 @@ function Skills({ skillsHeading, skillsItems }) {
             <Grid item xs={12} md={10}>
               <Typography
                 className={classes.skills_heading}
+                aria-label={heading}
                 component="h3"
                 gutterBottom
                 id="aniTextSkills"

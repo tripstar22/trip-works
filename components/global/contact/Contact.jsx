@@ -46,6 +46,7 @@ function Contact({ contactContent }) {
             <Grid item xs={12}>
               <Typography
                 className={classes.contact_heading}
+                aria-label={heading}
                 component="h2"
                 gutterBottom
                 id="aniTextContact"

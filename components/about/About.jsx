@@ -41,6 +41,7 @@ function About({ aboutContent, locationContent }) {
               <Grid item xs={12} sm={7} md={8}>
                 <div className={classes.about_content}>
                   <Typography
+                    aria-label={heading}
                     component="h3"
                     gutterBottom
                     id="aniTextAbout"

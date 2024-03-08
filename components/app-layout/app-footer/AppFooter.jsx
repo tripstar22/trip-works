@@ -45,6 +45,7 @@ function AppFooter({ footerHeading, navigationMain }) {
             <Grid item xs={12}>
               <Typography
                 className={classes.appfooter_heading}
+                aria-label={heading}
                 component="h3"
                 gutterBottom
                 id="aniFooterHeading"

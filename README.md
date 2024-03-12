@@ -79,9 +79,7 @@
 
 #### Slick carousel / react-slick
 - The React version ([react-slick](https://github.com/akiran/react-slick)) of Slick Carouel is being used for featured media items in `components/carousel/Carousel.jsx`. 
-- Since Slick generates some of it's `html` at build time, I had to target some carousel classes in a global `scss` file, rather than at the component level. You can find these styles in `src/styles/scss/global/_appCarousel.scss`. Those styles are then imported into `pages/_app.jsx`.
   - ***Note:** Using `react-slick` requires that I also add the standard version of [slick-carousel](https://github.com/kenwheeler/slick) to the project in order to access the base carousel styles. You can view the imports for the Slick Carousel styles in `components/carousel/Carousel.jsx`.*
-  - ***Note:** This functionality is currently a work in progress.*
 
 ### Misc
 

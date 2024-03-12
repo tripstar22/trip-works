@@ -19,7 +19,7 @@ function Skills({ skillsHeading, skillsItems }) {
   return (
     <section className={`section ${classes.skills}`} id="skills">
       <RevealOnScroll
-        aniTyped={true}
+        aniTyped
         end="top 10%"
         speed={1.5}
         start="70% bottom"
@@ -40,12 +40,12 @@ function Skills({ skillsHeading, skillsItems }) {
             </Grid>
           </Grid>
           <Grid container spacing={0}>
-            {skillsItems.map((item, index) => (
-              <Grid key={index} item xs={6} md={3}>
+            {skillsItems.map((item) => (
+              <Grid key={item.fields.title} item xs={6} md={3}>
                 <div className={classes.skills_section}>
                   <div className={classes.skills_icon}>
                     <img
-                      src={'https:' + item.fields.image.fields.file.url}
+                      src={`https:${item.fields.image.fields.file.url}`}
                       alt=""
                     />
                   </div>

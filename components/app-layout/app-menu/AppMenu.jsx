@@ -40,11 +40,11 @@ function AppMenu({ menuOpen, navigationMain, toggleMenuClose }) {
     const onDocReady = function handlerOnDocumentReady() {
       setDocumentIsReady(true);
     };
-    /* 
+    /*
       • work around to navigate to element IDs in navigation since Next.js Link component navigates to top of page even if ID specified in href
     */
     const checkUrlHash = function handlerCheckUrlHash() {
-      const hash = window.location.hash;
+      const { hash } = window.location;
       const sectionId = hash.substring(hash.indexOf('#') + 1);
       const targetSection = document.getElementById(sectionId);
 
@@ -56,7 +56,7 @@ function AppMenu({ menuOpen, navigationMain, toggleMenuClose }) {
     // * events *
     document.addEventListener('DOMContentLoaded', onDocReady());
     if (hasContactSection) {
-      contactIframe.addEventListener('load', function() {
+      contactIframe.addEventListener('load', () => {
         setContactIframeLoaded(true);
       });
     }
@@ -76,7 +76,7 @@ function AppMenu({ menuOpen, navigationMain, toggleMenuClose }) {
     return () => {
       document.removeEventListener('DOMContentLoaded', onDocReady);
       if (hasContactSection) {
-        contactIframe.removeEventListener('load', function() {
+        contactIframe.removeEventListener('load', () => {
           setContactIframeLoaded(true);
         });
       }
@@ -95,8 +95,8 @@ function AppMenu({ menuOpen, navigationMain, toggleMenuClose }) {
         </Grid>
         <nav>
           <List>
-            {navigationMain.items.items.map((item, index) => (
-              <ListItem key={index} className={classes.appmenu_listItem}>
+            {navigationMain.items.items.map((item) => (
+              <ListItem key={item.id} className={classes.appmenu_listItem}>
                 <ListItemButton className={classes.appmenu_listItemButton}>
                   <AppLink
                     href={item.href}

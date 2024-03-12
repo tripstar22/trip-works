@@ -8,8 +8,17 @@ import PropTypes from 'prop-types';
 import aniFade from '../../../src/js/ani-fade/aniFade';
 
 function RevealOnScroll(props) {
+  const {
+    aniTyped,
+    children,
+    end,
+    speed,
+    start,
+    text,
+    textElement,
+  } = props;
+
   const aniSection = useRef(null);
-  const { children } = props;
 
   // * state *
   const [contactIframeLoaded, setContactIframeLoaded] = useState(false);
@@ -37,7 +46,7 @@ function RevealOnScroll(props) {
     // * events *
     document.addEventListener('DOMContentLoaded', onDocReady());
     if (hasContactSection) {
-      contactIframe.addEventListener('load', function() {
+      contactIframe.addEventListener('load', () => {
         setContactIframeLoaded(true);
       });
     }
@@ -61,7 +70,7 @@ function RevealOnScroll(props) {
     return () => {
       document.removeEventListener('DOMContentLoaded', onDocReady);
       if (hasContactSection) {
-        contactIframe.removeEventListener('load', function() {
+        contactIframe.removeEventListener('load', () => {
           setContactIframeLoaded(true);
         });
       }
@@ -72,12 +81,12 @@ function RevealOnScroll(props) {
     <div className="revealonscroll visibilityHidden" ref={aniSection}>
       <div
         className="revealonscroll_target"
-        data-ani-typed={props.aniTyped}
-        data-end={props.end}
-        data-speed={props.speed}
-        data-start={props.start}
-        data-text={props.text}
-        data-text-element={props.textElement}
+        data-ani-typed={aniTyped}
+        data-end={end}
+        data-speed={speed}
+        data-start={start}
+        data-text={text}
+        data-text-element={textElement}
       >
         {children}
       </div>
@@ -93,6 +102,13 @@ RevealOnScroll.propTypes = {
   start: PropTypes.string.isRequired,
   text: PropTypes.any,
   textElement: PropTypes.string,
+};
+
+RevealOnScroll.defaultProps = {
+  aniTyped: null,
+  speed: null,
+  text: null,
+  textElement: null,
 };
 
 export default RevealOnScroll;

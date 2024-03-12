@@ -25,6 +25,14 @@ function Gallery({ media }) {
   const [open, setOpen] = useState(false);
 
   // * handlers *
+  const videoPause = function handlerPauseCurrentVideo() {
+    const activeSlide = document.querySelector('.slick-slide.slick-active');
+
+    if (activeSlide.querySelector('video')) {
+      const videoCurrent = activeSlide.querySelector('video');
+      videoCurrent.pause();
+    }
+  };
   const setCurrentSlide = function handlerSetCurrentSlide(index) {
     setActiveSlideIndex(index);
   };
@@ -51,7 +59,7 @@ function Gallery({ media }) {
               </Typography>
             </Grid>
             {media.map((item, index) => (
-              <Grid key={index} item xs={12} sm={6} md={4}>
+              <Grid key={item.fields.file.fileName} item xs={12} sm={6} md={4}>
                 <AppLink
                   href="#"
                   aria-label={item.fields.title}
@@ -116,6 +124,7 @@ function Gallery({ media }) {
           open={open}
           setCurrentSlide={setCurrentSlide}
           toggleModalClose={toggleModalClose}
+          videoPause={videoPause}
         />
       )}
     </section>

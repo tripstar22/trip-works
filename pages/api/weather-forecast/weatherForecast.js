@@ -2,9 +2,10 @@
 import fs from 'fs';
 import path from 'path';
 
-const weatherForecast = async function weatherForecastDataRequest(req, res) {
-  const axios = require('axios');
+// * third party library imports *
+const axios = require('axios');
 
+const weatherForecast = async function weatherForecastDataRequest(req, res) {
   const integerIdentifier = Math.floor(Math.random() * 100000000);
 
   let cityCurrent = '';
@@ -29,7 +30,7 @@ const weatherForecast = async function weatherForecastDataRequest(req, res) {
 
     cityCurrent = response.data.location.name;
     regionCurrent = response.data.location.region;
-    locationCurrent = cityCurrent + ', ' + regionCurrent;
+    locationCurrent = `${cityCurrent}, ${regionCurrent}`;
     iconWeather = response.data.current.condition.icon;
     tempCurrent = response.data.current.temp_f;
     tempCurrent = Math.round(tempCurrent);
@@ -47,7 +48,6 @@ const weatherForecast = async function weatherForecastDataRequest(req, res) {
     const filePath = path.join(process.cwd(), 'data', 'weather-forecast', 'weather-forecast.json');
     const fileData = fs.readFileSync(filePath, 'utf8');
     const weatherData = JSON.parse(fileData);
-    
     weatherData.splice(0, 1, weatherCurrent);
     fs.writeFileSync(filePath, JSON.stringify(weatherData));
     res.status(200).json(weatherData);

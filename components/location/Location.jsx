@@ -22,9 +22,9 @@ function Location({ locationContent }) {
   // * cms content *
   const { heading } = locationContent;
 
-  /* 
-    • set up SWR to run the fetchData when calling "/api/weatherForecast"
-    • there are three possible states: 
+  /*
+    • set up SWR to run the fetchData when calling "/api/weatherForecast"
+    • there are three possible states:
       • 1) error when there was an error fetching the data
       • 2) loading when data is null
       • 3) ready when the data is returned
@@ -32,11 +32,11 @@ function Location({ locationContent }) {
 
   const { data, error } = useSWR(
     '/api/weather-forecast/weatherForecast',
-    fetchData
+    fetchData,
   );
 
   // * handle the error state *
-  if (error)
+  if (error) {
     return (
       <section className={`section section___paddingSmall ${classes.location}`}>
         <RevealOnScroll end="top top" start="bottom bottom">
@@ -66,8 +66,9 @@ function Location({ locationContent }) {
         </RevealOnScroll>
       </section>
     );
+  }
   // * handle the loading state *
-  if (!data)
+  if (!data) {
     return (
       <section className={`section section___paddingSmall ${classes.location}`}>
         <RevealOnScroll end="top top" start="bottom bottom">
@@ -97,6 +98,7 @@ function Location({ locationContent }) {
         </RevealOnScroll>
       </section>
     );
+  }
   // * handle the ready state and display the result contained in the data object mapped to the structure of the json file *
   return (
     <section className={`section section___paddingSmall ${classes.location}`}>
@@ -118,7 +120,8 @@ function Location({ locationContent }) {
                   className={classes.location_weatherText}
                   variant="body2"
                 >
-                  Current Weather Forecast:{' '}
+                  Current Weather Forecast:
+                  {' '}
                 </Typography>
                 <Typography
                   className={classes.location_weatherLocation}
@@ -132,7 +135,10 @@ function Location({ locationContent }) {
                   alt="current weather icon"
                   className={classes.location_image}
                 />
-                <div className={classes.location_temp}>{data[0].temp}&deg;</div>
+                <div className={classes.location_temp}>
+                  {data[0].temp}
+                  &deg;
+                </div>
                 <Typography
                   className={classes.location_weatherCurrent}
                   gutterBottom

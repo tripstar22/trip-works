@@ -47,19 +47,19 @@ export async function getStaticProps({ params }) {
   try {
     // * contact *
     const contactContentResponse = await client.getEntry(
-      '6QNHyhpaVHS7bgqmfxQg0s'
+      '6QNHyhpaVHS7bgqmfxQg0s',
     );
     const contactContent = contactContentResponse.fields;
 
     // * footer heading *
     const footerHeadingResponse = await client.getEntry(
-      '7IE5FyfjP2sp1Y5kpC3Q2n'
+      '7IE5FyfjP2sp1Y5kpC3Q2n',
     );
     const footerHeading = footerHeadingResponse.fields;
 
     // * navigation main *
     const navigationMainResponse = await client.getEntry(
-      '15OSvONv0lmHEajKZ0oHFb'
+      '15OSvONv0lmHEajKZ0oHFb',
     );
     const navigationMain = navigationMainResponse.fields;
 
@@ -77,7 +77,7 @@ export async function getStaticProps({ params }) {
 
     // * repository cta *
     const repositoryCtaResponse = await client.getEntry(
-      '01lx3PqjdVxjp7QLNPaugU'
+      '01lx3PqjdVxjp7QLNPaugU',
     );
     const repositoryCta = repositoryCtaResponse.fields;
 
@@ -91,7 +91,7 @@ export async function getStaticProps({ params }) {
       },
     };
   } catch (error) {
-    console.log('Error fetching Contentful data: ' + error);
+    console.log(`Error fetching Contentful data: ${error}`);
 
     return {
       props: {
@@ -128,12 +128,11 @@ function ProjectDetailPage(props) {
     let allLoaded = false;
 
     // * check if all the Contentful data is available *
-    const contentfulDataLoaded =
-      contactContent &&
-      footerHeading &&
-      navigationMain &&
-      project &&
-      repositoryCta;
+    const contentfulDataLoaded = contactContent
+      && footerHeading
+      && navigationMain
+      && project
+      && repositoryCta;
 
     // * handlers *
     const onDocReady = function handlerOnDocumentReady() {
@@ -151,20 +150,19 @@ function ProjectDetailPage(props) {
     // * update state for isRendered once rendered *
     setIsRendered(true);
 
-    /* 
+    /*
       check for:
-        • cms content loaded, 
+        • cms content loaded,
         • document ready,
         • isRendered,
-        • router ready
+        • router ready
     */
 
-    allLoaded =
-      contentfulDataLoaded &&
-      documentIsReady &&
-      isRendered &&
-      router.isReady;
-  
+    allLoaded = contentfulDataLoaded
+      && documentIsReady
+      && isRendered
+      && router.isReady;
+
     if (allLoaded) {
       setLoading(false);
     }
@@ -191,9 +189,9 @@ function ProjectDetailPage(props) {
     const routeChangeComplete = function handerRouteChangeComplete() {
       setLoading(false);
     };
-    
+
     // * events *
-    /* 
+    /*
       • use events.on instead of addEventListener as it is the recommended way to listen for route change events in Next.js *
       • will automatically cleanup event listeners when component is unmounted
     */

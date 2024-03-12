@@ -5,17 +5,26 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 function AppLink(props) {
-  const { children } = props;
+  const {
+    ariaLabel,
+    children,
+    className,
+    dataTarget,
+    href,
+    onClick,
+    rel,
+    target,
+  } = props;
 
   return (
     <Link
-      aria-label={props.ariaLabel}
-      className={props.className}
-      data-target={props.dataTarget}
-      href={props.href}
-      onClick={props.onClick}
-      rel={props.rel}
-      target={props.target}
+      aria-label={ariaLabel}
+      className={className}
+      data-target={dataTarget}
+      href={href}
+      onClick={onClick}
+      rel={rel}
+      target={target}
     >
       {children}
     </Link>
@@ -31,6 +40,15 @@ AppLink.propTypes = {
   onClick: PropTypes.func,
   rel: PropTypes.string,
   target: PropTypes.string,
+};
+
+AppLink.defaultProps = {
+  ariaLabel: 'link',
+  className: null,
+  dataTarget: null,
+  onClick: null,
+  rel: null,
+  target: null,
 };
 
 export default AppLink;

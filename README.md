@@ -53,7 +53,7 @@
 
 ### SVGs
 - I am using the technique outlined [here](https://blog.logrocket.com/import-svgs-next-js-apps/#import-svgs-next-js-using-svgr) to leverage [SVGR](https://github.com/gregberge/svgr) for SVGs in the app.
-- SVG assets are kept in `public/svg` unless they are dynamic content from Contentful.
+- SVG assets are kept in `svg` unless they are dynamic content from Contentful.
 
 ### Other Third-Party Dependencies
 ***Note:** This is not an exhaustive list of third-party dependencies that are included in this app. It is meant to highlight dependencies that have not previously been mentioned in the README that are leveraged in custom components.*

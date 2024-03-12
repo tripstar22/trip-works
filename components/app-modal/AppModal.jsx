@@ -20,6 +20,7 @@ function AppModal({
   open,
   setCurrentSlide,
   toggleModalClose,
+  videoPause,
 }) {
   return (
     <Modal
@@ -33,6 +34,7 @@ function AppModal({
             activeSlideIndex={activeSlideIndex}
             media={media}
             setCurrentSlide={setCurrentSlide}
+            videoPause={videoPause}
           />
         </div>
         <IconButton
@@ -49,9 +51,7 @@ function AppModal({
 }
 
 Modal.propTypes = {
-  activeSlideIndex: PropTypes.number,
   open: PropTypes.bool.isRequired,
-  setCurrentSlide: PropTypes.func,
   toggleModalClose: PropTypes.func,
 };
 

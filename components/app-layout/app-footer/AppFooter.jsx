@@ -21,7 +21,7 @@ import AppLink from '../../ui/app-link/AppLink';
 import RevealOnScroll from '../../ui/reveal-on-scroll/RevealOnScroll';
 
 // * svg imports *
-import LogoSecondary from '/public/svg/logos/logoSecondary.svg';
+import LogoSecondary from '../../../svg/logos/logoSecondary.svg';
 
 // * styles imports *
 import classes from './_appfooter.module.scss';
@@ -33,7 +33,7 @@ function AppFooter({ footerHeading, navigationMain }) {
   return (
     <footer className={classes.appfooter}>
       <RevealOnScroll
-        aniTyped={true}
+        aniTyped
         end="top top"
         speed={1.25}
         start="bottom bottom"
@@ -55,9 +55,9 @@ function AppFooter({ footerHeading, navigationMain }) {
             <Grid item xs={12} md={4}>
               <nav>
                 <List>
-                  {navigationMain.items.items.map((item, index) => (
+                  {navigationMain.items.items.map((item) => (
                     <ListItem
-                      key={index}
+                      key={item.id}
                       className={classes.appfooter_listItem}
                     >
                       <ListItemButton>

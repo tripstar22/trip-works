@@ -2,7 +2,12 @@
 import * as React from 'react';
 
 // * next.js imports *
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, {
+  Html,
+  Head,
+  Main,
+  NextScript,
+} from 'next/document';
 
 // * emotion imports *
 import createEmotionServer from '@emotion/server/create-instance';
@@ -66,14 +71,12 @@ MyDocument.getInitialProps = async (ctx) => {
   // However, be aware that it can have global side effects.
   const cache = createEmotionCache();
   const { extractCriticalToChunks } = createEmotionServer(cache);
-  ctx.renderPage = () =>
-    originalRenderPage({
-      enhanceApp: (App) =>
-        function EnhanceApp(props) {
-          /* eslint react/jsx-props-no-spreading: "off" */
-          return <App emotionCache={cache} {...props} />;
-        },
-    });
+  ctx.renderPage = () => originalRenderPage({
+    enhanceApp: (App) => function EnhanceApp(props) {
+      /* eslint react/jsx-props-no-spreading: "off" */
+      return <App emotionCache={cache} {...props} />;
+    },
+  });
 
   const initialProps = await Document.getInitialProps(ctx);
   // This is important. It prevents Emotion to render invalid HTML.

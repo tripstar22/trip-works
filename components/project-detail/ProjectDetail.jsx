@@ -15,14 +15,14 @@ import classes from './_projectdetail.module.scss';
 
 function ProjectDetail({ project }) {
   // * cms content *
-  const media = project.fields.media;
-  const role = project.fields.role;
-  const title = project.fields.title;
+  const { media } = project.fields;
+  const { role } = project.fields;
+  const { title } = project.fields;
 
   return (
     <div className={classes.projectdetail}>
       <RevealOnScroll
-        aniTyped={true}
+        aniTyped
         end="top top"
         speed={1.75}
         start="top bottom"
@@ -47,7 +47,8 @@ function ProjectDetail({ project }) {
                   gutterBottom
                   variant="h4"
                 >
-                  My Role:{' '}
+                  My Role:
+                  {' '}
                   <span
                     className={classes.projectdetail_subheadingJob}
                     id="aniJobTitle"

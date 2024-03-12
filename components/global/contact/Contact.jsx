@@ -18,23 +18,33 @@ import classes from './_contact.module.scss';
 
 function Contact({ contactContent }) {
   // * cms content *
-  const { backgroundVideo, backgroundVideoImage, cta, heading } = contactContent;
+  const {
+    backgroundVideo,
+    backgroundVideoImage,
+    cta,
+    heading,
+  } = contactContent;
   const imageUrl = backgroundVideoImage.fields.file.url;
   const videoUrl = backgroundVideo.fields.file.url;
-  const { ctaHref, ctaRel, ctaTarget, ctaText } = cta;
+  const {
+    ctaHref,
+    ctaRel,
+    ctaTarget,
+    ctaText,
+  } = cta;
 
   return (
     <section className={`section ${classes.contact}`} id="contact">
       <BackgroundVideo
         autoPlay="autoplay"
-        loop={true}
-        playsInline={true}
+        loop
+        playsInline
         poster={imageUrl}
         src={videoUrl}
         type="video/mp4"
       />
       <RevealOnScroll
-        aniTyped={true}
+        aniTyped
         end="top top"
         speed={1.5}
         start="55% bottom"

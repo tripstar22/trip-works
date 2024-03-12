@@ -5,14 +5,20 @@ import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
 
 function ButtonLink(props) {
-  const { children } = props;
-  
+  const {
+    children,
+    className,
+    href,
+    rel,
+    target,
+  } = props;
+
   return (
     <Button
-      className={props.className}
-      href={props.href}
-      rel={props.rel}
-      target={props.target}
+      className={className}
+      href={href}
+      rel={rel}
+      target={target}
     >
       {children}
     </Button>
@@ -21,6 +27,17 @@ function ButtonLink(props) {
 
 ButtonLink.propTypes = {
   children: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  href: PropTypes.string,
+  rel: PropTypes.string,
+  target: PropTypes.string,
+};
+
+ButtonLink.defaultProps = {
+  className: null,
+  href: null,
+  rel: null,
+  target: null,
 };
 
 export default ButtonLink;

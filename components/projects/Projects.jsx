@@ -25,7 +25,7 @@ function Projects({ projectsItems, workHeading }) {
   return (
     <section id="work" className={`section ${classes.projects}`}>
       <RevealOnScroll
-        aniTyped={true}
+        aniTyped
         end="top 10%"
         speed={1.25}
         start="15% bottom"
@@ -50,8 +50,8 @@ function Projects({ projectsItems, workHeading }) {
               columnsCountBreakPoints={{ 350: 1, 599: 2, 899: 3 }}
             >
               <Masonry gutter="30px">
-                {projectsItems.map((item, index) => (
-                  <div key={index}>
+                {projectsItems.map((item) => (
+                  <div key={item.fields.title}>
                     <AppLink
                       href={`/projects/${item.fields.slug}`}
                       className={classes.projects_link}
@@ -78,7 +78,9 @@ function Projects({ projectsItems, workHeading }) {
                               gutterBottom
                               variant="h6"
                             >
-                              My Role: <span>{item.fields.role}</span>
+                              My Role:
+                              {' '}
+                              <span>{item.fields.role}</span>
                             </Typography>
                             <Typography
                               className={classes.projects_more}

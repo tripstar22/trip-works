@@ -17,7 +17,7 @@ import AppLink from '../../ui/app-link/AppLink';
 import AppMenu from '../app-menu/AppMenu';
 
 // * svg imports *
-import Logo from '/public/svg/logos/logo.svg';
+import Logo from '../../../svg/logos/logo.svg';
 
 // * styles imports *
 import classes from './_appheader.module.scss';

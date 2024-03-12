@@ -10,7 +10,18 @@ import Typography from '@mui/material/Typography';
 // * styles imports *
 import classes from './_backgroundvideo.module.scss';
 
+// * disable media has caption warning in this case since backround videos will not have audio *
+/* eslint-disable jsx-a11y/media-has-caption */
 function BackgroundVideo(props) {
+  const {
+    autoPlay,
+    loop,
+    playsInline,
+    poster,
+    src,
+    type,
+  } = props;
+
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -25,7 +36,6 @@ function BackgroundVideo(props) {
     }
 
     const video = videoRef.current;
-    
     if (!video.attributes.muted) {
       video.defaultMuted = true;
       video.muted = true;
@@ -37,15 +47,15 @@ function BackgroundVideo(props) {
     <div className={classes.backgroundvideo}>
       <video
         className={classes.backgroundvideo_video}
-        src={props.src}
+        src={src}
         ref={videoRef}
-        autoPlay={props.autoPlay}
-        loop={props.loop}
-        playsInline={props.playsInline}
-        poster={props.poster}
-        type={props.type}
+        autoPlay={autoPlay}
+        loop={loop}
+        playsInline={playsInline}
+        poster={poster}
+        type={type}
       >
-        <source src={props.src} type={props.type} />
+        <source src={src} type={type} />
         <Typography
           className={classes.backgroundvideo_heading}
           component="h6"
@@ -58,6 +68,7 @@ function BackgroundVideo(props) {
     </div>
   );
 }
+/* eslint-enable jsx-a11y/media-has-caption */
 
 BackgroundVideo.propTypes = {
   autoPlay: PropTypes.string,
@@ -66,6 +77,12 @@ BackgroundVideo.propTypes = {
   poster: PropTypes.string,
   src: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
+};
+
+BackgroundVideo.defaultProps = {
+  autoPlay: 'autoplay',
+  loop: true,
+  poster: null,
 };
 
 export default BackgroundVideo;

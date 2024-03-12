@@ -22,19 +22,19 @@ export async function getStaticProps() {
   try {
     // * footer heading *
     const footerHeadingResponse = await client.getEntry(
-      '7IE5FyfjP2sp1Y5kpC3Q2n'
+      '7IE5FyfjP2sp1Y5kpC3Q2n',
     );
     const footerHeading = footerHeadingResponse.fields;
 
     // * navigation main *
     const navigationMainResponse = await client.getEntry(
-      '15OSvONv0lmHEajKZ0oHFb'
+      '15OSvONv0lmHEajKZ0oHFb',
     );
     const navigationMain = navigationMainResponse.fields;
 
     // * page not found *
     const pageNotFoundContentResponse = await client.getEntry(
-      '6lCWLbBeREz7TrFPfAwkXp'
+      '6lCWLbBeREz7TrFPfAwkXp',
     );
     const pageNotFoundContent = pageNotFoundContentResponse.fields;
 
@@ -46,7 +46,7 @@ export async function getStaticProps() {
       },
     };
   } catch (error) {
-    console.log('Error fetching Contentful data: ' + error);
+    console.log(`Error fetching Contentful data: ${error}`);
 
     return {
       props: {
@@ -75,10 +75,9 @@ function FourZeroFour(props) {
     let allLoaded = false;
 
     // * check if all the Contentful data is available *
-    const contentfulDataLoaded =
-      footerHeading &&
-      navigationMain &&
-      pageNotFoundContent;
+    const contentfulDataLoaded = footerHeading
+      && navigationMain
+      && pageNotFoundContent;
 
     // * handlers *
     const onDocReady = function handlerOnDocumentReady() {
@@ -96,19 +95,18 @@ function FourZeroFour(props) {
     // * update state for isRendered once rendered *
     setIsRendered(true);
 
-    /* 
+    /*
       check for:
-        • cms content loaded, 
+        • cms content loaded,
         • document ready,
         • isRendered,
-        • router ready
+        • router ready
     */
 
-    allLoaded = 
-      contentfulDataLoaded &&
-      documentIsReady &&
-      isRendered &&
-      router.isReady;
+    allLoaded = contentfulDataLoaded
+      && documentIsReady
+      && isRendered
+      && router.isReady;
 
     if (allLoaded) {
       setLoading(false);
@@ -134,9 +132,9 @@ function FourZeroFour(props) {
     const routeChangeComplete = function handerRouteChangeComplete() {
       setLoading(false);
     };
-    
+
     // * events *
-    /* 
+    /*
       • use events.on instead of addEventListener as it is the recommended way to listen for route change events in Next.js *
       • will automatically cleanup event listeners when component is unmounted
     */

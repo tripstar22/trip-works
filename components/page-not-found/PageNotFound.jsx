@@ -17,7 +17,13 @@ import classes from './_pagenotfound.module.scss';
 
 function PageNotFound({ pageNotFoundContent }) {
   // * cms content *
-  const { backgroundVideo, backgroundVideoImage, heading, link, text } = pageNotFoundContent;
+  const {
+    backgroundVideo,
+    backgroundVideoImage,
+    heading,
+    link,
+    text,
+  } = pageNotFoundContent;
   const imageUrl = backgroundVideoImage.fields.file.url;
   const videoUrl = backgroundVideo.fields.file.url;
   const { linkHref, linkText } = link;
@@ -26,8 +32,8 @@ function PageNotFound({ pageNotFoundContent }) {
     <section className={classes.pagenotfound}>
       <BackgroundVideo
         autoPlay="autoplay"
-        loop={true}
-        playsInline={true}
+        loop
+        playsInline
         poster={imageUrl}
         src={videoUrl}
         type="video/mp4"
@@ -39,7 +45,7 @@ function PageNotFound({ pageNotFoundContent }) {
               <Container maxWidth="md">
                 <Grid container spacing={0}>
                   <Grid item xs={12}>
-                    <Typography 
+                    <Typography
                       className={classes.pagenotfound_heading}
                       component="h1"
                       gutterBottom
@@ -49,7 +55,8 @@ function PageNotFound({ pageNotFoundContent }) {
                     </Typography>
                     <div className={classes.pagenotfound_cta}>
                       <Typography component="h6" gutterBottom variant="h6">
-                        {text}{' '}
+                        {text}
+                        {' '}
                         <AppLink
                           className={classes.pagenotfound_link}
                           href={linkHref}

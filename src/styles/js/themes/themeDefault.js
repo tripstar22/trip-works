@@ -2,12 +2,16 @@
 import { createTheme } from '@mui/material/styles';
 
 // * font imports *
-import {FontSansSerifDefault, FontMonospaceDefault, FontDisplayDefault} from '../fonts/fonts';
+import { FontSansSerifDefault, FontMonospaceDefault, FontDisplayDefault } from '../fonts/fonts';
 
 // * variable imports *
 import colors from '../vars/colors';
 
-// * must initialize theme first in order to access breakpoints within theme styles *
+/*
+  • must initialize theme first in order to access breakpoints within theme styles
+  • due to this import/no-mutable-exports must be disabled so that themeDefault can be defined with let instead of const
+*/
+/* eslint-disable import/no-mutable-exports */
 let themeDefault = createTheme();
 
 // * basic theme *
@@ -23,18 +27,18 @@ themeDefault = createTheme(themeDefault, {
     MuiButton: {
       styleOverrides: {
         root: {
-          backgroundColor: colors['teal'],
-          color: colors['white'],
+          backgroundColor: colors.teal,
+          color: colors.white,
           fontFamily: FontSansSerifDefault.style.fontFamily,
           fontWeight: '700',
           textTransform: 'initial',
           '&:hover': {
-            backgroundColor: colors['tealDark'],
-            color: colors['white'],
+            backgroundColor: colors.tealDark,
+            color: colors.white,
           },
           '&:focus': {
-            backgroundColor: colors['tealDark'],
-            color: colors['white'],
+            backgroundColor: colors.tealDark,
+            color: colors.white,
           },
         },
       },
@@ -49,12 +53,12 @@ themeDefault = createTheme(themeDefault, {
     MuiFab: {
       styleOverrides: {
         root: {
-          backgroundColor: colors['teal'],
+          backgroundColor: colors.teal,
           '&:hover': {
-            backgroundColor: colors['tealDark'],
+            backgroundColor: colors.tealDark,
           },
           '&:focus': {
-            backgroundColor: colors['tealDark'],
+            backgroundColor: colors.tealDark,
           },
         },
       },
@@ -62,12 +66,12 @@ themeDefault = createTheme(themeDefault, {
     MuiLink: {
       styleOverrides: {
         root: {
-          color: colors['teal'],
+          color: colors.teal,
           '&:hover': {
-            color: colors['tealDark'],
+            color: colors.tealDark,
           },
           '&:focus': {
-            color: colors['tealDark'],
+            color: colors.tealDark,
           },
         },
       },
@@ -75,12 +79,12 @@ themeDefault = createTheme(themeDefault, {
     MuiSvgIcon: {
       styleOverrides: {
         root: {
-          fill: colors['teal'],
+          fill: colors.teal,
           '&:hover': {
-            fill: colors['tealDark'],
+            fill: colors.tealDark,
           },
           '&:focus': {
-            fill: colors['tealDark'],
+            fill: colors.tealDark,
           },
         },
       },
@@ -90,72 +94,72 @@ themeDefault = createTheme(themeDefault, {
         root: {
           '&.contact-me__textfield': {
             '& fieldset': {
-              border: '2px solid ' + colors['white'],
+              border: `2px solid ${colors.white}`,
             },
             '&:hover': {
               '& .MuiFormLabel-root': {
-                color: colors['white'],
+                color: colors.white,
               },
             },
             '& .MuiFormHelperText-root': {
-              color: colors['white'],
+              color: colors.white,
               fontFamily: FontSansSerifDefault.style.fontFamily,
             },
             '& .MuiFormLabel-root': {
-              color: colors['white'],
+              color: colors.white,
               '&.Mui-focused': {
-                color: colors['white'],
+                color: colors.white,
               },
             },
             '& .MuiInputBase-input': {
-              color: colors['white'],
+              color: colors.white,
               '&:hover': {
-                color: colors['white'],
+                color: colors.white,
                 '~ fieldset': {
-                  border: '2px solid ' + colors['white'],
+                  border: `2px solid ${colors.white}`,
                 },
               },
               '&:focus': {
-                color: colors['white'],
+                color: colors.white,
                 '~ fieldset': {
-                  border: '2px solid ' + colors['white'],
+                  border: `2px solid ${colors.white}`,
                 },
               },
             },
           },
         },
       },
-    }, 
+    },
   },
   palette: {
     type: 'light',
     background: {
-      default: colors['white'],
-      paper: colors['white'],
+      default: colors.white,
+      paper: colors.white,
     },
-    divider: colors['gray'],
+    divider: colors.gray,
     error: {
-      main: colors['red'],
+      main: colors.red,
     },
     primary: {
-      main: colors['offWhite'],
-      light: colors['white'],
-      dark: colors['grayLight'],
+      main: colors.offWhite,
+      light: colors.white,
+      dark: colors.grayLight,
     },
     secondary: {
-      main: colors['teal'],
-      light: colors['tealLight'],
-      dark: colors['tealDark'],
-      contrastText: colors['teal'],
+      main: colors.teal,
+      light: colors.tealLight,
+      dark: colors.tealDark,
+      contrastText: colors.teal,
     },
     success: {
-      main: colors['green'],
+      main: colors.green,
     },
     text: {
-      disabled: colors['gray'],
-      hint: colors['grayDark'],
-      primary: colors['charcoal'],
-      secondary: colors['grayDark'],
+      disabled: colors.gray,
+      hint: colors.grayDark,
+      primary: colors.charcoal,
+      secondary: colors.grayDark,
     },
   },
   typography: {
@@ -241,5 +245,6 @@ themeDefault = createTheme(themeDefault, {
     },
   },
 });
+/* eslint-enable import/no-mutable-exports */
 
 export default themeDefault;

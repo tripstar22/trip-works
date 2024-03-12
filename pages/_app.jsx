@@ -3,6 +3,7 @@ import * as React from 'react';
 
 // * next.js imports *
 import Head from 'next/head';
+// import Script from 'next/script';
 
 // * third party library imports *
 import PropTypes from 'prop-types';
@@ -27,6 +28,9 @@ import '../src/styles/scss/global/_appCarousel.scss';
 import '../src/styles/scss/global/_section.scss';
 import '../src/styles/scss/global/_utilities.scss';
 
+// * src js imports *
+import '../src/js/console-message/consoleMessage';
+
 // * Client-side cache, shared for the whole session of the user in the browser. *
 const clientSideEmotionCache = createEmotionCache();
 
@@ -40,11 +44,11 @@ function MyApp(props) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <ThemeProvider theme={themeDefault}>
-        {/*** CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. ***/}
+        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <Component pageProp={pageProps} />
       </ThemeProvider>
-      <script src="/js/consoleMessage.js" type="text/javascript" defer></script>
+      {/* <Script src="../src/js/consoleMessage.js" type="text/javascript" defer /> */}
     </CacheProvider>
   );
 }
@@ -53,12 +57,10 @@ MyApp.propTypes = {
   Component: PropTypes.elementType.isRequired,
   emotionCache: PropTypes.object,
   pageProps: PropTypes.object.isRequired,
-  themeDefault: PropTypes.object,
 };
 
 MyApp.defaultProps = {
   emotionCache: undefined,
-  themeDefault: themeDefault,
 };
 
 export default MyApp;

@@ -22,7 +22,12 @@ import classes from './_hero.module.scss';
 
 function HeroHome({ homeHeroContent }) {
   // * cms content *
-  const { backgroundVideo, backgroundVideoImage, heading, subheading } = homeHeroContent;
+  const {
+    backgroundVideo,
+    backgroundVideoImage,
+    heading,
+    subheading,
+  } = homeHeroContent;
   const imageUrl = backgroundVideoImage.fields.file.url;
   const videoUrl = backgroundVideo.fields.file.url;
 
@@ -30,14 +35,14 @@ function HeroHome({ homeHeroContent }) {
     <section className={`${classes.hero} ${classes.hero___home}`}>
       <BackgroundVideo
         autoPlay="autoplay"
-        loop={true}
-        playsInline={true}
+        loop
+        playsInline
         poster={imageUrl}
         src={videoUrl}
         type="video/mp4"
       />
       <RevealOnScroll
-        aniTyped={true}
+        aniTyped
         end="top top"
         speed={1.25}
         start="top bottom"

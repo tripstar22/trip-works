@@ -23,7 +23,7 @@ function About({ aboutContent, locationContent }) {
       id="about"
     >
       <RevealOnScroll
-        aniTyped={true}
+        aniTyped
         end="top 10%"
         speed={1.25}
         start="60% bottom"
@@ -47,8 +47,8 @@ function About({ aboutContent, locationContent }) {
                     id="aniTextAbout"
                     variant="h3"
                   />
-                  {content.content.map((item, index) => (
-                    <Typography key={index} className={classes.about_text} gutterBottom variant="body1">
+                  {content.content.map((item) => (
+                    <Typography key={item.content[0].value} className={classes.about_text} gutterBottom variant="body1">
                       {item.content[0].value}
                     </Typography>
                   ))}

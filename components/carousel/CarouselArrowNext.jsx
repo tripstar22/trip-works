@@ -26,4 +26,8 @@ CarouselArrowNext.propTypes = {
   onClick: PropTypes.func,
 };
 
+CarouselArrowNext.defaultProps = {
+  onClick: null,
+};
+
 export default CarouselArrowNext;

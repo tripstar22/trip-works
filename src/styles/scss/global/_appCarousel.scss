@@ -3,7 +3,8 @@
 */
 
 /* 
-  • These styles need to be in the global scss folder since they are not items specifically written out within a components html markup. Css modules will skip over any styles that are not associated with a class that is written out in an associated component. 
+  • These styles need to be in the global scss folder since they are not items specifically written out within a components html markup. Css modules will skip over any styles that are not associated with a class that is written out in an associated component.
+  • Using the appendDots setting for react-slick is not a viable option in this case because any specified className gets overwritten. Instead I am using the dotsClass setting (dotsClass: 'appCarousel_dots') and writing the styles for that class here.
 */
 
 // * imports *

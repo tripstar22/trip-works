@@ -79,6 +79,7 @@
 
 #### Slick carousel / react-slick
 - The React version ([react-slick](https://github.com/akiran/react-slick)) of Slick Carouel is being used for featured media items in `components/carousel/Carousel.jsx`. 
+- There is a bug with `react-slick` where classes specified using the `appendDots` setting are overwritten. I used the `dotsClass` setting (`dotsClass: 'appCarousel_dots'`) and wrote the styles for that class here: `src/styles/scss/global/_appCarousel.scss`. Those styles are then imported into `pages/_app.jsx`.
   - ***Note:** Using `react-slick` requires that I also add the standard version of [slick-carousel](https://github.com/kenwheeler/slick) to the project in order to access the base carousel styles. You can view the imports for the Slick Carousel styles in `components/carousel/Carousel.jsx`.*
 
 ### Misc

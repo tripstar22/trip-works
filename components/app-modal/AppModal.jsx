@@ -12,7 +12,7 @@ import Modal from '@mui/material/Modal';
 import Carousel from '../carousel/Carousel';
 
 // * styles imports *
-import classes from './_appmodal.module.scss';
+import classes from './appmodal.module.scss';
 
 function AppModal({
   activeSlideIndex,

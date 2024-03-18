@@ -2,7 +2,7 @@
 import CircularProgress from '@mui/material/CircularProgress';
 
 // * styles imports *
-import classes from './_apploader.module.scss';
+import classes from './apploader.module.scss';
 
 function AppLoader() {
   return (

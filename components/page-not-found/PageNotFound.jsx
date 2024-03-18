@@ -13,7 +13,7 @@ import BackgroundVideo from '../ui/background-video/BackgroundVideo';
 import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 
 // * styles imports *
-import classes from './_pagenotfound.module.scss';
+import classes from './pagenotfound.module.scss';
 
 function PageNotFound({ pageNotFoundContent }) {
   // * cms content *

@@ -49,7 +49,7 @@
 
 ### Fonts
 - Next.js allows you to automatically self-host any Google Fonts. They are being imported into the project via the technique found under the Google Fonts heading in this [link](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts). You can find the file where they are being imported here: `src/styles/js/fonts/fonts.js`.
-- I am also hosting one font locally in the project using `@font-face`, which can be found here: `src/styles/scss/fonts/_fonts.scss`. It is imported into the project in `pages/_app.jsx`.
+- I am also hosting one font locally in the project using `@font-face`, which can be found here: `src/styles/scss/fonts/fonts.scss`. It is imported into the project in `pages/_app.jsx`.
 
 ### SVGs
 - I am using the technique outlined [here](https://blog.logrocket.com/import-svgs-next-js-apps/#import-svgs-next-js-using-svgr) to leverage [SVGR](https://github.com/gregberge/svgr) for SVGs in the app.
@@ -79,7 +79,7 @@
 
 #### Slick carousel / react-slick
 - The React version ([react-slick](https://github.com/akiran/react-slick)) of Slick Carouel is being used for featured media items in `components/carousel/Carousel.jsx`. 
-- There is a bug with `react-slick` where classes specified using the `appendDots` setting are overwritten. I used the `dotsClass` setting (`dotsClass: 'appCarousel_dots'`) and wrote the styles for that class here: `src/styles/scss/global/_appCarousel.scss`. Those styles are then imported into `pages/_app.jsx`.
+- There is a bug with `react-slick` where classes specified using the `appendDots` setting are overwritten. I used the `dotsClass` setting (`dotsClass: 'appCarousel_dots'`) and wrote the styles for that class here: `src/styles/scss/global/appCarousel.scss`. Those styles are then imported into `pages/_app.jsx`.
   - ***Note:** Using `react-slick` requires that I also add the standard version of [slick-carousel](https://github.com/kenwheeler/slick) to the project in order to access the base carousel styles. You can view the imports for the Slick Carousel styles in `components/carousel/Carousel.jsx`.*
 
 ### Misc

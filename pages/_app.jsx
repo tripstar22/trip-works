@@ -17,16 +17,16 @@ import { CacheProvider } from '@emotion/react';
 
 // * src style imports *
 // fonts imported first
-import '../src/styles/scss/fonts/_fonts.scss';
+import '../src/styles/scss/fonts/fonts.scss';
 // theme imports
 import createEmotionCache from '../src/styles/js/createEmotionCache';
 import themeDefault from '../src/styles/js/themes/themeDefault';
 // base styles imported second
-import '../src/styles/scss/global/_base.scss';
+import '../src/styles/scss/global/base.scss';
 // other global styles imported alphabetically
-import '../src/styles/scss/global/_appCarousel.scss';
-import '../src/styles/scss/global/_section.scss';
-import '../src/styles/scss/global/_utilities.scss';
+import '../src/styles/scss/global/appCarousel.scss';
+import '../src/styles/scss/global/section.scss';
+import '../src/styles/scss/global/utilities.scss';
 
 // * src js imports *
 import '../src/js/console-message/consoleMessage';

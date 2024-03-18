@@ -11,7 +11,7 @@ import ButtonLink from '../../ui/button-link/ButtonLink';
 import RevealOnScroll from '../../ui/reveal-on-scroll/RevealOnScroll';
 
 // * styles imports *
-import classes from './_repositoryCta.module.scss';
+import classes from './repositoryCta.module.scss';
 
 function RepositoryCta({ repositoryCta }) {
   // * cms content

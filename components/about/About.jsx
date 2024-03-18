@@ -11,7 +11,7 @@ import Location from '../location/Location';
 import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 
 // * styles imports *
-import classes from './_about.module.scss';
+import classes from './about.module.scss';
 
 function About({ aboutContent, locationContent }) {
   // * cms content *

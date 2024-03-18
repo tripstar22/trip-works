@@ -18,7 +18,7 @@ import CarouselArrowNext from './CarouselArrowNext';
 import CarouselArrowPrev from './CarouselArrowPrev';
 
 // * styles imports *
-import classes from './_carousel.module.scss';
+import classes from './carousel.module.scss';
 
 // * disable jsx-props-no-spreading due to recommended structure of slick-carousel sliderSettings *
 /* eslint-disable react/jsx-props-no-spreading */
@@ -58,7 +58,7 @@ function Carousel({ activeSlideIndex, media, videoPause }) {
     },
     customPaging: carouselDots,
     dots: true,
-    dotsClass: 'appCarousel_dots', // * Referenced in src/styles/scss/global/_appCarousel.scss *
+    dotsClass: 'appCarousel_dots', // * Referenced in src/styles/scss/global/appCarousel.scss *
     fade: true,
     initialSlide: activeSlideIndex,
     nextArrow: arrowNext,

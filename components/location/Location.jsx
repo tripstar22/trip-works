@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 
 // * styles imports *
-import classes from './_location.module.scss';
+import classes from './location.module.scss';
 
 // * write a fetcher function to wrap the native fetch function and return the result of a call to url in json format *
 const fetchData = function fetchWeatherAPIData(url) {

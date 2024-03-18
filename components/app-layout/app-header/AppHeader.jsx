@@ -20,7 +20,7 @@ import AppMenu from '../app-menu/AppMenu';
 import Logo from '../../../svg/logos/logo.svg';
 
 // * styles imports *
-import classes from './_appheader.module.scss';
+import classes from './appheader.module.scss';
 
 function HideHeaderOnScroll(props) {
   const { children } = props;

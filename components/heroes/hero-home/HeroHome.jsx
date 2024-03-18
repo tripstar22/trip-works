@@ -18,7 +18,7 @@ import BackgroundVideo from '../../ui/background-video/BackgroundVideo';
 import RevealOnScroll from '../../ui/reveal-on-scroll/RevealOnScroll';
 
 // * styles imports *
-import classes from './_hero.module.scss';
+import classes from './hero.module.scss';
 
 function HeroHome({ homeHeroContent }) {
   // * cms content *

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import IconButton from '@mui/material/IconButton';
 
 // * styles imports *
-import classes from './_carousel.module.scss';
+import classes from './carousel.module.scss';
 
 function CarouselArrowNext(props) {
   const { children, onClick } = props;

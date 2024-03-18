@@ -13,7 +13,7 @@ import aniScroll from '../../../src/js/ani-scroll/aniScroll';
 import AppLink from '../app-link/AppLink';
 
 // * styles imports *
-import classes from './_backtotop.module.scss';
+import classes from './backtotop.module.scss';
 
 function BackToTop() {
   // * scroll trigger settings *

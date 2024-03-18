@@ -17,7 +17,7 @@ import AppLink from '../ui/app-link/AppLink';
 import AppModal from '../app-modal/AppModal';
 
 // * styles imports
-import classes from './_gallery.module.scss';
+import classes from './gallery.module.scss';
 
 function Gallery({ media }) {
   // * state *

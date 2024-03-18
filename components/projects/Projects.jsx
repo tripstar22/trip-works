@@ -16,7 +16,7 @@ import AppLink from '../ui/app-link/AppLink';
 import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 
 // * styles imports *
-import classes from './_projects.module.scss';
+import classes from './projects.module.scss';
 
 function Projects({ projectsItems, workHeading }) {
   // * cms content *

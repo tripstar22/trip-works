@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 
 // * styles imports *
-import classes from './_skills.module.scss';
+import classes from './skills.module.scss';
 
 function Skills({ skillsHeading, skillsItems }) {
   // * cms content *

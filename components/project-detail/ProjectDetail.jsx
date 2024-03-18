@@ -11,7 +11,7 @@ import Gallery from '../gallery/Gallery';
 import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 
 // * styles imports *
-import classes from './_projectdetail.module.scss';
+import classes from './projectdetail.module.scss';
 
 function ProjectDetail({ project }) {
   // * cms content *

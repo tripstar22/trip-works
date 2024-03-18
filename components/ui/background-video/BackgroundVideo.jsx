@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import Typography from '@mui/material/Typography';
 
 // * styles imports *
-import classes from './_backgroundvideo.module.scss';
+import classes from './backgroundvideo.module.scss';
 
 // * disable media has caption warning in this case since backround videos will not have audio *
 /* eslint-disable jsx-a11y/media-has-caption */

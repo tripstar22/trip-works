@@ -19,7 +19,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import AppLink from '../../ui/app-link/AppLink';
 
 // * styles imports *
-import classes from './_appmenu.module.scss';
+import classes from './appmenu.module.scss';
 
 function AppMenu({ menuOpen, navigationMain, toggleMenuClose }) {
   // * state *

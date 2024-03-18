@@ -14,7 +14,7 @@ import ButtonLink from '../../ui/button-link/ButtonLink';
 import RevealOnScroll from '../../ui/reveal-on-scroll/RevealOnScroll';
 
 // * styles imports *
-import classes from './_contact.module.scss';
+import classes from './contact.module.scss';
 
 function Contact({ contactContent }) {
   // * cms content *

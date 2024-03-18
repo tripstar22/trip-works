@@ -24,7 +24,7 @@ import RevealOnScroll from '../../ui/reveal-on-scroll/RevealOnScroll';
 import LogoSecondary from '../../../svg/logos/logoSecondary.svg';
 
 // * styles imports *
-import classes from './_appfooter.module.scss';
+import classes from './appfooter.module.scss';
 
 function AppFooter({ footerHeading, navigationMain }) {
   // * cms content *

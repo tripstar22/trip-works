@@ -1,11 +1,10 @@
-// * node.js imports *
-import fs from 'fs';
-import path from 'path';
-
 // * third party library imports *
-const axios = require('axios');
+import axios from 'axios';
 
-const weatherForecast = async function weatherForecastDataRequest(req, res) {
+let dataCurrent = null;
+let currentWeatherData = null;
+
+const weatherData = async function requestWeatherData() {
   const integerIdentifier = Math.floor(Math.random() * 100000000);
 
   let cityCurrent = '';
@@ -27,16 +26,17 @@ const weatherForecast = async function weatherForecastDataRequest(req, res) {
 
   try {
     const response = await axios.request(options);
+    dataCurrent = response.data;
 
-    cityCurrent = response.data.location.name;
-    regionCurrent = response.data.location.region;
+    cityCurrent = dataCurrent.location.name;
+    regionCurrent = dataCurrent.location.region;
     locationCurrent = `${cityCurrent}, ${regionCurrent}`;
-    iconWeather = response.data.current.condition.icon;
-    tempCurrent = response.data.current.temp_f;
+    iconWeather = dataCurrent.current.condition.icon;
+    tempCurrent = dataCurrent.current.temp_f;
     tempCurrent = Math.round(tempCurrent);
-    weatherConditions = response.data.current.condition.text;
+    weatherConditions = dataCurrent.current.condition.text;
 
-    const weatherCurrent = {
+    const currentForecast = {
       id: integerIdentifier,
       location: locationCurrent,
       icon: iconWeather,
@@ -44,15 +44,24 @@ const weatherForecast = async function weatherForecastDataRequest(req, res) {
       conditions: weatherConditions,
     };
 
-    // * store data by updating data/weather-forecast/weather-forecast.json *
-    const filePath = path.join(process.cwd(), 'data', 'weather-forecast', 'weather-forecast.json');
-    const fileData = fs.readFileSync(filePath, 'utf8');
-    const weatherData = JSON.parse(fileData);
-    weatherData.splice(0, 1, weatherCurrent);
-    fs.writeFileSync(filePath, JSON.stringify(weatherData));
-    res.status(200).json(weatherData);
+    currentWeatherData = [currentForecast];
   } catch (error) {
     console.error(error);
+  }
+};
+
+weatherData();
+
+const weatherForecast = async function storeWeatherForecast(req, res) {
+  try {
+    if (!currentWeatherData) {
+      await weatherData();
+    }
+    // * return weather stored in memory *
+    res.status(200).json(currentWeatherData);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 };
 

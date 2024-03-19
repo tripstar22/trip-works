@@ -26,7 +26,7 @@
 - I wanted to leverage a third-party API in my app, and decided to use a weather API to display the current weather of my local area.
 - The weather API that I decided to use is [WeatherAPI.com](https://rapidapi.com/user/weatherapi), which I found on the Rapid API platform.
 - I used [Node.js](https://nodejs.org/) and [Axios](https://github.com/axios/axios) to `GET` the weather data. The file can be found here: `pages/api/weatherForecast.js`.
-- I added the [SWR](https://github.com/vercel/swr) library into my project, and used the technique outlined [here](https://vercel.com/guides/loading-static-file-nextjs-api-route) to add the weather data to `components/location/Location.jsx`.  
+- Relevant weather data is stored in memory and added to the UI in `components/location/Location.jsx`.
 
 ### Styles
 - As the project scaffolding uses MUI, there is a theme JavaScript file for the vast majority of global styles, `src/styles/js/themes/themeDefault.js`.

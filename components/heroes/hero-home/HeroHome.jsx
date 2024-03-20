@@ -33,14 +33,7 @@ function HeroHome({ homeHeroContent }) {
 
   return (
     <section className={`${classes.hero} ${classes.hero___home}`}>
-      <BackgroundVideo
-        autoPlay="autoplay"
-        loop
-        playsInline
-        poster={imageUrl}
-        src={videoUrl}
-        type="video/mp4"
-      />
+      <BackgroundVideo src={videoUrl} poster={imageUrl} />
       <RevealOnScroll
         aniTyped
         end="top top"

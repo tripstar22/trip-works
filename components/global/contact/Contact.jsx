@@ -35,14 +35,7 @@ function Contact({ contactContent }) {
 
   return (
     <section className={`section ${classes.contact}`} id="contact">
-      <BackgroundVideo
-        autoPlay="autoplay"
-        loop
-        playsInline
-        poster={imageUrl}
-        src={videoUrl}
-        type="video/mp4"
-      />
+      <BackgroundVideo src={videoUrl} poster={imageUrl} />
       <RevealOnScroll
         aniTyped
         end="top top"

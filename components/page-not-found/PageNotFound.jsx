@@ -30,14 +30,7 @@ function PageNotFound({ pageNotFoundContent }) {
 
   return (
     <section className={classes.pagenotfound}>
-      <BackgroundVideo
-        autoPlay="autoplay"
-        loop
-        playsInline
-        poster={imageUrl}
-        src={videoUrl}
-        type="video/mp4"
-      />
+      <BackgroundVideo src={videoUrl} poster={imageUrl} />
       <RevealOnScroll end="top 10%" start="30% bottom">
         <div className={classes.pagenotfound_container}>
           <Container maxWidth="lg">

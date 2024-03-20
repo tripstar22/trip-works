@@ -6,6 +6,18 @@
   All Screen Sizes
 =================================================== */
 
+.bgVideo_image {
+
+  &.bgVideo_elementShow {
+    display: block;
+  }
+}
+.bgVideo_video {
+
+  &.bgVideo_elementHide {
+    display: none;
+  }
+}
 .pageTop {
   height: 0;
   position: absolute;

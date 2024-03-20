@@ -1,5 +1,5 @@
 // * react imports *
-import { useEffect, useRef } from 'react';
+import { useEffect, useInsertionEffect, useRef } from 'react';
 
 // * third party library imports *
 import PropTypes from 'prop-types';
@@ -14,15 +14,35 @@ import classes from './backgroundvideo.module.scss';
 /* eslint-disable jsx-a11y/media-has-caption */
 function BackgroundVideo(props) {
   const {
-    autoPlay,
-    loop,
-    playsInline,
     poster,
     src,
-    type,
   } = props;
 
   const videoRef = useRef(null);
+
+  useInsertionEffect(() => {
+    const { userAgent } = navigator;
+
+    const userAgentVideo = function userAgentBgVideoFunctionality(image, video) {
+      image.forEach((imageItem) => {
+        imageItem.addClass('bgVideo_elementShow');
+      });
+      video.forEach((videoItem) => {
+        videoItem.addClass('bgVideo_elementHide');
+      });
+    };
+
+    if (
+      (document.querySelector('.bgVideo'))
+      && (userAgent.indexOf('iPhone') >= 0
+      || userAgent.indexOf('iPad') >= 0
+      || userAgent.indexOf('Android') >= 0)
+    ) {
+      const bgVideoImage = document.querySelectorAll('.bgVideo_image');
+      const bgVideo = document.querySelectorAll('.bgVideo_video');
+      userAgentVideo(bgVideoImage, bgVideo);
+    }
+  }, []);
 
   useEffect(() => {
     /*
@@ -44,18 +64,20 @@ function BackgroundVideo(props) {
   }, []);
 
   return (
-    <div className={classes.backgroundvideo}>
+    <div className={`bgVideo ${classes.backgroundvideo}`}>
+      <img src={poster} className={`bgVideo_image ${classes.backgroundvideo_image}`} alt="" />
       <video
-        className={classes.backgroundvideo_video}
-        src={src}
+        className={`bgVideo_video ${classes.backgroundvideo_video}`}
         ref={videoRef}
-        autoPlay={autoPlay}
-        loop={loop}
-        playsInline={playsInline}
+        autoPlay="autoplay"
+        crossOrigin=""
+        loop
+        playsInline
+        type="video/mp4"
+        src={src}
         poster={poster}
-        type={type}
       >
-        <source src={src} type={type} />
+        <source src={src} type="video/mp4" />
         <Typography
           className={classes.backgroundvideo_heading}
           component="h6"
@@ -71,17 +93,11 @@ function BackgroundVideo(props) {
 /* eslint-enable jsx-a11y/media-has-caption */
 
 BackgroundVideo.propTypes = {
-  autoPlay: PropTypes.string,
-  loop: PropTypes.bool,
-  playsInline: PropTypes.bool.isRequired,
   poster: PropTypes.string,
   src: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
 };
 
 BackgroundVideo.defaultProps = {
-  autoPlay: 'autoplay',
-  loop: true,
   poster: null,
 };
 

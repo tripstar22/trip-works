@@ -22,6 +22,7 @@ import classes from './carousel.module.scss';
 
 // * disable jsx-props-no-spreading due to recommended structure of slick-carousel sliderSettings *
 /* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable jsx-a11y/media-has-caption */
 function Carousel({ activeSlideIndex, media, videoPause }) {
   /*
     • define the following:
@@ -82,7 +83,6 @@ function Carousel({ activeSlideIndex, media, videoPause }) {
                 className={classes.carousel_video}
                 controls
                 controlsList="disablepictureinpicture"
-                muted
                 playsInline
                 preload="auto"
               >
@@ -109,6 +109,7 @@ function Carousel({ activeSlideIndex, media, videoPause }) {
   );
 }
 /* eslint-enable react/jsx-props-no-spreading */
+/* eslint-enable jsx-a11y/media-has-caption */
 
 Carousel.propTypes = {
   activeSlideIndex: PropTypes.number.isRequired,

@@ -21,6 +21,11 @@ function BackgroundVideo(props) {
   const videoRef = useRef(null);
 
   useEffect(() => {
+    /*
+      • check userAgent to see which type of device is being used
+      • if this component is in the view and iPhone, iPad, or Android is being used then hide video element and display static image
+      • these devices have very limited capability for autoplay and I don't want mobile users to have to involuntarily use excess data
+    */
     const { userAgent } = navigator;
 
     const userAgentVideo = function userAgentBgVideoFunctionality(image, video) {
@@ -38,7 +43,6 @@ function BackgroundVideo(props) {
       || userAgent.indexOf('iPad') >= 0
       || userAgent.indexOf('Android') >= 0)
     ) {
-      console.log('mobile device detected');
       const bgVideoImage = document.querySelectorAll('.bgVideo_image');
       const bgVideo = document.querySelectorAll('.bgVideo_video');
       userAgentVideo(bgVideoImage, bgVideo);

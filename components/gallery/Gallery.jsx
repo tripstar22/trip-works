@@ -1,5 +1,5 @@
-// * react imports
-import { useState } from 'react';
+// * react imports *
+import { useEffect, useState } from 'react';
 
 // * third party library imports *
 import PropTypes from 'prop-types';
@@ -43,6 +43,30 @@ function Gallery({ media }) {
     setOpen(false);
   };
 
+  // useEffect(() => {
+  //   const videos = document.querySelectorAll('.videoThumbnail');
+
+  //   videos.forEach((video) => {
+  //     video.addEventListener('loadedmetadata', () => {
+  //       video.currentTime = 0;
+  //     });
+
+  //     video.addEventListener('seeked', () => {
+  //       const canvas = document.createElement('canvas');
+  //       const context = canvas.getContext('2d');
+  //       const { videoWidth, videoHeight } = video;
+
+  //       canvas.width = videoWidth;
+  //       canvas.height = videoHeight;
+
+  //       context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+  //       const posterUrl = canvas.toDataURL();
+  //       video.setAttribute('poster', posterUrl);
+  //     });
+  //   });
+  // }, []);
+
   return (
     <section className={`section ${classes.gallery}`}>
       <div className={classes.gallery_container}>
@@ -81,14 +105,18 @@ function Gallery({ media }) {
                           alt={item.fields.title}
                           component="img"
                           height="100%"
+                          image={item.fields.file.url}
                           src={item.fields.file.url}
                         />
                       ) : item.fields.file.contentType.startsWith('video/') ? (
                         <div className={classes.gallery_item}>
                           <CardMedia
                             alt={item.fields.title}
+                            className="videoThumbnail"
                             component="video"
                             height="100%"
+                            // poster={item.fields.file.url}
+                            image={item.fields.file.url}
                             src={item.fields.file.url}
                           />
                           <div className={classes.gallery_video}>

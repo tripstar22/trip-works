@@ -1,5 +1,5 @@
 // * react imports *
-import { useEffect, useInsertionEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 // * third party library imports *
 import PropTypes from 'prop-types';
@@ -20,15 +20,15 @@ function BackgroundVideo(props) {
 
   const videoRef = useRef(null);
 
-  useInsertionEffect(() => {
+  useEffect(() => {
     const { userAgent } = navigator;
 
     const userAgentVideo = function userAgentBgVideoFunctionality(image, video) {
       image.forEach((imageItem) => {
-        imageItem.addClass('bgVideo_elementShow');
+        imageItem.classList.add('bgVideo_elementShow');
       });
       video.forEach((videoItem) => {
-        videoItem.addClass('bgVideo_elementHide');
+        videoItem.classList.add('bgVideo_elementHide');
       });
     };
 
@@ -38,6 +38,7 @@ function BackgroundVideo(props) {
       || userAgent.indexOf('iPad') >= 0
       || userAgent.indexOf('Android') >= 0)
     ) {
+      console.log('mobile device detected');
       const bgVideoImage = document.querySelectorAll('.bgVideo_image');
       const bgVideo = document.querySelectorAll('.bgVideo_video');
       userAgentVideo(bgVideoImage, bgVideo);

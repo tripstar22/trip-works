@@ -1,5 +1,5 @@
 // * react imports *
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 // * third party library imports *
 import PropTypes from 'prop-types';

@@ -43,6 +43,55 @@ function Gallery({ media }) {
     setOpen(false);
   };
 
+  // useEffect(() => {
+  //   const videoPoster = function createDynamicVideoPoster() {
+  //     const videos = document.querySelectorAll('.videoMedia');
+
+  //     videos.forEach((video) => {
+  //       const videoSrc = video.getAttribute('src');
+  //       // create temp video element
+  //       const tempVideo = document.createElement('video');
+  //       let canvas;
+  //       let ctx;
+
+  //       tempVideo.setAttribute('src', videoSrc);
+
+  //       // console.log(tempVideo);
+
+  //       tempVideo.addEventListener('loadeddata', () => {
+  //         canvas = document.createElement('canvas');
+  //         const { videoHeight, videoWidth } = tempVideo;
+  //         // console.log(videoWidth, videoHeight);
+  //         canvas.width = videoWidth;
+  //         canvas.height = videoHeight;
+
+  //         ctx = canvas.getContext('2d');
+
+  //         // console.log(canvas);
+  //       });
+
+  //       tempVideo.addEventListener('seeked', () => {
+  //         if (!ctx) {
+  //           console.error('Canvas context is not initialized.');
+  //           return;
+  //         }
+  //         console.log('ctx', ctx);
+  //         ctx.drawImage(tempVideo, 0, 0, canvas.width, canvas.height);
+  //         const dataUrl = canvas.toDataURL('image/jpeg');
+  //         console.log(dataUrl);
+  //         video.setAttribute('poster', dataUrl);
+  //       });
+  //     });
+  //   };
+
+  //   videoPoster();
+  //   // document.addEventListener('DOMContentLoaded', videoPoster);
+
+  //   // return () => {
+  //   //   document.removeEventListener('DOMContentLoaded', videoPoster);
+  //   // };
+  // }, []);
+
   return (
     <section className={`section ${classes.gallery}`}>
       <div className={classes.gallery_container}>
@@ -79,6 +128,7 @@ function Gallery({ media }) {
                       {item.fields.file.contentType.startsWith('image/') ? (
                         <CardMedia
                           alt={item.fields.title}
+                          className={classes.gallery_media}
                           component="img"
                           height="100%"
                           src={item.fields.file.url}
@@ -87,11 +137,10 @@ function Gallery({ media }) {
                         <div className={classes.gallery_item}>
                           <CardMedia
                             alt={item.fields.title}
-                            className="videoMedia"
+                            className={classes.gallery_media}
                             component="video"
                             height="100%"
                             preload="metadata"
-                            poster="https://picsum.photos/410/230"
                             src={item.fields.file.url}
                           />
                           <div className={classes.gallery_video}>

@@ -54,6 +54,9 @@
       outline: none;
     }
   }
+  &_media {
+    object-fit: cover;
+  }
   &_text {
     font-weight: 700;
   }

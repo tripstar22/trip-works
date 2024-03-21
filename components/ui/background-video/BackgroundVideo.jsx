@@ -54,7 +54,7 @@ function BackgroundVideo(props) {
       • this component needs this logic due to:
         • react bug for muted attribute on html video tag (https://github.com/facebook/react/issues/10389)
         • safari and iOS lack of support to autoplaying videos
-          • tested on safari version 17.2.1 and it works correctly with the logic below
+          • tested on safari version 17.4 and it works correctly with the logic below
     */
     if (!videoRef.current) {
       return;

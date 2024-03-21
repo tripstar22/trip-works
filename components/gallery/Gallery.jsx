@@ -1,5 +1,5 @@
 // * react imports *
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 // * third party library imports *
 import PropTypes from 'prop-types';
@@ -22,7 +22,6 @@ import classes from './gallery.module.scss';
 function Gallery({ media }) {
   // * state *
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
-  const [loading, setLoading] = useState(true);
   const [open, setOpen] = useState(false);
 
   // * handlers *
@@ -44,10 +43,6 @@ function Gallery({ media }) {
     setOpen(false);
   };
 
-  useEffect(() => {
-    setLoading(false);
-  }, [media]);
-
   return (
     <section className={`section ${classes.gallery}`}>
       <div className={classes.gallery_container}>
@@ -63,81 +58,65 @@ function Gallery({ media }) {
                 Gallery
               </Typography>
             </Grid>
-            {loading ? (
-              <Typography className={classes.gallery_text} variant="body2">
-                Loading…
-              </Typography>
-            ) : (
-              media.map((item, index) => (
-                <Grid
-                  key={item.fields.file.fileName}
-                  item
-                  xs={12}
-                  sm={6}
-                  md={4}
+            {media.map((item, index) => (
+              <Grid key={item.fields.file.fileName} item xs={12} sm={6} md={4}>
+                <AppLink
+                  href="#"
+                  aria-label={item.fields.title}
+                  className={classes.gallery_link}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    toggleModalOpen();
+                    setCurrentSlide(index);
+                  }}
                 >
-                  <AppLink
-                    href="#"
-                    aria-label={item.fields.title}
-                    className={classes.gallery_link}
-                    onClick={(event) => {
-                      event.preventDefault();
-                      toggleModalOpen();
-                      setCurrentSlide(index);
-                    }}
-                  >
-                    <Card>
-                      <CardActionArea
-                        className={classes.gallery_action}
-                        component="div"
-                        tabIndex={-1}
-                      >
-                        {item.fields.file.contentType.startsWith('image/') ? (
+                  <Card>
+                    <CardActionArea
+                      className={classes.gallery_action}
+                      component="div"
+                      tabIndex={-1}
+                    >
+                      {item.fields.file.contentType.startsWith('image/') ? (
+                        <CardMedia
+                          alt={item.fields.title}
+                          component="img"
+                          height="100%"
+                          src={item.fields.file.url}
+                        />
+                      ) : item.fields.file.contentType.startsWith('video/') ? (
+                        <div className={classes.gallery_item}>
                           <CardMedia
                             alt={item.fields.title}
-                            component="img"
+                            className="videoMedia"
+                            component="video"
                             height="100%"
+                            preload="metadata"
+                            poster="https://picsum.photos/410/230"
                             src={item.fields.file.url}
                           />
-                        ) : item.fields.file.contentType.startsWith(
-                          'video/',
-                        ) ? (
-                          <div className={classes.gallery_item}>
-                            <CardMedia
-                              alt={item.fields.title}
-                              component="video"
-                              height="100%"
-                              preload="metadata"
-                              src={item.fields.file.url}
-                            />
-                            <div className={classes.gallery_video}>
-                              <div className={classes.gallery_videoContainer}>
-                                <div className={classes.gallery_videoPlay}>
-                                  <div
-                                    className={
-                                      classes.gallery_videoPlayTriangle
-                                    }
-                                  />
-                                </div>
-                                <Typography
-                                  className={classes.gallery_videoText}
-                                >
-                                  Watch Video
-                                </Typography>
+                          <div className={classes.gallery_video}>
+                            <div className={classes.gallery_videoContainer}>
+                              <div className={classes.gallery_videoPlay}>
+                                <div
+                                  className={classes.gallery_videoPlayTriangle}
+                                />
                               </div>
+                              <Typography className={classes.gallery_videoText}>
+                                Watch Video
+                              </Typography>
                             </div>
                           </div>
-                          ) : (
-                            <Typography variant="body1">
-                              Unsupported media type.
-                            </Typography>
-                          )}
-                      </CardActionArea>
-                    </Card>
-                  </AppLink>
-                </Grid>
-              ))
-            )}
+                        </div>
+                      ) : (
+                        <Typography variant="body1">
+                          Unsupported media type.
+                        </Typography>
+                      )}
+                    </CardActionArea>
+                  </Card>
+                </AppLink>
+              </Grid>
+            ))}
           </Grid>
         </Container>
       </div>

@@ -85,9 +85,11 @@ function Gallery({ media }) {
     }
 
     videos.forEach((video) => {
-      const currentVideo = video;
-      currentVideo.currentTime = 0;
-      console.log('current time:', video.currentTime);
+      video.addEventListener('loadeddata', () => {
+        const currentVideo = video;
+        currentVideo.currentTime = 0;
+        console.log('current time:', video.currentTime);
+      });
     });
   }, []);
 

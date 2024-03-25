@@ -1,5 +1,5 @@
 // * react imports *
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 // * third party library imports *
 import PropTypes from 'prop-types';
@@ -24,6 +24,40 @@ function Gallery({ media }) {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const [open, setOpen] = useState(false);
 
+  // const videoPoster = function createDynamicVideoPoster(video) {
+  //   const { videoHeight, videoWidth } = video;
+  //   const canvas = document.createElement('canvas');
+  //   const ctx = canvas.getContext('2d');
+  //   let canvasWidth = canvas.width;
+  //   let canvasHeight = canvas.height;
+
+  //   if (!ctx) {
+  //     console.error('Canvas context is not initialized.');
+  //     return;
+  //   }
+
+  //   canvasWidth = videoWidth;
+  //   canvasHeight = videoHeight;
+
+  //   ctx.drawImage(
+  //     video,
+  //     0,
+  //     0,
+  //     canvasWidth,
+  //     canvasHeight,
+  //     0,
+  //     0,
+  //     canvasWidth,
+  //     canvasHeight,
+  //   );
+
+  //   const dataUrl = canvas.toDataURL('image/jpeg', 0.5);
+  //   // console.log('dataURL:', dataUrl);
+  //   video.setAttribute('crossorigin', 'anonymous');
+  //   video.setAttribute('poster', dataUrl);
+  //   console.log('Poster attribute set:', video.getAttribute('poster'));
+  // };
+
   // * handlers *
   const videoPause = function handlerPauseCurrentVideo() {
     const activeSlide = document.querySelector('.slick-slide.slick-active');
@@ -43,54 +77,19 @@ function Gallery({ media }) {
     setOpen(false);
   };
 
-  // useEffect(() => {
-  //   const videoPoster = function createDynamicVideoPoster() {
-  //     const videos = document.querySelectorAll('.videoMedia');
+  useEffect(() => {
+    const videos = document.querySelectorAll('.videoMedia');
 
-  //     videos.forEach((video) => {
-  //       const videoSrc = video.getAttribute('src');
-  //       // create temp video element
-  //       const tempVideo = document.createElement('video');
-  //       let canvas;
-  //       let ctx;
+    if (!videos) {
+      return;
+    }
 
-  //       tempVideo.setAttribute('src', videoSrc);
-
-  //       // console.log(tempVideo);
-
-  //       tempVideo.addEventListener('loadeddata', () => {
-  //         canvas = document.createElement('canvas');
-  //         const { videoHeight, videoWidth } = tempVideo;
-  //         // console.log(videoWidth, videoHeight);
-  //         canvas.width = videoWidth;
-  //         canvas.height = videoHeight;
-
-  //         ctx = canvas.getContext('2d');
-
-  //         // console.log(canvas);
-  //       });
-
-  //       tempVideo.addEventListener('seeked', () => {
-  //         if (!ctx) {
-  //           console.error('Canvas context is not initialized.');
-  //           return;
-  //         }
-  //         console.log('ctx', ctx);
-  //         ctx.drawImage(tempVideo, 0, 0, canvas.width, canvas.height);
-  //         const dataUrl = canvas.toDataURL('image/jpeg');
-  //         console.log(dataUrl);
-  //         video.setAttribute('poster', dataUrl);
-  //       });
-  //     });
-  //   };
-
-  //   videoPoster();
-  //   // document.addEventListener('DOMContentLoaded', videoPoster);
-
-  //   // return () => {
-  //   //   document.removeEventListener('DOMContentLoaded', videoPoster);
-  //   // };
-  // }, []);
+    videos.forEach((video) => {
+      const currentVideo = video;
+      currentVideo.currentTime = 0;
+      console.log('current time:', video.currentTime);
+    });
+  }, []);
 
   return (
     <section className={`section ${classes.gallery}`}>
@@ -136,11 +135,9 @@ function Gallery({ media }) {
                       ) : item.fields.file.contentType.startsWith('video/') ? (
                         <div className={classes.gallery_item}>
                           <CardMedia
-                            alt={item.fields.title}
-                            className={classes.gallery_media}
+                            className={`${classes.gallery_media} videoMedia`}
                             component="video"
                             height="100%"
-                            preload="metadata"
                             src={item.fields.file.url}
                           />
                           <div className={classes.gallery_video}>

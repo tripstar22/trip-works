@@ -87,6 +87,7 @@ function Gallery({ media }) {
     videos.forEach((video) => {
       video.addEventListener('loadeddata', () => {
         const currentVideo = video;
+        currentVideo.pause();
         currentVideo.currentTime = 0;
         console.log('current time:', video.currentTime);
       });

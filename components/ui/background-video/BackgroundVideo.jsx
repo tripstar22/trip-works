@@ -38,10 +38,9 @@ function BackgroundVideo(props) {
     };
 
     if (
-      (document.querySelector('.bgVideo'))
-      && (userAgent.indexOf('iPhone') >= 0
+      userAgent.indexOf('iPhone') >= 0
       || userAgent.indexOf('iPad') >= 0
-      || userAgent.indexOf('Android') >= 0)
+      || userAgent.indexOf('Android') >= 0
     ) {
       const bgVideoImage = document.querySelectorAll('.bgVideo_image');
       const bgVideo = document.querySelectorAll('.bgVideo_video');

@@ -24,39 +24,17 @@ function Gallery({ media }) {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const [open, setOpen] = useState(false);
 
-  // const videoPoster = function createDynamicVideoPoster(video) {
-  //   const { videoHeight, videoWidth } = video;
-  //   const canvas = document.createElement('canvas');
-  //   const ctx = canvas.getContext('2d');
-  //   let canvasWidth = canvas.width;
-  //   let canvasHeight = canvas.height;
+  const videoPosters = function createDynamicVideoPosters() {
+    const videos = document.querySelectorAll('.videoMedia');
 
-  //   if (!ctx) {
-  //     console.error('Canvas context is not initialized.');
-  //     return;
-  //   }
+    if (!videos) {
+      return;
+    }
 
-  //   canvasWidth = videoWidth;
-  //   canvasHeight = videoHeight;
-
-  //   ctx.drawImage(
-  //     video,
-  //     0,
-  //     0,
-  //     canvasWidth,
-  //     canvasHeight,
-  //     0,
-  //     0,
-  //     canvasWidth,
-  //     canvasHeight,
-  //   );
-
-  //   const dataUrl = canvas.toDataURL('image/jpeg', 0.5);
-  //   // console.log('dataURL:', dataUrl);
-  //   video.setAttribute('crossorigin', 'anonymous');
-  //   video.setAttribute('poster', dataUrl);
-  //   console.log('Poster attribute set:', video.getAttribute('poster'));
-  // };
+    videos.forEach((video) => {
+      video.setAttribute('poster', '/_assets/img/video-poster.jpg');
+    });
+  };
 
   // * handlers *
   const videoPause = function handlerPauseCurrentVideo() {
@@ -78,20 +56,19 @@ function Gallery({ media }) {
   };
 
   useEffect(() => {
-    const videos = document.querySelectorAll('.videoMedia');
+    /*
+      • check userAgent to see which type of device is being used
+      • if this component is in the view and iPhone or iPad is being used then run videoPosters(); to dynamically put in poster placeholder for iOS
+      • these devices don't show the first frame as the poster if a poster attribute isn't specified
+    */
+    const { userAgent } = navigator;
 
-    if (!videos) {
-      return;
+    if (
+      userAgent.indexOf('iPhone') >= 0
+      || userAgent.indexOf('iPad') >= 0
+    ) {
+      videoPosters();
     }
-
-    videos.forEach((video) => {
-      video.addEventListener('loadeddata', () => {
-        const currentVideo = video;
-        currentVideo.pause();
-        currentVideo.currentTime = 0;
-        console.log('current time:', video.currentTime);
-      });
-    });
   }, []);
 
   return (

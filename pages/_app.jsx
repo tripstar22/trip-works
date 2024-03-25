@@ -2,8 +2,8 @@
 import * as React from 'react';
 
 // * next.js imports *
+import { GoogleAnalytics } from '@next/third-parties/google';
 import Head from 'next/head';
-// import Script from 'next/script';
 
 // * third party library imports *
 import PropTypes from 'prop-types';
@@ -40,9 +40,12 @@ function MyApp(props) {
   return (
     <CacheProvider value={emotionCache}>
       <Head>
-        <title>Trip Pruitt - Front End Engineer</title>
+        <title>Trip Pruitt - Frontend Engineer</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
+        <meta name="description" content="Hi, my name is Trip! I'm a frontend engineer based in the Greater Metro Atlanta area, and am also open to remote work. I have 10 years of professional experience, and it would be great to connect with you!" />
+        <meta name="keywords" content="frontend engineer, front-end engineer, front end engineer, frontend developer, front-end developer, front end developer, javascript, html, css, scss, react, next.js, node.js" />
       </Head>
+      <GoogleAnalytics gaId="G-NMKEL5PE4Q" />
       <ThemeProvider theme={themeDefault}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />

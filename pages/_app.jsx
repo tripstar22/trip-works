@@ -45,7 +45,7 @@ function MyApp(props) {
         <meta name="description" content="Hi, my name is Trip! I'm a frontend engineer based in the Greater Metro Atlanta area, and am also open to remote work. I have 10 years of professional experience, and it would be great to connect with you!" />
         <meta name="keywords" content="frontend engineer, front-end engineer, front end engineer, frontend developer, front-end developer, front end developer, javascript, html, css, scss, react, next.js, node.js" />
       </Head>
-      <GoogleAnalytics gaId="G-NMKEL5PE4Q" />
+      <GoogleAnalytics gaId="G-XXQYYJEDSP" />
       <ThemeProvider theme={themeDefault}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />

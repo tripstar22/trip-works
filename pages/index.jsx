@@ -177,7 +177,7 @@ function IndexPage(props) {
     onDocReady();
 
     // * events *
-    document.addEventListener('DOMContentLoaded', onDocReady);
+    document.addEventListener('readystatechange', onDocReady);
 
     // * update state for isRendered once rendered *
     setIsRendered(true);

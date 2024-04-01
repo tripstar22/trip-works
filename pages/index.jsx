@@ -195,6 +195,12 @@ function IndexPage(props) {
       && isRendered
       && router.isReady;
 
+    console.log('allLoaded:', allLoaded);
+    console.log('contentful:', contentfulDataLoaded);
+    console.log('doc ready:', documentIsReady);
+    console.log('rendered:', isRendered);
+    console.log('router:', router.isReady);
+
     if (allLoaded) {
       setLoading(false);
     }

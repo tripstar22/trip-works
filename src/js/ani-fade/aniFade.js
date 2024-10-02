@@ -40,7 +40,6 @@ function aniFade(aniTarget, scopeRef) {
         // * has aniType functionality *
 
         // * check to see if specified element exists in current template  *
-        // if (ani.dataset.textElement) {
         const aniType = function animateTextTyping() {
           // * get required data for aniType parameters *
           const { textElement } = ani.dataset;
@@ -72,7 +71,6 @@ function aniFade(aniTarget, scopeRef) {
           },
           startAt: { opacity: 0 },
         });
-        // }
       }
     });
   }, scopeRef); // * scope *

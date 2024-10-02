@@ -13,6 +13,7 @@ import AppLayout from '../components/app-layout/AppLayout';
 import AppLoader from '../components/app-loader/AppLoader';
 import Contact from '../components/global/contact/Contact';
 import HeroHome from '../components/heroes/hero-home/HeroHome';
+import Labs from '../components/labs/Labs';
 import Projects from '../components/projects/Projects';
 import RepositoryCta from '../components/global/repository-cta/RepositoryCta';
 import Skills from '../components/skills/Skills';
@@ -247,6 +248,7 @@ function IndexPage(props) {
       <About aboutContent={aboutContent} locationContent={locationContent} />
       <Skills skillsHeading={skillsHeading} skillsItems={skillsItems} />
       <Projects projectsItems={projectsItems} workHeading={workHeading} />
+      <Labs />
       <Contact contactContent={contactContent} />
       <RepositoryCta repositoryCta={repositoryCta} />
     </AppLayout>

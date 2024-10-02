@@ -1,0 +1,179 @@
+/* 
+  # labs #
+*/
+
+// * imports *
+@import '../../src/styles/scss/vars/vars';
+
+/* ===================================================
+  All Screen Sizes
+=================================================== */
+
+.labs {
+  background-color: $offWhite;
+  position: static;
+  
+  &_container {
+    pointer-events: none;
+
+    &:hover {
+
+      .labs_link:not(:hover) {
+        filter: $filterDefault;
+      }
+    }
+  }
+  &_heading {
+    min-height: 136px;
+    text-align: center;
+  }
+  &_link {
+    border: 3px solid transparent;
+    box-shadow: none;
+    display: block;
+    pointer-events: auto;
+    text-decoration: none;
+    transform-origin: center;
+    transition: border $transitionDefault,
+                box-shadow $transitionDefault,
+                opacity $transitionDefault,
+                transform $transitionDefault;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.04);
+      
+      .projects_more {
+        color: $tealDark;
+      }
+    }
+    &:focus-visible {
+      border: $borderDefault;
+      border-radius: 8px 8px 6px 6px;
+      box-shadow: $boxShadowDefault;
+      outline: none;
+    }
+  }
+  &_more {
+    color: $teal;
+    display: block;
+    font-size: 14px;
+    padding-bottom: 10px;
+    text-decoration: underline;
+    transition: color $transitionDefault;
+  }
+  &_labHeading {
+    font-weight: 400;
+    padding: 20px 0 0;
+  }
+}
+
+/* ===================================================
+  END All Screen Sizes
+=================================================== */
+
+
+/* ===================================================
+  Screens 301px & Up
+=================================================== */
+
+@media screen and (min-width: 301px) {
+
+  .labs {
+
+    &_heading {
+      min-height: 97px;
+    }
+  }
+}
+
+/* ===================================================
+  END Screens 301px & Up
+=================================================== */
+
+
+/* ===================================================
+  Screens 513px & Up (min-width: 513px)
+=================================================== */
+
+@media screen and (min-width: 513px) {
+
+  .labs {
+
+    &_heading {
+      min-height: auto;
+    }
+  }
+}
+
+/* ===================================================
+  END Screens 513px & Up
+=================================================== */
+
+
+/* ===================================================
+  Small Screens & Up (min-width: 600px)
+=================================================== */
+
+@media screen and (min-width: $screen-sm) {
+
+  .labs {
+
+    &_card {
+      align-items: stretch;
+      display: flex;
+      min-height: 100%;
+    }
+    &_link {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
+}
+
+/* ===================================================
+  END Small Screens & Up (min-width: 600px)
+=================================================== */
+
+
+/* ===================================================
+  Medium Screens & Up (min-width: 900px)
+=================================================== */
+
+@media screen and (min-width: $screen-md) {
+
+  .labs {
+
+    &_more {
+      font-size: 16px;
+    }
+  }
+}
+
+/* ===================================================
+  END Medium Screens & Up (min-width: 900px)
+=================================================== */
+
+
+/* ===================================================
+  Large Screens & Up (min-width: 1200px)
+=================================================== */
+
+
+
+/* ===================================================
+  END Large Screens & Up (min-width: 1200px)
+=================================================== */
+
+
+/* ===================================================
+  Extra-Large Screens & Up (min-width: 1536px)
+=================================================== */
+
+
+
+/* ===================================================
+  END Extra-Large Screens & Up (min-width: 1536px)
+=================================================== */

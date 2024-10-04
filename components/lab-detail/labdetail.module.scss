@@ -1,28 +1,45 @@
-/*
-  # section #
+/* 
+  # lab detail #
 */
 
 // * imports *
-@import '../vars/vars';
+@import '../../src/styles/scss/vars/vars';
 
 /* ===================================================
   All Screen Sizes
 =================================================== */
 
-.section {
-  padding: 80px 0;
-
-  &___noPaddingBottom {
-    padding-bottom: 0;
+.labdetail {
+  
+  &_description {
+    background-color: $offWhite;
+    padding: 60px 0;
   }
-  &___noPaddingTop {
-    padding-top: 0;
+  &_heading {
+    position: relative;
+    text-align: center;
+    z-index: 1;
   }
-  &___paddingSmall {
-    padding: 40px 0;
+  &_hero {
+    position: relative;
   }
-  &___paddingSmallBottom {
-    padding-bottom: 40px;
+  &_heroBg {
+    background-repeat: no-repeat;
+    background-position: center center;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  &_heroContainer {
+    padding: 60px 0;
+  }
+  &_item {
+    background-color: $white;
+  }
+  &_section {
+    padding-top: 80px; // * 80px is height of sticky header *
   }
 }
 
@@ -35,7 +52,15 @@
   Small Screens & Up (min-width: 600px)
 =================================================== */
 
+@media screen and (min-width: $screen-sm) {
+  
+  .labdetail {
 
+    &_section {
+      padding-top: 86px; // * height of sticky header *
+    }
+  }
+}
 
 /* ===================================================
   END Small Screens & Up (min-width: 600px)
@@ -47,21 +72,17 @@
 =================================================== */
 
 @media screen and (min-width: $screen-md) {
-  
-  .section {
-    padding: 100px 0;
 
-    &___noPaddingBottom {
-      padding-bottom: 0;
+  .labdetail {
+
+    &_description {
+      padding: 80px 0;
     }
-    &___noPaddingTop {
-      padding-top: 0;
+    &_heroContainer {
+      padding: 80px 0;
     }
-    &___paddingSmall {
-      padding: 50px 0;
-    }
-    &___paddingSmallBottom {
-      padding-bottom: 50px;
+    &_section {
+      padding-top: 92px; // * 92px is height of sticky header *
     }
   }
 }
@@ -75,25 +96,7 @@
   Large Screens & Up (min-width: 1200px)
 =================================================== */
 
-@media screen and (min-width: $screen-lg) {
-  
-  .section {
-    padding: 120px 0;
 
-    &___noPaddingBottom {
-      padding-bottom: 0;
-    }
-    &___noPaddingTop {
-      padding-top: 0;
-    }
-    &___paddingSmall {
-      padding: 60px 0;
-    }
-    &___paddingSmallBottom {
-      padding-bottom: 60px;
-    }
-  }
-}
 
 /* ===================================================
   END Large Screens & Up (min-width: 1200px)

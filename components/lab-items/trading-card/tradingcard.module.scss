@@ -1,28 +1,55 @@
-/*
-  # section #
+/* 
+  # trading card #
 */
 
 // * imports *
-@import '../vars/vars';
+@import '../../../src/styles/scss/vars/vars';
 
 /* ===================================================
   All Screen Sizes
 =================================================== */
 
-.section {
-  padding: 80px 0;
+.tradingcard {
+  
+  &_back,
+  &_front {
+    backface-visibility: hidden;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+  &_back {
+    background-color: red;
+    transform: rotateY(180deg);
+  }
+  &_card {
+    cursor: pointer;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform $transitionDefault;
+    width: 100%;
+  }
+  &_container {
+    height: 350px;
+    perspective: 1000px;
+    position: relative;
+    margin: 0 auto;
+    max-width: 250px;
+    width: 100%;
 
-  &___noPaddingBottom {
-    padding-bottom: 0;
+    &:hover {
+
+      .tradingcard_card {
+        transform: rotateY(-180deg);
+      }
+    }
   }
-  &___noPaddingTop {
-    padding-top: 0;
+  &_front {
+    background-color: blue;
   }
-  &___paddingSmall {
-    padding: 40px 0;
-  }
-  &___paddingSmallBottom {
-    padding-bottom: 40px;
+  &_helpertext {
+    text-align: center;
   }
 }
 
@@ -47,21 +74,12 @@
 =================================================== */
 
 @media screen and (min-width: $screen-md) {
-  
-  .section {
-    padding: 100px 0;
 
-    &___noPaddingBottom {
-      padding-bottom: 0;
-    }
-    &___noPaddingTop {
-      padding-top: 0;
-    }
-    &___paddingSmall {
-      padding: 50px 0;
-    }
-    &___paddingSmallBottom {
-      padding-bottom: 50px;
+  .tradingcard {
+
+    &_container {
+      height: 500px;
+      max-width: 357px;
     }
   }
 }
@@ -75,25 +93,7 @@
   Large Screens & Up (min-width: 1200px)
 =================================================== */
 
-@media screen and (min-width: $screen-lg) {
-  
-  .section {
-    padding: 120px 0;
 
-    &___noPaddingBottom {
-      padding-bottom: 0;
-    }
-    &___noPaddingTop {
-      padding-top: 0;
-    }
-    &___paddingSmall {
-      padding: 60px 0;
-    }
-    &___paddingSmallBottom {
-      padding-bottom: 60px;
-    }
-  }
-}
 
 /* ===================================================
   END Large Screens & Up (min-width: 1200px)

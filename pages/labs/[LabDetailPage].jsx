@@ -8,18 +8,36 @@ import { useRouter } from 'next/router';
 import * as contentful from 'contentful';
 
 // * custom component imports *
-import About from '../components/about/About';
-import AppLayout from '../components/app-layout/AppLayout';
-import AppLoader from '../components/app-loader/AppLoader';
-import Contact from '../components/global/contact/Contact';
-import HeroHome from '../components/heroes/hero-home/HeroHome';
-// Uncomment Labs component once at least 3 labs have been added to CMS
-// import Labs from '../components/labs/Labs';
-import Projects from '../components/projects/Projects';
-import RepositoryCta from '../components/global/repository-cta/RepositoryCta';
-import Skills from '../components/skills/Skills';
+import AppLayout from '../../components/app-layout/AppLayout';
+import AppLoader from '../../components/app-loader/AppLoader';
+import Contact from '../../components/global/contact/Contact';
+import RepositoryCta from '../../components/global/repository-cta/RepositoryCta';
+import LabDetail from '../../components/lab-detail/LabDetail';
 
-export async function getStaticProps() {
+export async function getStaticPaths() {
+  // * access cms content for lab urls *
+  const client = contentful.createClient({
+    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
+  });
+
+  // * labs *
+  const labsResponse = await client.getEntries({
+    content_type: 'labs',
+  });
+
+  // * lab paths *
+  const paths = labsResponse.items.map((item) => ({
+    params: { LabDetailPage: item.fields.slug },
+  }));
+
+  return {
+    paths,
+    fallback: 'blocking',
+  };
+}
+
+export async function getStaticProps({ params }) {
   // * access cms content *
   const client = contentful.createClient({
     space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
@@ -27,12 +45,6 @@ export async function getStaticProps() {
   });
 
   try {
-    // * about *
-    const aboutContentResponse = await client.getEntry(
-      '5qNHxrgorV0020tJFgu0up',
-    );
-    const aboutContent = aboutContentResponse.fields;
-
     // * contact *
     const contactContentResponse = await client.getEntry(
       '6QNHyhpaVHS7bgqmfxQg0s',
@@ -45,17 +57,17 @@ export async function getStaticProps() {
     );
     const footerHeading = footerHeadingResponse.fields;
 
-    // * home hero *
-    const homeHeroContentResponse = await client.getEntry(
-      '6O60cfV82lAZKjI1vyWoJa',
-    );
-    const homeHeroContent = homeHeroContentResponse.fields;
-
-    // * location *
-    const locationContentResponse = await client.getEntry(
-      '3zwnDmVEdqsO04rOy2WQIM',
-    );
-    const locationContent = locationContentResponse.fields;
+    // * lab *
+    const lab = await client.getEntries({
+      content_type: 'labs',
+      'fields.slug': params.LabDetailPage,
+    });
+    // * if lab dosen't exist then return not found
+    if (!lab.items.length) {
+      return {
+        notFound: true,
+      };
+    }
 
     // * navigation main *
     const navigationMainResponse = await client.getEntry(
@@ -63,47 +75,19 @@ export async function getStaticProps() {
     );
     const navigationMain = navigationMainResponse.fields;
 
-    // * projects *
-    const projectsResponse = await client.getEntries({
-      content_type: 'projects',
-    });
-    const projectsItems = projectsResponse.items;
-
     // * repository cta *
     const repositoryCtaResponse = await client.getEntry(
       '01lx3PqjdVxjp7QLNPaugU',
     );
     const repositoryCta = repositoryCtaResponse.fields;
 
-    // * skills heading *
-    const skillsHeadingResponse = await client.getEntry(
-      'SzzgN6NoZIsDBxcPLHNvO',
-    );
-    const skillsHeading = skillsHeadingResponse.fields;
-
-    // * skills items *
-    const skillsItemsResponse = await client.getEntries({
-      content_type: 'skillsItems',
-    });
-    const skillsItems = skillsItemsResponse.items;
-
-    // * work heading *
-    const workHeadingResponse = await client.getEntry('4D8B7cYwhfl13gL74nIcqa');
-    const workHeading = workHeadingResponse.fields;
-
     return {
       props: {
-        aboutContent,
         contactContent,
         footerHeading,
-        homeHeroContent,
-        locationContent,
         navigationMain,
-        projectsItems,
+        lab: lab.items[0],
         repositoryCta,
-        skillsHeading,
-        skillsItems,
-        workHeading,
       },
     };
   } catch (error) {
@@ -111,37 +95,25 @@ export async function getStaticProps() {
 
     return {
       props: {
-        aboutContent: null,
         contactContent: null,
         footerHeading: null,
-        homeHeroContent: null,
-        locationContent: null,
         navigationMain: null,
-        projectsItems: null,
+        lab: null,
         repositoryCta: null,
-        skillsHeading: null,
-        skillsItems: null,
-        workHeading: null,
       },
     };
   }
 }
 
-function IndexPage(props) {
+function LabDetailPage(props) {
   // * cms content *
   const { pageProp } = props;
   const {
-    aboutContent,
     contactContent,
     footerHeading,
-    homeHeroContent,
-    locationContent,
+    lab,
     navigationMain,
-    projectsItems,
     repositoryCta,
-    skillsHeading,
-    skillsItems,
-    workHeading,
   } = pageProp;
 
   // * state *
@@ -156,17 +128,11 @@ function IndexPage(props) {
     let allLoaded = false;
 
     // * check if all the Contentful data is available *
-    const contentfulDataLoaded = aboutContent
-      && contactContent
+    const contentfulDataLoaded = contactContent
       && footerHeading
-      && homeHeroContent
-      && locationContent
       && navigationMain
-      && projectsItems
-      && repositoryCta
-      && skillsHeading
-      && skillsItems
-      && workHeading;
+      && lab
+      && repositoryCta;
 
     // * handlers *
     const onDocReady = function handlerOnDocumentReady() {
@@ -192,10 +158,7 @@ function IndexPage(props) {
         • router ready
     */
 
-    allLoaded = contentfulDataLoaded
-      && documentIsReady
-      && isRendered
-      && router.isReady;
+    allLoaded = contentfulDataLoaded && documentIsReady && isRendered && router.isReady;
 
     if (allLoaded) {
       setLoading(false);
@@ -205,20 +168,14 @@ function IndexPage(props) {
       document.removeEventListener('DOMContentLoaded', onDocReady);
     };
   }, [
-    aboutContent,
     contactContent,
     documentIsReady,
     footerHeading,
-    homeHeroContent,
     isRendered,
-    locationContent,
+    lab,
     navigationMain,
-    projectsItems,
     repositoryCta,
     router.isReady,
-    skillsHeading,
-    skillsItems,
-    workHeading,
   ]);
 
   useEffect(() => {
@@ -245,16 +202,11 @@ function IndexPage(props) {
 
   return (
     <AppLayout footerHeading={footerHeading} navigationMain={navigationMain}>
-      <HeroHome homeHeroContent={homeHeroContent} />
-      <About aboutContent={aboutContent} locationContent={locationContent} />
-      <Skills skillsHeading={skillsHeading} skillsItems={skillsItems} />
-      <Projects projectsItems={projectsItems} workHeading={workHeading} />
-      {/* Uncomment Labs component once at least 3 labs have been added to CMS */}
-      {/* <Labs /> */}
+      <LabDetail lab={lab} />
       <Contact contactContent={contactContent} />
       <RepositoryCta repositoryCta={repositoryCta} />
     </AppLayout>
   );
 }
 
-export default IndexPage;
+export default LabDetailPage;

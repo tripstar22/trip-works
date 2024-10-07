@@ -12,7 +12,7 @@ import About from '../components/about/About';
 import AppLayout from '../components/app-layout/AppLayout';
 import AppLoader from '../components/app-loader/AppLoader';
 import Contact from '../components/global/contact/Contact';
-import HeroHome from '../components/heroes/hero-home/HeroHome';
+import HeroHome from '../components/hero-home/HeroHome';
 // Uncomment Labs component once at least 3 labs have been added to CMS
 // import Labs from '../components/labs/Labs';
 import Projects from '../components/projects/Projects';

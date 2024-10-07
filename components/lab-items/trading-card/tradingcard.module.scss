@@ -11,26 +11,17 @@
 
 .tradingcard {
   
-  &_back,
-  &_front {
-    backface-visibility: hidden;
-    height: 100%;
-    position: absolute;
-    width: 100%;
-  }
-  &_back {
-    background-color: red;
-    transform: rotateY(180deg);
-  }
   &_card,
   &_link {
     height: 100%;
-    width: 100%;
   }
   &_card {
-    position: absolute;
+    box-shadow: $boxShadowDefault;
+    overflow: unset;
+    position: relative;
     transform-style: preserve-3d;
     transition: transform $transitionDefault;
+    width: 100%;
   }
   &_container {
     height: 350px;
@@ -39,9 +30,6 @@
     margin: 0 auto;
     max-width: 250px;
     width: 100%;
-  }
-  &_front {
-    background-color: blue;
   }
   &_helpertext {
     padding-bottom: 40px;
@@ -54,6 +42,18 @@
     
     .tradingcard_card {
       transform: rotateY(-180deg);
+    }
+  }
+  &_side {
+    background-color: blue;
+    backface-visibility: hidden;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+
+    &___back {
+      background-color: red;
+      transform: rotateY(180deg);
     }
   }
 }

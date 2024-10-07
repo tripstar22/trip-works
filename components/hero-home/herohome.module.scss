@@ -1,9 +1,9 @@
 /* 
-  # hero #
+  # hero home #
 */
 
 // * imports *
-@import '../../../src/styles/scss/vars/vars';
+@import '../../src/styles/scss/vars/vars';
 
 // * keyframe animations *
 @keyframes animateArrow {
@@ -22,7 +22,7 @@
   All Screen Sizes
 =================================================== */
 
-.hero {
+.herohome {
   padding-top: 80px; // * height of sticky header *
 
   &_arrow,
@@ -103,7 +103,7 @@
 
 @media screen and (min-width: $screen-sm) {
   
-  .hero {
+  .herohome {
     padding-top: 86px; // * height of sticky header *
 
     &_heading {
@@ -126,7 +126,7 @@
 
 @media screen and (min-width: $screen-md) {
   
-  .hero {
+  .herohome {
     padding-top: 92px; // * height of sticky header *
 
     &_heading {
@@ -153,7 +153,7 @@
 
 @media screen and (min-width: $screen-lg) {
   
-  .hero {
+  .herohome {
 
     &_heading {
 

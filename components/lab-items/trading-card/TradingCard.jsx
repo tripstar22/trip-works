@@ -2,6 +2,8 @@
 import { useEffect, useState } from 'react';
 
 // * mui imports *
+import Card from '@mui/material/Card';
+import CardActionArea from '@mui/material/CardActionArea';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
@@ -26,7 +28,9 @@ function TradingCard() {
     const helperText = document.getElementById('tradingCardHelperText');
     const userAgent = navigator.userAgent.toLowerCase();
     // * check if the user agent corresponds to a mobile or tablet device *
-    const isMobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/.test(userAgent);
+    const isMobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/.test(
+      userAgent,
+    );
 
     if (isMobile) {
       helperText.textContent = 'Tap';
@@ -65,10 +69,22 @@ function TradingCard() {
                   toggleCardFlip();
                 }}
               >
-                <div className={classes.tradingcard_card}>
-                  <div className={classes.tradingcard_front}>Front</div>
-                  <div className={classes.tradingcard_back}>Back</div>
-                </div>
+                <Card className={classes.tradingcard_card}>
+                  <CardActionArea
+                    className={classes.tradingcard_side}
+                    component="div"
+                    tabIndex={-1}
+                  >
+                    <div>Front</div>
+                  </CardActionArea>
+                  <CardActionArea
+                    className={`${classes.tradingcard_side} ${classes.tradingcard_side___back}`}
+                    component="div"
+                    tabIndex={-1}
+                  >
+                    <div>Back</div>
+                  </CardActionArea>
+                </Card>
               </AppLink>
             </div>
           </Grid>

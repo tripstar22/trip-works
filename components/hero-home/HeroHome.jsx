@@ -10,15 +10,15 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 // * custom js animation imports *
-import aniScroll from '../../../src/js/ani-scroll/aniScroll';
+import aniScroll from '../../src/js/ani-scroll/aniScroll';
 
 // * custom component imports *
-import AppLink from '../../ui/app-link/AppLink';
-import BackgroundVideo from '../../ui/background-video/BackgroundVideo';
-import RevealOnScroll from '../../ui/reveal-on-scroll/RevealOnScroll';
+import AppLink from '../ui/app-link/AppLink';
+import BackgroundVideo from '../ui/background-video/BackgroundVideo';
+import RevealOnScroll from '../ui/reveal-on-scroll/RevealOnScroll';
 
 // * styles imports *
-import classes from './hero.module.scss';
+import classes from './herohome.module.scss';
 
 function HeroHome({ homeHeroContent }) {
   // * cms content *
@@ -32,7 +32,7 @@ function HeroHome({ homeHeroContent }) {
   const videoUrl = backgroundVideo.fields.file.url;
 
   return (
-    <section className={`${classes.hero} ${classes.hero___home}`}>
+    <section className={`${classes.herohome} ${classes.herohome___home}`}>
       <BackgroundVideo src={videoUrl} poster={imageUrl} />
       <RevealOnScroll
         aniTyped
@@ -45,9 +45,9 @@ function HeroHome({ homeHeroContent }) {
         <Container maxWidth="lg">
           <Grid container spacing={0}>
             <Grid item xs={12}>
-              <div className={classes.hero_content}>
+              <div className={classes.herohome_content}>
                 <Typography
-                  className={`${classes.hero_heading} ${classes.hero_heading___home}`}
+                  className={`${classes.herohome_heading} ${classes.herohome_heading___home}`}
                   component="h1"
                   gutterBottom
                   variant="h1"
@@ -55,7 +55,7 @@ function HeroHome({ homeHeroContent }) {
                   {heading}
                 </Typography>
                 <Typography
-                  className={`${classes.hero_subheading} ${classes.hero_subheading___home}`}
+                  className={`${classes.herohome_subheading} ${classes.herohome_subheading___home}`}
                   aria-label={subheading}
                   component="h2"
                   id="aniHeroHeading"
@@ -65,12 +65,12 @@ function HeroHome({ homeHeroContent }) {
               </div>
               <AppLink
                 href="#about"
-                className={classes.hero_scrollLink}
+                className={classes.herohome_scrollLink}
                 ariaLabel="scroll to about"
                 dataTarget="about"
                 onClick={aniScroll}
               >
-                <KeyboardArrowDownIcon className={classes.hero_arrow} />
+                <KeyboardArrowDownIcon className={classes.herohome_arrow} />
               </AppLink>
             </Grid>
           </Grid>

@@ -70,6 +70,7 @@ function LabDetail({ lab }) {
                 backgroundImage: `url(${featuredImage.fields.file.url})`,
               }}
             />
+            <div className={classes.labdetail_heroGradient} />
             <div className={classes.labdetail_heroContainer}>
               <Container maxWidth="lg">
                 <Grid container spacing={0}>

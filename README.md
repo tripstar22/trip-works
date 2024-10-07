@@ -85,4 +85,4 @@
 ### Misc
 
 #### aniScroll
-- I created a JavaScript function called `aniScroll` that adds smooth scroll functionality on certain elements. It can be found in `src/js/ani-scroll/aniScroll.js`. `aniScroll` is currently imported in the `HeroHome` component (`components/heroes/hero-home/HeroHome.jsx`), and in the `BackToTop` component (`components/ui/back-to-top/BackToTop.jsx`).
+- I created a JavaScript function called `aniScroll` that adds smooth scroll functionality on certain elements. It can be found in `src/js/ani-scroll/aniScroll.js`. `aniScroll` is currently imported in the `HeroHome` component (`components/hero-home/HeroHome.jsx`), and in the `BackToTop` component (`components/ui/back-to-top/BackToTop.jsx`).

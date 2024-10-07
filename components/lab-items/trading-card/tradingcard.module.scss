@@ -22,13 +22,15 @@
     background-color: red;
     transform: rotateY(180deg);
   }
-  &_card {
-    cursor: pointer;
+  &_card,
+  &_link {
     height: 100%;
+    width: 100%;
+  }
+  &_card {
     position: absolute;
     transform-style: preserve-3d;
     transition: transform $transitionDefault;
-    width: 100%;
   }
   &_container {
     height: 350px;
@@ -37,19 +39,22 @@
     margin: 0 auto;
     max-width: 250px;
     width: 100%;
-
-    &:hover {
-
-      .tradingcard_card {
-        transform: rotateY(-180deg);
-      }
-    }
   }
   &_front {
     background-color: blue;
   }
   &_helpertext {
+    padding-bottom: 40px;
     text-align: center;
+  }
+  &_link {
+    display: block;
+  }
+  &_link___flipped {
+    
+    .tradingcard_card {
+      transform: rotateY(-180deg);
+    }
   }
 }
 

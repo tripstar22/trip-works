@@ -11,9 +11,15 @@
 
 .tradingcard {
   
+  &_action,
   &_card,
-  &_link {
+  &_link,
+  &_side {
     height: 100%;
+  }
+  &_action,
+  &_side {
+    position: absolute;
   }
   &_card {
     box-shadow: $boxShadowDefault;
@@ -47,8 +53,6 @@
   &_side {
     background-color: blue;
     backface-visibility: hidden;
-    height: 100%;
-    position: absolute;
     width: 100%;
 
     &___back {
